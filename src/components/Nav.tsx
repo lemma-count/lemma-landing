@@ -47,6 +47,7 @@ export function Nav() {
   }
 
   return (
+    <>
     <header className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-sm border-b border-border/60">
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
         {/* Logo */}
@@ -145,6 +146,7 @@ export function Nav() {
           </svg>
         </button>
       </nav>
+    </header>
 
       {/* Mobile drawer backdrop */}
       {mobileOpen && (
@@ -158,8 +160,9 @@ export function Nav() {
       {/* Mobile drawer */}
       {mobileOpen && (
         <div
-          className="fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-white shadow-2xl transition-transform duration-300 md:hidden"
-          aria-hidden={!mobileOpen}
+          className="fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-white shadow-2xl md:hidden"
+          role="dialog"
+          aria-modal="true"
         >
           {/* Drawer header */}
           <div className="flex h-20 items-center justify-between px-6">
@@ -266,6 +269,6 @@ export function Nav() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
