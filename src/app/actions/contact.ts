@@ -1,8 +1,8 @@
 "use server";
 
-import { Resend } from "resend";
+import { BrevoClient } from "@getbrevo/brevo";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const brevo = new BrevoClient({ apiKey: process.env.BREVO_API_KEY! });
 
 export type ContactState =
   | { status: "idle" }
@@ -22,12 +22,12 @@ export async function submitContact(formData: FormData): Promise<ContactState> {
   }
 
   try {
-    await resend.emails.send({
-      from: "Lemma Contact <noreply@heylemma.com>",
-      to: "contact@heylemma.com",
-      replyTo: workEmail,
+    await brevo.transactionalEmails.sendTransacEmail({
+      sender: { name: "Lemma Contact", email: "noreply@heylemma.com" },
+      to: [{ email: "contact@heylemma.com" }],
+      replyTo: { email: workEmail, name: fullName },
       subject: `New contact from ${fullName} — ${companyName}`,
-      text: [
+      textContent: [
         `Name: ${fullName}`,
         `Company: ${companyName}`,
         `Email: ${workEmail}`,
