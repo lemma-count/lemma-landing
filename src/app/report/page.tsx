@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Where AI Fits Your Work",
@@ -149,18 +150,22 @@ export default function ReportPage() {
             keep deciding yourself.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
+            <TrackedLink
               href="#"
+              event="cta_click"
+              eventProps={{ label: "Get my report", page: "report", location: "hero" }}
               className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               Get my report — $9.99
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="/report/samples/operations-manager"
+              event="sample_click"
+              eventProps={{ role: "operations-manager", location: "report_hero" }}
               className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-50"
             >
               See sample report
-            </Link>
+            </TrackedLink>
           </div>
           <p className="mt-4 text-sm text-subtle">
             Report link sent by email within a few minutes. Refunds available.
@@ -447,12 +452,14 @@ export default function ReportPage() {
                 </li>
               ))}
             </ul>
-            <Link
+            <TrackedLink
               href="#"
+              event="cta_click"
+              eventProps={{ label: "Get my report", page: "report", location: "pricing" }}
               className="inline-flex w-full items-center justify-center rounded-md bg-accent py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               Get my report — $9.99
-            </Link>
+            </TrackedLink>
             <p className="mt-4 text-xs text-subtle">
               Refunded if we cannot generate a useful report from your
               interview.
@@ -570,12 +577,14 @@ export default function ReportPage() {
             Talk through your real work. Get a simple plan for what to test
             first and how to start.
           </p>
-          <Link
+          <TrackedLink
             href="#"
+            event="cta_click"
+            eventProps={{ label: "Get my report", page: "report", location: "footer_cta" }}
             className="mt-7 inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
           >
             Get my report — $9.99
-          </Link>
+          </TrackedLink>
         </div>
       </section>
     </main>

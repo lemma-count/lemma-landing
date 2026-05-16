@@ -1,3 +1,5 @@
+import { TrackedDetails } from "./TrackedDetails";
+
 type Item = { q: string; a: string };
 
 export function FAQ({ items, title = "F.A.Q." }: { items: Item[]; title?: string }) {
@@ -10,7 +12,7 @@ export function FAQ({ items, title = "F.A.Q." }: { items: Item[]; title?: string
         <ul className="mt-10 divide-y divide-border border-t border-border">
           {items.map((it) => (
             <li key={it.q}>
-              <details className="group py-5">
+              <TrackedDetails question={it.q} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-medium text-ink">
                   <span>{it.q}</span>
                   <span
@@ -24,7 +26,7 @@ export function FAQ({ items, title = "F.A.Q." }: { items: Item[]; title?: string
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
                   {it.a}
                 </p>
-              </details>
+              </TrackedDetails>
             </li>
           ))}
         </ul>

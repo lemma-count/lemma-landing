@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 
 type Feature = { title: string; body: string };
 
@@ -41,12 +41,14 @@ export function SolutionPage({ hero, feature }: SolutionPageProps) {
             <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
               {hero.body}
             </p>
-            <Link
+            <TrackedLink
               href={hero.ctaHref}
+              event="cta_click"
+              eventProps={{ label: hero.ctaLabel, page: "solution", location: "hero" }}
               className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               {hero.ctaLabel}
-            </Link>
+            </TrackedLink>
           </div>
 
           <div

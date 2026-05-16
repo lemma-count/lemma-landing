@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 import { posts, formatDate } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function BlogPage() {
             <ul className="mt-12 divide-y divide-border">
               {posts.map((post) => (
                 <li key={post.slug} className="py-8 first:pt-0">
-                  <Link href={`/blog/${post.slug}`} className="group block">
+                  <TrackedLink href={`/blog/${post.slug}`} event="blog_post_click" eventProps={{ slug: post.slug, title: post.title }} className="group block">
                     <time className="text-xs text-subtle" dateTime={post.date}>
                       {formatDate(post.date)}
                     </time>
@@ -41,7 +41,7 @@ export default function BlogPage() {
                         <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                  </Link>
+                  </TrackedLink>
                 </li>
               ))}
             </ul>

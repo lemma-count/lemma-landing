@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Operations Manager Sample Report",
@@ -306,12 +306,14 @@ Before the final draft, list anything you are unsure about or any place where th
             $9.99 — about 10 minutes — report link sent by email
           </span>
         </p>
-        <Link
+        <TrackedLink
           href="#"
+          event="cta_click"
+          eventProps={{ label: "Get my report", page: "sample_ops_manager", location: "sticky_bottom" }}
           className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
         >
           Get my report — $9.99
-        </Link>
+        </TrackedLink>
       </div>
     </>
   );
