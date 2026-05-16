@@ -107,7 +107,7 @@ function Card({ plan, annual }: { plan: Plan; annual: boolean }) {
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_50%_30%,rgba(180,80,160,0.55),rgba(60,20,55,0.5)_45%,#000_75%)]"
         />
       )}
-      <div className="p-6">
+      <div className="min-h-[9rem] p-6">
         <h3 className="text-xl font-semibold">{plan.name}</h3>
         <p className={`mt-2 text-sm ${dark ? "text-white/75" : "text-muted"}`}>
           {plan.tagline}
@@ -123,8 +123,7 @@ function Card({ plan, annual }: { plan: Plan; annual: boolean }) {
           </p>
         )}
       </div>
-      <div className="flex-1 px-6" />
-      <div className="px-6">
+      <div className="px-6 pb-6">
         <TrackedLink
           href={plan.cta.href}
           event="pricing_cta_click"
