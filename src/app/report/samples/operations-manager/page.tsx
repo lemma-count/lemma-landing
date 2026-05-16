@@ -81,18 +81,28 @@ export default function OperationsManagerSample() {
           <article className="border-t border-border md:border-l md:border-t-0 md:pl-16">
             <Section id="read-first" label="01 — Read this first">
               <h2>
-                Your best first AI test is the weekly operations update.
+                Your time is lost before you start writing, not while you write.
               </h2>
               <p>
-                Based on this fictional interview, the main bottleneck is not
-                one hard task. It is the repeated effort of collecting scattered
-                updates, finding what changed, and turning it into a clear
-                message for the team.
+                Every Friday, before you write a word, you spend 30 to 45
+                minutes doing archaeology: scanning Slack for the final project
+                status, re-reading meeting notes for the one decision that
+                actually changed, checking who is still blocked. By the time
+                the inputs are assembled, the writing is almost obvious. That
+                reconstruction step is where the time goes — and it is the
+                step AI can help with most.
+              </p>
+              <p>
+                AI cannot fix scattered sources. It cannot pull from three
+                tools at once or know which Slack message was the real decision
+                versus the one that got overruled. But once you have assembled
+                the inputs into one structured note, it can compress the
+                writing step from two hours to twenty minutes. That is the test.
               </p>
               <ul className="mt-5 grid gap-3">
-                <Li>The problem: updates are spread across Slack, meetings, spreadsheets, and memory.</Li>
-                <Li>The opportunity: AI can prepare a first draft from structured notes.</Li>
-                <Li>The first step: test one weekly update before using AI for anything more sensitive.</Li>
+                <Li>The problem: you hold the context across four tools and three departments — no single source reflects what actually happened.</Li>
+                <Li>The opportunity: a writing assistant can turn structured notes into a first draft you edit, not a blank page you fill.</Li>
+                <Li>The constraint: AI will write confidently even when the input is incomplete — you are the only check on what gets promised.</Li>
               </ul>
             </Section>
 
@@ -100,10 +110,11 @@ export default function OperationsManagerSample() {
               <h2>Work profile</h2>
               <p>
                 You manage day-to-day operations for a 45-person services
-                company. You work across client delivery, finance, support, and
-                leadership. Most of your week is coordination: finding the
-                latest status, checking blockers, reminding owners, and writing
-                updates people can act on.
+                company. Your week runs across client delivery, finance,
+                support, and leadership. Most of it is coordination: tracking
+                the latest status, surfacing blockers before they become
+                problems, reminding owners, and turning distributed context
+                into updates people can act on.
               </p>
               <table className="mt-6 w-full border-collapse text-sm">
                 <thead>
@@ -136,45 +147,70 @@ export default function OperationsManagerSample() {
                   </tr>
                 </tbody>
               </table>
-              <h3>Pull quote</h3>
+              <h3>From the interview</h3>
               <p>
                 &ldquo;I spend too much time figuring out what actually changed
                 before I can write the update.&rdquo;
+              </p>
+              <h3>What this means</h3>
+              <p>
+                The update itself is not the hard part. The hard part is the
+                30 minutes before: the scroll through Slack, the re-read of
+                three meeting notes, the mental reconstruction of which version
+                of the project status is current. Once you know what happened,
+                you already know most of what the update should say. AI
+                addresses that second half — the drafting — not the first half.
+                But the first half is where most of the time goes.
+              </p>
+              <p>
+                This is important because it sets the right expectation for
+                what the first test will and will not fix.
               </p>
             </Section>
 
             <Section id="where-ai-fits" label="03 — Where AI fits your work">
               <h2>
-                The useful work is preparation, not automatic sending.
+                One tool, one task. Add the second only if the first works.
               </h2>
+              <p>
+                The biggest mistake at this stage is starting with three tools
+                at once. The Friday update is the right first test — it is
+                frequent enough to measure, structured enough to prompt, and
+                low-stakes enough to send with a review step.
+              </p>
               <table className="mt-6 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-t border-border">
-                    <Th>Tool category</Th>
+                    <Th>When</Th>
+                    <Th>Tool type</Th>
                     <Th>Task</Th>
-                    <Th>Benefit</Th>
+                    <Th>Why it fits</Th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-t border-border">
+                    <Td>Start now</Td>
                     <Td>Writing assistant</Td>
-                    <Td>Draft weekly operations update</Td>
-                    <Td>Turns structured notes into a first draft you can edit.</Td>
+                    <Td>Draft the Friday operations update</Td>
+                    <Td>Structured format, predictable audience, you review before sending.</Td>
                   </tr>
                   <tr className="border-t border-border">
+                    <Td>After 2 weeks</Td>
                     <Td>Meeting notes tool</Td>
-                    <Td>Capture decisions and follow-ups</Td>
-                    <Td>Reduces the amount you have to reconstruct after calls.</Td>
+                    <Td>Capture decisions and follow-ups during calls</Td>
+                    <Td>Reduces reconstruction time. Test on internal meetings first, not client calls.</Td>
                   </tr>
                   <tr className="border-t border-border">
+                    <Td>After 4 weeks</Td>
                     <Td>Research assistant</Td>
-                    <Td>Prepare short context briefs</Td>
-                    <Td>Summarizes background before recurring review meetings.</Td>
+                    <Td>Pre-brief before recurring reviews</Td>
+                    <Td>Worth trying only if meetings still feel underprepared after the first two phases.</Td>
                   </tr>
                   <tr className="border-t border-border">
-                    <Td>Workflow assistant</Td>
-                    <Td>Turn tasks into checklist format</Td>
-                    <Td>Makes handoffs clearer without changing the underlying system.</Td>
+                    <Td>Skip for now</Td>
+                    <Td>Workflow automation</Td>
+                    <Td>Auto-routing tasks across teams</Td>
+                    <Td>Your work requires too much contextual judgment for automation to be reliable yet.</Td>
                   </tr>
                 </tbody>
               </table>
@@ -182,128 +218,201 @@ export default function OperationsManagerSample() {
 
             <Section id="watch-first" label="04 — What to watch first">
               <h2>
-                The risk is not the draft. The risk is an unchecked commitment.
+                AI writes confident drafts. Confident drafts get reviewed less carefully.
               </h2>
-              <h3>Condition: use AI only before your review step.</h3>
               <p>
-                The weekly update may include promises, deadlines,
-                client-sensitive context, and internal issues. AI can help
-                prepare the update, but it should not decide what gets escalated
-                or promised to leadership.
+                The weekly update reaches leadership. It may contain deadlines
+                your team is expected to hit, owner names who will be held
+                accountable, and status language that becomes the official
+                record. AI will write all of this confidently, whether or not
+                the underlying notes support it.
               </p>
-              <h3>Condition: remove sensitive details before using outside tools.</h3>
+              <h3>Three things to verify before every send</h3>
+              <p>
+                Deadlines: did you set that date, or did AI infer it from
+                context? Check every number against what you actually know to
+                be true.
+              </p>
+              <p>
+                Owners: are those the real decision-makers, or just the names
+                that appeared most often in the notes? A name in the update
+                implies accountability. Make sure that is intentional.
+              </p>
+              <p>
+                Escalations: is what the draft flagged as a blocker what you
+                actually want leadership to focus on? AI will surface what
+                looks biggest in the text. You know what is actually urgent.
+              </p>
+              <h3>Keep sensitive information out of outside tools</h3>
               <p>
                 Do not paste client names, private financial details, employee
-                issues, or confidential project information into an outside tool
-                unless your company allows it.
+                issues, or confidential project information into a tool your
+                company has not approved. When in doubt, use role labels
+                and project codes instead of real names.
               </p>
             </Section>
 
             <Section id="first-test" label="05 — Your first test">
               <h2>
-                Draft one weekly operations update from a prepared note pack.
+                Draft one Friday update from a structured note. Measure the time.
               </h2>
               <p>
-                This is the right first test because it is frequent, structured,
-                low enough risk with review, and painful enough that improvement
-                will be noticeable.
+                This is the right first test because the failure mode is
+                visible and recoverable. If the draft is wrong, you catch it
+                in review. If it saves time, you will know immediately. Do not
+                start with meeting follow-ups or leadership summaries — those
+                carry more relationship risk.
               </p>
               <ol className="mt-5 grid gap-3 counter-reset-[report-step]">
-                <Ol>Create one note with this week's projects, blockers, decisions, owners, and dates.</Ol>
-                <Ol>Remove client names or sensitive internal details that do not need to be included.</Ol>
-                <Ol>Paste the note into a writing assistant with the prompt below.</Ol>
-                <Ol>Ask for a concise update with sections for wins, blockers, decisions, and next actions.</Ol>
-                <Ol>Review every deadline, owner, metric, and promise before sending.</Ol>
-                <Ol>Track whether the draft saved at least 45 minutes.</Ol>
+                <Ol>Before Friday, write one note covering: each active project (one status sentence each), current blockers with owner names, decisions made this week, and open questions that need answers next week.</Ol>
+                <Ol>Remove anything that would identify clients by name or expose internal conflict. Replace client names with role labels if needed.</Ol>
+                <Ol>Open a writing assistant in a separate browser tab — not in a tool connected to your company files unless it is approved for that use.</Ol>
+                <Ol>Paste the note and the prompt from section VIII. Ask for a draft with four sections: Wins, Blockers, Decisions, Next actions.</Ol>
+                <Ol>Read every deadline, owner, and commitment in the draft. Change anything that does not match what you know to be accurate.</Ol>
+                <Ol>Measure: did the full process — note, prompt, review, edit — take less than 60 minutes? If the update normally takes 2 hours, that is a pass. If it took longer than writing from scratch, the input was probably too sparse.</Ol>
               </ol>
             </Section>
 
             <Section id="tool-needs" label="06 — What the tool needs">
-              <h2>The output improves when the input is specific.</h2>
-              <h3>Context</h3>
+              <h2>The draft quality is determined entirely by the input quality.</h2>
               <p>
-                Give the tool your audience, update purpose, time period, active
-                projects, known blockers, decisions made, open questions, and
-                the action you want readers to take.
+                A writing assistant does not know what changed this week. It
+                only knows what you tell it. Vague input produces vague output.
+                Specific input — with real statuses, actual decisions, and
+                named blockers — produces a draft you can edit in 10 minutes
+                instead of 45.
+              </p>
+              <h3>What good input looks like</h3>
+              <p>
+                Here is one project entry from a well-structured note:
+              </p>
+              <pre className="mt-4 whitespace-pre-wrap border border-border bg-neutral-50 p-5 text-sm leading-[1.62] text-ink">
+{`Project: Client onboarding workflow overhaul
+Status: 80% done. Design handoff complete. Dev is waiting on legal sign-off for data retention language.
+Blocker: Legal review delayed by 2 weeks. No hard date yet.
+Owner: [Ops lead]
+Decision made this week: If legal takes more than 3 more weeks, we launch without the data retention update.
+Open question: Does [CEO] know we may launch without full compliance on this feature?
+Risk level: Medium — this is client-facing.`}
+              </pre>
+              <p>
+                Four to six entries at this level of specificity is enough for
+                a strong first draft. The tool cannot infer risk levels,
+                decision rationale, or open questions — you have to provide
+                those explicitly or they will be missing from the output.
               </p>
               <h3>Tone</h3>
               <p>
-                Ask for a calm, direct update. Avoid dramatic language, vague
-                praise, and long introductions. The message should be easy to
-                scan.
+                Ask for calm and direct. No dramatic language, no vague
+                praise, no long introductions. The update should be easy to
+                scan in 90 seconds. If leadership has to read twice, it is
+                too long or too dense.
               </p>
-              <h3>Examples</h3>
+              <h3>One example is enough</h3>
               <p>
-                Include one past update you were happy with. One example is
-                enough for the first test. Add a second example only if the tone
-                is still off.
-              </p>
-              <h3>Leave out</h3>
-              <p>
-                Leave out client names, employee issues, private financial
-                details, confidential escalations, and anything your company
-                would not allow in an outside tool.
+                Include one past update you were satisfied with. The tool will
+                calibrate to your format. Add a second example only if the
+                tone of the first draft is noticeably off.
               </p>
             </Section>
 
             <Section id="keep-yourself" label="07 — What to keep deciding yourself">
-              <h2>AI can prepare the update. You still own the signal.</h2>
+              <h2>AI prepares the update. You still own the signal.</h2>
               <h3>What gets escalated</h3>
               <p>
-                AI can list blockers. You still decide what deserves leadership
-                attention, because escalation changes priorities and
-                expectations.
+                AI will surface what looks biggest in the notes. You decide
+                what deserves leadership attention — because escalating
+                something changes priorities, shifts focus, and creates
+                expectations that did not exist before. That judgment belongs
+                to you. No draft should escalate something you have not
+                consciously decided to escalate.
               </p>
               <h3>What gets promised</h3>
               <p>
-                AI can phrase commitments. You still approve dates, owners, and
-                promises, because those details affect trust across the team.
+                AI will phrase things as commitments if the notes contain
+                dates and owner names. You approve every deadline, owner, and
+                promise before the update goes out. Those details affect trust
+                across the team in ways that outlast any single update.
               </p>
               <h3>What gets left out</h3>
               <p>
-                AI can shorten the update. You still decide what to omit,
-                because missing context can create confusion or hide risk.
+                AI will shorten by removing what looks least important in the
+                text. You decide what is actually safe to omit — because the
+                detail that seems minor in a note is sometimes the thing
+                someone in leadership is specifically watching for. Omissions
+                have consequences that additions do not.
+              </p>
+              <h3>What tone gets used</h3>
+              <p>
+                The draft will sound professional but neutral. If a situation
+                requires careful framing — a delayed project, a difficult
+                client, a team conflict — that framing has to come from you.
+                AI does not know what is politically sensitive in your
+                organization.
               </p>
             </Section>
 
             <Section id="prompt" label="08 — Your prompt">
               <h2>Copy this into a writing assistant.</h2>
+              <p>
+                Fill in every bracketed section before submitting. The quality
+                of the output depends entirely on how specific the input is.
+                Leave a section blank only if it genuinely does not apply this
+                week — not because it takes a minute to fill in.
+              </p>
               <pre className="mt-6 whitespace-pre-wrap border border-border bg-neutral-50 p-6 text-sm leading-[1.62] text-ink">
-{`The person using this prompt is an Operations Manager preparing a weekly update for [AUDIENCE]. The update covers [TIME PERIOD] and should help readers understand progress, blockers, decisions, and next actions.
+{`Context: I am an Operations Manager preparing the weekly update for [AUDIENCE — e.g. leadership team, all-hands, direct manager]. The update covers [TIME PERIOD — e.g. Mon–Fri this week] and should help readers understand what progressed, what is blocked, what was decided, and what needs to happen next.
 
 Draft a weekly operations update from the notes below.
 
-Input:
-[PASTE PROJECT NOTES]
-[PASTE BLOCKERS]
-[PASTE DECISIONS MADE]
-[PASTE OPEN QUESTIONS]
-[PASTE OWNER NAMES OR SAFE ROLE LABELS]
-[PASTE DEADLINES]
-[PASTE ONE PAST UPDATE EXAMPLE, IF AVAILABLE]
+Project notes:
+[FOR EACH ACTIVE PROJECT: one paragraph with status, blocker if any, owner, any decision made, any open question, risk level]
 
-Constraints:
-Use four sections: Wins, Blockers, Decisions, Next actions.
-Keep the update under [TARGET LENGTH].
-Use calm, direct language.
-Do not invent metrics, owners, dates, or commitments.
-Do not include any client-sensitive or confidential detail unless it appears in the notes.
+Other context:
+[PASTE ANY RELEVANT SLACK MESSAGES, MEETING DECISIONS, OR FOLLOW-UPS]
 
-Before the final draft, list anything you are unsure about or any place where the notes are missing detail.`}
+Tone and format:
+- Four sections: Wins, Blockers, Decisions, Next actions
+- Keep the update under [TARGET LENGTH — e.g. 300 words, one page]
+- Calm and direct. No dramatic language. Easy to scan.
+- Do not invent metrics, deadlines, owner names, or commitments not in the notes.
+- Do not include client names or confidential detail unless it appears in the notes.
+
+Reference:
+[PASTE ONE PAST UPDATE YOU WERE HAPPY WITH — so the tool can match your format]
+
+Before writing the draft: list any place where the notes are missing information that would normally appear in this type of update. I will fill in the gaps before you draft.`}
               </pre>
             </Section>
 
             <Section id="next" label="09 — What comes next">
-              <h2>Keep the test small for one week.</h2>
+              <h2>Three weeks, not three tools.</h2>
               <p>
-                If the update saves time and still sounds like your normal work,
-                repeat it next Friday. Then test the same structure on meeting
-                follow-ups.
+                Week one: run the test on one Friday update. Keep the note
+                short and structured. Measure whether the review-and-send step
+                took less than half your usual time. If it did, and the draft
+                still sounded like you, the test passed.
               </p>
-              <p className="mt-4">
-                If it does not work, the likely problem is weak input. Add one
-                good past example and make the project notes more structured
-                before changing tools.
+              <p>
+                Week two: if the update worked, apply the same structure to
+                meeting follow-ups. Use the same approach — one structured
+                note per meeting, decisions and action items only, no raw
+                transcript. Keep the risk level the same: internal meetings
+                before client-facing ones.
+              </p>
+              <p>
+                Week three: decide whether this is now part of the permanent
+                workflow or still an experiment. The threshold is simple —
+                does the output still sound like you, does it save at least
+                45 minutes per week, and have you caught any errors in review
+                that would have been embarrassing if sent? If yes to the first
+                two and no to the third, keep going.
+              </p>
+              <p>
+                If the test did not work, the most likely cause is sparse
+                input. Go back to the note format in section VI and add more
+                specificity before trying a different tool. The tool is rarely
+                the problem at this stage.
               </p>
             </Section>
           </article>

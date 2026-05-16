@@ -55,38 +55,6 @@ const steps = [
   },
 ];
 
-const moreRoles = [
-  {
-    role: "Sales Representative",
-    work: "Follow-ups, CRM notes, prospect research, meeting prep",
-    test: "Draft post-call follow-up from notes",
-  },
-  {
-    role: "Marketing Coordinator",
-    work: "Campaign notes, content drafts, stakeholder updates",
-    test: "Turn a campaign note into a weekly draft pack",
-  },
-  {
-    role: "Customer Support Lead",
-    work: "Ticket themes, issue summaries, internal updates",
-    test: "Summarize recurring issues for the team",
-  },
-  {
-    role: "Recruiter",
-    work: "Candidate outreach, screening notes, interview packets",
-    test: "Prepare candidate summaries from screen notes",
-  },
-  {
-    role: "HR Manager",
-    work: "Policy updates, onboarding notes, employee communication",
-    test: "Turn a policy change into an employee note",
-  },
-  {
-    role: "Finance Manager",
-    work: "Budget explanations, variance comments, monthly updates",
-    test: "Explain a spreadsheet change in plain English",
-  },
-];
 
 const pricingItems = [
   "10-minute Lemma voice interview",
@@ -383,45 +351,6 @@ export default function ReportPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* More roles */}
-      <section className="border-t border-border px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto max-w-[1280px]">
-          <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                More sample roles
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-                For practical knowledge work, not only tech teams.
-              </h2>
-            </div>
-            <p className="self-end text-base leading-relaxed text-muted">
-              These roles keep the report relatable to people who use tools
-              every day but do not see themselves as technical.
-            </p>
-          </div>
-          <div className="border-t border-border">
-            <div className="hidden grid-cols-[0.85fr_1.35fr_1.25fr] gap-6 border-b border-border py-3 text-[11px] font-bold uppercase tracking-[0.13em] text-subtle md:grid">
-              <span>Role</span>
-              <span>Repeated work</span>
-              <span>First AI test</span>
-            </div>
-            {moreRoles.map(({ role, work, test }) => (
-              <div
-                key={role}
-                className="grid grid-cols-1 gap-2 border-b border-border py-5 md:grid-cols-[0.85fr_1.35fr_1.25fr] md:gap-6"
-              >
-                <strong className="text-base font-semibold text-ink">
-                  {role}
-                </strong>
-                <span className="text-sm text-muted">{work}</span>
-                <span className="text-sm text-muted">{test}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
