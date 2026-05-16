@@ -299,18 +299,18 @@ Before the final draft, list anything you are unsure about or any place where th
       </main>
 
       {/* Sticky bottom CTA */}
-      <div className="sticky bottom-0 z-20 flex flex-col items-stretch gap-4 border-t border-border bg-white/95 px-6 py-4 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:px-10">
+      <div className="border-t border-border bg-white/95 px-6 py-4 backdrop-blur-sm md:sticky md:bottom-0 md:z-20 md:flex md:items-center md:justify-between md:gap-4 md:px-10">
         <p className="text-sm font-semibold text-ink">
           Want one for your work?
-          <span className="ml-2 font-normal text-subtle">
+          <span className="block font-normal text-subtle md:ml-2 md:inline">
             $9.99 — about 10 minutes — report link sent by email
           </span>
         </p>
         <TrackedLink
-          href="#"
+          href="https://app.heylemma.com"
           event="cta_click"
           eventProps={{ label: "Get my report", page: "sample_ops_manager", location: "sticky_bottom" }}
-          className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
+          className="mt-3 inline-flex w-full items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6] md:mt-0 md:w-auto"
         >
           Get my report — $9.99
         </TrackedLink>

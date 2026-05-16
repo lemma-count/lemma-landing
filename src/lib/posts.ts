@@ -9,6 +9,14 @@ export type Post = {
 // Add new posts here. MDX file goes in src/content/posts/<slug>.mdx
 export const posts: Post[] = [
   {
+    slug: "bienvenue-sur-le-blog-lemma",
+    title: "Bienvenue sur le blog Lemma",
+    description:
+      "Pourquoi Lemma ouvre un blog et ce que nous allons y publier: observations terrain, analyses de fond, et questions ouvertes.",
+    date: "2026-05-16",
+    author: "Wissem Fathallah",
+  },
+  {
     slug: "what-to-ask-before-rewriting-your-homepage",
     title: "What To Ask Before Rewriting Your Homepage",
     description:

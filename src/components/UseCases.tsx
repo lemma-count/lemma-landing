@@ -63,7 +63,7 @@ export function UseCases() {
   }
 
   return (
-    <section className="bg-white">
+    <section className="overflow-x-clip bg-white">
       <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-24 md:px-10 md:pt-20 md:pb-32">
         <div className="flex items-end justify-between gap-4">
           <h2 className="max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight text-ink md:text-5xl">

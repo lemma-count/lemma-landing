@@ -116,7 +116,7 @@ export default function MethodologyPage() {
             Take the 10-minute interview and receive your report link by email.
           </p>
           <TrackedLink
-            href="#"
+            href="https://app.heylemma.com"
             event="cta_click"
             eventProps={{ label: "Get my report", page: "methodology", location: "footer_cta" }}
             className="mt-7 inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"

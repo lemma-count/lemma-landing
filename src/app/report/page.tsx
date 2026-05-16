@@ -151,7 +151,7 @@ export default function ReportPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <TrackedLink
-              href="#"
+              href="https://app.heylemma.com"
               event="cta_click"
               eventProps={{ label: "Get my report", page: "report", location: "hero" }}
               className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
@@ -453,7 +453,7 @@ export default function ReportPage() {
               ))}
             </ul>
             <TrackedLink
-              href="#"
+              href="https://app.heylemma.com"
               event="cta_click"
               eventProps={{ label: "Get my report", page: "report", location: "pricing" }}
               className="inline-flex w-full items-center justify-center rounded-md bg-accent py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
@@ -578,7 +578,7 @@ export default function ReportPage() {
             first and how to start.
           </p>
           <TrackedLink
-            href="#"
+            href="https://app.heylemma.com"
             event="cta_click"
             eventProps={{ label: "Get my report", page: "report", location: "footer_cta" }}
             className="mt-7 inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"

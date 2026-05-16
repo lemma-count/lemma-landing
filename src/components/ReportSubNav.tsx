@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "Overview", href: "/report" },
@@ -12,10 +13,22 @@ const links = [
 
 export function ReportSubNav() {
   const pathname = usePathname();
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    function updateHash() {
+      setHash(window.location.hash);
+    }
+
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
 
   function isActive(href: string) {
     const path = href.split("#")[0];
-    if (path === "/report") return pathname === "/report";
+    if (href.includes("#")) return pathname === path && hash === href.slice(path.length);
+    if (path === "/report") return pathname === "/report" && hash === "";
     return pathname.startsWith(path);
   }
 
@@ -37,7 +50,7 @@ export function ReportSubNav() {
         ))}
       </div>
       <Link
-        href="#"
+        href="https://app.heylemma.com"
         className="hidden text-sm font-medium text-accent transition-colors hover:text-[#2f3fd6] md:block"
       >
         Get my report — $9.99 →
