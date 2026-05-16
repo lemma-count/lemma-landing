@@ -14,6 +14,7 @@ const solutions = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Report", href: "/report" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
