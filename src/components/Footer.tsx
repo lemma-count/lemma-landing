@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -30,13 +31,15 @@ export function Footer() {
               Tell Lemma what to keep learning. It interviews the right people and
               turns answers into evidence your team can act on.
             </p>
-            <Link
+            <TrackedLink
               href="/contact"
+              event="cta_click"
+              eventProps={{ label: "Contact us", page: "footer", location: "footer" }}
               className="mt-7 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-neutral-200"
             >
               Contact us
               <span aria-hidden>→</span>
-            </Link>
+            </TrackedLink>
           </div>
 
           <nav aria-label="Footer navigation" className="flex flex-col gap-3 md:pt-1">

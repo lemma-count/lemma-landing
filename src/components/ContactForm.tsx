@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { submitContact, type ContactState } from "@/app/actions/contact";
+import { track } from "@vercel/analytics";
 
 const companySizes = ["1-10", "11-50", "51-200", "201-1000", "1000+"];
 
@@ -20,7 +21,12 @@ export function ContactForm() {
     const result = await submitContact(data);
     setState(result);
     setLoading(false);
-    if (result.status === "sent") formRef.current?.reset();
+    if (result.status === "sent") {
+      formRef.current?.reset();
+      track("contact_submit", {
+        company_size: (data.get("companySize") as string) ?? "unknown",
+      });
+    }
   }
 
   if (state.status === "sent") {

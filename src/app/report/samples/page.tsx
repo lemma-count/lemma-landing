@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Sample Reports",
@@ -86,12 +86,14 @@ export default function SamplesPage() {
                 <h2 className="mt-4 text-2xl font-semibold text-ink">{title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{body}</p>
                 {href && (
-                  <Link
+                  <TrackedLink
                     href={href}
+                    event="sample_click"
+                    eventProps={{ role: title.toLowerCase().replace(/\s+/g, "-") }}
                     className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-accent transition-colors"
                   >
                     Read sample <span className="text-accent">→</span>
-                  </Link>
+                  </TrackedLink>
                 )}
               </article>
             ))}
@@ -108,12 +110,14 @@ export default function SamplesPage() {
             Take the interview and get a personal plan based on what you
             actually do.
           </p>
-          <Link
+          <TrackedLink
             href="#"
+            event="cta_click"
+            eventProps={{ label: "Get my report", page: "samples", location: "footer_cta" }}
             className="mt-7 inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
           >
             Get my report — $9.99
-          </Link>
+          </TrackedLink>
         </div>
       </section>
     </main>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Methodology",
@@ -115,12 +115,14 @@ export default function MethodologyPage() {
           <p className="mx-auto mt-5 max-w-[560px] text-base leading-relaxed text-muted">
             Take the 10-minute interview and receive your report link by email.
           </p>
-          <Link
+          <TrackedLink
             href="#"
+            event="cta_click"
+            eventProps={{ label: "Get my report", page: "methodology", location: "footer_cta" }}
             className="mt-7 inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
           >
             Get my report — $9.99
-          </Link>
+          </TrackedLink>
         </div>
       </section>
     </main>

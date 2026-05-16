@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 
 export function Hero() {
   return (
@@ -15,18 +15,22 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
-            <Link
+            <TrackedLink
               href="https://app.heylemma.com"
+              event="cta_click"
+              eventProps={{ label: "Sign up", page: "home", location: "hero" }}
               className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               Sign up
-            </Link>
-            <Link
+            </TrackedLink>
+            <TrackedLink
               href="/contact"
+              event="cta_click"
+              eventProps={{ label: "Try a voice interview", page: "home", location: "hero" }}
               className="inline-flex items-center justify-center rounded-md border border-ink bg-transparent px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
             >
               Try a voice interview
-            </Link>
+            </TrackedLink>
           </div>
         </div>
 

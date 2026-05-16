@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import { track } from "@vercel/analytics";
 
 const useCases = [
   {
@@ -58,6 +59,7 @@ export function UseCases() {
     if (!card) return;
     const amount = card.getBoundingClientRect().width + 16;
     el.scrollBy({ left: dir === "next" ? amount : -amount, behavior: "smooth" });
+    track("carousel_nav", { direction: dir });
   }
 
   return (

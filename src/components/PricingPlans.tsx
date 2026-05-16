@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { TrackedLink } from "./TrackedLink";
 
 // Set to true once prices are confirmed to display them.
 const SHOW_PRICES = false;
@@ -123,12 +125,14 @@ function Card({ plan, annual }: { plan: Plan; annual: boolean }) {
       </div>
       <div className="flex-1 px-6" />
       <div className="px-6">
-        <Link
+        <TrackedLink
           href={plan.cta.href}
+          event="pricing_cta_click"
+          eventProps={{ plan: plan.name }}
           className={`inline-flex w-full items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium transition-colors ${ctaBg}`}
         >
           {plan.cta.label}
-        </Link>
+        </TrackedLink>
       </div>
       <div className={`mt-6 border-t ${dark ? "border-white/15" : "border-border"} p-6`}>
         <p className={`text-sm font-medium ${dark ? "text-white" : "text-ink"}`}>

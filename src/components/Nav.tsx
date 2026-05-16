@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 
 const solutions = [
   { label: "Consultants", href: "/consultants" },
@@ -124,6 +125,7 @@ export function Nav() {
         {/* Desktop CTA */}
         <Link
           href="https://app.heylemma.com"
+          onClick={() => track("nav_cta_click", { location: "desktop" })}
           className="hidden items-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 md:inline-flex"
         >
           Start for free
@@ -256,7 +258,7 @@ export function Nav() {
         <div className="border-t border-border p-4">
           <Link
             href="https://app.heylemma.com"
-            onClick={closeMobile}
+            onClick={() => { closeMobile(); track("nav_cta_click", { location: "mobile" }); }}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
           >
             Start for free
