@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { TrackedLink } from "./TrackedLink";
 
 const footerLinks = [
@@ -24,17 +25,15 @@ export function Footer() {
             <Link
               href="/"
               aria-label="Lemma home"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-white"
+              className="inline-flex items-center"
             >
-              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden>
-                <path
-                  d="M1 2h10M1 5h10M1 8h10"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span>Lemma</span>
+              <Image
+                src="/assets/lemma-logo-white.png"
+                alt="Lemma"
+                width={117}
+                height={20}
+                className="h-5 w-auto"
+              />
             </Link>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
               Keep learning from the people closest to the decision. Lemma runs

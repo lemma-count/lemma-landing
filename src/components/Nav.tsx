@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 
@@ -19,21 +20,14 @@ const navLinks = [
 
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 text-sm font-medium ${
-        inverse ? "text-white" : "text-ink"
-      }`}
-    >
-      <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden>
-        <path
-          d="M1 2h10M1 5h10M1 8h10"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span>Lemma</span>
-    </span>
+    <Image
+      src={inverse ? "/assets/lemma-logo-white.png" : "/assets/lemma-logo-black.png"}
+      alt="Lemma"
+      width={120}
+      height={20}
+      priority
+      className="h-5 w-auto"
+    />
   );
 }
 
