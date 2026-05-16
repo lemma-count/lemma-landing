@@ -48,7 +48,7 @@ export function Nav() {
 
   return (
     <>
-    <header className="sticky top-0 z-30 w-full bg-white/90 backdrop-blur-sm border-b border-border/60">
+    <header className="w-full bg-white/90 backdrop-blur-sm border-b border-border/60">
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" onClick={closeMobile}>
@@ -127,7 +127,7 @@ export function Nav() {
         <Link
           href="https://app.heylemma.com"
           onClick={() => track("nav_cta_click", { location: "desktop" })}
-          className="hidden items-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 md:inline-flex"
+          className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6] md:inline-flex"
         >
           Start for free
           <span aria-hidden>→</span>
@@ -261,7 +261,7 @@ export function Nav() {
             <Link
               href="https://app.heylemma.com"
               onClick={() => { closeMobile(); track("nav_cta_click", { location: "mobile" }); }}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               Start for free
               <span aria-hidden>→</span>

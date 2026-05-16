@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
+import { TrackedDetails } from "@/components/TrackedDetails";
 
 export const metadata: Metadata = {
   title: "Where AI Fits Your Work",
@@ -357,7 +358,7 @@ export default function ReportPage() {
               </p>
               <Link
                 href="/report/samples/operations-manager"
-                className="mt-auto inline-flex w-fit items-center rounded-md border border-ink bg-ink px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+                className="mt-auto inline-flex w-fit items-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
               >
                 Read sample report
               </Link>
@@ -553,7 +554,7 @@ export default function ReportPage() {
           </div>
           <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2">
             {faqItems.map(({ q, a }) => (
-              <details key={q} className="group border-t border-border">
+              <TrackedDetails key={q} question={q} className="group border-t border-border">
                 <summary className="flex cursor-pointer list-none items-center justify-between py-5 text-base font-semibold text-ink">
                   {q}
                   <span className="text-subtle transition-transform group-open:rotate-45">
@@ -561,7 +562,7 @@ export default function ReportPage() {
                   </span>
                 </summary>
                 <p className="pb-5 text-sm leading-relaxed text-muted">{a}</p>
-              </details>
+              </TrackedDetails>
             ))}
           </div>
         </div>
