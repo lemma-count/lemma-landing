@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { TrackedLink } from "./TrackedLink";
 
@@ -20,13 +19,21 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
-            <Image
-              src="/assets/logo-white.png"
-              alt="Lemma"
-              width={180}
-              height={44}
-              className="h-8 w-auto"
-            />
+            <Link
+              href="/"
+              aria-label="Lemma home"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white"
+            >
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden>
+                <path
+                  d="M1 2h10M1 5h10M1 8h10"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span>Lemma</span>
+            </Link>
             <p className="mt-5 text-base leading-7 text-white/75 md:text-lg md:leading-8">
               Tell Lemma what to keep learning. It interviews the right people and
               turns answers into evidence your team can act on.
