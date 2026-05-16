@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
@@ -67,6 +68,12 @@ const sections = [
 export default function MethodologyPage() {
   return (
     <main className="pb-28">
+      <div className="border-b border-border px-6 py-3 md:px-10">
+        <Link href="/report" className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink">
+          <span aria-hidden>←</span> Report overview
+        </Link>
+      </div>
+
       <section className="border-b border-border px-6 py-16 text-center md:px-10 md:py-20">
         <div className="mx-auto max-w-[1280px]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">

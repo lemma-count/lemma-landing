@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ReportSubNav } from "@/components/ReportSubNav";
 
 export const metadata: Metadata = {
   title: {
@@ -9,10 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function ReportLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <ReportSubNav />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
@@ -55,6 +56,12 @@ const samples = [
 export default function SamplesPage() {
   return (
     <main>
+      <div className="border-b border-border px-6 py-3 md:px-10">
+        <Link href="/report" className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink">
+          <span aria-hidden>←</span> Report overview
+        </Link>
+      </div>
+
       <section className="border-b border-border px-6 py-16 text-center md:px-10 md:py-20">
         <div className="mx-auto max-w-[1280px]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
@@ -85,7 +92,7 @@ export default function SamplesPage() {
                 </p>
                 <h2 className="mt-4 text-2xl font-semibold text-ink">{title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{body}</p>
-                {href && (
+                {href ? (
                   <TrackedLink
                     href={href}
                     event="sample_click"
@@ -94,6 +101,10 @@ export default function SamplesPage() {
                   >
                     Read sample <span className="text-accent">→</span>
                   </TrackedLink>
+                ) : (
+                  <span className="mt-auto inline-flex items-center gap-1.5 text-sm text-subtle cursor-default">
+                    Coming soon
+                  </span>
                 )}
               </article>
             ))}
