@@ -12,7 +12,7 @@ export default function SalesPage() {
     <SolutionPage
       hero={{
         title: "Turn product intent into qualified pipeline.",
-        body: "Lemma engages prospects and PQLs your team can't reach manually. Lemma turns then every conversation into context and actions for faster product-led sales.",
+        body: "Lemma engages prospects and PQLs your team can't reach manually, then turns every conversation into context and actions for faster product-led sales.",
         ctaLabel: "Get Started Free",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/card-plg-discovery.png",

@@ -3,6 +3,9 @@ import { TrackedLink } from "./TrackedLink";
 
 const footerLinks = [
   { label: "Home", href: "/" },
+  { label: "Consultants", href: "/consultants" },
+  { label: "Marketing", href: "/marketing" },
+  { label: "Sales", href: "/sales" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -13,7 +16,7 @@ export function Footer() {
     <footer className="relative isolate overflow-hidden bg-black text-white">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_60%_30%,rgba(180,80,30,0.45),rgba(40,15,5,0.6)_45%,#000_75%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_95%_at_78%_10%,rgba(72,32,18,0.88),rgba(18,6,2,0.8)_48%,#000_82%)]"
       />
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto]">
@@ -33,9 +36,10 @@ export function Footer() {
               </svg>
               <span>Lemma</span>
             </Link>
-            <p className="mt-5 text-base leading-7 text-white/75 md:text-lg md:leading-8">
-              Tell Lemma what to keep learning. It interviews the right people and
-              turns answers into evidence your team can act on.
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
+              Keep learning from the people closest to the decision. Lemma runs
+              the interviews and turns their answers into evidence your team can
+              act on.
             </p>
             <TrackedLink
               href="/contact"
@@ -48,7 +52,7 @@ export function Footer() {
             </TrackedLink>
           </div>
 
-          <nav aria-label="Footer navigation" className="flex flex-col gap-3 md:pt-1">
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-10 gap-y-3 md:grid-cols-1 md:pt-1">
             {footerLinks.map(({ label, href }) => (
               <Link
                 key={href}

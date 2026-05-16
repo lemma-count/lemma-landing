@@ -9,15 +9,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="pt-8 md:pt-12">
+    <main>
       <section className="bg-white">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 py-12 md:grid-cols-2 md:gap-16 md:px-10 md:py-20">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:px-10 md:py-28">
           <div className="md:sticky md:top-24">
-            <h1 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink md:text-6xl">
-              Let&apos;s talk!
+            <h1 className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
+              Start with the decision you need evidence for.
             </h1>
-            <p className="mt-4 max-w-md text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Start from a real decision, not shallow answers.
+            <p className="mt-6 max-w-md text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
+              Tell us what you need to understand, who you need to hear from,
+              and what decision the research should support.
             </p>
             <ul className="mt-10 space-y-5">
               {[
@@ -54,13 +55,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1280px] px-6 pb-24 text-center md:px-10 md:pb-32">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-ink md:text-5xl">
-            Let us be your guide
+      <section className="border-t border-border bg-white">
+        <div className="mx-auto max-w-[1280px] px-6 py-20 text-center md:px-10 md:py-28">
+          <h2 className="mx-auto max-w-3xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
+            Better interviews start with a sharper question.
           </h2>
-          <p className="mt-4 text-base text-muted md:text-lg">
-            Start from how your teams work, not assumptions.
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted md:text-lg md:leading-8">
+            We will help you decide whether Lemma fits your use case and what a
+            first interview project should look like.
           </p>
         </div>
       </section>

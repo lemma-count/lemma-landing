@@ -41,16 +41,16 @@ const faqItems = [
 
 export default function PricingPage() {
   return (
-    <main className="pt-8 md:pt-12">
+    <main>
       <section className="bg-white">
-        <div className="mx-auto max-w-[1280px] px-6 pt-12 pb-4 text-center md:px-10 md:pt-20 md:pb-6">
-          <h1 className="mx-auto max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Pricing that scales with the interviews you run.
+        <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-8 text-center md:px-10 md:pt-28 md:pb-10">
+          <h1 className="mx-auto max-w-4xl text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
+            Pay for the conversations you collect.
           </h1>
-          <div className="mx-auto mt-6 max-w-xl space-y-1 text-base text-muted md:text-lg">
+          <div className="mx-auto mt-7 max-w-xl space-y-1 text-base leading-7 text-muted md:text-lg md:leading-8">
             <p>Each completed voice interview uses 1 credit.</p>
             <p>Invite as many teammates as you want.</p>
-            <p>Pay for the conversations you collect.</p>
+            <p>Scale from one real use case to always-on discovery.</p>
           </div>
         </div>
         <PricingSection />

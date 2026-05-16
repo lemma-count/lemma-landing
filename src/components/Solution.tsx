@@ -16,13 +16,13 @@ const steps = [
 ];
 
 const cardBg =
-  "bg-[radial-gradient(120%_80%_at_20%_30%,#9ec5b1_0%,#4b8a7b_35%,#1c4940_70%,#0e2a25_100%)]";
+  "bg-[radial-gradient(90%_75%_at_20%_15%,rgba(170,215,195,0.95)_0%,rgba(78,139,124,0.92)_34%,rgba(20,73,63,0.98)_70%,#09251f_100%)]";
 
 function CardSearch() {
   return (
     <div className={`relative h-full w-full ${cardBg}`}>
       <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div className="flex w-full max-w-sm items-center gap-2 rounded-full bg-white/95 px-4 py-3 text-sm text-subtle shadow-[0_8px_24px_-8px_rgba(0,0,0,0.25)]">
+        <div className="flex w-full max-w-sm items-center gap-2 rounded-full bg-white/95 px-4 py-3 text-sm text-subtle shadow-[0_16px_32px_-18px_rgba(0,0,0,0.65)] ring-1 ring-black/5">
           <svg
             width="16"
             height="16"
@@ -62,7 +62,8 @@ function CardListening() {
           alt="Listening prompt: Where did you notice friction or effort in that experience?"
           width={520}
           height={520}
-          className="h-auto w-[78%] max-w-[320px] rounded-2xl"
+          priority
+          className="h-auto w-[78%] max-w-[320px] rounded-2xl shadow-[0_18px_40px_-24px_rgba(0,0,0,0.7)]"
         />
       </div>
     </div>
@@ -73,7 +74,7 @@ function CardReport() {
   return (
     <div className={`relative h-full w-full ${cardBg}`}>
       <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div className="w-full max-w-[320px] rounded-xl bg-white p-4 text-left text-[11px] leading-snug text-ink shadow-[0_12px_30px_-10px_rgba(0,0,0,0.4)]">
+        <div className="w-full max-w-[320px] rounded-xl bg-white p-4 text-left text-[11px] leading-snug text-ink shadow-[0_18px_42px_-20px_rgba(0,0,0,0.65)] ring-1 ring-black/5">
           <p className="text-[12px] font-medium leading-snug">
             Coverage spans GTM, technical, and operational functions; no single
             role exceeds 20% of the sample, and adoption was largely peer-driven.
@@ -107,9 +108,9 @@ const cards = [CardSearch, CardListening, CardReport];
 export function Solution() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
+      <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-32">
         <div className="max-w-3xl">
-          <h2 className="text-balance text-3xl font-semibold leading-tight tracking-tight text-ink md:text-5xl">
+          <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
             Turn important conversations into decisions.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
@@ -120,14 +121,14 @@ export function Solution() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 border-t border-border pt-10 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 border-t border-border pt-10 md:grid-cols-3">
           {steps.map((step, i) => {
             const Card = cards[i];
             return (
               <div key={step.title} className="flex flex-col">
                 <h3 className="text-base font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{step.body}</p>
-                <div className="mt-6 aspect-[4/3] w-full overflow-hidden rounded-md">
+                <div className="mt-7 aspect-[4/3] w-full overflow-hidden rounded-md shadow-[0_20px_50px_-34px_rgba(0,0,0,0.7)]">
                   <Card />
                 </div>
               </div>
