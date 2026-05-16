@@ -156,116 +156,116 @@ export function Nav() {
       )}
 
       {/* Mobile drawer */}
-      <div
-        className={`fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-white shadow-2xl transition-transform duration-300 md:hidden ${
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!mobileOpen}
-      >
-        {/* Drawer header */}
-        <div className="flex h-20 items-center justify-between px-6">
-          <Link href="/" onClick={closeMobile}>
-            <Image
-              src="/assets/logo-black.png"
-              alt="Lemma"
-              width={100}
-              height={24}
-              className="h-5 w-auto"
-            />
-          </Link>
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={closeMobile}
-            className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-neutral-100"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-              <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>
+      {mobileOpen && (
+        <div
+          className="fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-white shadow-2xl transition-transform duration-300 md:hidden"
+          aria-hidden={!mobileOpen}
+        >
+          {/* Drawer header */}
+          <div className="flex h-20 items-center justify-between px-6">
+            <Link href="/" onClick={closeMobile}>
+              <Image
+                src="/assets/logo-black.png"
+                alt="Lemma"
+                width={100}
+                height={24}
+                className="h-5 w-auto"
+              />
+            </Link>
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={closeMobile}
+              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-neutral-100"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
 
-        {/* Drawer links */}
-        <nav className="flex-1 overflow-y-auto px-4 py-2">
-          <ul className="space-y-1">
-            <li>
-              <Link
-                href="/"
-                onClick={closeMobile}
-                className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-              >
-                Home
-              </Link>
-            </li>
-
-            {/* Solutions accordion */}
-            <li>
-              <button
-                type="button"
-                onClick={() => setMobileSolutionsOpen((v) => !v)}
-                className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-              >
-                Solutions
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  aria-hidden
-                  className={`transition-transform ${mobileSolutionsOpen ? "rotate-180" : ""}`}
-                >
-                  <path
-                    d="M2 3.5L5 6.5L8 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              {mobileSolutionsOpen && (
-                <ul className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
-                  {solutions.map((s) => (
-                    <li key={s.label}>
-                      <Link
-                        href={s.href}
-                        onClick={closeMobile}
-                        className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-neutral-100 hover:text-ink"
-                      >
-                        {s.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-
-            {navLinks.slice(1).map((l) => (
-              <li key={l.label}>
+          {/* Drawer links */}
+          <nav className="flex-1 overflow-y-auto px-4 py-2">
+            <ul className="space-y-1">
+              <li>
                 <Link
-                  href={l.href}
+                  href="/"
                   onClick={closeMobile}
                   className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
                 >
-                  {l.label}
+                  Home
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
 
-        {/* Drawer CTA */}
-        <div className="border-t border-border p-4">
-          <Link
-            href="https://app.heylemma.com"
-            onClick={() => { closeMobile(); track("nav_cta_click", { location: "mobile" }); }}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
-          >
-            Start for free
-            <span aria-hidden>→</span>
-          </Link>
+              {/* Solutions accordion */}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setMobileSolutionsOpen((v) => !v)}
+                  className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
+                >
+                  Solutions
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    aria-hidden
+                    className={`transition-transform ${mobileSolutionsOpen ? "rotate-180" : ""}`}
+                  >
+                    <path
+                      d="M2 3.5L5 6.5L8 3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                {mobileSolutionsOpen && (
+                  <ul className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
+                    {solutions.map((s) => (
+                      <li key={s.label}>
+                        <Link
+                          href={s.href}
+                          onClick={closeMobile}
+                          className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-neutral-100 hover:text-ink"
+                        >
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+
+              {navLinks.slice(1).map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    onClick={closeMobile}
+                    className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Drawer CTA */}
+          <div className="border-t border-border p-4">
+            <Link
+              href="https://app.heylemma.com"
+              onClick={() => { closeMobile(); track("nav_cta_click", { location: "mobile" }); }}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+            >
+              Start for free
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
