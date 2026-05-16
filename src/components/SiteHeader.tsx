@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { AnnouncementBar } from "./AnnouncementBar";
 import { Nav } from "./Nav";
 
 export function SiteHeader() {
@@ -26,7 +25,6 @@ export function SiteHeader() {
 
   return (
     <div ref={ref} className="sticky top-0 z-30">
-      <AnnouncementBar />
       <Nav />
     </div>
   );
