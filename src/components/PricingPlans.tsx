@@ -1,8 +1,13 @@
 import Link from "next/link";
 
+// Set to true once prices are confirmed to display them.
+const SHOW_PRICES = false;
+
 type Plan = {
   name: string;
   tagline: string;
+  monthlyPrice: string;
+  annualPrice: string;
   cta: { label: string; href: string };
   featuresHeading: string;
   features: string[];
@@ -13,6 +18,8 @@ const plans: Plan[] = [
   {
     name: "Starter",
     tagline: "For trying Lemma on a real use case.",
+    monthlyPrice: "€0",
+    annualPrice: "€0",
     cta: { label: "Start for free", href: "https://app.heylemma.com" },
     featuresHeading: "Includes",
     features: [
@@ -27,6 +34,8 @@ const plans: Plan[] = [
   {
     name: "Professional",
     tagline: "For people who run interviews regularly.",
+    monthlyPrice: "€XX",
+    annualPrice: "€XX",
     cta: { label: "Get Started", href: "https://app.heylemma.com" },
     featuresHeading: "Everything in Starter +",
     features: [
@@ -41,6 +50,8 @@ const plans: Plan[] = [
   {
     name: "Enterprise",
     tagline: "For high-volume interviews and custom workflows.",
+    monthlyPrice: "Sur devis",
+    annualPrice: "Sur devis",
     cta: { label: "Contact Sales", href: "/contact" },
     featuresHeading: "Everything in Professional +",
     features: [
@@ -75,12 +86,11 @@ function Check({ light = false }: { light?: boolean }) {
   );
 }
 
-function Card({ plan }: { plan: Plan }) {
+function Card({ plan, annual }: { plan: Plan; annual: boolean }) {
   const dark = plan.highlighted;
   const wrap = dark
     ? "relative isolate overflow-hidden bg-black text-white"
     : "bg-white text-ink";
-  const bg = dark ? "bg-black hover:bg-neutral-900" : "bg-accent hover:bg-[#2f3fd6]";
   const ctaBg = dark
     ? "bg-accent text-white hover:bg-[#2f3fd6]"
     : "bg-black text-white hover:bg-neutral-800";
@@ -100,6 +110,16 @@ function Card({ plan }: { plan: Plan }) {
         <p className={`mt-2 text-sm ${dark ? "text-white/75" : "text-muted"}`}>
           {plan.tagline}
         </p>
+        {SHOW_PRICES && (
+          <p className={`mt-4 text-3xl font-semibold ${dark ? "text-white" : "text-ink"}`}>
+            {annual ? plan.annualPrice : plan.monthlyPrice}
+            {plan.monthlyPrice !== "Sur devis" && (
+              <span className={`ml-1 text-sm font-normal ${dark ? "text-white/60" : "text-muted"}`}>
+                /mo
+              </span>
+            )}
+          </p>
+        )}
       </div>
       <div className="flex-1 px-6" />
       <div className="px-6">
@@ -132,11 +152,11 @@ function Card({ plan }: { plan: Plan }) {
   );
 }
 
-export function PricingPlans() {
+export function PricingPlans({ annual = true }: { annual?: boolean }) {
   return (
     <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
       {plans.map((p) => (
-        <Card key={p.name} plan={p} />
+        <Card key={p.name} plan={p} annual={annual} />
       ))}
     </div>
   );

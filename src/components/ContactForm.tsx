@@ -1,31 +1,41 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useRef } from "react";
+import { submitContact, type ContactState } from "@/app/actions/contact";
 
-const companySizes = [
-  "1-10",
-  "11-50",
-  "51-200",
-  "201-1000",
-  "1000+",
-];
+const companySizes = ["1-10", "11-50", "51-200", "201-1000", "1000+"];
 
 const inputBase =
   "block w-full rounded-md bg-neutral-200/70 px-4 py-3 text-sm text-ink placeholder:text-subtle focus:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-accent/40";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+  const [state, setState] = useState<ContactState>({ status: "idle" });
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO(cofounder): wire to a real endpoint (Resend server action,
-    // Formspree, Tally, or a /api/contact route). For now this is a no-op
-    // that pretends to succeed so the UI is fully wired.
-    setStatus("sent");
+    setLoading(true);
+    const data = new FormData(e.currentTarget);
+    const result = await submitContact(data);
+    setState(result);
+    setLoading(false);
+    if (result.status === "sent") formRef.current?.reset();
+  }
+
+  if (state.status === "sent") {
+    return (
+      <div className="rounded-lg border border-border bg-neutral-50 px-6 py-12 text-center">
+        <p className="text-lg font-medium text-ink">Message sent.</p>
+        <p className="mt-2 text-sm text-muted">
+          We&apos;ll get back to you at your work email shortly.
+        </p>
+      </div>
+    );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label htmlFor="full-name" className="mb-1.5 block text-sm text-ink">
           Full name
@@ -42,10 +52,7 @@ export function ContactForm() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-          <label
-            htmlFor="company-name"
-            className="mb-1.5 block text-sm text-ink"
-          >
+          <label htmlFor="company-name" className="mb-1.5 block text-sm text-ink">
             Company name
           </label>
           <input
@@ -102,7 +109,7 @@ export function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          placeholder="e.g. +1 555 555 1234"
+          placeholder="e.g. +33 6 00 00 00 00"
           className={inputBase}
         />
       </div>
@@ -121,20 +128,17 @@ export function ContactForm() {
         />
       </div>
 
+      {state.status === "error" && (
+        <p className="text-sm text-red-600">{state.message}</p>
+      )}
+
       <button
         type="submit"
-        disabled={status === "sent"}
-        className="inline-flex w-full items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6] disabled:opacity-70"
+        disabled={loading}
+        className="inline-flex w-full items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6] disabled:opacity-60"
       >
-        {status === "sent" ? "Sent — we'll be in touch" : "Submit"}
+        {loading ? "Sending…" : "Submit"}
       </button>
-
-      {status === "sent" && (
-        <p className="text-xs text-muted">
-          Note: this form is not wired to a backend yet. See ContactForm.tsx
-          to connect it to Resend, Formspree, Tally, or a Next.js server action.
-        </p>
-      )}
     </form>
   );
 }

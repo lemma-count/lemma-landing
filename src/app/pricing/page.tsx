@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { BillingToggle } from "@/components/BillingToggle";
-import { PricingPlans } from "@/components/PricingPlans";
 import { FAQ } from "@/components/FAQ";
+import { PricingSection } from "@/components/PricingSection";
 
 export const metadata: Metadata = {
   title: "Pricing — Lemma",
@@ -42,9 +41,9 @@ const faqItems = [
 
 export default function PricingPage() {
   return (
-    <main className="pt-24 md:pt-28">
+    <main className="pt-8 md:pt-12">
       <section className="bg-white">
-        <div className="mx-auto max-w-[1280px] px-6 pt-12 pb-16 text-center md:px-10 md:pt-20">
+        <div className="mx-auto max-w-[1280px] px-6 pt-12 pb-4 text-center md:px-10 md:pt-20 md:pb-6">
           <h1 className="mx-auto max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink md:text-6xl">
             Pricing that scales with the interviews you run.
           </h1>
@@ -53,16 +52,8 @@ export default function PricingPage() {
             <p>Invite as many teammates as you want.</p>
             <p>Pay for the conversations you collect.</p>
           </div>
-          <div className="mt-8 flex justify-center">
-            <BillingToggle />
-          </div>
         </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1280px] px-6 pb-20 md:px-10 md:pb-28">
-          <PricingPlans />
-        </div>
+        <PricingSection />
       </section>
 
       <FAQ items={faqItems} />

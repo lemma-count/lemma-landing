@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
+    <section className="relative pt-16 pb-16 md:pt-20 md:pb-20">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-ink md:text-6xl">
@@ -23,7 +23,7 @@ export function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-black px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+              className="inline-flex items-center justify-center rounded-md border border-ink bg-transparent px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
             >
               Try a voice interview
             </Link>

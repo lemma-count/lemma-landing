@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
-import { Nav } from "@/components/Nav";
+import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${inter.variable}`}>
       <body>
-        <Nav />
+        <SiteHeader />
         {children}
         <Footer />
       </body>

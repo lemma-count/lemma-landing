@@ -31,7 +31,7 @@ const defaultFeatureBg =
 
 export function SolutionPage({ hero, feature }: SolutionPageProps) {
   return (
-    <main className="pt-24 md:pt-28">
+    <main className="pt-8 md:pt-12">
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 py-12 md:grid-cols-2 md:gap-16 md:px-10 md:py-20">
           <div>
@@ -77,6 +77,7 @@ export function SolutionPage({ hero, feature }: SolutionPageProps) {
                 alt={feature.imageAlt}
                 width={1300}
                 height={1300}
+                loading="eager"
                 className="h-auto w-full max-w-[520px] rounded-xl shadow-[0_24px_60px_-24px_rgba(0,0,0,0.4)] ring-1 ring-black/5"
               />
             </div>

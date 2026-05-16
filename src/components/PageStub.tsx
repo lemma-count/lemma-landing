@@ -6,7 +6,7 @@ export function PageStub({
   body: string;
 }) {
   return (
-    <main className="pt-32 md:pt-40">
+    <main className="pt-8 md:pt-12">
       <div className="mx-auto max-w-[1280px] px-6 pb-32 md:px-10">
         <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-ink md:text-6xl">
           {title}
