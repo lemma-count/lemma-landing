@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
@@ -18,6 +17,26 @@ const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
+
+function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 text-sm font-medium ${
+        inverse ? "text-white" : "text-ink"
+      }`}
+    >
+      <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden>
+        <path
+          d="M1 2h10M1 5h10M1 8h10"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+        />
+      </svg>
+      <span>Lemma</span>
+    </span>
+  );
+}
 
 export function Nav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -52,15 +71,8 @@ export function Nav() {
     <header className="w-full bg-white/90 backdrop-blur-sm border-b border-border/60">
       <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={closeMobile}>
-          <Image
-            src="/assets/logo-black.png"
-            alt="Lemma"
-            width={120}
-            height={28}
-            priority
-            className="h-6 w-auto"
-          />
+        <Link href="/" className="flex items-center" onClick={closeMobile} aria-label="Lemma home">
+          <LemmaWordmark />
         </Link>
 
         {/* Desktop nav */}
@@ -146,8 +158,8 @@ export function Nav() {
             <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
       {/* Mobile drawer backdrop */}
       {mobileOpen && (
@@ -167,14 +179,8 @@ export function Nav() {
         >
           {/* Drawer header */}
           <div className="flex h-20 items-center justify-between px-6">
-            <Link href="/" onClick={closeMobile}>
-              <Image
-                src="/assets/logo-black.png"
-                alt="Lemma"
-                width={100}
-                height={24}
-                className="h-5 w-auto"
-              />
+            <Link href="/" onClick={closeMobile} aria-label="Lemma home">
+              <LemmaWordmark />
             </Link>
             <button
               type="button"
