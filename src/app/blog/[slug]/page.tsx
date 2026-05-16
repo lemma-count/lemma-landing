@@ -39,9 +39,9 @@ export default async function BlogPostPage({ params }: Props) {
   ) as { default: React.ComponentType };
 
   return (
-    <main className="pt-8 md:pt-12">
-      <div className="mx-auto max-w-[1280px] px-6 py-12 md:px-10 md:py-16">
-        <div className="mx-auto max-w-2xl">
+    <main>
+      <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[760px]">
           {/* Back link */}
           <Link
             href="/blog"
@@ -54,19 +54,19 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
 
           {/* Header */}
-          <div className="mt-8 border-b border-border pb-8">
+          <div className="mt-10 border-b border-border pb-10">
             <time className="text-xs text-subtle" dateTime={post.date}>
               {formatDate(post.date)}
             </time>
-            <h1 className="mt-3 text-3xl font-semibold leading-snug tracking-tight text-ink md:text-4xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.04] tracking-tight text-ink md:text-6xl">
               {post.title}
             </h1>
-            <p className="mt-4 text-base text-muted">{post.description}</p>
+            <p className="mt-5 text-base leading-7 text-muted md:text-lg md:leading-8">{post.description}</p>
             <p className="mt-4 text-sm text-subtle">{post.author}</p>
           </div>
 
           {/* MDX body */}
-          <div className="prose prose-neutral mt-10 max-w-none">
+          <div className="prose prose-neutral mt-10 max-w-none prose-headings:tracking-tight prose-p:leading-7">
             <Content />
           </div>
 

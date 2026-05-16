@@ -7,7 +7,7 @@ import { track } from "@vercel/analytics";
 const companySizes = ["1-10", "11-50", "51-200", "201-1000", "1000+"];
 
 const inputBase =
-  "block w-full rounded-md bg-neutral-200/70 px-4 py-3 text-sm text-ink placeholder:text-subtle focus:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-accent/40";
+  "block w-full rounded-md border border-border bg-white px-4 py-3 text-sm text-ink placeholder:text-subtle shadow-[0_10px_30px_-28px_rgba(0,0,0,0.7)] focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20";
 
 export function ContactForm() {
   const [state, setState] = useState<ContactState>({ status: "idle" });
@@ -31,7 +31,7 @@ export function ContactForm() {
 
   if (state.status === "sent") {
     return (
-      <div className="rounded-lg border border-border bg-neutral-50 px-6 py-12 text-center">
+      <div className="rounded-md border border-border bg-neutral-50 px-6 py-12 text-center">
         <p className="text-lg font-medium text-ink">Message sent.</p>
         <p className="mt-2 text-sm text-muted">
           We&apos;ll get back to you at your work email shortly.
@@ -41,7 +41,8 @@ export function ContactForm() {
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+    <form ref={formRef} onSubmit={handleSubmit} className="rounded-md border border-border bg-neutral-50/70 p-5 shadow-[0_24px_70px_-56px_rgba(0,0,0,0.6)] md:p-7">
+      <div className="space-y-5">
       <div>
         <label htmlFor="full-name" className="mb-1.5 block text-sm text-ink">
           Full name
@@ -145,6 +146,7 @@ export function ContactForm() {
       >
         {loading ? "Sending…" : "Submit"}
       </button>
+      </div>
     </form>
   );
 }

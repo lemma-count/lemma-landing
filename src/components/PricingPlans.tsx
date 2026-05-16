@@ -99,15 +99,15 @@ function Card({ plan, annual }: { plan: Plan; annual: boolean }) {
 
   return (
     <div
-      className={`flex flex-col rounded-lg border border-border ${wrap}`}
+      className={`flex flex-col rounded-md border border-border shadow-[0_20px_70px_-56px_rgba(0,0,0,0.55)] ${wrap}`}
     >
       {dark && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_50%_30%,rgba(180,80,160,0.55),rgba(60,20,55,0.5)_45%,#000_75%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_85%_at_46%_18%,rgba(122,54,103,0.72),rgba(38,13,34,0.7)_48%,#000_80%)]"
         />
       )}
-      <div className="min-h-[9rem] p-6">
+      <div className="min-h-[9.5rem] p-6">
         <h3 className="text-xl font-semibold">{plan.name}</h3>
         <p className={`mt-2 text-sm ${dark ? "text-white/75" : "text-muted"}`}>
           {plan.tagline}

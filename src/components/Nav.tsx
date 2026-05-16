@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 
@@ -19,21 +20,14 @@ const navLinks = [
 
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 text-sm font-medium ${
-        inverse ? "text-white" : "text-ink"
-      }`}
-    >
-      <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden>
-        <path
-          d="M1 2h10M1 5h10M1 8h10"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span>Lemma</span>
-    </span>
+    <Image
+      src={inverse ? "/assets/lemma-logo-white.png" : "/assets/lemma-logo-black.png"}
+      alt="Lemma"
+      width={120}
+      height={20}
+      priority
+      className="h-5 w-auto"
+    />
   );
 }
 
@@ -67,15 +61,15 @@ export function Nav() {
 
   return (
     <>
-    <header className="w-full bg-white/90 backdrop-blur-sm border-b border-border/60">
-      <nav className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 lg:px-10">
+    <header className="w-full border-b border-border/70 bg-white/92 backdrop-blur-sm">
+      <nav className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center" onClick={closeMobile} aria-label="Lemma home">
           <LemmaWordmark />
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-8 text-sm text-ink md:flex">
+        <ul className="hidden items-center gap-8 text-[13px] font-medium text-ink md:flex">
           <li>
             <Link href="/" className="transition-colors hover:text-muted">
               Home
@@ -110,7 +104,7 @@ export function Nav() {
             {dropdownOpen && (
               <div
                 role="menu"
-                className="absolute left-1/2 top-full mt-3 w-44 -translate-x-1/2 rounded-lg border border-border bg-white p-2 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.15)]"
+                className="absolute left-1/2 top-full mt-3 w-48 -translate-x-1/2 rounded-md border border-border bg-white p-2 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.4)]"
               >
                 {solutions.map((s) => (
                   <Link
@@ -139,7 +133,7 @@ export function Nav() {
         <Link
           href="https://app.heylemma.com"
           onClick={() => track("nav_cta_click", { location: "desktop" })}
-          className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6] md:inline-flex"
+          className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-[0_8px_18px_-12px_rgba(61,80,255,0.8)] transition-colors hover:bg-[#2f3fd6] md:inline-flex"
         >
           Start for free
           <span aria-hidden>→</span>
@@ -172,12 +166,12 @@ export function Nav() {
       {/* Mobile drawer */}
       {mobileOpen && (
         <div
-          className="fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-white shadow-2xl md:hidden"
+          className="fixed inset-y-0 right-0 z-50 flex w-[min(82vw,22rem)] flex-col bg-white shadow-2xl md:hidden"
           role="dialog"
           aria-modal="true"
         >
           {/* Drawer header */}
-          <div className="flex h-20 items-center justify-between px-6">
+          <div className="flex h-16 items-center justify-between border-b border-border/70 px-6">
             <Link href="/" onClick={closeMobile} aria-label="Lemma home">
               <LemmaWordmark />
             </Link>

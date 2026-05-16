@@ -5,9 +5,9 @@
   --color-background: #ffffff;
   --color-foreground: #0a0a0a;
   --color-ink: #0a0a0a;
-  --color-muted: #4f4f4f;
-  --color-subtle: #868686;
-  --color-border: #e7e7e7;
+  --color-muted: #4a4a4a;
+  --color-subtle: #8a8a8a;
+  --color-border: #e5e5e2;
   --color-accent: #3d50ff;
   --color-surface-dark: #000000;
 
@@ -22,4 +22,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #dfe4ff;
+  color: #0a0a0a;
 }

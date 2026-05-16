@@ -66,7 +66,7 @@ export function UseCases() {
     <section className="overflow-x-clip bg-white">
       <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-24 md:px-10 md:pt-20 md:pb-32">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight text-ink md:text-5xl">
+          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
             For people who need better answers before making decisions.
           </h2>
           <div className="hidden shrink-0 items-center gap-2 md:flex">
@@ -98,16 +98,17 @@ export function UseCases() {
             {useCases.map((u) => (
               <li
                 key={u.title}
-                className="relative aspect-[3/4] w-[78vw] flex-none snap-start overflow-hidden rounded-lg md:w-[28%]"
+                className="relative aspect-[3/4] w-[78vw] flex-none snap-start overflow-hidden rounded-md bg-neutral-200 md:w-[28%]"
               >
                 <Image
                   src={u.image}
                   alt={u.title}
                   fill
                   sizes="(min-width: 768px) 28vw, 78vw"
+                  loading="eager"
                   className="object-cover"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-5 text-white">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/88 via-black/54 to-transparent p-5 pt-24 text-white">
                   <h3 className="text-base font-semibold">{u.title}</h3>
                   <p className="mt-1 text-sm leading-5 text-white/85">{u.body}</p>
                 </div>
