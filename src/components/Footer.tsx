@@ -14,11 +14,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden bg-black text-white">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_95%_at_78%_10%,rgba(72,32,18,0.88),rgba(18,6,2,0.8)_48%,#000_82%)]"
-      />
+    <footer className="border-t border-border bg-[#f7f5f0] text-ink">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
@@ -28,14 +24,15 @@ export function Footer() {
               className="inline-flex items-center"
             >
               <Image
-                src="/assets/lemma-logo-white.png"
+                src="/assets/lemma-logo-black.png"
                 alt="Lemma"
                 width={117}
                 height={20}
                 className="h-5 w-auto"
+                style={{ width: "auto" }}
               />
             </Link>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">
               Keep learning from the people closest to the decision. Lemma runs
               the interviews and turns their answers into evidence your team can
               act on.
@@ -44,7 +41,7 @@ export function Footer() {
               href="/contact"
               event="cta_click"
               eventProps={{ label: "Contact us", page: "footer", location: "footer" }}
-              className="mt-7 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-neutral-200"
+              className="mt-7 inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
             >
               Contact us
               <span aria-hidden>→</span>
@@ -56,7 +53,7 @@ export function Footer() {
               <Link
                 key={href}
                 href={href}
-                className="text-sm text-white/60 transition-colors hover:text-white"
+                className="text-sm text-muted transition-colors hover:text-ink"
               >
                 {label}
               </Link>
@@ -64,7 +61,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex items-center justify-end border-t border-white/10 pt-6 text-xs text-white/60">
+        <div className="mt-16 flex items-center justify-end border-t border-border pt-6 text-xs text-subtle">
           <span>{new Date().getFullYear()} · Lemma</span>
         </div>
       </div>
