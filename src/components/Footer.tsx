@@ -14,7 +14,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-[#f7f5f0] text-ink">
+    <footer className="border-t border-[#e6e3dd] bg-[#f8f7f4] text-ink">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
@@ -61,7 +61,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex items-center justify-end border-t border-border pt-6 text-xs text-subtle">
+        <div className="mt-16 flex items-center justify-end border-t border-[#e6e3dd] pt-6 text-xs text-subtle">
           <span>{new Date().getFullYear()} · Lemma</span>
         </div>
       </div>
