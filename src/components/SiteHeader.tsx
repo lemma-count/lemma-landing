@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { BS_DETECTOR_URL } from "@/lib/links";
 import { Nav } from "./Nav";
 
 export function SiteHeader() {
