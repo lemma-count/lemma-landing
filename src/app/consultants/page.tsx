@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SolutionPage } from "@/components/SolutionPage";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Lemma for Consultants — Scale stakeholder discovery",
   description:
     "Lemma runs AI-led voice interviews with stakeholders, subject matter experts, and employees, then turns those conversations into synthesized reports, workflow maps, and client-ready evidence.",
-};
+  path: "/consultants",
+});
 
 export default function ConsultantsPage() {
   return (

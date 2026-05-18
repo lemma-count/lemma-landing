@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { TrackedLink } from "@/components/TrackedLink";
 import { posts, formatDate } from "@/lib/posts";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Blog — Lemma",
-  description: "Field observations and practical thinking on AI adoption for teams and businesses.",
-};
+  description:
+    "Field observations on better questions, richer interviews, and turning scattered customer evidence into decisions.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

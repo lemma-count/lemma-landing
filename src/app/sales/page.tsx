@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SolutionPage } from "@/components/SolutionPage";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Lemma for Sales — Turn product intent into qualified pipeline",
   description:
     "Lemma engages prospects and PQLs your team can't reach manually, and turns every conversation into context and actions for faster product-led sales.",
-};
+  path: "/sales",
+});
 
 export default function SalesPage() {
   return (

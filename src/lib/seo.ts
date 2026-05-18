@@ -1,0 +1,76 @@
+import type { Metadata } from "next";
+
+export const siteUrl = "https://www.heylemma.com";
+export const siteName = "Lemma";
+
+const defaultImage = {
+  url: "/assets/card-customer-evidence.png",
+  width: 2558,
+  height: 1462,
+  alt: "Lemma customer evidence report preview",
+};
+
+export function absoluteUrl(path = "/") {
+  return new URL(path, siteUrl).toString();
+}
+
+export function createMetadata({
+  title,
+  description,
+  path = "/",
+  noIndex = false,
+}: {
+  title: string;
+  description: string;
+  path?: string;
+  noIndex?: boolean;
+}): Metadata {
+  const url = absoluteUrl(path);
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName,
+      type: "website",
+      images: [defaultImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [defaultImage.url],
+    },
+  };
+}
+
+export const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl,
+  logo: absoluteUrl("/assets/lemma-logo-black.png"),
+};
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: siteUrl,
+  description:
+    "Lemma runs adaptive voice interviews with customers, buyers, users, employees, and stakeholders, then turns their answers into evidence your team can use before the decision is made.",
+};
+
+export function stringifyJsonLd(data: unknown) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}

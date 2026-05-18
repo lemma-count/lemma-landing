@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Contact — Lemma",
   description:
     "Talk to the Lemma team. Start from a real decision, not shallow answers.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

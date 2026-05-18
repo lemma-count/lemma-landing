@@ -2,17 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FAQ } from "@/components/FAQ";
 import { TrackedLink } from "@/components/TrackedLink";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Typeform Alternative - Lemma",
   description:
     "Lemma is a Typeform alternative for teams that need richer answers than static forms can collect. Send adaptive AI voice forms and get transcript-grounded themes, quotes, and reports.",
-  openGraph: {
-    title: "Typeform Alternative - Lemma",
-    description:
-      "Replace static forms with adaptive AI voice forms that ask useful follow-up questions and return decision-ready reports.",
-  },
-};
+  path: "/typeform-alternative",
+});
 
 const faqItems = [
   {

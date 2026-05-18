@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { posts, getPost, formatDate } from "@/lib/posts";
+import { createMetadata } from "@/lib/seo";
 
 function getAdjacentPosts(slug: string) {
   const idx = posts.findIndex((p) => p.slug === slug);
@@ -21,10 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
-  return {
+  return createMetadata({
     title: `${post.title} — Lemma`,
     description: post.description,
-  };
+    path: `/blog/${post.slug}`,
+  });
 }
 
 export default async function BlogPostPage({ params }: Props) {
