@@ -68,27 +68,15 @@ export function Footer() {
             </TrackedLink>
           </div>
 
-          <nav
-            aria-label="Footer navigation"
-            className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-4 lg:pt-1"
-          >
-            {footerGroups.map(({ title, links }) => (
-              <div key={title} className="min-w-32">
-                <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
-                  {title}
-                </h2>
-                <div className="mt-4 grid gap-3">
-                  {links.map(({ label, href }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="text-sm text-muted transition-colors hover:text-ink"
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-10 gap-y-3 md:grid-cols-1 md:pt-1">
+            {footerLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-sm text-muted transition-colors hover:text-ink"
+              >
+                {label}
+              </Link>
             ))}
           </nav>
         </div>
