@@ -1,4 +1,5 @@
 import { TrackedLink } from "./TrackedLink";
+import { BS_DETECTOR_URL } from "@/lib/links";
 
 export function Hero() {
   return (
@@ -24,12 +25,12 @@ export function Hero() {
               Sign up
             </TrackedLink>
             <TrackedLink
-              href="/contact"
+              href={BS_DETECTOR_URL}
               event="cta_click"
-              eventProps={{ label: "Try a voice interview", page: "home", location: "hero" }}
+              eventProps={{ label: "Try the BS Detector", page: "home", location: "hero" }}
               className="inline-flex items-center justify-center rounded-md border border-ink bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
             >
-              Try a voice interview
+              Try the BS Detector
             </TrackedLink>
           </div>
         </div>
