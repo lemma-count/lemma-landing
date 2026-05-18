@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SolutionPage } from "@/components/SolutionPage";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Lemma for Marketing — Always-on customer research",
   description:
     "Lemma conducts AI-led voice interviews with customers and turns their answers into case-study briefs, quote banks, proof points, objection maps, buyer language, launch messaging, and sales collateral inputs.",
-};
+  path: "/marketing",
+});
 
 export default function MarketingPage() {
   return (

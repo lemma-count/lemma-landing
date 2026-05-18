@@ -15,14 +15,13 @@ const steps = [
   },
 ];
 
-const cardBg =
-  "bg-[radial-gradient(90%_75%_at_20%_15%,rgba(170,215,195,0.95)_0%,rgba(78,139,124,0.92)_34%,rgba(20,73,63,0.98)_70%,#09251f_100%)]";
+const cardBg = "bg-[#f8f7f4]";
 
 function CardSearch() {
   return (
     <div className={`relative h-full w-full ${cardBg}`}>
       <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div className="flex w-full max-w-sm items-center gap-2 rounded-full bg-white/95 px-4 py-3 text-sm text-subtle shadow-[0_16px_32px_-18px_rgba(0,0,0,0.65)] ring-1 ring-black/5">
+        <div className="flex w-full max-w-sm items-center gap-2 rounded-full border border-[#e6e3dd] bg-white px-4 py-3 text-sm text-subtle">
           <svg
             width="16"
             height="16"
@@ -63,7 +62,7 @@ function CardListening() {
           width={520}
           height={520}
           priority
-          className="h-auto w-[78%] max-w-[320px] rounded-2xl shadow-[0_18px_40px_-24px_rgba(0,0,0,0.7)]"
+          className="h-auto w-[78%] max-w-[320px] rounded-2xl border border-[#e6e3dd]"
         />
       </div>
     </div>
@@ -74,7 +73,7 @@ function CardReport() {
   return (
     <div className={`relative h-full w-full ${cardBg}`}>
       <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div className="w-full max-w-[320px] rounded-xl bg-white p-4 text-left text-[11px] leading-snug text-ink shadow-[0_18px_42px_-20px_rgba(0,0,0,0.65)] ring-1 ring-black/5">
+        <div className="w-full max-w-[320px] rounded-xl border border-[#e6e3dd] bg-white p-4 text-left text-[11px] leading-snug text-ink">
           <p className="text-[12px] font-medium leading-snug">
             Coverage spans GTM, technical, and operational functions; no single
             role exceeds 20% of the sample, and adoption was largely peer-driven.
@@ -110,6 +109,9 @@ export function Solution() {
     <section className="bg-white">
       <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-32">
         <div className="max-w-3xl">
+          <p className="mb-5 text-xs font-medium uppercase tracking-[0.16em] text-subtle">
+            The solution
+          </p>
           <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
             Turn important conversations into decisions.
           </h2>
@@ -121,14 +123,23 @@ export function Solution() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 border-t border-border pt-10 md:grid-cols-3">
+        <div className="mt-14 border-t border-border pt-10">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
+            How it works
+          </p>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
           {steps.map((step, i) => {
             const Card = cards[i];
             return (
-              <div key={step.title} className="flex flex-col">
+              <div
+                key={step.title}
+                className="flex flex-col rounded-[18px] border border-[#e6e3dd] bg-white p-5"
+              >
                 <h3 className="text-base font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{step.body}</p>
-                <div className="mt-7 aspect-[4/3] w-full overflow-hidden rounded-md shadow-[0_20px_50px_-34px_rgba(0,0,0,0.7)]">
+                <div className="mt-7 aspect-[4/3] w-full overflow-hidden rounded-[14px] border border-[#e6e3dd]">
                   <Card />
                 </div>
               </div>

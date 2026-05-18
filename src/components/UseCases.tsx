@@ -63,12 +63,17 @@ export function UseCases() {
   }
 
   return (
-    <section className="overflow-x-clip bg-white">
+    <section className="overflow-x-clip border-t border-border bg-white">
       <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-24 md:px-10 md:pt-20 md:pb-32">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-            For people who need better answers before making decisions.
-          </h2>
+          <div>
+            <p className="mb-5 text-xs font-medium uppercase tracking-[0.16em] text-subtle">
+              Use cases
+            </p>
+            <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
+              For people who need better answers before making decisions.
+            </h2>
+          </div>
           <div className="hidden shrink-0 items-center gap-2 md:flex">
             <button
               onClick={() => scroll("prev")}
@@ -98,7 +103,7 @@ export function UseCases() {
             {useCases.map((u) => (
               <li
                 key={u.title}
-                className="relative aspect-[3/4] w-[78vw] flex-none snap-start overflow-hidden rounded-md bg-neutral-200 md:w-[28%]"
+                className="relative aspect-[3/4] w-[78vw] flex-none snap-start overflow-hidden rounded-[18px] border border-[#e6e3dd] bg-white md:w-[28%]"
               >
                 <Image
                   src={u.image}

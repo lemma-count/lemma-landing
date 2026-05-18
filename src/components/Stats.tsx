@@ -6,9 +6,14 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[1280px] px-6 py-14 md:px-10 md:py-20">
-        <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3">
+    <section className="border-t border-border bg-white">
+      <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-24">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
+            Why it pays off
+          </p>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-10 text-center md:grid-cols-3">
           {stats.map((s) => (
             <div key={s.value} className="flex flex-col items-center">
               <div className="text-5xl font-medium tracking-tight text-ink md:text-6xl">

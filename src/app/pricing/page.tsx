@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { FAQ } from "@/components/FAQ";
 import { PricingSection } from "@/components/PricingSection";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
   description:
     "Pricing that scales with the interviews you run. Each completed voice interview uses 1 credit. Invite as many teammates as you want. Pay for the conversations you collect.",
-};
+  path: "/pricing",
+});
 
 const faqItems = [
   {

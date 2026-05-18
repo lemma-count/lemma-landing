@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Page not found — Lemma" };
+export const metadata: Metadata = createMetadata({
+  title: "Page not found — Lemma",
+  description: "This page doesn't exist or has been moved.",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (
