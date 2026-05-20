@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
+import { trackGrowthCta } from "@/lib/growth-analytics";
 
 const solutions = [
   { label: "Consultants", href: "/consultants" },
@@ -57,6 +58,16 @@ export function Nav() {
   function closeMobile() {
     setMobileOpen(false);
     setMobileSolutionsOpen(false);
+  }
+
+  function trackNavCta(location: "desktop" | "mobile") {
+    track("nav_cta_click", { location });
+    trackGrowthCta("nav_cta_click", {
+      cta_id: `nav_${location}_start_free`,
+      cta_text: "Start for free",
+      cta_href: "https://app.heylemma.com",
+      location,
+    });
   }
 
   return (
@@ -132,7 +143,7 @@ export function Nav() {
         {/* Desktop CTA */}
         <Link
           href="https://app.heylemma.com"
-          onClick={() => track("nav_cta_click", { location: "desktop" })}
+          onClick={() => trackNavCta("desktop")}
           className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-[0_8px_18px_-12px_rgba(61,80,255,0.8)] transition-colors hover:bg-[#2f3fd6] md:inline-flex"
         >
           Start for free
@@ -260,7 +271,7 @@ export function Nav() {
           <div className="border-t border-border p-4">
             <Link
               href="https://app.heylemma.com"
-              onClick={() => { closeMobile(); track("nav_cta_click", { location: "mobile" }); }}
+              onClick={() => { closeMobile(); trackNavCta("mobile"); }}
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
             >
               Start for free
