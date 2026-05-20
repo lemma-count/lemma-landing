@@ -136,9 +136,10 @@ export function initGrowthAnalytics() {
   posthog.init(POSTHOG_PROJECT_TOKEN, {
     api_host: POSTHOG_HOST,
     defaults: "2026-01-30",
-    capture_pageview: "history_change",
+    capture_pageview: false,
     autocapture: false,
     disable_session_recording: true,
+    request_batching: false,
     before_send: enrichEvent,
   });
   posthog.register(getGrowthAnalyticsProperties());
@@ -151,6 +152,12 @@ export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
   posthog.register(getGrowthAnalyticsProperties());
+}
+
+export function trackGrowthPageview() {
+  if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
+
+  posthog.capture("$pageview", getGrowthAnalyticsProperties());
 }
 
 export function trackGrowthCta(

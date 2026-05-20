@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   initGrowthAnalytics,
   refreshGrowthAnalyticsProperties,
+  trackGrowthPageview,
 } from "@/lib/growth-analytics";
 
 export function GrowthAnalyticsProvider() {
@@ -13,6 +14,7 @@ export function GrowthAnalyticsProvider() {
   useEffect(() => {
     if (initGrowthAnalytics()) {
       refreshGrowthAnalyticsProperties();
+      trackGrowthPageview();
     }
   }, [pathname]);
 
