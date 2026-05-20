@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GrowthAnalyticsProvider } from "@/components/GrowthAnalyticsProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/Footer";
 import {
@@ -42,6 +43,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <Footer />
+        <GrowthAnalyticsProvider />
         <Analytics />
       </body>
     </html>
