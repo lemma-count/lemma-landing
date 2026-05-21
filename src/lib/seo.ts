@@ -4,10 +4,10 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/assets/card-customer-evidence.png",
-  width: 2558,
-  height: 1462,
-  alt: "Lemma customer evidence report preview",
+  url: "/assets/forms-vs-interviews-og.png",
+  width: 1200,
+  height: 630,
+  alt: "Lemma turns static form rows into reasons, quotes, themes, and next actions.",
 };
 
 type MetadataImage = {
