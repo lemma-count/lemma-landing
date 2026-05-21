@@ -4,10 +4,17 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/assets/card-customer-evidence.png",
-  width: 2558,
-  height: 1462,
-  alt: "Lemma customer evidence report preview",
+  url: "/assets/forms-vs-interviews-og.png",
+  width: 1200,
+  height: 630,
+  alt: "Abstract Lemma preview showing static form rows flowing through a voice waveform into a structured report.",
+};
+
+type MetadataImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
 };
 
 export function absoluteUrl(path = "/") {
@@ -18,11 +25,13 @@ export function createMetadata({
   title,
   description,
   path = "/",
+  image = defaultImage,
   noIndex = false,
 }: {
   title: string;
   description: string;
   path?: string;
+  image?: MetadataImage;
   noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
@@ -43,13 +52,13 @@ export function createMetadata({
       url,
       siteName,
       type: "website",
-      images: [defaultImage],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [defaultImage.url],
+      images: [image.url],
     },
   };
 }
