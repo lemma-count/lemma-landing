@@ -20,6 +20,7 @@ const navGroups: {
       { label: "Consultants", href: "/consultants" },
       { label: "Marketing", href: "/marketing" },
       { label: "Sales", href: "/sales" },
+      { label: "Founders", href: "/founders" },
     ],
   },
   {
