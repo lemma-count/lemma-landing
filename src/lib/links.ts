@@ -1,2 +1,2 @@
-export const BS_DETECTOR_URL =
-  "https://app.heylemma.com/i/UxCrY43BAuxllqvUTvlYxks9";
+export const AI_WORK_REPORT_URL =
+  "https://app.heylemma.com/i/Y1HtNYP6CnsDDryefvy_WzSp";
