@@ -10,6 +10,13 @@ const defaultImage = {
   alt: "Lemma customer evidence report preview",
 };
 
+type MetadataImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
 export function absoluteUrl(path = "/") {
   return new URL(path, siteUrl).toString();
 }
@@ -18,11 +25,13 @@ export function createMetadata({
   title,
   description,
   path = "/",
+  image = defaultImage,
   noIndex = false,
 }: {
   title: string;
   description: string;
   path?: string;
+  image?: MetadataImage;
   noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
@@ -43,13 +52,13 @@ export function createMetadata({
       url,
       siteName,
       type: "website",
-      images: [defaultImage],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [defaultImage.url],
+      images: [image.url],
     },
   };
 }

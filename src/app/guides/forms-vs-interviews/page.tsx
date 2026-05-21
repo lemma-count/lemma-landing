@@ -8,6 +8,12 @@ export const metadata: Metadata = createMetadata({
   description:
     "Use static forms when first answers are enough. Use adaptive AI voice forms when follow-up questions, reasons, examples, quotes, and reports would change the decision.",
   path: "/guides/forms-vs-interviews",
+  image: {
+    url: "/assets/forms-vs-interviews-og.png",
+    width: 1200,
+    height: 630,
+    alt: "Lemma turns static form rows into reasons, quotes, themes, and next actions.",
+  },
 });
 
 const decisionRows = [
