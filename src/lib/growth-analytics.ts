@@ -54,6 +54,9 @@ function getPageType(pathname: string) {
 function getSourceAssetId(pathname: string) {
   if (pathname === "/typeform-alternative") return "lemma-typeform-alternative";
   if (pathname === "/google-forms-alternative") return "lemma-google-forms-alternative";
+  if (pathname === "/templates/demo-request-form") {
+    return "lemma-demo-request-form-template-2026-05-20";
+  }
   if (pathname.startsWith("/templates/")) return `lemma-template-${pathname.split("/").pop()}`;
   if (pathname.startsWith("/guides/")) return `lemma-guide-${pathname.split("/").pop()}`;
   if (pathname.startsWith("/blog/")) return `lemma-blog-${pathname.split("/").pop()}`;
@@ -66,6 +69,7 @@ function getContentId(pathname: string) {
     return pathname.split("/").pop();
   }
   if (pathname.startsWith("/blog/")) return pathname.split("/").pop();
+  if (pathname === "/templates/demo-request-form") return "demo-request-form";
   if (pathname === "/marketing" || pathname === "/sales" || pathname === "/consultants") {
     return pathname.slice(1);
   }
