@@ -15,6 +15,7 @@ declare global {
 
 type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
+const optionalGrowthPropertyKeys = ["source_asset_id", "content_id"] as const;
 
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
@@ -132,11 +133,22 @@ export function getGrowthAnalyticsProperties(): GrowthProperties {
 function enrichEvent(event: CaptureResult | null) {
   if (!event) return event;
 
+  const growthProperties = getGrowthAnalyticsProperties();
+  const eventProperties = { ...event.properties } as Properties;
+
+  // PostHog super properties are sticky, so clear route-derived asset metadata
+  // when the current route does not define it.
+  optionalGrowthPropertyKeys.forEach((key) => {
+    if (!(key in growthProperties)) {
+      delete eventProperties[key];
+    }
+  });
+
   return {
     ...event,
     properties: {
-      ...getGrowthAnalyticsProperties(),
-      ...event.properties,
+      ...eventProperties,
+      ...growthProperties,
     } satisfies Properties,
   };
 }
@@ -164,6 +176,7 @@ export function initGrowthAnalytics() {
 export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
+  optionalGrowthPropertyKeys.forEach((key) => posthog.unregister(key));
   posthog.register(getGrowthAnalyticsProperties());
 }
 
