@@ -7,7 +7,7 @@ const defaultImage = {
   url: "/assets/forms-vs-interviews-og.png",
   width: 1200,
   height: 630,
-  alt: "Lemma turns static form rows into reasons, quotes, themes, and next actions.",
+  alt: "Lemma adaptive AI voice forms turn richer answers into decision-ready reports.",
 };
 
 type MetadataImage = {
