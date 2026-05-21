@@ -56,6 +56,7 @@ function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
       height={20}
       priority
       className="h-5 w-auto"
+      style={{ width: "auto" }}
     />
   );
 }
