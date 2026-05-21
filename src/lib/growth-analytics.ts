@@ -54,6 +54,7 @@ function getPageType(pathname: string) {
 function getSourceAssetId(pathname: string) {
   if (pathname === "/typeform-alternative") return "lemma-typeform-alternative";
   if (pathname === "/google-forms-alternative") return "lemma-google-forms-alternative";
+  if (pathname === "/templates") return "lemma-templates-hub";
   if (pathname === "/templates/demo-request-form") {
     return "lemma-demo-request-form-template-2026-05-20";
   }
@@ -65,6 +66,7 @@ function getSourceAssetId(pathname: string) {
 }
 
 function getContentId(pathname: string) {
+  if (pathname === "/templates") return "templates";
   if (pathname.startsWith("/templates/") || pathname.startsWith("/guides/")) {
     return pathname.split("/").pop();
   }
