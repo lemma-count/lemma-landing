@@ -20,6 +20,7 @@ const navGroups: {
       { label: "Consultants", href: "/consultants" },
       { label: "Marketing", href: "/marketing" },
       { label: "Sales", href: "/sales" },
+      { label: "Founders", href: "/founders" },
     ],
   },
   {
@@ -55,6 +56,7 @@ function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
       height={20}
       priority
       className="h-5 w-auto"
+      style={{ width: "auto" }}
     />
   );
 }

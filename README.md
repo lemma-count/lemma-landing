@@ -37,6 +37,7 @@ npm run start    # serve the production build locally
 | `/consultants` | Solutions / Consultants | ✅ Complete |
 | `/marketing` | Solutions / Marketing | ✅ Complete |
 | `/sales` | Solutions / Sales | ✅ Complete |
+| `/founders` | Solutions / Founders | ✅ Complete |
 | `/pricing` | Pricing + FAQ | ⚠️ FAQ answers were drafted by Claude, need product validation. No prices displayed (intentional — Framer site doesn't show them either). |
 | `/contact` | Contact form | ⚠️ Form UI is complete but **not wired to a backend**. See "TODOs" below. |
 | `/blog` | Blog | ⏳ Stub. Needs design + content. |
