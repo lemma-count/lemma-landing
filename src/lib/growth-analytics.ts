@@ -38,6 +38,7 @@ function getPageType(pathname: string) {
   if (pathname === "/contact") return "contact";
   if (pathname === "/typeform-alternative") return "comparison_typeform";
   if (pathname === "/google-forms-alternative") return "comparison_google_forms";
+  if (pathname.startsWith("/guides/")) return "guide";
   if (pathname === "/marketing" || pathname === "/sales" || pathname === "/consultants") {
     return "solution_page";
   }
@@ -50,12 +51,14 @@ function getPageType(pathname: string) {
 function getSourceAssetId(pathname: string) {
   if (pathname === "/typeform-alternative") return "lemma-typeform-alternative";
   if (pathname === "/google-forms-alternative") return "lemma-google-forms-alternative";
+  if (pathname === "/guides/forms-vs-interviews") return "lemma-forms-vs-interviews-guide";
   if (pathname.startsWith("/blog/")) return `lemma-blog-${pathname.split("/").pop()}`;
 
   return undefined;
 }
 
 function getContentId(pathname: string) {
+  if (pathname.startsWith("/guides/")) return pathname.split("/").pop();
   if (pathname.startsWith("/blog/")) return pathname.split("/").pop();
   if (pathname === "/marketing" || pathname === "/sales" || pathname === "/consultants") {
     return pathname.slice(1);
