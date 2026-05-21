@@ -7,7 +7,7 @@ const defaultImage = {
   url: "/assets/forms-vs-interviews-og.png",
   width: 1200,
   height: 630,
-  alt: "Lemma adaptive AI voice forms turn richer answers into decision-ready reports.",
+  alt: "Abstract Lemma preview showing static form rows flowing through a voice waveform into a structured report.",
 };
 
 type MetadataImage = {
