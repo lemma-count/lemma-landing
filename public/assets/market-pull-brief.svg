@@ -1,0 +1,43 @@
+<svg width="1300" height="780" viewBox="0 0 1300 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1300" height="780" rx="34" fill="#FAF9F6"/>
+  <rect x="34" y="34" width="1232" height="712" rx="28" fill="white" stroke="#E6E3DD" stroke-width="2"/>
+
+  <text x="88" y="110" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">MARKET PULL BRIEF</text>
+  <text x="88" y="178" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">Operations is pulling hardest.</text>
+  <text x="88" y="230" fill="#62615B" font-family="Inter, Arial, sans-serif" font-size="30">Evidence from 24 target-market conversations.</text>
+
+  <rect x="88" y="282" width="1124" height="118" rx="24" fill="#F7F6F2" stroke="#E6E3DD" stroke-width="2"/>
+  <text x="124" y="334" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Recommended next bet</text>
+  <text x="124" y="374" fill="#4F4E49" font-family="Inter, Arial, sans-serif" font-size="26">Build toward teams replacing spreadsheet-based intake.</text>
+
+  <rect x="88" y="446" width="342" height="204" rx="24" fill="white" stroke="#DAD7CF" stroke-width="2"/>
+  <text x="118" y="496" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Operations</text>
+  <rect x="118" y="518" width="154" height="40" rx="20" fill="#E8F7EE"/>
+  <text x="139" y="546" fill="#14743E" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Strong pull</text>
+  <text x="118" y="596" fill="#565550" font-family="Inter, Arial, sans-serif" font-size="23">Painful workaround</text>
+  <text x="334" y="596" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700">87%</text>
+  <rect x="118" y="620" width="252" height="12" rx="6" fill="#D8D6D0"/>
+  <rect x="118" y="620" width="219" height="12" rx="6" fill="#245CFF"/>
+
+  <rect x="479" y="446" width="342" height="204" rx="24" fill="white" stroke="#DAD7CF" stroke-width="2"/>
+  <text x="509" y="496" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Founders</text>
+  <rect x="509" y="518" width="137" height="40" rx="20" fill="#FFF3DD"/>
+  <text x="530" y="546" fill="#8A5A00" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Mixed pull</text>
+  <text x="509" y="596" fill="#565550" font-family="Inter, Arial, sans-serif" font-size="23">Budget unclear</text>
+  <text x="725" y="596" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700">58%</text>
+  <rect x="509" y="620" width="252" height="12" rx="6" fill="#D8D6D0"/>
+  <rect x="509" y="620" width="146" height="12" rx="6" fill="#245CFF"/>
+
+  <rect x="870" y="446" width="342" height="204" rx="24" fill="white" stroke="#DAD7CF" stroke-width="2"/>
+  <text x="900" y="496" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">Marketing</text>
+  <rect x="900" y="518" width="165" height="40" rx="20" fill="#F1F0EB"/>
+  <text x="921" y="546" fill="#55544F" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Polite interest</text>
+  <text x="900" y="596" fill="#565550" font-family="Inter, Arial, sans-serif" font-size="23">No urgent switch</text>
+  <text x="1116" y="596" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700">31%</text>
+  <rect x="900" y="620" width="252" height="12" rx="6" fill="#D8D6D0"/>
+  <rect x="900" y="620" width="78" height="12" rx="6" fill="#245CFF"/>
+
+  <line x1="88" y1="690" x2="1212" y2="690" stroke="#E6E3DD" stroke-width="2"/>
+  <text x="88" y="730" fill="#111111" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Why it matters</text>
+  <text x="282" y="730" fill="#62615B" font-family="Inter, Arial, sans-serif" font-size="24">Clear owner, painful workaround, budget path.</text>
+</svg>

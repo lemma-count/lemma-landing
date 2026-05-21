@@ -17,8 +17,8 @@ export default function FoundersPage() {
         body: "Lemma helps founders talk to the market before they bet more runway. Find who is most likely to buy, what pain to lead with, and what to build next.",
         ctaLabel: "Get Started Free",
         ctaHref: "https://app.heylemma.com",
-        cardImage: "/assets/card-customer-evidence.png",
-        cardImageAlt: "Create Customer Evidence Engine product card",
+        cardImage: "/assets/market-pull-brief.svg",
+        cardImageAlt: "Market Pull Brief comparing which customer segment is showing the strongest pull",
       }}
       feature={{
         title: "Turn target-market conversations into decisions.",
