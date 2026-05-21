@@ -29,8 +29,9 @@ const footerGroups = [
   {
     title: "Resources",
     links: [
-      { label: "Demo request form", href: "/templates/demo-request-form" },
       { label: "Blog", href: "/blog" },
+      { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
+      { label: "Demo request form", href: "/templates/demo-request-form" },
     ],
   },
 ];
