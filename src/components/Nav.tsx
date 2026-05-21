@@ -6,16 +6,43 @@ import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { trackGrowthCta } from "@/lib/growth-analytics";
 
-const solutions = [
-  { label: "Consultants", href: "/consultants" },
-  { label: "Marketing", href: "/marketing" },
-  { label: "Sales", href: "/sales" },
+type NavGroupId = "solutions" | "compare" | "resources";
+
+const navGroups: {
+  id: NavGroupId;
+  label: string;
+  links: { label: string; href: string }[];
+}[] = [
+  {
+    id: "solutions",
+    label: "Solutions",
+    links: [
+      { label: "Consultants", href: "/consultants" },
+      { label: "Marketing", href: "/marketing" },
+      { label: "Sales", href: "/sales" },
+    ],
+  },
+  {
+    id: "compare",
+    label: "Compare",
+    links: [
+      { label: "Typeform alternative", href: "/typeform-alternative" },
+      { label: "Google Forms alternative", href: "/google-forms-alternative" },
+    ],
+  },
+  {
+    id: "resources",
+    label: "Resources",
+    links: [
+      { label: "Blog", href: "/blog" },
+      { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
+      { label: "Demo request form", href: "/templates/demo-request-form" },
+    ],
+  },
 ];
 
-const navLinks = [
-  { label: "Home", href: "/" },
+const primaryLinks = [
   { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -33,14 +60,16 @@ function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
 }
 
 export function Nav() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<NavGroupId | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const wrapperRef = useRef<HTMLLIElement>(null);
+  const [mobileOpenGroup, setMobileOpenGroup] = useState<NavGroupId | null>(null);
+  const desktopNavRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     function handle(e: MouseEvent) {
-      if (!wrapperRef.current?.contains(e.target as Node)) setDropdownOpen(false);
+      if (!desktopNavRef.current?.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
     }
     document.addEventListener("mousedown", handle);
     return () => document.removeEventListener("mousedown", handle);
@@ -57,7 +86,7 @@ export function Nav() {
 
   function closeMobile() {
     setMobileOpen(false);
-    setMobileSolutionsOpen(false);
+    setMobileOpenGroup(null);
   }
 
   function trackNavCta(location: "desktop" | "mobile") {
@@ -80,58 +109,69 @@ export function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-8 text-[13px] font-medium text-ink md:flex">
+        <ul
+          ref={desktopNavRef}
+          className="hidden items-center gap-7 text-[13px] font-medium text-ink md:flex lg:gap-8"
+        >
           <li>
             <Link href="/" className="transition-colors hover:text-muted">
               Home
             </Link>
           </li>
-          <li ref={wrapperRef} className="relative">
-            <button
-              type="button"
-              onClick={() => setDropdownOpen((v) => !v)}
-              aria-expanded={dropdownOpen}
-              aria-haspopup="menu"
-              className="inline-flex items-center gap-1 transition-colors hover:text-muted"
-            >
-              Solutions
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                aria-hidden
-                className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+          {navGroups.map((group) => (
+            <li key={group.id} className="relative">
+              <button
+                type="button"
+                onClick={() =>
+                  setOpenDropdown((current) =>
+                    current === group.id ? null : group.id
+                  )
+                }
+                aria-expanded={openDropdown === group.id}
+                aria-haspopup="menu"
+                className="inline-flex items-center gap-1 transition-colors hover:text-muted"
               >
-                <path
-                  d="M2 3.5L5 6.5L8 3.5"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            {dropdownOpen && (
-              <div
-                role="menu"
-                className="absolute left-1/2 top-full mt-3 w-48 -translate-x-1/2 rounded-md border border-border bg-white p-2 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.4)]"
-              >
-                {solutions.map((s) => (
-                  <Link
-                    key={s.label}
-                    href={s.href}
-                    role="menuitem"
-                    onClick={() => setDropdownOpen(false)}
-                    className="block rounded-md px-3 py-2 text-sm text-ink transition-colors hover:bg-neutral-100"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </li>
-          {navLinks.slice(1).map((l) => (
+                {group.label}
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  aria-hidden
+                  className={`transition-transform ${
+                    openDropdown === group.id ? "rotate-180" : ""
+                  }`}
+                >
+                  <path
+                    d="M2 3.5L5 6.5L8 3.5"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              {openDropdown === group.id && (
+                <div
+                  role="menu"
+                  className="absolute left-1/2 top-full mt-3 w-56 -translate-x-1/2 rounded-md border border-border bg-white p-2 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.4)]"
+                >
+                  {group.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      role="menuitem"
+                      onClick={() => setOpenDropdown(null)}
+                      className="block rounded-md px-3 py-2 text-sm text-ink transition-colors hover:bg-neutral-100"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+          {primaryLinks.map((l) => (
             <li key={l.label}>
               <Link href={l.href} className="transition-colors hover:text-muted">
                 {l.label}
@@ -211,49 +251,56 @@ export function Nav() {
                 </Link>
               </li>
 
-              {/* Solutions accordion */}
-              <li>
-                <button
-                  type="button"
-                  onClick={() => setMobileSolutionsOpen((v) => !v)}
-                  className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-                >
-                  Solutions
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    aria-hidden
-                    className={`transition-transform ${mobileSolutionsOpen ? "rotate-180" : ""}`}
+              {navGroups.map((group) => (
+                <li key={group.id}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setMobileOpenGroup((current) =>
+                        current === group.id ? null : group.id
+                      )
+                    }
+                    className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
                   >
-                    <path
-                      d="M2 3.5L5 6.5L8 3.5"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                {mobileSolutionsOpen && (
-                  <ul className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
-                    {solutions.map((s) => (
-                      <li key={s.label}>
-                        <Link
-                          href={s.href}
-                          onClick={closeMobile}
-                          className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-neutral-100 hover:text-ink"
-                        >
-                          {s.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
+                    {group.label}
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      aria-hidden
+                      className={`transition-transform ${
+                        mobileOpenGroup === group.id ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        d="M2 3.5L5 6.5L8 3.5"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  {mobileOpenGroup === group.id && (
+                    <ul className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
+                      {group.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            onClick={closeMobile}
+                            className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-neutral-100 hover:text-ink"
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
 
-              {navLinks.slice(1).map((l) => (
+              {primaryLinks.map((l) => (
                 <li key={l.label}>
                   <Link
                     href={l.href}
