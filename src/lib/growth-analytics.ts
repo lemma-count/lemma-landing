@@ -16,7 +16,16 @@ declare global {
 type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
 
-const ROUTE_SCOPED_GROWTH_PROPERTIES = ["source_asset_id", "content_id", "docs_section"] as const;
+const ROUTE_SCOPED_SUPER_PROPERTIES = [
+  "source_asset_id",
+  "content_id",
+  "docs_section",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+] as const;
 
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
@@ -56,6 +65,7 @@ function getPageType(pathname: string) {
 function getSourceAssetId(pathname: string) {
   if (pathname === "/typeform-alternative") return "lemma-typeform-alternative";
   if (pathname === "/google-forms-alternative") return "lemma-google-forms-alternative";
+  if (pathname === "/templates") return "lemma-templates-hub";
   if (pathname === "/templates/demo-request-form") {
     return "lemma-demo-request-form-template-2026-05-20";
   }
@@ -67,6 +77,7 @@ function getSourceAssetId(pathname: string) {
 }
 
 function getContentId(pathname: string) {
+  if (pathname === "/templates") return "templates";
   if (pathname.startsWith("/templates/") || pathname.startsWith("/guides/")) {
     return pathname.split("/").pop();
   }
@@ -136,24 +147,26 @@ export function getGrowthAnalyticsProperties(): GrowthProperties {
 function enrichEvent(event: CaptureResult | null) {
   if (!event) return event;
 
-  const eventProperties = { ...event.properties };
-  for (const key of ROUTE_SCOPED_GROWTH_PROPERTIES) {
+  const growthProperties = getGrowthAnalyticsProperties();
+  const eventProperties = { ...event.properties } as Properties;
+
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((key) => {
     delete eventProperties[key];
-  }
+  });
 
   return {
     ...event,
     properties: {
       ...eventProperties,
-      ...getGrowthAnalyticsProperties(),
+      ...growthProperties,
     } satisfies Properties,
   };
 }
 
-function unregisterRouteScopedGrowthProperties() {
-  for (const key of ROUTE_SCOPED_GROWTH_PROPERTIES) {
-    posthog.unregister(key);
-  }
+function clearRouteScopedSuperProperties() {
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((property) => {
+    posthog.unregister(property);
+  });
 }
 
 export function initGrowthAnalytics() {
@@ -170,7 +183,7 @@ export function initGrowthAnalytics() {
     request_batching: false,
     before_send: enrichEvent,
   });
-  unregisterRouteScopedGrowthProperties();
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
   window.__growthPostHogInitialized = true;
 
@@ -180,7 +193,7 @@ export function initGrowthAnalytics() {
 export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
-  unregisterRouteScopedGrowthProperties();
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
 }
 

@@ -37,6 +37,7 @@ const navGroups: {
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
+      { label: "Templates", href: "/templates" },
       { label: "Demo request form", href: "/templates/demo-request-form" },
     ],
   },
