@@ -15,17 +15,17 @@ declare global {
 
 type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
-const optionalGrowthPropertyKeys = ["source_asset_id", "content_id"] as const;
 
 const ROUTE_SCOPED_SUPER_PROPERTIES = [
   "source_asset_id",
   "content_id",
+  "docs_section",
   "utm_source",
   "utm_medium",
   "utm_campaign",
   "utm_term",
   "utm_content",
-];
+] as const;
 
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
@@ -99,9 +99,11 @@ function getEnvironment(hostname: string) {
 
 function isInternalTraffic(url: URL) {
   const hostname = url.hostname;
+  const utmSource = url.searchParams.get("utm_source");
 
   return (
     url.searchParams.get("growth_internal") === "1" ||
+    utmSource === "growth_os_smoke" ||
     hostname === "localhost" ||
     hostname === "127.0.0.1" ||
     hostname.endsWith(".vercel.app")
@@ -148,12 +150,8 @@ function enrichEvent(event: CaptureResult | null) {
   const growthProperties = getGrowthAnalyticsProperties();
   const eventProperties = { ...event.properties } as Properties;
 
-  // PostHog super properties are sticky, so clear route-derived asset metadata
-  // when the current route does not define it.
-  optionalGrowthPropertyKeys.forEach((key) => {
-    if (!(key in growthProperties)) {
-      delete eventProperties[key];
-    }
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((key) => {
+    delete eventProperties[key];
   });
 
   return {
@@ -195,7 +193,6 @@ export function initGrowthAnalytics() {
 export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
-  optionalGrowthPropertyKeys.forEach((key) => posthog.unregister(key));
   clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
 }
