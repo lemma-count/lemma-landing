@@ -17,6 +17,16 @@ type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
 const optionalGrowthPropertyKeys = ["source_asset_id", "content_id"] as const;
 
+const ROUTE_SCOPED_SUPER_PROPERTIES = [
+  "source_asset_id",
+  "content_id",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+];
+
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
 ): GrowthProperties {
@@ -55,6 +65,7 @@ function getPageType(pathname: string) {
 function getSourceAssetId(pathname: string) {
   if (pathname === "/typeform-alternative") return "lemma-typeform-alternative";
   if (pathname === "/google-forms-alternative") return "lemma-google-forms-alternative";
+  if (pathname === "/templates") return "lemma-templates-hub";
   if (pathname === "/templates/demo-request-form") {
     return "lemma-demo-request-form-template-2026-05-20";
   }
@@ -66,6 +77,7 @@ function getSourceAssetId(pathname: string) {
 }
 
 function getContentId(pathname: string) {
+  if (pathname === "/templates") return "templates";
   if (pathname.startsWith("/templates/") || pathname.startsWith("/guides/")) {
     return pathname.split("/").pop();
   }
@@ -153,6 +165,12 @@ function enrichEvent(event: CaptureResult | null) {
   };
 }
 
+function clearRouteScopedSuperProperties() {
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((property) => {
+    posthog.unregister(property);
+  });
+}
+
 export function initGrowthAnalytics() {
   if (typeof window === "undefined") return false;
   if (window.__growthPostHogInitialized) return true;
@@ -167,6 +185,7 @@ export function initGrowthAnalytics() {
     request_batching: false,
     before_send: enrichEvent,
   });
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
   window.__growthPostHogInitialized = true;
 
@@ -177,6 +196,7 @@ export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
   optionalGrowthPropertyKeys.forEach((key) => posthog.unregister(key));
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
 }
 
