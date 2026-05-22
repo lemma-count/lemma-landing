@@ -16,6 +16,16 @@ declare global {
 type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
 
+const ROUTE_SCOPED_SUPER_PROPERTIES = [
+  "source_asset_id",
+  "content_id",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+];
+
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
 ): GrowthProperties {
@@ -143,6 +153,12 @@ function enrichEvent(event: CaptureResult | null) {
   };
 }
 
+function clearRouteScopedSuperProperties() {
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((property) => {
+    posthog.unregister(property);
+  });
+}
+
 export function initGrowthAnalytics() {
   if (typeof window === "undefined") return false;
   if (window.__growthPostHogInitialized) return true;
@@ -157,6 +173,7 @@ export function initGrowthAnalytics() {
     request_batching: false,
     before_send: enrichEvent,
   });
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
   window.__growthPostHogInitialized = true;
 
@@ -166,6 +183,7 @@ export function initGrowthAnalytics() {
 export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
+  clearRouteScopedSuperProperties();
   posthog.register(getGrowthAnalyticsProperties());
 }
 
