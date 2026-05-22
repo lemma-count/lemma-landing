@@ -16,6 +16,8 @@ declare global {
 type GrowthPropertyValue = string | number | boolean;
 type GrowthProperties = Record<string, GrowthPropertyValue>;
 
+const ROUTE_SCOPED_GROWTH_PROPERTIES = ["source_asset_id", "content_id", "docs_section"] as const;
+
 function cleanProperties(
   properties: Record<string, GrowthPropertyValue | null | undefined>,
 ): GrowthProperties {
@@ -86,9 +88,11 @@ function getEnvironment(hostname: string) {
 
 function isInternalTraffic(url: URL) {
   const hostname = url.hostname;
+  const utmSource = url.searchParams.get("utm_source");
 
   return (
     url.searchParams.get("growth_internal") === "1" ||
+    utmSource === "growth_os_smoke" ||
     hostname === "localhost" ||
     hostname === "127.0.0.1" ||
     hostname.endsWith(".vercel.app")
@@ -132,13 +136,24 @@ export function getGrowthAnalyticsProperties(): GrowthProperties {
 function enrichEvent(event: CaptureResult | null) {
   if (!event) return event;
 
+  const eventProperties = { ...event.properties };
+  for (const key of ROUTE_SCOPED_GROWTH_PROPERTIES) {
+    delete eventProperties[key];
+  }
+
   return {
     ...event,
     properties: {
+      ...eventProperties,
       ...getGrowthAnalyticsProperties(),
-      ...event.properties,
     } satisfies Properties,
   };
+}
+
+function unregisterRouteScopedGrowthProperties() {
+  for (const key of ROUTE_SCOPED_GROWTH_PROPERTIES) {
+    posthog.unregister(key);
+  }
 }
 
 export function initGrowthAnalytics() {
@@ -155,6 +170,7 @@ export function initGrowthAnalytics() {
     request_batching: false,
     before_send: enrichEvent,
   });
+  unregisterRouteScopedGrowthProperties();
   posthog.register(getGrowthAnalyticsProperties());
   window.__growthPostHogInitialized = true;
 
@@ -164,6 +180,7 @@ export function initGrowthAnalytics() {
 export function refreshGrowthAnalyticsProperties() {
   if (typeof window === "undefined" || !window.__growthPostHogInitialized) return;
 
+  unregisterRouteScopedGrowthProperties();
   posthog.register(getGrowthAnalyticsProperties());
 }
 
