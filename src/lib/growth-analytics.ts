@@ -144,11 +144,20 @@ export function getGrowthAnalyticsProperties(): GrowthProperties {
 function enrichEvent(event: CaptureResult | null) {
   if (!event) return event;
 
+  const growthProperties = getGrowthAnalyticsProperties();
+  const eventProperties = { ...event.properties } as Properties;
+
+  ROUTE_SCOPED_SUPER_PROPERTIES.forEach((property) => {
+    if (!(property in growthProperties)) {
+      delete eventProperties[property];
+    }
+  });
+
   return {
     ...event,
     properties: {
-      ...getGrowthAnalyticsProperties(),
-      ...event.properties,
+      ...eventProperties,
+      ...growthProperties,
     } satisfies Properties,
   };
 }
