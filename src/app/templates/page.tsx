@@ -19,10 +19,18 @@ const templateCards = [
       "Capture demo intent first, then ask useful follow-up questions about urgency, current workflow, constraints, and what would make the call useful.",
     output: "Buyer context, likely objections, useful quotes, and a sales-ready brief.",
   },
+  {
+    title: "Customer feedback form",
+    href: "/templates/customer-feedback-form",
+    eyebrow: "Customer Success",
+    description:
+      "Start with the feedback prompt, then ask follow-up questions that uncover the example, reason, tradeoff, and next action behind the score or comment.",
+    output:
+      "Themes, customer quotes, severity notes, and a fix-ready feedback brief.",
+  },
 ];
 
 const upcomingTemplates = [
-  "Customer feedback form",
   "Lead qualification form",
   "Churn feedback form",
   "NPS or CSAT follow-up form",

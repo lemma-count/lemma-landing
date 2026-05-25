@@ -34,6 +34,7 @@ const footerGroups = [
       { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
       { label: "Templates", href: "/templates" },
       { label: "Demo request form", href: "/templates/demo-request-form" },
+      { label: "Customer feedback form", href: "/templates/customer-feedback-form" },
     ],
   },
 ];
