@@ -9,6 +9,14 @@ export type Post = {
 // Add new posts here. MDX file goes in src/content/posts/<slug>.mdx
 export const posts: Post[] = [
   {
+    slug: "people-do-not-hate-surveys-they-hate-being-processed",
+    title: "People Do Not Hate Surveys. They Hate Being Processed.",
+    description:
+      "The best feedback does not come from bigger text boxes. It comes from asking one useful follow-up while the customer still remembers what happened.",
+    date: "2026-05-26",
+    author: "Wissem Fathallah",
+  },
+  {
     slug: "what-to-ask-before-rewriting-your-homepage",
     title: "What To Ask Before Rewriting Your Homepage",
     description:
