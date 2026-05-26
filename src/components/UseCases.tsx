@@ -23,7 +23,7 @@ const useCases = [
   {
     title: "Sales & marketing",
     body: "to capture buyer language, objections, urgency, alternatives, and proof your team can use.",
-    image: "/assets/card-customer-evidence.png",
+    image: "/assets/use-case-hr.png",
   },
   {
     title: "Consultants & researchers",
