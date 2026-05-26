@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const steps = [
   {
-    title: "Start with a business question",
-    body: "Define the decision, audience, and context you need: why users dropped, what customers think about your brand, what employees need, what buyers decided, or which customer story is worth writing.",
+    title: "Start with one decision",
+    body: "Name what you need to decide: what to build, who to sell to, why customers churn, what buyers compare you against, or which message is working.",
   },
   {
     title: "Launch adaptive voice conversations",
-    body: "Send one link to customers, users, employees, buyers, partners, or stakeholders. Lemma guides each conversation based on the objective and the person's answers.",
+    body: "Send one link to customers, users, buyers, employees, partners, or stakeholders. Lemma adapts to each answer and asks the follow-up a static form would miss.",
   },
   {
-    title: "Act on transcript-grounded insight",
-    body: "View themes, quotes, and transcripts in a single hub. See the patterns that matter most, understand the evidence behind them, and push next steps to Slack, CRM, Docs, Decks, and AI workspaces.",
+    title: "Get decision-ready context",
+    body: "Read the transcripts, summaries, themes, quotes, reports, and next actions your team can use before it builds, launches, sells, or prioritizes.",
   },
 ];
 
@@ -75,8 +75,9 @@ function CardReport() {
       <div className="absolute inset-0 flex items-center justify-center px-6">
         <div className="w-full max-w-[320px] rounded-xl border border-[#e6e3dd] bg-white p-4 text-left text-[11px] leading-snug text-ink">
           <p className="text-[12px] font-medium leading-snug">
-            Coverage spans GTM, technical, and operational functions; no single
-            role exceeds 20% of the sample, and adoption was largely peer-driven.
+            Buyers keep comparing us to the current manual workflow. The
+            strongest pull is from teams that need proof before the next build
+            cycle.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2 text-[10px] text-muted">
             <div className="rounded-md bg-neutral-100 p-2">
@@ -113,13 +114,12 @@ export function Solution() {
             The solution
           </p>
           <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-            Turn important conversations into decisions.
+            Turn human context into decisions.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Tell Lemma what you need to understand. Lemma runs focused voice
-            conversations, adapts to each person, and produces a report with
-            patterns, priorities, quotes, transcripts, and recommended next
-            steps.
+            Manual interviews are rich but slow. Static forms are scalable but
+            shallow. Lemma gives teams adaptive conversations that collect the
+            missing context and turn it into reports they can act on.
           </p>
         </div>
 

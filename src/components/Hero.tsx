@@ -6,35 +6,40 @@ export function Hero() {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
         <div className="mx-auto max-w-[860px] text-center">
           <h1 className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-            Talk to more of the people your business depends on.
+            AI made building easy. Now context is the moat.
           </h1>
           <p className="mx-auto mt-7 max-w-[650px] text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Lemma runs adaptive voice interviews with customers, buyers, users,
-            employees, and stakeholders, then turns their answers into evidence
-            your team can use before the decision is made.
+            Lemma helps teams collect the human context they need to decide
+            what to build, who wants it, why they care, and what to do next.
+            Send adaptive voice conversations and get transcripts, themes,
+            quotes, reports, and next actions.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
             <TrackedLink
               href="https://app.heylemma.com"
               event="cta_click"
-              eventProps={{ label: "Sign up", page: "home", location: "hero" }}
-              className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-[0_12px_22px_-14px_rgba(61,80,255,0.9)] transition-colors hover:bg-[#2f3fd6]"
-            >
-              Sign up
-            </TrackedLink>
-            <TrackedLink
-              href="/guides/forms-vs-interviews"
-              event="cta_click"
               eventProps={{
-                label: "Read the forms vs interviews guide",
+                label: "Start a voice conversation",
                 page: "home",
                 location: "hero",
-                cta_id: "home_hero_forms_vs_interviews_guide",
+              }}
+              className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-[0_12px_22px_-14px_rgba(61,80,255,0.9)] transition-colors hover:bg-[#2f3fd6]"
+            >
+              Start a voice conversation
+            </TrackedLink>
+            <TrackedLink
+              href="/blog/before-you-build-price-or-launch-ask-for-decision-evidence"
+              event="cta_click"
+              eventProps={{
+                label: "Read the decision evidence guide",
+                page: "home",
+                location: "hero",
+                cta_id: "home_hero_decision_evidence_guide",
               }}
               className="inline-flex items-center justify-center rounded-md border border-ink bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
             >
-              Forms vs interviews
+              See the thinking
             </TrackedLink>
           </div>
         </div>

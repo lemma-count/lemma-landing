@@ -4,9 +4,9 @@ import { TrackedLink } from "@/components/TrackedLink";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Adaptive Voice Form Templates - Lemma",
+  title: "Adaptive Conversation Templates - Lemma",
   description:
-    "Start with a static form workflow, then use Lemma to ask adaptive voice follow-up questions and return decision-ready reports.",
+    "Start with a shallow workflow, then use Lemma to ask adaptive voice follow-up questions and return decision-ready reports.",
   path: "/templates",
 });
 
@@ -30,8 +30,8 @@ const upcomingTemplates = [
 
 const workflowSteps = [
   {
-    title: "Name the old form",
-    body: "Start from the static form workflow your team already sends to customers, buyers, users, or clients.",
+    title: "Name the workflow",
+    body: "Start from the form, survey, intake, call, or notes workflow your team already uses to collect context.",
   },
   {
     title: "Ask the next question",
@@ -50,29 +50,28 @@ export default function TemplatesPage() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
-              Adaptive voice form templates
+              Adaptive conversation templates
             </p>
             <h1 className="mt-5 text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-              Replace static forms where the first answer is not enough.
+              Turn shallow workflows into adaptive conversations.
             </h1>
             <p className="mt-7 max-w-3xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Use these templates when a Typeform, Google Form, or intake form
-              would collect a shallow response, but your team needs the reason,
-              example, objection, tradeoff, or next step behind it.
+              Use these templates when your team needs the reason, example,
+              objection, tradeoff, or next step behind a first answer.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
                 href="https://app.heylemma.com"
                 event="cta_click"
                 eventProps={{
-                  label: "Create a voice form",
+                  label: "Create a conversation",
                   page: "templates_index",
                   location: "hero",
                   cta_id: "templates_index_hero_create",
                 }}
                 className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-[0_12px_22px_-14px_rgba(61,80,255,0.9)] transition-colors hover:bg-[#2f3fd6]"
               >
-                Create a voice form
+                Create a conversation
               </TrackedLink>
               <TrackedLink
                 href="/guides/forms-vs-interviews"
@@ -117,13 +116,13 @@ export default function TemplatesPage() {
                 Available template
               </p>
               <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-                Start with a form your team already understands.
+                Start with a workflow your team already understands.
               </h2>
             </div>
             <p className="max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Each template names the static form workflow, explains when
-              adaptive follow-up is worth using, and shows the kind of report
-              your team should expect from the responses.
+              Each template names the old context-capture workflow, explains
+              when adaptive follow-up is worth using, and shows the kind of
+              report your team should expect from the responses.
             </p>
           </div>
 

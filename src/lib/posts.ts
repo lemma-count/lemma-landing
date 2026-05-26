@@ -9,6 +9,14 @@ export type Post = {
 // Add new posts here. MDX file goes in src/content/posts/<slug>.mdx
 export const posts: Post[] = [
   {
+    slug: "ai-made-building-easy-now-context-is-the-moat",
+    title: "AI Made Building Easy. Now Context Is the Moat.",
+    description:
+      "AI made production cheap. The scarce resource is now knowing what to build, who wants it, why they care, and what to do next.",
+    date: "2026-05-26",
+    author: "Wissem Fathallah",
+  },
+  {
     slug: "people-do-not-hate-surveys-they-hate-being-processed",
     title: "People Do Not Hate Surveys. They Hate Being Processed.",
     description:

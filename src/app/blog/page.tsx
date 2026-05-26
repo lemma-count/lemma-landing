@@ -4,9 +4,9 @@ import { posts, formatDate } from "@/lib/posts";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Blog — Lemma",
+  title: "The Context Layer — Lemma",
   description:
-    "Field observations on better questions, richer interviews, and turning scattered customer evidence into decisions.",
+    "Essays on why AI-native teams need better human context before they build, price, launch, sell, support, or decide.",
   path: "/blog",
 });
 
@@ -16,11 +16,11 @@ export default function BlogPage() {
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-28">
         <div className="mx-auto max-w-[760px]">
           <h1 className="text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-            Blog
+            The Context Layer
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-muted md:text-lg md:leading-8">
-            Field observations on better questions, richer interviews, and
-            turning scattered customer evidence into decisions.
+            Essays on why AI-native teams need better human context before they
+            build, price, launch, sell, support, or decide.
           </p>
 
           {posts.length === 0 ? (

@@ -59,9 +59,9 @@ export function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">
-              Keep learning from the people closest to the decision. Lemma runs
-              the interviews and turns their answers into evidence your team can
-              act on.
+              Lemma helps teams collect human context through adaptive voice
+              conversations and turn it into transcripts, themes, quotes,
+              reports, and next actions.
             </p>
             <TrackedLink
               href="/contact"

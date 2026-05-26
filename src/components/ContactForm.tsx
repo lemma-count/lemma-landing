@@ -123,14 +123,14 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="needs" className="mb-1.5 block text-sm text-ink">
-          Can you share more about your needs?
+          What decision needs better context?
         </label>
         <textarea
           id="needs"
           name="needs"
           required
           rows={6}
-          placeholder="Please share more about your needs so we can better understand them and ensure our sales team can assist you effectively when they reach out."
+          placeholder="For example: we need to know who will buy, why customers churn, which message is landing, or what buyers need before a demo."
           className={`${inputBase} resize-y`}
         />
       </div>

@@ -1,7 +1,7 @@
 const stats = [
-  { value: "100+", body: "voice interviews in parallel, with no scheduling." },
-  { value: "10x", body: "richer answers through AI-led follow-ups." },
-  { value: "Minutes", body: "to first insights, not weeks of manual analysis." },
+  { value: "Parallel", body: "Collect voice conversations without turning research into a calendar problem." },
+  { value: "Warm", body: "Ask follow-ups while the respondent still remembers what happened." },
+  { value: "Report-ready", body: "Turn answers into transcripts, summaries, themes, quotes, and next actions." },
 ];
 
 export function Stats() {

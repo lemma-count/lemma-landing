@@ -6,29 +6,29 @@ import { track } from "@vercel/analytics";
 
 const useCases = [
   {
-    title: "Consultants & researchers",
-    body: "to run more client, expert, customer, or employee interviews without adding calendar time.",
-    image: "/assets/use-case-consultants.png",
-  },
-  {
-    title: "Product",
-    body: "to understand what customers need, what they struggle with, and which product changes matter most.",
+    title: "Founders & operators",
+    body: "to learn who wants the product, why they care, and what to build next before betting another quarter.",
     image: "/assets/use-case-product.png",
   },
   {
-    title: "Customer success & CX",
-    body: "to uncover why customers complain, downgrade, renew, churn, or stop engaging.",
-    image: "/assets/use-case-cx.png",
-  },
-  {
-    title: "Marketing & growth",
-    body: "to learn how buyers describe the problem, evaluate options, and decide between you and the alternatives.",
+    title: "Product & growth",
+    body: "to understand where users get stuck, which message lands, and which product changes matter most.",
     image: "/assets/use-case-marketing.png",
   },
   {
-    title: "HR & people",
-    body: "to hear what employees actually think before decisions on culture, performance, or retention are made.",
-    image: "/assets/use-case-hr.png",
+    title: "Customer success & CX",
+    body: "to uncover why customers complain, downgrade, renew, churn, or stop getting value.",
+    image: "/assets/use-case-cx.png",
+  },
+  {
+    title: "Sales & marketing",
+    body: "to capture buyer language, objections, urgency, alternatives, and proof your team can use.",
+    image: "/assets/card-customer-evidence.png",
+  },
+  {
+    title: "Consultants & researchers",
+    body: "to collect stakeholder context, surface hidden friction, and support recommendations with evidence.",
+    image: "/assets/use-case-consultants.png",
   },
 ];
 
@@ -71,7 +71,7 @@ export function UseCases() {
               Use cases
             </p>
             <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-              For people who need better answers before making decisions.
+              For teams whose AI work is only as good as their context.
             </h2>
           </div>
           <div className="hidden shrink-0 items-center gap-2 md:flex">

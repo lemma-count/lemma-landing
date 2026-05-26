@@ -3,9 +3,9 @@ import { SolutionPage } from "@/components/SolutionPage";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma for Marketing — Always-on customer research",
+  title: "Lemma for Marketing — Customer context for better messaging",
   description:
-    "Lemma conducts AI-led voice interviews with customers and turns their answers into case-study briefs, quote banks, proof points, objection maps, buyer language, launch messaging, and sales collateral inputs.",
+    "Lemma runs adaptive voice conversations with customers and turns their answers into buyer language, proof points, objections, quotes, and story briefs.",
   path: "/marketing",
 });
 
@@ -14,16 +14,16 @@ export default function MarketingPage() {
     <SolutionPage
       hero={{
         title:
-          "Keep learning from customers. Turn every conversation into assets.",
-        body: "Lemma conducts AI-led voice interviews with customers and turns their answers into case-study briefs, quote banks, proof points, objection maps, buyer language, launch messaging, and sales collateral inputs.",
+          "Get the customer context behind better messaging.",
+        body: "Lemma helps marketing teams hear how customers describe the problem, the alternatives, the value, and the objections, then turns those conversations into proof your team can use.",
         ctaLabel: "Get Started Free",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/card-customer-evidence.png",
         cardImageAlt: "Create Customer Evidence Engine product card",
       }}
       feature={{
-        title: "Always-on customer research.",
-        body: "Send interviews after key customer moments. Lemma does the research work and turns answers into themes, quotes, proof, and marketing material your team can use.",
+        title: "Turn customer conversations into proof.",
+        body: "Send conversations after key customer moments. Lemma asks useful follow-ups and returns themes, quotes, objections, story angles, and buyer language.",
         image: "/assets/report-coverage.png",
         imageAlt: "Sample Customer Proof & Story Report",
         items: [
@@ -32,12 +32,12 @@ export default function MarketingPage() {
             body: "Trigger interviews after onboarding, product usage, renewals, expansions, support moments, launch feedback, or story nominations.",
           },
           {
-            title: "Let Lemma run the research.",
+            title: "Let Lemma ask the follow-ups.",
             body: "Lemma conducts each voice interview and probes for sentiment, value, objections, unmet needs, examples, and the words customers actually use.",
           },
           {
-            title: "Turn insights into assets",
-            body: "Receive reports, quote banks, proof points, story briefs, launch messaging, sales-slide inputs, and drafts your team can review and ship.",
+            title: "Turn context into assets",
+            body: "Receive reports, quote banks, proof points, story briefs, launch-message inputs, and sales proof your team can review and use.",
           },
         ],
       }}

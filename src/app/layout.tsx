@@ -23,9 +23,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma | Talk to More of the People Your Business Depends On",
+  title: "Lemma | Context for AI-Native Teams",
   description:
-    "Lemma runs adaptive voice interviews with customers, buyers, users, employees, and stakeholders, then turns their answers into evidence your team can use before the decision is made.",
+    "Lemma helps teams collect human context through adaptive voice conversations and turn it into transcripts, themes, quotes, reports, and next actions.",
 });
 
 export default function RootLayout({

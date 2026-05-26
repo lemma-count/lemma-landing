@@ -7,17 +7,16 @@ export function ProblemStatement() {
             The problem
           </p>
           <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight md:text-6xl">
-            Teams are making expensive decisions from answers they never really
-            understood.
+            Teams can build faster than they can understand the market.
           </h2>
           <div className="mt-8 grid max-w-4xl grid-cols-1 gap-5 text-base leading-7 text-muted md:grid-cols-2 md:gap-10 md:text-lg md:leading-8">
             <p>
-              Human interviews reveal what people actually mean, but they are
-              too slow to run at scale.
+              AI can generate products, pages, campaigns, docs, and workflows.
+              It cannot fix shallow inputs.
             </p>
             <p>
-              Forms and surveys reach everyone, but they stop exactly when the
-              insight starts.
+              If your customer context is weak, every output gets faster
+              without getting more true.
             </p>
           </div>
         </div>

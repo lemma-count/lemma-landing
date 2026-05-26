@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
   description:
-    "Pricing that scales with the interviews you run. Each completed voice interview uses 1 credit. Invite as many teammates as you want. Pay for the conversations you collect.",
+    "Pricing that scales with the conversations you collect. Each completed voice interview uses 1 credit. Invite as many teammates as you want.",
   path: "/pricing",
 });
 
@@ -29,15 +29,15 @@ const faqItems = [
   },
   {
     q: "Do I pay per teammate?",
-    a: "No. All plans include unlimited teammates. You only pay for the interviews you collect.",
+    a: "No. You do not pay per seat. Invite the teammates you need and pay for the interviews you collect.",
   },
   {
     q: "Can I run multiple interview projects at the same time?",
     a: "Yes. You can run as many concurrent studies as you need; credits are pooled across the workspace.",
   },
   {
-    q: "What integrations are included?",
-    a: "Professional and Enterprise include integrations with docs, slides, CRM, support tools, and AI workspaces. Enterprise adds API access and webhooks.",
+    q: "What if I need integrations or custom workflows?",
+    a: "Talk to us. We will map the first workflow with you and confirm what is available for your plan.",
   },
 ];
 
