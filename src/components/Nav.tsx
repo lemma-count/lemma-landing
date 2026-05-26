@@ -5,48 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import { trackGrowthCta } from "@/lib/growth-analytics";
-
-type NavGroupId = "solutions" | "compare" | "resources";
-
-const navGroups: {
-  id: NavGroupId;
-  label: string;
-  links: { label: string; href: string }[];
-}[] = [
-  {
-    id: "solutions",
-    label: "Solutions",
-    links: [
-      { label: "Consultants", href: "/consultants" },
-      { label: "Marketing", href: "/marketing" },
-      { label: "Sales", href: "/sales" },
-      { label: "Founders", href: "/founders" },
-    ],
-  },
-  {
-    id: "compare",
-    label: "Compare",
-    links: [
-      { label: "Typeform alternative", href: "/typeform-alternative" },
-      { label: "Google Forms alternative", href: "/google-forms-alternative" },
-    ],
-  },
-  {
-    id: "resources",
-    label: "Resources",
-    links: [
-      { label: "Blog", href: "/blog" },
-      { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
-      { label: "Templates", href: "/templates" },
-      { label: "Demo request form", href: "/templates/demo-request-form" },
-    ],
-  },
-];
-
-const primaryLinks = [
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" },
-];
+import { navGroups, primaryLinks, productLinks, type NavGroupId } from "@/lib/navigation";
 
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -57,7 +16,7 @@ function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
       height={20}
       priority
       className="h-5 w-auto"
-      style={{ width: "auto" }}
+      style={{ width: "auto", height: "auto" }}
     />
   );
 }
@@ -121,6 +80,13 @@ export function Nav() {
               Home
             </Link>
           </li>
+          {productLinks.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} className="transition-colors hover:text-muted">
+                {link.label}
+              </Link>
+            </li>
+          ))}
           {navGroups.map((group) => (
             <li key={group.id} className="relative">
               <button
@@ -253,6 +219,18 @@ export function Nav() {
                   Home
                 </Link>
               </li>
+
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={closeMobile}
+                    className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
 
               {navGroups.map((group) => (
                 <li key={group.id}>

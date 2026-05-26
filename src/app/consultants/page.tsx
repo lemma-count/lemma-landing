@@ -15,7 +15,7 @@ export default function ConsultantsPage() {
       hero={{
         title: "Collect stakeholder context before the room fills with opinions.",
         body: "Lemma runs adaptive voice conversations with stakeholders, experts, customers, and employees, then turns what they say into reports, workflow context, quotes, and client-ready evidence.",
-        ctaLabel: "Get Started Free",
+        ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/card-client-discovery.png",
         cardImageAlt: "Create Client Discovery Engine product card",

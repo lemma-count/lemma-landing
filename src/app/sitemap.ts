@@ -7,9 +7,12 @@ const base = siteUrl;
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/product`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/consultants`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/product-growth`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/marketing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/sales`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/customer-success`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/founders`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/typeform-alternative`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/google-forms-alternative`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },

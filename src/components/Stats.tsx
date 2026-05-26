@@ -1,7 +1,7 @@
 const stats = [
-  { value: "Parallel", body: "Collect voice conversations without turning research into a calendar problem." },
-  { value: "Warm", body: "Ask follow-ups while the respondent still remembers what happened." },
-  { value: "Report-ready", body: "Turn answers into transcripts, summaries, themes, quotes, and next actions." },
+  { value: "More context", body: "Ask follow-ups while the respondent still remembers what happened." },
+  { value: "Less calendar work", body: "Collect voice conversations without turning research into a scheduling problem." },
+  { value: "Ready to use", body: "Turn answers into transcripts, summaries, themes, quotes, and next actions." },
 ];
 
 export function Stats() {

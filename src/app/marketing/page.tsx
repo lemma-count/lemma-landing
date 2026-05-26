@@ -16,7 +16,7 @@ export default function MarketingPage() {
         title:
           "Get the customer context behind better messaging.",
         body: "Lemma helps marketing teams hear how customers describe the problem, the alternatives, the value, and the objections, then turns those conversations into proof your team can use.",
-        ctaLabel: "Get Started Free",
+        ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/card-customer-evidence.png",
         cardImageAlt: "Create Customer Evidence Engine product card",

@@ -20,26 +20,26 @@ export function Hero() {
               href="https://app.heylemma.com"
               event="cta_click"
               eventProps={{
-                label: "Start a voice conversation",
+                label: "Start a conversation",
                 page: "home",
                 location: "hero",
               }}
               className="inline-flex items-center justify-center rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-[0_12px_22px_-14px_rgba(61,80,255,0.9)] transition-colors hover:bg-[#2f3fd6]"
             >
-              Start a voice conversation
+              Start a conversation
             </TrackedLink>
             <TrackedLink
-              href="/blog/before-you-build-price-or-launch-ask-for-decision-evidence"
+              href="/product"
               event="cta_click"
               eventProps={{
-                label: "Read the decision evidence guide",
+                label: "See how it works",
                 page: "home",
                 location: "hero",
-                cta_id: "home_hero_decision_evidence_guide",
+                cta_id: "home_hero_product",
               }}
               className="inline-flex items-center justify-center rounded-md border border-ink bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
             >
-              See the thinking
+              See how it works
             </TrackedLink>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function FoundersPage() {
       hero={{
         title: "Find where the market is pulling.",
         body: "AI makes it easier to build in five directions. Lemma helps founders collect the market context to decide which direction is worth betting on.",
-        ctaLabel: "Get Started Free",
+        ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/market-pull-brief.svg",
         cardImageAlt: "Market Pull Brief comparing which customer segment is showing the strongest pull",

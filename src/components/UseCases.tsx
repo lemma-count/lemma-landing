@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { track } from "@vercel/analytics";
 
@@ -8,26 +9,37 @@ const useCases = [
   {
     title: "Founders & operators",
     body: "to learn who wants the product, why they care, and what to build next before betting another quarter.",
+    href: "/founders",
     image: "/assets/use-case-product.png",
   },
   {
     title: "Product & growth",
     body: "to understand where users get stuck, which message lands, and which product changes matter most.",
+    href: "/product-growth",
+    image: "/assets/use-case-marketing.png",
+  },
+  {
+    title: "Marketing",
+    body: "to collect buyer language, proof points, objections, and stories your team can turn into sharper messaging.",
+    href: "/marketing",
     image: "/assets/use-case-marketing.png",
   },
   {
     title: "Customer success & CX",
     body: "to uncover why customers complain, downgrade, renew, churn, or stop getting value.",
+    href: "/customer-success",
     image: "/assets/use-case-cx.png",
   },
   {
-    title: "Sales & marketing",
-    body: "to capture buyer language, objections, urgency, alternatives, and proof your team can use.",
+    title: "Sales",
+    body: "to capture buyer context, urgency, alternatives, objections, and what would make the next call useful.",
+    href: "/sales",
     image: "/assets/use-case-hr.png",
   },
   {
     title: "Consultants & researchers",
     body: "to collect stakeholder context, surface hidden friction, and support recommendations with evidence.",
+    href: "/consultants",
     image: "/assets/use-case-consultants.png",
   },
 ];
@@ -105,18 +117,32 @@ export function UseCases() {
                 key={u.title}
                 className="relative aspect-[3/4] w-[78vw] flex-none snap-start overflow-hidden rounded-[18px] border border-[#e6e3dd] bg-white md:w-[28%]"
               >
-                <Image
-                  src={u.image}
-                  alt={u.title}
-                  fill
-                  sizes="(min-width: 768px) 28vw, 78vw"
-                  loading="eager"
-                  className="object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/88 via-black/54 to-transparent p-5 pt-24 text-white">
-                  <h3 className="text-base font-semibold">{u.title}</h3>
-                  <p className="mt-1 text-sm leading-5 text-white/85">{u.body}</p>
-                </div>
+                <Link
+                  href={u.href}
+                  onClick={() => track("use_case_click", { title: u.title, href: u.href })}
+                  className="group relative block h-full"
+                >
+                  <Image
+                    src={u.image}
+                    alt={u.title}
+                    fill
+                    sizes="(min-width: 768px) 28vw, 78vw"
+                    loading="eager"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/88 via-black/54 to-transparent p-5 pt-24 text-white">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-base font-semibold">{u.title}</h3>
+                      <span
+                        aria-hidden
+                        className="shrink-0 text-lg leading-none transition-transform group-hover:translate-x-0.5"
+                      >
+                        →
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm leading-5 text-white/85">{u.body}</p>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>

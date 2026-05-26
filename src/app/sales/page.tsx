@@ -15,7 +15,7 @@ export default function SalesPage() {
       hero={{
         title: "Capture the context behind buyer intent.",
         body: "A demo request tells you someone raised their hand. Lemma helps you understand the use case, urgency, constraints, objections, and next step before the call.",
-        ctaLabel: "Get Started Free",
+        ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/card-plg-discovery.png",
         cardImageAlt: "Create PLG Discovery Engine product card",

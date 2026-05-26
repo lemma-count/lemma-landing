@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { navGroups, primaryLinks, productLinks } from "@/lib/navigation";
 import { TrackedLink } from "./TrackedLink";
 
 const footerGroups = [
@@ -7,35 +8,14 @@ const footerGroups = [
     title: "Product",
     links: [
       { label: "Home", href: "/" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Contact", href: "/contact" },
+      ...productLinks,
+      ...primaryLinks,
     ],
   },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Consultants", href: "/consultants" },
-      { label: "Marketing", href: "/marketing" },
-      { label: "Sales", href: "/sales" },
-      { label: "Founders", href: "/founders" },
-    ],
-  },
-  {
-    title: "Compare",
-    links: [
-      { label: "Typeform alternative", href: "/typeform-alternative" },
-      { label: "Google Forms alternative", href: "/google-forms-alternative" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Blog", href: "/blog" },
-      { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
-      { label: "Templates", href: "/templates" },
-      { label: "Demo request form", href: "/templates/demo-request-form" },
-    ],
-  },
+  ...navGroups.map((group) => ({
+    title: group.label,
+    links: group.links,
+  })),
 ];
 
 export function Footer() {
@@ -55,7 +35,7 @@ export function Footer() {
                 width={117}
                 height={20}
                 className="h-5 w-auto"
-                style={{ width: "auto" }}
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">
