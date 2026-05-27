@@ -6,12 +6,13 @@ export type Post = {
   author: string;
 };
 
+// Add new posts here. MDX file goes in src/content/posts/<slug>.mdx
 export const posts: Post[] = [
   {
     slug: "ai-made-building-easy-now-context-is-the-moat",
     title: "AI Made Building Easy. Now Context Is the Moat.",
     description:
-      "AI made production cheap. The scarce resource is knowing what to build, who wants it, why they care, and which path will work.",
+      "AI made production cheap. The scarce resource is now knowing what to build, who wants it, why they care, and what to do next.",
     date: "2026-05-26",
     author: "Wissem Fathallah",
   },
@@ -35,7 +36,7 @@ export const posts: Post[] = [
     slug: "customer-feedback-is-not-evidence-until-it-survives-follow-up",
     title: "Customer Feedback Is Not Evidence Until It Survives a Follow-Up",
     description:
-      "A customer comment is not evidence until it survives a follow-up. Here is how to turn shallow answers into usable context.",
+      "A customer comment is not evidence until it survives a follow-up. Here is how to turn shallow answers into decision-ready research.",
     date: "2026-04-27",
     author: "Wissem Fathallah",
   },
@@ -79,55 +80,7 @@ export const posts: Post[] = [
     date: "2026-02-14",
     author: "Wissem Fathallah",
   },
-  {
-    slug: "customer-language-is-a-product-input-not-a-copywriting-detail",
-    title: "Customer Language Is a Product Input, Not a Copywriting Detail",
-    description:
-      "The words customers use reveal what they believe, compare against, fear, and need next. That language should shape product and GTM decisions.",
-    date: "2026-02-07",
-    author: "Wissem Fathallah",
-  },
-  {
-    slug: "your-typeform-is-not-the-problem-your-missing-follow-up-is",
-    title: "Your Typeform Is Not the Problem. Your Missing Follow-Up Is.",
-    description:
-      "The issue is rarely the collection interface alone. Important customer, sales, churn, and discovery workflows need the context behind the answer.",
-    date: "2026-01-27",
-    author: "Wissem Fathallah",
-  },
-  {
-    slug: "the-context-layer-for-ai-native-companies",
-    title: "The Context Layer for AI-Native Companies",
-    description:
-      "AI-native teams can produce faster than they can understand. They need a context layer that turns human intelligence into usable input for people and agents.",
-    date: "2026-01-18",
-    author: "Wissem Fathallah",
-  },
-  {
-    slug: "when-a-form-should-become-a-conversation",
-    title: "When a Form Should Become a Conversation",
-    description:
-      "Use fixed collection when the answer is simple. Use adaptive conversations when the team needs the context behind what people say.",
-    date: "2026-01-10",
-    author: "Wissem Fathallah",
-  },
-  {
-    slug: "the-danger-of-polished-strategy-from-shallow-inputs",
-    title: "The Danger of Polished Strategy From Shallow Inputs",
-    description:
-      "AI can turn weak assumptions into finished-looking pages, plans, campaigns, and workflows. Better output starts with better context.",
-    date: "2025-12-18",
-    author: "Wissem Fathallah",
-  },
-  {
-    slug: "ai-did-not-kill-customer-research-it-raised-the-standard",
-    title: "AI Did Not Kill Customer Research. It Raised the Standard.",
-    description:
-      "When AI makes execution faster, weak research gets more expensive. The advantage shifts to teams with better human context.",
-    date: "2025-12-03",
-    author: "Wissem Fathallah",
-  },
-].sort((a, b) => b.date.localeCompare(a.date));
+];
 
 export function getPost(slug: string): Post | undefined {
   return posts.find((p) => p.slug === slug);

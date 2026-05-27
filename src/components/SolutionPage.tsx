@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TrackedLink } from "./TrackedLink";
+import { SolutionVisual, type VisualVariant } from "./ContextVisuals";
 
 type Feature = { title: string; body: string };
 
@@ -9,15 +10,17 @@ export type SolutionPageProps = {
     body: string;
     ctaLabel: string;
     ctaHref: string;
-    cardImage: string;
-    cardImageAlt: string;
+    visual?: VisualVariant;
+    cardImage?: string;
+    cardImageAlt?: string;
     backgroundClass?: string;
   };
   feature: {
     title: string;
     body: string;
-    image: string;
-    imageAlt: string;
+    visual?: VisualVariant;
+    image?: string;
+    imageAlt?: string;
     backgroundClass?: string;
     items: Feature[];
   };
@@ -53,14 +56,18 @@ export function SolutionPage({ hero, feature }: SolutionPageProps) {
             className={`relative aspect-[5/4] w-full overflow-hidden rounded-[18px] border border-[#e6e3dd] md:aspect-[6/5] ${hero.backgroundClass ?? defaultHeroBg}`}
           >
             <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
-              <Image
-                src={hero.cardImage}
-                alt={hero.cardImageAlt}
-                width={1300}
-                height={780}
-                priority
-                className="h-auto w-full max-w-[640px] rounded-xl border border-[#e6e3dd]"
-              />
+              {hero.visual ? (
+                <SolutionVisual variant={hero.visual} />
+              ) : hero.cardImage && hero.cardImageAlt ? (
+                <Image
+                  src={hero.cardImage}
+                  alt={hero.cardImageAlt}
+                  width={1300}
+                  height={780}
+                  priority
+                  className="h-auto w-full max-w-[640px] rounded-xl border border-[#e6e3dd]"
+                />
+              ) : null}
             </div>
           </div>
         </div>
@@ -72,14 +79,18 @@ export function SolutionPage({ hero, feature }: SolutionPageProps) {
             className={`relative order-2 aspect-square w-full overflow-hidden rounded-[18px] border border-[#e6e3dd] md:order-1 ${feature.backgroundClass ?? defaultFeatureBg}`}
           >
             <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
-              <Image
-                src={feature.image}
-                alt={feature.imageAlt}
-                width={1300}
-                height={1300}
-                loading="eager"
-                className="h-auto w-full max-w-[520px] rounded-xl border border-[#e6e3dd]"
-              />
+              {feature.visual ? (
+                <SolutionVisual variant={feature.visual} />
+              ) : feature.image && feature.imageAlt ? (
+                <Image
+                  src={feature.image}
+                  alt={feature.imageAlt}
+                  width={1300}
+                  height={1300}
+                  loading="eager"
+                  className="h-auto w-full max-w-[520px] rounded-xl border border-[#e6e3dd]"
+                />
+              ) : null}
             </div>
           </div>
 

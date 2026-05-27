@@ -3,9 +3,9 @@ import { SolutionPage } from "@/components/SolutionPage";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma for Consultants — Collect stakeholder context",
+  title: "Lemma for Consultants - Turn stakeholder context into evidence",
   description:
-    "Lemma runs adaptive voice conversations with stakeholders, experts, customers, and employees, then turns what they say into reports, workflow context, quotes, and client-ready evidence.",
+    "Lemma helps consultants capture workflows, blockers, tradeoffs, and alignment gaps, then turn stakeholder conversations into client-ready evidence.",
   path: "/consultants",
 });
 
@@ -13,31 +13,30 @@ export default function ConsultantsPage() {
   return (
     <SolutionPage
       hero={{
-        title: "Collect stakeholder context before the room fills with opinions.",
-        body: "Lemma runs adaptive voice conversations with stakeholders, experts, customers, and employees, then turns what they say into reports, workflow context, quotes, and client-ready evidence.",
+        title: "Turn stakeholder conversations into structured evidence.",
+        body: "Lemma helps consultants capture the context behind workflows, blockers, tradeoffs, and alignment gaps before the room fills with opinions.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
-        cardImage: "/assets/card-client-discovery.png",
-        cardImageAlt: "Create Client Discovery Engine product card",
+        cardImage: "/assets/solution-consultants-context.png",
+        cardImageAlt:
+          "Consultant facilitating a stakeholder workshop with client decision makers.",
       }}
       feature={{
-        title: "Standardize discovery without flattening the nuance.",
-        body: "Send Lemma to the people closest to the work and surface the bottlenecks, tradeoffs, workarounds, and context behind stronger recommendations.",
-        image: "/assets/report-coverage.png",
-        imageAlt:
-          "Sample Lemma report: Coverage spans GTM, technical, and operational functions",
+        title: "From stakeholder input to client-ready context.",
+        body: "Use Lemma to collect richer input from stakeholders, experts, customers, and employees, then turn it into briefs, patterns, quotes, and evidence for stronger recommendations.",
+        visual: "consultants",
         items: [
           {
-            title: "Interview more stakeholders, faster.",
-            body: "Send one Lemma link and collect qualitative voice input in parallel. Broaden your sample without weeks of calendar work.",
+            title: "Capture stakeholder briefs.",
+            body: "Collect each person's role, workflow, constraints, goals, objections, and view of what needs to change.",
           },
           {
-            title: "Surface hidden friction.",
-            body: "Lemma probes for broken handoffs, bottlenecks, alignment gaps, and local workarounds that surveys and notes often miss.",
+            title: "Map hidden friction.",
+            body: "Surface broken handoffs, bottlenecks, tradeoffs, alignment gaps, and local workarounds.",
           },
           {
-            title: "Generate client-ready evidence.",
-            body: "Turn conversations into themes, risk maps, stakeholder quotes, and workshop briefs that support stronger recommendations.",
+            title: "Support the recommendation.",
+            body: "Turn conversations into patterns, quote banks, risk maps, and workshop briefs clients can trust.",
           },
         ],
       }}

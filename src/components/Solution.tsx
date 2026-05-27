@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const steps = [
   {
-    title: "Start with one decision",
-    body: "Name what you need to decide: what to build, who to sell to, why customers churn, what buyers compare you against, or which message is working.",
+    title: "Start with what you need to understand",
+    body: "Who cares, why now, what blocks them, and what would make this worth choosing.",
   },
   {
-    title: "Launch adaptive voice conversations",
-    body: "Send one link to customers, users, buyers, employees, partners, or stakeholders. Lemma adapts to each answer and asks the follow-up a static form would miss.",
+    title: "Run adaptive voice conversations",
+    body: "Send one adaptive voice conversation to customers, users, buyers, leads, or stakeholders. Lemma listens and asks the next useful question.",
   },
   {
-    title: "Get decision-ready context",
-    body: "Read the transcripts, summaries, themes, quotes, reports, and next actions your team can use before it builds, launches, sells, or prioritizes.",
+    title: "Use the context",
+    body: "Get transcripts, summaries, themes, quotes, objections, context reports, and next actions before you build, launch, sell, support, prioritize, or brief agents.",
   },
 ];
 
@@ -44,7 +44,7 @@ function CardSearch() {
             />
           </svg>
           <span className="truncate">
-            Interview customers, leads, or stakeholders…
+            Ask customers, leads, or stakeholders…
           </span>
         </div>
       </div>
@@ -57,12 +57,12 @@ function CardListening() {
     <div className={`relative h-full w-full ${cardBg}`}>
       <div className="absolute inset-0 flex items-center justify-center px-6">
         <Image
-          src="/assets/listening-bubble.png"
-          alt="Listening prompt: Where did you notice friction or effort in that experience?"
-          width={520}
-          height={520}
+          src="/assets/adaptive-voice-context.png"
+          alt="Adaptive voice conversation turning follow-up answers into structured context cards."
+          width={1254}
+          height={1254}
           priority
-          className="h-auto w-[78%] max-w-[320px] rounded-2xl border border-[#e6e3dd]"
+          className="h-auto w-[88%] max-w-[350px] rounded-2xl border border-[#e6e3dd] shadow-[0_18px_50px_-38px_rgba(36,92,255,0.75)]"
         />
       </div>
     </div>
@@ -114,12 +114,14 @@ export function Solution() {
             The solution
           </p>
           <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-            Turn human context into decisions.
+            Find the context behind what people say.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Manual interviews are rich but slow. Static forms are scalable but
-            shallow. Lemma gives teams adaptive conversations that collect the
-            missing context and turn it into reports they can act on.
+            Most teams already have signals. What they miss is context in the
+            right shape: the real need, hidden objection, buying trigger,
+            workflow detail, and language people actually use. Lemma asks
+            adaptive follow-up questions and turns what it learns into usable
+            context for people and agents.
           </p>
         </div>
 

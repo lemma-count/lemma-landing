@@ -1,60 +1,88 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { TrackedLink } from "@/components/TrackedLink";
+import { ProductContextVisual } from "@/components/ContextVisuals";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Product - Lemma",
   description:
-    "Lemma sends adaptive voice conversations, asks follow-up questions, and turns human context into transcripts, themes, quotes, reports, and next actions.",
+    "Lemma asks adaptive follow-up questions, collects human context, and turns it into usable intelligence your team and agents can use.",
   path: "/product",
 });
 
 const steps = [
   {
-    title: "Start with a decision",
-    body: "Choose the decision that needs better context: what to build, why buyers care, why customers churn, or which message is working.",
+    title: "Start with what you need to understand",
+    body: "Choose the audience and context: market pull, product friction, buyer intent, churn risk, message clarity, stakeholder alignment, or customer proof.",
   },
   {
-    title: "Send one conversation link",
-    body: "Respondents answer by voice. Lemma adapts to what they say and asks the follow-up questions a static form cannot ask.",
+    title: "Run adaptive voice conversations",
+    body: "People answer by voice. Lemma listens, adapts, and asks follow-up questions that surface reasons, examples, objections, tradeoffs, and urgency.",
   },
   {
-    title: "Use the report",
-    body: "Your team gets transcripts, summaries, themes, quotes, and next actions grounded in what people actually said.",
+    title: "Turn it into usable intelligence",
+    body: "Get structured context your team can read, share, search, and use before building, selling, supporting, prioritizing, or briefing agents.",
   },
 ];
 
 const outputs = [
-  "Transcripts",
-  "Summaries",
-  "Themes",
-  "Quotes",
-  "Reports",
-  "Next actions",
+  {
+    title: "Evidence base",
+    body: "Transcripts and raw conversation evidence grounded in what people actually said.",
+  },
+  {
+    title: "Respondent briefs",
+    body: "Each person's situation, need, language, objections, and next step.",
+  },
+  {
+    title: "Pattern map",
+    body: "Repeated needs, blockers, buying triggers, friction points, and segments.",
+  },
+  {
+    title: "Quote bank",
+    body: "Customer and stakeholder language your team can reuse.",
+  },
+  {
+    title: "Context report",
+    body: "What was learned, why it matters, and where the evidence points.",
+  },
+  {
+    title: "Agent-ready knowledge base",
+    body: "Structured context your AI agents can use as better input.",
+  },
 ];
 
 const workflowLinks = [
   {
     title: "Founders",
     href: "/founders",
-    body: "Find where the market is pulling before you bet more runway.",
+    body: "Understand market pull before committing more runway.",
   },
   {
-    title: "Product & growth",
+    title: "Product",
     href: "/product-growth",
-    body: "Understand friction, activation, demand, and what to build next.",
+    body: "Learn what to build, fix, kill, or prioritize next.",
   },
   {
     title: "Sales",
     href: "/sales",
-    body: "Capture buyer context before the sales conversation starts.",
+    body: "Turn product-led and self-serve signals into buyer context.",
+  },
+  {
+    title: "Marketing",
+    href: "/marketing",
+    body: "Capture buyer language, proof, objections, and category framing.",
   },
   {
     title: "Customer success",
     href: "/customer-success",
-    body: "Learn why customers complain, renew, churn, or stop getting value.",
+    body: "Surface churn risk, activation friction, and expansion signals.",
+  },
+  {
+    title: "Consultants",
+    href: "/consultants",
+    body: "Turn stakeholder conversations into structured evidence.",
   },
 ];
 
@@ -68,12 +96,12 @@ export default function ProductPage() {
               Product
             </p>
             <h1 className="mt-5 text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-              Collect human context before the next decision.
+              Capture the context behind your customers, team, and market.
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Lemma runs adaptive voice conversations with customers, buyers,
-              users, employees, or stakeholders, then turns what they say into
-              context your team and AI tools can act on.
+              Lemma asks adaptive follow-up questions, collects human context,
+              and turns it into usable intelligence your team and agents can
+              use.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -90,32 +118,23 @@ export default function ProductPage() {
                 Start a conversation
               </TrackedLink>
               <TrackedLink
-                href="/templates"
+                href="#outputs"
                 event="cta_click"
                 eventProps={{
-                  label: "See templates",
+                  label: "See outputs",
                   page: "product",
                   location: "hero",
-                  cta_id: "product_hero_templates",
+                  cta_id: "product_hero_outputs",
                 }}
                 className="inline-flex items-center justify-center rounded-md border border-ink bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
               >
-                See templates
+                See outputs
               </TrackedLink>
             </div>
           </div>
 
           <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[18px] border border-[#e6e3dd] bg-[#f8f7f4]">
-            <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
-              <Image
-                src="/assets/report-coverage.png"
-                alt="Sample Lemma report coverage"
-                width={1300}
-                height={1300}
-                priority
-                className="h-auto w-full max-w-[560px] rounded-xl border border-[#e6e3dd]"
-              />
-            </div>
+            <ProductContextVisual />
           </div>
         </div>
       </section>
@@ -127,7 +146,7 @@ export default function ProductPage() {
               How it works
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-              A better input layer for AI-native teams.
+              From scattered signals to usable context.
             </h2>
           </div>
 
@@ -150,26 +169,34 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="bg-[#f8f7f4]">
+      <section id="outputs" className="bg-[#f8f7f4]">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:px-10 md:py-28">
           <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              Outputs
+            </p>
             <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-              Outputs your team can actually use.
+              Built for action, not storage.
             </h2>
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Lemma is not another place to store raw responses. It turns
-              conversations into material your team can use before it builds,
-              sells, supports, researches, or decides.
+              Lemma turns unstructured, uncollected, or sparse signals into
+              usable context so your team can double down on what it should do
+              next, faster.
             </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             {outputs.map((output) => (
               <div
-                key={output}
+                key={output.title}
                 className="rounded-[14px] border border-[#e6e3dd] bg-white p-5"
               >
-                <h3 className="text-base font-semibold text-ink">{output}</h3>
+                <h3 className="text-base font-semibold text-ink">
+                  {output.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted">
+                  {output.body}
+                </p>
               </div>
             ))}
           </div>
@@ -184,12 +211,13 @@ export default function ProductPage() {
                 Where it fits
               </p>
               <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-                Use it anywhere the first answer is too shallow.
+                Use Lemma when better context changes what happens next.
               </h2>
             </div>
             <p className="max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Static forms work when fixed fields are enough. Lemma fits when
-              your next question depends on what the person just said.
+              For work where the missing context affects what you build, who
+              you prioritize, what you say, why customers get stuck, why buyers
+              care, or what your team and agents should use as input.
             </p>
           </div>
 

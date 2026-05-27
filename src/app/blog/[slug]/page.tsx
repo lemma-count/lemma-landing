@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import {
+  BlogContextVisual,
+  ContextLayerImageVisual,
+} from "@/components/ContextVisuals";
 import { posts, getPost, formatDate } from "@/lib/posts";
 import { createMetadata } from "@/lib/seo";
 
@@ -35,6 +39,9 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const { prev, next } = getAdjacentPosts(slug);
+  const showContextLayerImage =
+    slug === "ai-made-building-easy-now-context-is-the-moat" ||
+    slug === "the-context-layer-for-ai-native-companies";
 
   const { default: Content } = await import(
     `@/content/posts/${slug}.mdx`
@@ -65,6 +72,13 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <p className="mt-5 text-base leading-7 text-muted md:text-lg md:leading-8">{post.description}</p>
             <p className="mt-4 text-sm text-subtle">{post.author}</p>
+            <div className="mt-8">
+              {showContextLayerImage ? (
+                <ContextLayerImageVisual />
+              ) : (
+                <BlogContextVisual />
+              )}
+            </div>
           </div>
 
           {/* MDX body */}

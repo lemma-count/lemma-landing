@@ -3,9 +3,9 @@ import { SolutionPage } from "@/components/SolutionPage";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma for Marketing — Customer context for better messaging",
+  title: "Lemma for Marketing - Capture buyer language and proof",
   description:
-    "Lemma runs adaptive voice conversations with customers and turns their answers into buyer language, proof points, objections, quotes, and story briefs.",
+    "Lemma helps marketing teams find buyer language, objections, proof, and category framing through adaptive voice conversations.",
   path: "/marketing",
 });
 
@@ -13,31 +13,30 @@ export default function MarketingPage() {
   return (
     <SolutionPage
       hero={{
-        title:
-          "Get the customer context behind better messaging.",
-        body: "Lemma helps marketing teams hear how customers describe the problem, the alternatives, the value, and the objections, then turns those conversations into proof your team can use.",
+        title: "Capture the language behind better messaging.",
+        body: "AI can generate endless campaigns. Lemma helps marketers find the buyer language, objections, proof, and category framing that make the work sound true.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
-        cardImage: "/assets/card-customer-evidence.png",
-        cardImageAlt: "Create Customer Evidence Engine product card",
+        cardImage: "/assets/solution-marketing-context.png",
+        cardImageAlt:
+          "Product marketing team sorting customer notes and campaign concepts in a creative studio.",
       }}
       feature={{
-        title: "Turn customer conversations into proof.",
-        body: "Send conversations after key customer moments. Lemma asks useful follow-ups and returns themes, quotes, objections, story angles, and buyer language.",
-        image: "/assets/report-coverage.png",
-        imageAlt: "Sample Customer Proof & Story Report",
+        title: "Turn customer conversations into message evidence.",
+        body: "Use Lemma to hear how customers describe the problem, what they compare against, why they believe, and what would stop them from acting.",
+        visual: "marketing",
         items: [
           {
-            title: "Share interview links",
-            body: "Trigger interviews after onboarding, product usage, renewals, expansions, support moments, launch feedback, or story nominations.",
+            title: "Find buyer language.",
+            body: "Capture the words customers use for the problem, the value, the alternative, and the moment they started to care.",
           },
           {
-            title: "Let Lemma ask the follow-ups.",
-            body: "Lemma conducts each voice interview and probes for sentiment, value, objections, unmet needs, examples, and the words customers actually use.",
+            title: "Map objections.",
+            body: "Surface what buyers doubt, what proof they need, and what would make the offer feel credible.",
           },
           {
-            title: "Turn context into assets",
-            body: "Receive reports, quote banks, proof points, story briefs, launch-message inputs, and sales proof your team can review and use.",
+            title: "Build the proof bank.",
+            body: "Turn conversations into quotes, proof points, story angles, category language, and launch-message inputs.",
           },
         ],
       }}

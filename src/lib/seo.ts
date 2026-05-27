@@ -4,10 +4,10 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/assets/forms-vs-interviews-og.png",
-  width: 1200,
-  height: 630,
-  alt: "Abstract Lemma preview showing static form rows flowing through a voice waveform into a structured report.",
+  url: "/assets/context-layer-visual.png",
+  width: 1672,
+  height: 941,
+  alt: "Human conversations flowing through an adaptive voice layer into structured context for teams and agents.",
 };
 
 type MetadataImage = {
@@ -77,7 +77,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Lemma runs adaptive voice interviews with customers, buyers, users, employees, and stakeholders, then turns their answers into evidence your team can use before the decision is made.",
+    "Lemma runs adaptive voice conversations that ask follow-up questions, collect human context, and turn it into usable intelligence for people and agents.",
 };
 
 export function stringifyJsonLd(data: unknown) {

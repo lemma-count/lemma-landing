@@ -25,9 +25,16 @@ The dev server picks the first free port (3000 by default, falls back to 3001+).
 Other scripts:
 
 ```bash
-npm run build    # production build (catches type errors)
-npm run start    # serve the production build locally
+npm run typecheck    # clears stale Next/Turbopack state, then runs TypeScript
+npm run build        # removes all .next output, then builds from scratch
+npm run build:fresh  # alias for npm run build
+npm run verify       # typecheck + production build
+npm run start        # serve the production build locally
 ```
+
+If `next build` appears stuck around "Running TypeScript" after local dev/build
+iterations, treat it as generated Next/Turbopack state first. The normal
+`npm run build` already removes `.next`, which is safe because it is generated.
 
 ## Routes
 

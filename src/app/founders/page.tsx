@@ -3,9 +3,9 @@ import { SolutionPage } from "@/components/SolutionPage";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma for Founders - Find where the market is pulling",
+  title: "Lemma for Founders - Find market pull before it is too late",
   description:
-    "Lemma helps founders turn target-market conversations into market-pull evidence: who is most likely to buy, what pain to lead with, and what to build next before betting more runway.",
+    "Lemma helps founders avoid defocus by hearing who cares now, why it matters, what blocks adoption, and where the company should bet next.",
   path: "/founders",
 });
 
@@ -13,30 +13,30 @@ export default function FoundersPage() {
   return (
     <SolutionPage
       hero={{
-        title: "Find where the market is pulling.",
-        body: "AI makes it easier to build in five directions. Lemma helps founders collect the market context to decide which direction is worth betting on.",
+        title: "Find where the market is pulling before it's too late.",
+        body: "AI makes it cheap to build in every direction. Lemma helps founders avoid defocus by hearing who cares now, why it matters, what blocks adoption, and where the company should bet next.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
-        cardImage: "/assets/market-pull-brief.svg",
-        cardImageAlt: "Market Pull Brief comparing which customer segment is showing the strongest pull",
+        cardImage: "/assets/solution-founders-context.png",
+        cardImageAlt:
+          "Founder and cofounder reviewing customer interview notes in a startup workspace.",
       }}
       feature={{
-        title: "Turn target-market conversations into decision evidence.",
-        body: "When the product can go in five directions, Lemma helps you hear who cares, why now, what they compare you against, and what to build next.",
-        image: "/assets/report-coverage.png",
-        imageAlt: "Sample Lemma report: evidence coverage across market signals",
+        title: "Turn early conversations into market-pull context.",
+        body: "Run adaptive voice conversations with prospects, customers, and stakeholders. Lemma turns what they say into evidence about which segment wants this, why now, what stands in the way, and which bet deserves focus.",
+        visual: "founders",
         items: [
           {
-            title: "Find who is most likely to buy.",
-            body: "Compare segments, urgency, buying triggers, and current workarounds before you commit another quarter of product and GTM effort.",
+            title: "Find who cares now.",
+            body: "Identify the segment with real urgency, current workarounds, buying triggers, and language that sounds like pull.",
           },
           {
-            title: "Separate interest from pull.",
-            body: "Probe past polite feedback to hear the pain, objections, urgency, and language that show whether people actually care.",
+            title: "Avoid PMF illusions.",
+            body: "Polite interest can burn months. Lemma probes for pain, urgency, alternatives, objections, and whether people would actually change behavior.",
           },
           {
-            title: "Decide what to build next.",
-            body: "Turn conversations into roadmap signals, narrative risks, and evidence your team can use before the next product bet.",
+            title: "Choose your next bet.",
+            body: "Use the context to focus the company: what to build, who to sell to, what to say, and what not to pursue.",
           },
         ],
       }}

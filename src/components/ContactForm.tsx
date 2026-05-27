@@ -123,7 +123,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="needs" className="mb-1.5 block text-sm text-ink">
-          What decision needs better context?
+          What workflow needs better context?
         </label>
         <textarea
           id="needs"

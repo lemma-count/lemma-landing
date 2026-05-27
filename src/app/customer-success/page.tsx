@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Lemma for Customer Success - Understand churn, renewal, and value",
   description:
-    "Lemma helps customer success teams collect customer context around value, friction, complaints, renewal risk, churn, and expansion opportunities.",
+    "Lemma helps customer success teams capture the context behind churn risk, activation friction, renewal hesitation, and expansion potential.",
   path: "/customer-success",
 });
 
@@ -13,30 +13,30 @@ export default function CustomerSuccessPage() {
   return (
     <SolutionPage
       hero={{
-        title: "Understand why customers stay, leave, or stop getting value.",
-        body: "Scores and tags can route the work. Lemma helps customer success teams collect the context behind the score, complaint, renewal risk, or churn reason.",
+        title: "Understand why customers get stuck, stay, or leave.",
+        body: "Scores and tags show the signal. Lemma helps customer success teams capture the context behind churn risk, activation friction, renewal hesitation, and expansion potential.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
-        cardImage: "/assets/card-customer-evidence.png",
-        cardImageAlt: "Create Customer Evidence Engine product card",
+        cardImage: "/assets/solution-customer-success-context.png",
+        cardImageAlt:
+          "Customer success team reviewing renewal and customer feedback notes together.",
       }}
       feature={{
-        title: "Turn customer moments into evidence.",
-        body: "Send a short voice conversation after support issues, onboarding stalls, downgrades, renewals, cancellations, or NPS responses. Lemma asks the follow-up and returns a report your team can use.",
-        image: "/assets/report-coverage.png",
-        imageAlt: "Sample Lemma report showing customer success evidence coverage",
+        title: "Turn customer moments into retention context.",
+        body: "Use Lemma after onboarding stalls, support issues, renewals, downgrades, cancellations, or NPS responses to understand what happened and what should change.",
+        visual: "customerSuccess",
         items: [
           {
-            title: "Go past the label",
-            body: "A churn reason like too expensive or missing features is only useful when you understand the situation behind it.",
+            title: "Explain churn risk.",
+            body: "Understand the situation behind the label: what changed, what value was missing, and what made the customer hesitate.",
           },
           {
-            title: "Learn while the moment is fresh",
-            body: "Ask what happened, why it mattered, what changed, and what would have made the experience work.",
+            title: "Find activation friction.",
+            body: "Ask what the customer tried to do, where the workflow broke, and what would have made the experience click.",
           },
           {
-            title: "Give teams the next action",
-            body: "Turn customer conversations into themes, quotes, recovery opportunities, renewal risks, and product feedback.",
+            title: "Surface expansion signals.",
+            body: "Capture where customers see value, what else they need, and what would make expansion worth discussing.",
           },
         ],
       }}

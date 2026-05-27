@@ -1,4 +1,4 @@
-export type NavGroupId = "useCases" | "resources" | "compare";
+export type NavGroupId = "useCases" | "resources";
 
 export type NavLink = {
   label: string;
@@ -17,7 +17,7 @@ export const navGroups: NavGroup[] = [
     label: "Use cases",
     links: [
       { label: "Founders", href: "/founders" },
-      { label: "Product & growth", href: "/product-growth" },
+      { label: "Product", href: "/product-growth" },
       { label: "Marketing", href: "/marketing" },
       { label: "Sales", href: "/sales" },
       { label: "Customer success", href: "/customer-success" },
@@ -29,17 +29,8 @@ export const navGroups: NavGroup[] = [
     label: "Resources",
     links: [
       { label: "Context layer thesis", href: "/blog/ai-made-building-easy-now-context-is-the-moat" },
+      { label: "Alternatives", href: "/alternatives" },
       { label: "Blog", href: "/blog" },
-      { label: "Templates", href: "/templates" },
-      { label: "Forms vs interviews", href: "/guides/forms-vs-interviews" },
-    ],
-  },
-  {
-    id: "compare",
-    label: "Compare",
-    links: [
-      { label: "Typeform alternative", href: "/typeform-alternative" },
-      { label: "Google Forms alternative", href: "/google-forms-alternative" },
     ],
   },
 ];

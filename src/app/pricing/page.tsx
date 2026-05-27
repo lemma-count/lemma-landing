@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { FAQ } from "@/components/FAQ";
+import { PricingFlowVisual } from "@/components/ContextVisuals";
 import { PricingSection } from "@/components/PricingSection";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
   description:
-    "Pricing that scales with the conversations you collect. Each completed voice interview uses 1 credit. Invite as many teammates as you want.",
+    "Pricing that scales with the adaptive conversations you collect. Each completed conversation uses 1 credit. Invite as many teammates as you want.",
   path: "/pricing",
 });
 
 const faqItems = [
   {
-    q: "What counts as an interview credit?",
-    a: "One credit is consumed for each completed voice interview, regardless of length. Incomplete or dropped sessions are not counted.",
+    q: "What counts as a conversation credit?",
+    a: "One credit is consumed for each completed adaptive voice conversation, regardless of length. Incomplete or dropped sessions are not counted.",
   },
   {
     q: "Are credits monthly?",
@@ -25,14 +26,14 @@ const faqItems = [
   },
   {
     q: "Can I buy more credits if I run out?",
-    a: "Yes. You can buy additional interview credits at any time from your workspace settings, on every plan.",
+    a: "Yes. You can buy additional conversation credits at any time from your workspace settings, on every plan.",
   },
   {
     q: "Do I pay per teammate?",
-    a: "No. You do not pay per seat. Invite the teammates you need and pay for the interviews you collect.",
+    a: "No. You do not pay per seat. Invite the teammates you need and pay for the conversations you collect.",
   },
   {
-    q: "Can I run multiple interview projects at the same time?",
+    q: "Can I run multiple context workflows at the same time?",
     a: "Yes. You can run as many concurrent studies as you need; credits are pooled across the workspace.",
   },
   {
@@ -50,10 +51,11 @@ export default function PricingPage() {
             Pay for the conversations you collect.
           </h1>
           <div className="mx-auto mt-7 max-w-xl space-y-1 text-base leading-7 text-muted md:text-lg md:leading-8">
-            <p>Each completed voice interview uses 1 credit.</p>
+            <p>Each completed adaptive voice conversation uses 1 credit.</p>
             <p>Invite as many teammates as you want.</p>
-            <p>Scale from one real use case to always-on discovery.</p>
+            <p>Scale from one real workflow to always-on context capture.</p>
           </div>
+          <PricingFlowVisual />
         </div>
         <PricingSection />
       </section>

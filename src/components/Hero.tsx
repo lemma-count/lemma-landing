@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { TrackedLink } from "./TrackedLink";
 
 export function Hero() {
@@ -6,13 +7,14 @@ export function Hero() {
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
         <div className="mx-auto max-w-[860px] text-center">
           <h1 className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-            AI made building easy. Now context is the moat.
+            AI made building cheap. Human context is now the edge.
           </h1>
           <p className="mx-auto mt-7 max-w-[650px] text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Lemma helps teams collect the human context they need to decide
-            what to build, who wants it, why they care, and what to do next.
-            Send adaptive voice conversations and get transcripts, themes,
-            quotes, reports, and next actions.
+            Lemma helps founders and AI-native teams understand who wants what,
+            why it matters, what blocks adoption, and what is worth building
+            next. Send adaptive voice conversations to the people your business
+            depends on, then turn what they say into context your team and
+            agents can use.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
@@ -46,14 +48,16 @@ export function Hero() {
 
         <div className="mt-14 md:mt-20">
           <div className="relative mx-auto max-w-[1120px] rounded-[18px] bg-[radial-gradient(90%_80%_at_15%_15%,rgba(61,80,255,0.24),transparent_38%),radial-gradient(80%_75%_at_86%_18%,rgba(255,169,32,0.42),transparent_40%),linear-gradient(180deg,#f7f7f5,#f0f0ed)] p-2 shadow-[0_32px_90px_-44px_rgba(0,0,0,0.55)] ring-1 ring-black/5 md:p-3">
-            <div className="overflow-hidden rounded-[12px] bg-neutral-100 ring-1 ring-black/10">
-            <video
-              src="/assets/demo.mp4"
-              controls
-              playsInline
-              preload="metadata"
-              className="block aspect-[16/9] w-full bg-neutral-100"
-            />
+            <div className="overflow-hidden rounded-[12px] bg-[#f8f7f4] ring-1 ring-black/10">
+              <Image
+                src="/assets/context-layer-visual.png"
+                alt="Human conversations flowing through an adaptive voice layer into structured context for teams and agents."
+                width={1672}
+                height={941}
+                priority
+                sizes="(min-width: 1024px) 1120px, 100vw"
+                className="block aspect-[16/9] w-full object-cover"
+              />
             </div>
           </div>
         </div>

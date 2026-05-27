@@ -7,16 +7,17 @@ export function ProblemStatement() {
             The problem
           </p>
           <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight md:text-6xl">
-            Teams can build faster than they can understand the market.
+            Everyone can ship. Not everyone can ship something people love.
           </h2>
           <div className="mt-8 grid max-w-4xl grid-cols-1 gap-5 text-base leading-7 text-muted md:grid-cols-2 md:gap-10 md:text-lg md:leading-8">
             <p>
-              AI can generate products, pages, campaigns, docs, and workflows.
-              It cannot fix shallow inputs.
+              AI can generate campaigns, workflows, prototypes, and software.
+              If the inputs are weak, it makes the wrong strategy look more
+              complete.
             </p>
             <p>
-              If your customer context is weak, every output gets faster
-              without getting more true.
+              When every team uses the same AI tools, the advantage is not more
+              output. It is better context.
             </p>
           </div>
         </div>

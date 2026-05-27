@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContextPulseVisual } from "@/components/ContextVisuals";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -18,6 +19,9 @@ export default function NotFound() {
       <p className="mt-3 text-base text-muted">
         This page doesn&apos;t exist or has been moved.
       </p>
+      <div className="mt-8 w-full max-w-md">
+        <ContextPulseVisual />
+      </div>
       <Link
         href="/"
         className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"

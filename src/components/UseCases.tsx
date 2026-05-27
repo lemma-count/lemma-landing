@@ -7,40 +7,46 @@ import { track } from "@vercel/analytics";
 
 const useCases = [
   {
-    title: "Founders & operators",
-    body: "to learn who wants the product, why they care, and what to build next before betting another quarter.",
+    title: "Founders",
+    body: "to find where the market is pulling before betting more runway.",
     href: "/founders",
-    image: "/assets/use-case-product.png",
+    image: "/assets/solution-founders-context.png",
+    imageAlt: "Founder and cofounder reviewing customer interview notes in a startup workspace.",
   },
   {
-    title: "Product & growth",
-    body: "to understand where users get stuck, which message lands, and which product changes matter most.",
+    title: "Product",
+    body: "to know what to build, fix, kill, or prioritize next.",
     href: "/product-growth",
-    image: "/assets/use-case-marketing.png",
+    image: "/assets/solution-product-context.png",
+    imageAlt: "Product team observing a user research session and reviewing notes together.",
   },
   {
     title: "Marketing",
-    body: "to collect buyer language, proof points, objections, and stories your team can turn into sharper messaging.",
+    body: "to capture buyer language, proof, objections, and category framing.",
     href: "/marketing",
-    image: "/assets/use-case-marketing.png",
-  },
-  {
-    title: "Customer success & CX",
-    body: "to uncover why customers complain, downgrade, renew, churn, or stop getting value.",
-    href: "/customer-success",
-    image: "/assets/use-case-cx.png",
+    image: "/assets/solution-marketing-context.png",
+    imageAlt: "Product marketing team sorting customer notes and campaign concepts in a creative studio.",
   },
   {
     title: "Sales",
-    body: "to capture buyer context, urgency, alternatives, objections, and what would make the next call useful.",
+    body: "to turn PLG and self-serve signals into buyer context.",
     href: "/sales",
-    image: "/assets/use-case-hr.png",
+    image: "/assets/solution-sales-context.png",
+    imageAlt: "Sales teammates preparing for a buyer call with notes and an account plan.",
   },
   {
-    title: "Consultants & researchers",
-    body: "to collect stakeholder context, surface hidden friction, and support recommendations with evidence.",
+    title: "Customer success",
+    body: "to surface churn risk, activation friction, and expansion signals.",
+    href: "/customer-success",
+    image: "/assets/solution-customer-success-context.png",
+    imageAlt: "Customer success team reviewing renewal and customer feedback notes together.",
+  },
+  {
+    title: "Consultants",
+    body: "to turn stakeholder conversations into structured evidence.",
     href: "/consultants",
-    image: "/assets/use-case-consultants.png",
+    image: "/assets/solution-consultants-context.png",
+    imageAlt: "Consultant facilitating a stakeholder workshop with client decision makers.",
   },
 ];
 
@@ -83,7 +89,7 @@ export function UseCases() {
               Use cases
             </p>
             <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-              For teams whose AI work is only as good as their context.
+              AI makes everyone faster. Context tells you what is worth doing.
             </h2>
           </div>
           <div className="hidden shrink-0 items-center gap-2 md:flex">
@@ -124,11 +130,10 @@ export function UseCases() {
                 >
                   <Image
                     src={u.image}
-                    alt={u.title}
+                    alt={u.imageAlt}
                     fill
                     sizes="(min-width: 768px) 28vw, 78vw"
-                    loading="eager"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/88 via-black/54 to-transparent p-5 pt-24 text-white">
                     <div className="flex items-center justify-between gap-3">
