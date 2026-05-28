@@ -151,7 +151,7 @@ export function ProductContextVisual() {
         </div>
 
         <div className="rounded-xl border border-[#d7dcff] bg-white p-4 shadow-[0_22px_60px_-40px_rgba(36,92,255,0.7)]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-subtle">
             Usable context
           </p>
           <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
@@ -453,7 +453,7 @@ export function WorkflowContextVisual({ kind = "generic" }: { kind?: WorkflowKin
           </div>
 
           <div className="rounded-xl border border-[#eceae4] bg-white p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-subtle">
               Output
             </p>
             <p className="mt-3 text-sm font-semibold leading-5 text-ink">

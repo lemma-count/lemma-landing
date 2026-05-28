@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { TrackedLink } from "./TrackedLink";
 
 export function Hero() {
@@ -49,15 +48,17 @@ export function Hero() {
         <div className="mt-14 md:mt-20">
           <div className="relative mx-auto max-w-[1120px] rounded-[18px] bg-[radial-gradient(90%_80%_at_15%_15%,rgba(61,80,255,0.24),transparent_38%),radial-gradient(80%_75%_at_86%_18%,rgba(255,169,32,0.42),transparent_40%),linear-gradient(180deg,#f7f7f5,#f0f0ed)] p-2 shadow-[0_32px_90px_-44px_rgba(0,0,0,0.55)] ring-1 ring-black/5 md:p-3">
             <div className="overflow-hidden rounded-[12px] bg-[#f8f7f4] ring-1 ring-black/10">
-              <Image
-                src="/assets/context-layer-visual.png"
-                alt="Human conversations flowing through an adaptive voice layer into structured context for teams and agents."
-                width={1672}
-                height={941}
-                priority
-                sizes="(min-width: 1024px) 1120px, 100vw"
+              <video
                 className="block aspect-[16/9] w-full object-cover"
-              />
+                controls
+                playsInline
+                preload="metadata"
+                poster="/assets/context-layer-visual.png"
+                aria-label="Lemma product demo"
+              >
+                <source src="/assets/demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

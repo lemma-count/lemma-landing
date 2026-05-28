@@ -92,7 +92,7 @@ export default function ProductPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 py-16 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:px-10 md:py-28">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
               Product
             </p>
             <h1 className="mt-5 text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
@@ -142,7 +142,7 @@ export default function ProductPage() {
       <section className="border-t border-border bg-white">
         <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
               How it works
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
@@ -172,7 +172,7 @@ export default function ProductPage() {
       <section id="outputs" className="bg-[#f8f7f4]">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-[0.85fr_1.15fr] md:gap-16 md:px-10 md:py-28">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
               Outputs
             </p>
             <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
@@ -207,7 +207,7 @@ export default function ProductPage() {
         <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
           <div className="grid gap-8 md:grid-cols-[0.75fr_1fr] md:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
                 Where it fits
               </p>
               <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
