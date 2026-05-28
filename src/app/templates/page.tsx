@@ -2,17 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WorkflowContextVisual } from "@/components/ContextVisuals";
 import { TrackedLink } from "@/components/TrackedLink";
-import { createMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, createMetadata, stringifyJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Context Workflow Starters - Lemma",
+  title: "Adaptive Voice Form Templates - Lemma",
   description:
-    "Run AI-led voice conversation workflows that ask useful follow-up questions.",
+    "Adaptive voice form templates for feedback, demo requests, lead qualification, churn, NPS, CSAT, and other workflows that need follow-up questions.",
   path: "/templates",
-  noIndex: true,
 });
 
 const templateCards = [
+  {
+    title: "Customer feedback workflow",
+    href: "/templates/customer-feedback-form",
+    category: "Customer success",
+    context: "What happened, why did it matter, and what should the team fix or understand next?",
+    audience: "Customers, users, and accounts with recent feedback to explain.",
+    goal: "Turn shallow feedback into reasons, examples, quotes, and next actions.",
+    followUp:
+      "Lemma asks what the customer expected, what changed, and what would make the experience better.",
+    output: "A transcript-grounded feedback brief.",
+    use: "Product, CX, and customer success teams.",
+  },
   {
     title: "Demo request workflow",
     href: "/templates/demo-request-form",
@@ -28,7 +39,6 @@ const templateCards = [
 ];
 
 const upcomingTemplates = [
-  "Customer feedback workflow",
   "Lead qualification workflow",
   "Churn feedback workflow",
   "NPS or CSAT follow-up workflow",
@@ -52,6 +62,17 @@ const workflowSteps = [
 export default function TemplatesPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Templates", path: "/templates" },
+            ]),
+          ),
+        }}
+      />
       <section className="bg-white pt-16 pb-14 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid gap-12 md:grid-cols-[0.86fr_0.74fr] md:items-center">

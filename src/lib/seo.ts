@@ -80,6 +80,71 @@ export const websiteJsonLd = {
     "Lemma runs AI-led voice conversations with the people who matter and turns what they say into usable context.",
 };
 
+export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function faqJsonLd(
+  items: Array<{ question: string; answer: string }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function articleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  author,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  author: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: absoluteUrl(path),
+    datePublished,
+    author: {
+      "@type": "Person",
+      name: author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteName,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/assets/lemma-logo-black.png"),
+      },
+    },
+  };
+}
+
 export function stringifyJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }

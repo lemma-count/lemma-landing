@@ -14,7 +14,17 @@ const footerGroups = [
   },
   ...navGroups.map((group) => ({
     title: group.label,
-    links: group.links,
+    links:
+      group.id === "resources"
+        ? [
+            ...group.links,
+            {
+              label: "Customer feedback form",
+              href: "/templates/customer-feedback-form",
+            },
+            { label: "Demo request form", href: "/templates/demo-request-form" },
+          ]
+        : group.links,
   })),
 ];
 

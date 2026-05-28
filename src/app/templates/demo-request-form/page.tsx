@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WorkflowContextVisual } from "@/components/ContextVisuals";
 import { TrackedLink } from "@/components/TrackedLink";
-import { createMetadata } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  createMetadata,
+  faqJsonLd,
+  stringifyJsonLd,
+} from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Demo Request Context Workflow - Lemma",
+  title: "Demo Request Form Template with Follow-Up - Lemma",
   description:
-    "Use Lemma to turn a demo request into a sales-ready buyer brief.",
+    "A demo request form template for teams that need adaptive voice follow-up, buyer context, urgency, objections, quotes, and a sales-ready brief.",
   path: "/templates/demo-request-form",
-  noIndex: true,
 });
 
 const starterQuestions = [
@@ -41,9 +45,43 @@ const relatedLinks = [
   { href: "/contact", label: "Talk to Lemma" },
 ];
 
+const faqItems = [
+  {
+    question: "Should a demo request workflow qualify leads before or after booking?",
+    answer:
+      "A demo request workflow should usually capture the high-intent request before asking for detailed qualification. If the buyer's context is messy, ask follow-up questions after the first step so sales gets a useful brief without making the request feel like homework.",
+  },
+  {
+    question: "What should a demo request workflow ask?",
+    answer:
+      "Start with the minimum information needed to preserve the request: contact details and preferred next step. Then follow up on why now and what would make the call useful.",
+  },
+  {
+    question: "When should lead qualification become a conversation?",
+    answer:
+      "Lead qualification should become a short conversation when the next useful question depends on the buyer's first answer. Fixed fields work for simple routing. Adaptive follow-up works better when sales needs the reason behind the request.",
+  },
+];
+
 export default function DemoRequestFormTemplatePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd([
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Templates", path: "/templates" },
+              {
+                name: "Demo request form",
+                path: "/templates/demo-request-form",
+              },
+            ]),
+            faqJsonLd(faqItems),
+          ]),
+        }}
+      />
       <section className="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid gap-12 md:grid-cols-[0.86fr_0.74fr] md:items-center">
@@ -251,38 +289,19 @@ export default function DemoRequestFormTemplatePage() {
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1280px] gap-6 px-6 py-20 md:grid-cols-3 md:px-10 md:py-28">
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              Should a demo request workflow qualify leads before or after booking?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              A demo request workflow should usually capture the high-intent request
-              before asking for detailed qualification. If the buyer's context
-              is messy, ask follow-up questions after the first step so sales
-              gets a useful brief without making the request feel like homework.
-            </p>
-          </div>
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              What should a demo request workflow ask?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Start with the minimum information needed to preserve the
-              request: contact details and preferred next step. Then follow up
-              on why now and what would make the call useful.
-            </p>
-          </div>
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              When should lead qualification become a conversation?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Lead qualification should become a short conversation when
-              the next useful question depends on the buyer's first answer.
-              Fixed fields work for simple routing. Adaptive follow-up works
-              better when sales needs the reason behind the request.
-            </p>
-          </div>
+          {faqItems.map((item) => (
+            <div
+              key={item.question}
+              className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6"
+            >
+              <h2 className="text-xl font-semibold tracking-tight text-ink">
+                {item.question}
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-muted">
+                {item.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </main>

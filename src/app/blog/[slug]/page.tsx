@@ -6,7 +6,7 @@ import {
   ContextLayerImageVisual,
 } from "@/components/ContextVisuals";
 import { posts, getPost, formatDate } from "@/lib/posts";
-import { createMetadata } from "@/lib/seo";
+import { articleJsonLd, createMetadata, stringifyJsonLd } from "@/lib/seo";
 
 function getAdjacentPosts(slug: string) {
   const idx = posts.findIndex((p) => p.slug === slug);
@@ -49,6 +49,20 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(
+            articleJsonLd({
+              title: post.title,
+              description: post.description,
+              path: `/blog/${post.slug}`,
+              datePublished: post.date,
+              author: post.author,
+            }),
+          ),
+        }}
+      />
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-[760px]">
           {/* Back link */}
