@@ -29,7 +29,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   founders: {
     eyebrow: "MARKET PULL",
     title: "Focus the next bet",
-    subtitle: "who cares now, why now, what blocks adoption",
+    subtitle: "where pull is real",
     accent: "#245CFF",
     soft: "#EAF0FF",
     dark: "#102A78",
@@ -43,7 +43,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   product: {
     eyebrow: "PRODUCT CONTEXT",
     title: "Prioritize with evidence",
-    subtitle: "friction, demand, segment, consequence",
+    subtitle: "which problem deserves action",
     accent: "#245CFF",
     soft: "#EEF7F4",
     dark: "#0E5D4E",
@@ -57,7 +57,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   marketing: {
     eyebrow: "MESSAGE EVIDENCE",
     title: "Use the words buyers use",
-    subtitle: "language, objections, proof, category frame",
+    subtitle: "what buyers actually say",
     accent: "#245CFF",
     soft: "#FFF2DF",
     dark: "#8A5200",
@@ -71,7 +71,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   sales: {
     eyebrow: "BUYER BRIEF",
     title: "Route the right follow-up",
-    subtitle: "intent, urgency, fit, objection",
+    subtitle: "why the buyer raised a hand",
     accent: "#245CFF",
     soft: "#EFEAFE",
     dark: "#4B247A",
@@ -85,7 +85,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   customerSuccess: {
     eyebrow: "RETENTION CONTEXT",
     title: "Find the reason behind the signal",
-    subtitle: "activation, churn, renewal, expansion",
+    subtitle: "why customers get stuck",
     accent: "#245CFF",
     soft: "#EAF7EA",
     dark: "#1C6B35",
@@ -99,7 +99,7 @@ const configs: Record<VisualVariant, VisualConfig> = {
   consultants: {
     eyebrow: "STAKEHOLDER MAP",
     title: "Structure the room before opinions win",
-    subtitle: "workflow, blockers, tradeoffs, alignment gaps",
+    subtitle: "what each stakeholder knows",
     accent: "#245CFF",
     soft: "#F1F0EB",
     dark: "#3F3B34",
@@ -155,7 +155,7 @@ export function ProductContextVisual() {
             Usable context
           </p>
           <h3 className="mt-3 text-xl font-semibold leading-tight text-ink">
-            What to build, say, sell, or fix next.
+            What the team should do next.
           </h3>
           <div className="mt-4 grid gap-2">
             {["follow-up depth", "buyer language", "objections", "agent input"].map((item) => (
@@ -337,8 +337,8 @@ export function PricingFlowVisual() {
       <div className="grid gap-3 rounded-[14px] border border-[#e6e3dd] bg-white p-4 md:grid-cols-3">
         {[
           ["Conversation credits", "Completed adaptive conversations"],
-          ["Context workflows", "Market, product, sales, support"],
-          ["Usable outputs", "Briefs, patterns, quotes, next actions"],
+          ["Context workflows", "Repeatable voice conversations"],
+          ["Usable outputs", "Evidence and reports"],
         ].map(([title, body], index) => (
           <div key={title} className="rounded-xl bg-[#fbfaf7] p-4">
             <div className="flex items-center gap-2">
@@ -371,9 +371,9 @@ const workflowConfig: Record<
   generic: {
     eyebrow: "Context workflow",
     title: "From first signal to usable intelligence",
-    signal: "Customer, buyer, user, or stakeholder signal",
+    signal: "A signal that needs a follow-up",
     followUp: "Adaptive voice follow-up",
-    output: "Brief, patterns, quotes, next actions",
+    output: "A usable report",
     rows: ["Need", "Reason", "Objection", "Workflow", "Next step"],
   },
   demo: {
@@ -381,7 +381,7 @@ const workflowConfig: Record<
     title: "Turn self-serve demand into a buyer brief",
     signal: "Demo request, pricing view, invite spike",
     followUp: "Why now? What changed? What blocks the next step?",
-    output: "Intent, urgency, fit, objections, recommended follow-up",
+    output: "A sales-ready buyer brief",
     rows: ["Intent", "Urgency", "Use case", "Stakeholders", "Objection"],
   },
   feedback: {
@@ -389,7 +389,7 @@ const workflowConfig: Record<
     title: "Turn a score or comment into the moment behind it",
     signal: "NPS, churn reason, support tag, product comment",
     followUp: "What happened? What did you expect? What should change?",
-    output: "Situation, impact, repeated themes, useful quotes",
+    output: "The reason behind the label",
     rows: ["Moment", "Expectation", "Impact", "Friction", "Fix"],
   },
 };
@@ -532,7 +532,7 @@ export function BlogContextVisual() {
         <div className="mt-5 grid gap-3">
           {[
             ["AI made building cheap", "output is no longer scarce"],
-            ["Context is the moat", "what to build, say, sell, fix"],
+            ["Context is the moat", "the next decision gets clearer"],
             ["Adaptive conversation", "the next input for AI-native teams"],
           ].map(([title, body], index) => (
             <div key={title} className="flex gap-3 rounded-xl border border-[#eceae4] bg-[#fbfaf7] p-3">

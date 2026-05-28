@@ -77,7 +77,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Lemma runs adaptive voice conversations that ask follow-up questions, collect human context, and turn it into usable intelligence for people and agents.",
+    "Lemma runs AI-led voice conversations with the people who matter and turns what they say into usable context.",
 };
 
 export function stringifyJsonLd(data: unknown) {

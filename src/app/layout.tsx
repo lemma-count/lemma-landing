@@ -14,7 +14,7 @@ import "./globals.css";
 export const metadata: Metadata = createMetadata({
   title: "Lemma | Human Context for AI-Native Teams",
   description:
-    "Lemma helps founders and AI-native teams ask adaptive follow-up questions, collect human context, and turn it into usable intelligence for people and agents.",
+    "Lemma runs AI-led voice conversations with the people who matter and turns what they say into usable context.",
 });
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Lemma for Customer Success - Understand churn, renewal, and value",
   description:
-    "Lemma helps customer success teams capture the context behind churn risk, activation friction, renewal hesitation, and expansion potential.",
+    "Lemma helps customer success teams understand why customers get stuck, stay, or leave.",
   path: "/customer-success",
 });
 
@@ -14,7 +14,7 @@ export default function CustomerSuccessPage() {
     <SolutionPage
       hero={{
         title: "Understand why customers get stuck, stay, or leave.",
-        body: "Scores and tags show the signal. Lemma helps customer success teams capture the context behind churn risk, activation friction, renewal hesitation, and expansion potential.",
+        body: "Scores and tags show the signal. Lemma asks the follow-up that explains what happened.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/solution-customer-success-context.png",
@@ -23,12 +23,12 @@ export default function CustomerSuccessPage() {
       }}
       feature={{
         title: "Turn customer moments into retention context.",
-        body: "Use Lemma after onboarding stalls, support issues, renewals, downgrades, cancellations, or NPS responses to understand what happened and what should change.",
+        body: "Use Lemma after a stall, downgrade, cancellation, or NPS response to learn what should change.",
         visual: "customerSuccess",
         items: [
           {
             title: "Explain churn risk.",
-            body: "Understand the situation behind the label: what changed, what value was missing, and what made the customer hesitate.",
+            body: "Understand what changed and what value was missing.",
           },
           {
             title: "Find activation friction.",
@@ -36,7 +36,7 @@ export default function CustomerSuccessPage() {
           },
           {
             title: "Surface expansion signals.",
-            body: "Capture where customers see value, what else they need, and what would make expansion worth discussing.",
+            body: "Hear where customers see value and what would make expansion worth discussing.",
           },
         ],
       }}

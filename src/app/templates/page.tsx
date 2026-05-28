@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Context Workflow Starters - Lemma",
   description:
-    "Launch adaptive voice conversation workflows that ask follow-up questions, collect human context, and return usable intelligence for teams and agents.",
+    "Run AI-led voice conversation workflows that ask useful follow-up questions.",
   path: "/templates",
   noIndex: true,
 });
@@ -21,9 +21,9 @@ const templateCards = [
     audience: "Demo requesters, high-intent leads, and product-qualified accounts.",
     goal: "Capture the buying context behind the request without making the first step feel like homework.",
     followUp:
-      "Lemma asks about urgency, current workflow, constraints, objections, buying process, and what would make the call useful.",
-    output: "Buyer context, likely objections, useful quotes, and a sales-ready brief.",
-    use: "Sales, founders, and agents preparing summaries or routing next steps.",
+      "Lemma asks why now, what changed, and what would make the call useful.",
+    output: "A sales-ready buyer brief.",
+    use: "Sales teams preparing the next step.",
   },
 ];
 
@@ -37,15 +37,15 @@ const upcomingTemplates = [
 const workflowSteps = [
   {
     title: "Choose the workflow",
-    body: "Start from the workflow that needs better context: what to build, who to prioritize, why someone churned, or what a buyer really needs.",
+    body: "Start from the business moment where your team needs better context.",
   },
   {
     title: "Send the conversation",
-    body: "Use a launchable Lemma workflow when the useful answer depends on what the respondent says first.",
+    body: "Use a Lemma workflow when the useful answer depends on what the respondent says first.",
   },
   {
     title: "Use the output",
-    body: "Turn conversations into transcripts, summaries, themes, quotes, reports, and next actions your team and agents can use.",
+    body: "Turn voice responses into evidence your team can act on.",
   },
 ];
 
@@ -63,10 +63,9 @@ export default function TemplatesPage() {
                 Start the context workflow.
               </h1>
               <p className="mt-7 max-w-3xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-                Lemma workflow starters help teams launch adaptive voice
-                conversations around the context they need. Each one asks useful
-                follow-up questions and returns context your team and agents can
-                use.
+                Lemma workflow starters help teams run focused voice
+                conversations faster. Each one asks follow-up questions and
+                returns context your team can use.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
@@ -131,10 +130,9 @@ export default function TemplatesPage() {
               </h2>
             </div>
             <p className="max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Each starter names the audience, conversation goal, follow-up
-              behavior, output, and team or agent workflow it should improve.
-              The value is not the prompt. It is the context the conversation
-              captures.
+              Each starter names who should answer, what Lemma should ask, and
+              what the team should get back. The value is not the prompt. It is
+              the context the conversation captures.
             </p>
           </div>
 
@@ -191,9 +189,8 @@ export default function TemplatesPage() {
               Next workflow areas.
             </h2>
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              The next starters should cover workflows where adaptive follow-up
-              questions can change what the team builds, says, sells, supports,
-              or prioritizes.
+              The next starters should cover workflows where a better follow-up
+              changes the team's next decision.
             </p>
           </div>
           <div className="grid gap-3">

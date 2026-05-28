@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const steps = [
   {
-    title: "Start with what you need to understand",
-    body: "Who cares, why now, what blocks them, and what would make this worth choosing.",
+    title: "Frame the decision",
+    body: "Start with the business question you need better human context to answer.",
   },
   {
-    title: "Run adaptive voice conversations",
-    body: "Send one adaptive voice conversation to customers, users, buyers, leads, or stakeholders. Lemma listens and asks the next useful question.",
+    title: "Run AI-led conversations",
+    body: "Send an AI-led conversation to the people who matter. They answer by voice, and Lemma asks the next useful question.",
   },
   {
-    title: "Use the context",
-    body: "Get transcripts, summaries, themes, quotes, objections, context reports, and next actions before you build, launch, sell, support, prioritize, or brief agents.",
+    title: "Use the context layer",
+    body: "Turn what people said into evidence and context your team and agents can use.",
   },
 ];
 
@@ -43,9 +43,7 @@ function CardSearch() {
               strokeLinecap="round"
             />
           </svg>
-          <span className="truncate">
-            Ask customers, leads, or stakeholders…
-          </span>
+          <span className="truncate">What decision needs context?</span>
         </div>
       </div>
     </div>
@@ -75,9 +73,8 @@ function CardReport() {
       <div className="absolute inset-0 flex items-center justify-center px-6">
         <div className="w-full max-w-[320px] rounded-xl border border-[#e6e3dd] bg-white p-4 text-left text-[11px] leading-snug text-ink">
           <p className="text-[12px] font-medium leading-snug">
-            Buyers keep comparing us to the current manual workflow. The
-            strongest pull is from teams that need proof before the next build
-            cycle.
+            The report shows what matters, why it matters now, and what to do
+            next.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2 text-[10px] text-muted">
             <div className="rounded-md bg-neutral-100 p-2">
@@ -117,11 +114,10 @@ export function Solution() {
             Find the context behind what people say.
           </h2>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Most teams already have signals. What they miss is context in the
-            right shape: the real need, hidden objection, buying trigger,
-            workflow detail, and language people actually use. Lemma asks
-            adaptive follow-up questions and turns what it learns into usable
-            context for people and agents.
+            Most teams already have signals. What they miss is the human
+            context behind them: why it matters, what changed, and what should
+            happen next. Lemma asks the follow-up and turns what people say
+            into a context layer for people and agents.
           </p>
         </div>
 
@@ -140,7 +136,9 @@ export function Solution() {
                 className="flex flex-col rounded-[18px] border border-[#e6e3dd] bg-white p-5"
               >
                 <h3 className="text-base font-semibold text-ink">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{step.body}</p>
+                <p className="mt-3 text-sm leading-6 text-muted md:min-h-[96px]">
+                  {step.body}
+                </p>
                 <div className="mt-7 aspect-[4/3] w-full overflow-hidden rounded-[14px] border border-[#e6e3dd]">
                   <Card />
                 </div>

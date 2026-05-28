@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Lemma for Consultants - Turn stakeholder context into evidence",
   description:
-    "Lemma helps consultants capture workflows, blockers, tradeoffs, and alignment gaps, then turn stakeholder conversations into client-ready evidence.",
+    "Lemma helps consultants turn stakeholder conversations into client-ready evidence.",
   path: "/consultants",
 });
 
@@ -14,7 +14,7 @@ export default function ConsultantsPage() {
     <SolutionPage
       hero={{
         title: "Turn stakeholder conversations into structured evidence.",
-        body: "Lemma helps consultants capture the context behind workflows, blockers, tradeoffs, and alignment gaps before the room fills with opinions.",
+        body: "Lemma helps consultants hear the context behind stakeholder opinions before the room fills with debate.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/solution-consultants-context.png",
@@ -23,20 +23,20 @@ export default function ConsultantsPage() {
       }}
       feature={{
         title: "From stakeholder input to client-ready context.",
-        body: "Use Lemma to collect richer input from stakeholders, experts, customers, and employees, then turn it into briefs, patterns, quotes, and evidence for stronger recommendations.",
+        body: "Use Lemma to collect richer stakeholder input, then turn it into evidence for stronger recommendations.",
         visual: "consultants",
         items: [
           {
             title: "Capture stakeholder briefs.",
-            body: "Collect each person's role, workflow, constraints, goals, objections, and view of what needs to change.",
+            body: "Collect each person's role, constraints, and view of what needs to change.",
           },
           {
             title: "Map hidden friction.",
-            body: "Surface broken handoffs, bottlenecks, tradeoffs, alignment gaps, and local workarounds.",
+            body: "Surface the broken handoffs and local workarounds that meetings often miss.",
           },
           {
             title: "Support the recommendation.",
-            body: "Turn conversations into patterns, quote banks, risk maps, and workshop briefs clients can trust.",
+            body: "Turn conversations into evidence clients can trust.",
           },
         ],
       }}
