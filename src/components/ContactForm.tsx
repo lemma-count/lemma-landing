@@ -130,7 +130,7 @@ export function ContactForm() {
           name="needs"
           required
           rows={6}
-          placeholder="For example: we need to know who will buy, why customers churn, which message is landing, or what buyers need before a demo."
+          placeholder="For example: we need to understand the reason behind a demo request or feedback answer."
           className={`${inputBase} resize-y`}
         />
       </div>

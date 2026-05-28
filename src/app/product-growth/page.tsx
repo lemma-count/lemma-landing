@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Lemma for Product - Know what to build next",
   description:
-    "Lemma helps product teams understand which user need, friction, or segment is worth building, fixing, killing, or prioritizing next.",
+    "Lemma helps product teams understand which user problem deserves action.",
   path: "/product-growth",
 });
 
@@ -13,8 +13,8 @@ export default function ProductGrowthPage() {
   return (
     <SolutionPage
       hero={{
-        title: "Know what to build, fix, kill, or prioritize next.",
-        body: "AI helps product teams ship faster. Lemma helps them understand which user need, friction, or segment is worth acting on.",
+        title: "Know which user problem deserves action.",
+        body: "AI helps product teams ship faster. Lemma helps them understand which user problem deserves action before the next build.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/solution-product-context.png",
@@ -23,7 +23,7 @@ export default function ProductGrowthPage() {
       }}
       feature={{
         title: "Turn user signals into product context.",
-        body: "Use Lemma when analytics show something happened, but the team still needs to know why, what users expected, and what evidence should shape the next build.",
+        body: "Use Lemma when analytics show something happened, but the team still needs the context behind it.",
         visual: "product",
         items: [
           {
@@ -32,11 +32,11 @@ export default function ProductGrowthPage() {
           },
           {
             title: "Separate demand from noise.",
-            body: "Hear which segments, jobs, urgencies, alternatives, and workarounds point to something worth building.",
+            body: "Hear whether the request points to real demand or one loud edge case.",
           },
           {
             title: "Bring evidence to roadmap calls.",
-            body: "Turn conversations into user context, quotes, product risks, and priority signals your team can review before the roadmap meeting.",
+            body: "Bring user context, quotes, and priority signals into the roadmap meeting.",
           },
         ],
       }}

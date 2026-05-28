@@ -11,9 +11,8 @@ export function ProblemStatement() {
           </h2>
           <div className="mt-8 grid max-w-4xl grid-cols-1 gap-5 text-base leading-7 text-muted md:grid-cols-2 md:gap-10 md:text-lg md:leading-8">
             <p>
-              AI can generate campaigns, workflows, prototypes, and software.
-              If the inputs are weak, it makes the wrong strategy look more
-              complete.
+              AI makes it faster to create the work. If the input is weak, it
+              makes the wrong plan look polished.
             </p>
             <p>
               When every team uses the same AI tools, the advantage is not more

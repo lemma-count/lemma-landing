@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "The Context Layer — Lemma",
   description:
-    "Essays on why AI-native teams need better human context before they build, launch, sell, support, prioritize, or brief agents.",
+    "Essays on why AI-native teams need better human context before they decide.",
   path: "/blog",
 });
 
@@ -23,7 +23,7 @@ export default function BlogPage() {
               </h1>
               <p className="mt-6 max-w-xl text-base leading-7 text-muted md:text-lg md:leading-8">
                 Essays on why AI-native teams need better human context before
-                they build, launch, sell, support, prioritize, or brief agents.
+                they decide what to do next.
               </p>
             </div>
             <ContextLayerImageVisual />

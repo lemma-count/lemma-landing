@@ -15,14 +15,14 @@ const useCases = [
   },
   {
     title: "Product",
-    body: "to know what to build, fix, kill, or prioritize next.",
+    body: "to learn which user problem deserves action.",
     href: "/product-growth",
     image: "/assets/solution-product-context.png",
     imageAlt: "Product team observing a user research session and reviewing notes together.",
   },
   {
     title: "Marketing",
-    body: "to capture buyer language, proof, objections, and category framing.",
+    body: "to hear the words buyers actually use.",
     href: "/marketing",
     image: "/assets/solution-marketing-context.png",
     imageAlt: "Product marketing team sorting customer notes and campaign concepts in a creative studio.",
@@ -36,7 +36,7 @@ const useCases = [
   },
   {
     title: "Customer success",
-    body: "to surface churn risk, activation friction, and expansion signals.",
+    body: "to understand why customers get stuck.",
     href: "/customer-success",
     image: "/assets/use-case-cx.png",
     imageAlt: "Customer success manager on a headset reviewing customer notes during a support conversation.",

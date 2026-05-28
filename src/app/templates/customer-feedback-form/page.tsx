@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Customer Feedback Context Workflow - Lemma",
   description:
-    "Use Lemma to turn shallow customer feedback into adaptive follow-up, themes, quotes, and usable context.",
+    "Use Lemma to turn shallow customer feedback into a follow-up conversation.",
   path: "/templates/customer-feedback-form",
   noIndex: true,
 });
@@ -34,7 +34,7 @@ const staticFormCases = [
   "Simple ratings where the score is enough",
   "Structured facts that do not need explanation",
   "High-volume operational workflows with fixed fields",
-  "Operational workflows that require uploads, payments, quizzes, or native CRM writes",
+  "Operational workflows that require unsupported form features",
 ];
 
 const relatedLinks = [
@@ -58,10 +58,9 @@ export default function CustomerFeedbackFormTemplatePage() {
                 Customer feedback that asks what they meant.
               </h1>
               <p className="mt-7 max-w-[730px] text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-                Use Lemma when a customer signal needs the reason behind it. Let
-                customers answer by voice, ask adaptive follow-up questions, and
-                turn responses into themes, quotes, and context your team can
-                use.
+                Use Lemma when a customer signal needs the reason behind it.
+                Customers answer by voice, Lemma asks follow-ups, and your team
+                receives usable context.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -118,9 +117,8 @@ export default function CustomerFeedbackFormTemplatePage() {
                 Follow up on the moment.
               </h2>
               <p className="mt-4 text-sm leading-6 text-muted md:text-base md:leading-7">
-                Lemma lets the customer explain the situation in their own
-                words, then asks useful follow-up questions about the moment,
-                expectation, impact, and next action.
+                Lemma lets the customer explain the situation, then asks what
+                happened and what should change.
               </p>
             </div>
           </div>
@@ -135,8 +133,7 @@ export default function CustomerFeedbackFormTemplatePage() {
             </h2>
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
               Customer feedback is most useful when the team knows which
-              workflow it should inform: onboarding, pricing, retention,
-              product priority, messaging, or service recovery.
+              decision it should inform.
             </p>
           </div>
 
@@ -169,8 +166,7 @@ export default function CustomerFeedbackFormTemplatePage() {
             </h2>
             <p className="mt-5 text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
               The goal is not to collect more feedback for its own sake. The
-              goal is to understand what customers meant before the team
-              changes a product, message, process, package, or support flow.
+              goal is to understand what customers meant before the team acts.
             </p>
           </div>
 
@@ -196,7 +192,7 @@ export default function CustomerFeedbackFormTemplatePage() {
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
               Lemma is for feedback where the useful answer depends on what the
               customer says first. Keep simple capture when the team only needs
-              a structured fact, rating, or operational record.
+              a structured fact or rating.
             </p>
           </div>
 
@@ -224,7 +220,7 @@ export default function CustomerFeedbackFormTemplatePage() {
               </h2>
               <p className="mt-5 max-w-2xl text-pretty text-base leading-7 text-white/70 md:text-lg md:leading-8">
                 Turn shallow feedback into an adaptive voice conversation that
-                captures the context behind the score, comment, or label.
+                captures the context behind the first answer.
               </p>
             </div>
             <TrackedLink
@@ -264,8 +260,7 @@ export default function CustomerFeedbackFormTemplatePage() {
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
               Customer feedback should ask what happened, what the customer
-              expected, what happened instead, why it mattered, and what they
-              would change first. Fixed fields can capture the category.
+              expected, and why it mattered. Fixed fields capture the category.
               Follow-up questions explain the situation behind it.
             </p>
           </div>
@@ -275,9 +270,8 @@ export default function CustomerFeedbackFormTemplatePage() {
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
               Feedback should become a conversation when the first answer is a
-              label rather than context. Scores, tags, and short comments
-              can show where to look, but follow-up questions reveal the
-              reason, example, tradeoff, and next action.
+              label rather than context. Short answers can show where to look,
+              but follow-up questions reveal the reason behind the label.
             </p>
           </div>
           <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
@@ -287,8 +281,7 @@ export default function CustomerFeedbackFormTemplatePage() {
             <p className="mt-4 text-sm leading-6 text-muted">
               Fixed feedback asks the same questions to every respondent. Lemma
               is useful when the next question should depend on the
-              customer's first answer, especially for churn, onboarding,
-              satisfaction, product feedback, and message testing workflows.
+              customer's first answer.
             </p>
           </div>
         </div>

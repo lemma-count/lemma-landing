@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Alternatives - Lemma",
   description:
-    "Compare Lemma with collection, survey, research, and repository tools based on the speed and depth of human context your team needs.",
+    "Compare Lemma with tools that collect answers without turning voice follow-up into usable context.",
   path: "/alternatives",
 });
 
@@ -14,14 +14,14 @@ const formAlternatives = [
   {
     name: "Typeform",
     bestFor: "Polished forms and surveys with a strong respondent experience.",
-    limit: "Useful when the planned questions are enough, weaker when the next useful question depends on the answer.",
-    lemma: "Use Lemma when adaptive follow-up, buyer language, objections, and richer context matter more than collection polish.",
+    limit: "Useful when planned questions are enough; weaker when the next question depends on the answer.",
+    lemma: "Use Lemma when the first answer needs a follow-up.",
   },
   {
     name: "Google Forms",
     bestFor: "Fast, free collection into spreadsheet-like rows.",
-    limit: "Good for structured facts, but thin when the team needs the reason, example, urgency, or tradeoff behind a response.",
-    lemma: "Use Lemma when the row is not enough to decide what to build, say, sell, or fix.",
+    limit: "Good for structured facts, thin when the team needs the reason behind a response.",
+    lemma: "Use Lemma when a row is not enough for the decision.",
   },
   {
     name: "Tally",
@@ -33,13 +33,13 @@ const formAlternatives = [
     name: "Jotform",
     bestFor: "Operational forms, widgets, and business intake workflows.",
     limit: "Strong for collection and routing, not built around qualitative follow-up and synthesis.",
-    lemma: "Use Lemma when the intake needs nuance, objections, workflow detail, and a usable context report.",
+    lemma: "Use Lemma when the intake should end in a usable report.",
   },
   {
     name: "SurveyMonkey",
     bestFor: "Structured surveys, panels, and quantitative feedback programs.",
     limit: "Helpful for measuring known questions at scale, less helpful when the team needs the reason behind an answer.",
-    lemma: "Use Lemma when reasons, examples, language, and quotes are the context the team needs.",
+    lemma: "Use Lemma when the team needs the story behind the answer.",
   },
   {
     name: "Airtable forms",
@@ -51,7 +51,7 @@ const formAlternatives = [
     name: "HubSpot forms",
     bestFor: "Lead capture tied to CRM and marketing automation.",
     limit: "Good for conversion and routing, but the buyer context often still has to be collected later.",
-    lemma: "Use Lemma when sales needs intent, urgency, fit, alternatives, and objections before the next conversation.",
+    lemma: "Use Lemma when sales needs a buyer brief before the next conversation.",
   },
 ];
 
@@ -64,7 +64,7 @@ const researchAlternatives = [
   {
     name: "Maze",
     role: "Prototype and usability testing",
-    note: "Useful for testing flows and prototypes. Lemma fits better when the job is open-ended human context, objections, and language.",
+    note: "Useful for testing flows and prototypes. Lemma fits when the team needs open-ended human context.",
   },
   {
     name: "Sprig",
@@ -98,7 +98,7 @@ const choiceRules = [
   },
   {
     title: "Choose Lemma",
-    body: "when your team needs the human context behind the answer before it builds, launches, sells, supports, or briefs agents.",
+    body: "when the next decision depends on the story behind the answer.",
   },
 ];
 
@@ -116,11 +116,9 @@ export default function AlternativesPage() {
                 Choose the tool by the context you need.
               </h1>
               <p className="mt-7 max-w-3xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-                Collection, survey, research, and repository tools are useful
-                when collection, measurement, testing, or storage is the job.
-                Lemma is for founders and AI-native teams that need adaptive
-                voice conversations to ask follow-up questions and collect the
-                context behind what people say.
+                Collection tools are useful when the first answer is enough.
+                Lemma is for teams that need AI-led voice follow-up and usable
+                context before they decide.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink

@@ -7,49 +7,49 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Product - Lemma",
   description:
-    "Lemma asks adaptive follow-up questions, collects human context, and turns it into usable intelligence your team and agents can use.",
+    "Lemma runs AI-led voice conversations with the people who matter and turns what they say into usable context.",
   path: "/product",
 });
 
 const steps = [
   {
-    title: "Start with what you need to understand",
-    body: "Choose the audience and context: market pull, product friction, buyer intent, churn risk, message clarity, stakeholder alignment, or customer proof.",
+    title: "Frame the business question",
+    body: "Start with the business question that needs better human context.",
   },
   {
-    title: "Run adaptive voice conversations",
-    body: "People answer by voice. Lemma listens, adapts, and asks follow-up questions that surface reasons, examples, objections, tradeoffs, and urgency.",
+    title: "Run AI-led conversations",
+    body: "Send a voice conversation to the people closest to the question. Lemma asks the follow-ups.",
   },
   {
-    title: "Turn it into usable intelligence",
-    body: "Get structured context your team can read, share, search, and use before building, selling, supporting, prioritizing, or briefing agents.",
+    title: "Use the context layer",
+    body: "Review the evidence, patterns, and report before your team decides what to do next.",
   },
 ];
 
 const outputs = [
   {
     title: "Evidence base",
-    body: "Transcripts and raw conversation evidence grounded in what people actually said.",
+    body: "Transcripts and raw answers from each voice conversation.",
   },
   {
     title: "Respondent briefs",
-    body: "Each person's situation, need, language, objections, and next step.",
+    body: "A plain-English summary of each person's situation.",
   },
   {
     title: "Pattern map",
-    body: "Repeated needs, blockers, buying triggers, friction points, and segments.",
+    body: "Themes and repeated blockers across responses.",
   },
   {
     title: "Quote bank",
-    body: "Customer and stakeholder language your team can reuse.",
+    body: "Useful lines from respondents, grounded in the transcript.",
   },
   {
     title: "Context report",
-    body: "What was learned, why it matters, and where the evidence points.",
+    body: "What the team learned and why it matters.",
   },
   {
     title: "Agent-ready knowledge base",
-    body: "Structured context your AI agents can use as better input.",
+    body: "Structured context your team and agents can use as input.",
   },
 ];
 
@@ -62,7 +62,7 @@ const workflowLinks = [
   {
     title: "Product",
     href: "/product-growth",
-    body: "Learn what to build, fix, kill, or prioritize next.",
+    body: "Learn which user problem deserves action.",
   },
   {
     title: "Sales",
@@ -72,12 +72,12 @@ const workflowLinks = [
   {
     title: "Marketing",
     href: "/marketing",
-    body: "Capture buyer language, proof, objections, and category framing.",
+    body: "Hear the words buyers actually use.",
   },
   {
     title: "Customer success",
     href: "/customer-success",
-    body: "Surface churn risk, activation friction, and expansion signals.",
+    body: "Understand why customers get stuck.",
   },
   {
     title: "Consultants",
@@ -96,12 +96,12 @@ export default function ProductPage() {
               Product
             </p>
             <h1 className="mt-5 text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-              Capture the context behind your customers, team, and market.
+              Build your context layer from AI-led voice conversations.
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Lemma asks adaptive follow-up questions, collects human context,
-              and turns it into usable intelligence your team and agents can
-              use.
+              Run AI-led conversations with the people who matter to your
+              business. Lemma listens, asks follow-ups, and turns what people
+              say into context your team and agents can use.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -146,7 +146,7 @@ export default function ProductPage() {
               How it works
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
-              From scattered signals to usable context.
+              From business question to usable context.
             </h2>
           </div>
 
@@ -179,9 +179,8 @@ export default function ProductPage() {
               Built for action, not storage.
             </h2>
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              Lemma turns unstructured, uncollected, or sparse signals into
-              usable context so your team can double down on what it should do
-              next, faster.
+              Lemma turns voice conversations into clear evidence so your team
+              can make the next decision with less guessing.
             </p>
           </div>
 
@@ -215,9 +214,8 @@ export default function ProductPage() {
               </h2>
             </div>
             <p className="max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-              For work where the missing context affects what you build, who
-              you prioritize, what you say, why customers get stuck, why buyers
-              care, or what your team and agents should use as input.
+              Use Lemma when the next move depends on what the people closest
+              to the question know but your team has not captured yet.
             </p>
           </div>
 

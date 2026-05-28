@@ -39,9 +39,9 @@ export function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">
-              Lemma helps founders and AI-native teams ask adaptive follow-up
-              questions, collect human context, and turn it into usable
-              intelligence for people and agents.
+              Run AI-led voice conversations with the people who matter to your
+              business. Lemma turns what people say into context your team and
+              agents can use.
             </p>
             <TrackedLink
               href="/contact"

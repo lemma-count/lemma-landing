@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Demo Request Context Workflow - Lemma",
   description:
-    "Use Lemma to capture demo request intent, ask adaptive follow-up questions, and turn self-serve demand into sales context.",
+    "Use Lemma to turn a demo request into a sales-ready buyer brief.",
   path: "/templates/demo-request-form",
   noIndex: true,
 });
@@ -34,7 +34,7 @@ const staticFormCases = [
   "Simple newsletter capture",
   "Low-intent contact collection",
   "Workflows where fixed fields are enough",
-  "Operational workflows that require payments, uploads, quizzes, or native CRM writes",
+  "Operational workflows that require unsupported form features",
 ];
 
 const relatedLinks = [
@@ -55,10 +55,9 @@ export default function DemoRequestFormTemplatePage() {
                 Capture demo intent, then ask why now.
               </h1>
               <p className="mt-7 max-w-[730px] text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-                Use Lemma when a demo request, pricing view, or product signal
-                needs more context before sales acts. Capture the signal, ask
-                adaptive follow-up questions by voice, and give the team a useful
-                buyer brief.
+                Use Lemma when a demo request needs more context before sales
+                acts. Capture the signal, ask follow-up questions by voice, and
+                give the team a useful buyer brief.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -102,9 +101,8 @@ export default function DemoRequestFormTemplatePage() {
                 Capture the signal.
               </h2>
               <p className="mt-4 text-sm leading-6 text-muted md:text-base md:leading-7">
-                A short request preserves intent. But sales still needs to know
-                why now, what changed, what the buyer is trying to solve, and
-                what would make the next step useful.
+                A short request preserves intent. Sales still needs to know why
+                now and what would make the next step useful.
               </p>
             </div>
             <div className="rounded-[14px] border border-[#d7dcff] bg-white p-5 shadow-[0_24px_70px_-48px_rgba(61,80,255,0.85)] md:p-7">
@@ -115,9 +113,8 @@ export default function DemoRequestFormTemplatePage() {
                 Ask what the signal means.
               </h2>
               <p className="mt-4 text-sm leading-6 text-muted md:text-base md:leading-7">
-                Lemma lets a buyer answer by voice, then asks useful follow-up
-                questions about why now, the current workflow, urgency,
-                constraints, and what would make the call useful.
+                Lemma lets a buyer answer by voice, then asks what changed and
+                what would make the call useful.
               </p>
             </div>
           </div>
@@ -192,8 +189,7 @@ export default function DemoRequestFormTemplatePage() {
             <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
               Lemma is for workflows where the useful next question depends on
               the buyer's first answer. Keep simple capture when the team only
-              needs a structured fact, routing field, or unsupported
-              operational workflow.
+              needs a structured fact or routing field.
             </p>
           </div>
 
@@ -272,9 +268,8 @@ export default function DemoRequestFormTemplatePage() {
             </h2>
             <p className="mt-4 text-sm leading-6 text-muted">
               Start with the minimum information needed to preserve the
-              request: name, email, company, role, and preferred next step. Then
-              follow up on why now, current workaround, urgency, constraints,
-              buying process, and what would make the call useful.
+              request: contact details and preferred next step. Then follow up
+              on why now and what would make the call useful.
             </p>
           </div>
           <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
@@ -285,8 +280,7 @@ export default function DemoRequestFormTemplatePage() {
               Lead qualification should become a short conversation when
               the next useful question depends on the buyer's first answer.
               Fixed fields work for simple routing. Adaptive follow-up works
-              better when sales needs the reason, example, objection, urgency,
-              or tradeoff behind the request.
+              better when sales needs the reason behind the request.
             </p>
           </div>
         </div>

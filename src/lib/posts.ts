@@ -11,7 +11,7 @@ export const posts: Post[] = [
     slug: "ai-made-building-easy-now-context-is-the-moat",
     title: "AI Made Building Easy. Now Context Is the Moat.",
     description:
-      "AI made production cheap. The scarce resource is knowing what to build, who wants it, why they care, and which path will work.",
+      "AI made production cheap. The scarce resource is knowing what people need, why it matters, and which path will work.",
     date: "2026-05-26",
     author: "Wissem Fathallah",
   },
@@ -51,7 +51,7 @@ export const posts: Post[] = [
     slug: "customer-discovery-should-explain-why-people-buy-not-just-what-they-want",
     title: "Customer Discovery Should Explain Why People Buy, Not Just What They Want",
     description:
-      "Feature requests are clues, not strategy. Discovery is useful when it reveals why someone buys, hesitates, switches, stays, or leaves.",
+      "Feature requests are clues, not strategy. Discovery is useful when it explains the buying decision.",
     date: "2026-04-01",
     author: "Wissem Fathallah",
   },
@@ -59,7 +59,7 @@ export const posts: Post[] = [
     slug: "an-nps-score-is-a-signal-the-follow-up-is-the-research",
     title: "An NPS Score Is a Signal. The Follow-Up Is the Research.",
     description:
-      "NPS tells you where to look. The follow-up is where the useful evidence appears: the moment, the expectation, the impact, and the next action.",
+      "NPS tells you where to look. The follow-up explains what happened and what to fix first.",
     date: "2026-03-01",
     author: "Wissem Fathallah",
   },
@@ -83,7 +83,7 @@ export const posts: Post[] = [
     slug: "customer-language-is-a-product-input-not-a-copywriting-detail",
     title: "Customer Language Is a Product Input, Not a Copywriting Detail",
     description:
-      "The words customers use reveal what they believe, compare against, fear, and need next. That language should shape product and GTM decisions.",
+      "The words customers use reveal what they believe and need next. That language should shape product and go-to-market decisions.",
     date: "2026-02-07",
     author: "Wissem Fathallah",
   },
@@ -91,7 +91,7 @@ export const posts: Post[] = [
     slug: "your-typeform-is-not-the-problem-your-missing-follow-up-is",
     title: "Your Typeform Is Not the Problem. Your Missing Follow-Up Is.",
     description:
-      "The issue is rarely the collection interface alone. Important customer, sales, churn, and discovery workflows need the context behind the answer.",
+      "The issue is rarely the collection interface alone. Important workflows need the context behind the answer.",
     date: "2026-01-27",
     author: "Wissem Fathallah",
   },
@@ -115,7 +115,7 @@ export const posts: Post[] = [
     slug: "the-danger-of-polished-strategy-from-shallow-inputs",
     title: "The Danger of Polished Strategy From Shallow Inputs",
     description:
-      "AI can turn weak assumptions into finished-looking pages, plans, campaigns, and workflows. Better output starts with better context.",
+      "AI can make weak assumptions look finished. Better output starts with better context.",
     date: "2025-12-18",
     author: "Wissem Fathallah",
   },

@@ -9,11 +9,9 @@ export function Hero() {
             AI made building cheap. Human context is now the edge.
           </h1>
           <p className="mx-auto mt-7 max-w-[650px] text-pretty text-base leading-7 text-muted md:text-lg md:leading-8">
-            Lemma helps founders and AI-native teams understand who wants what,
-            why it matters, what blocks adoption, and what is worth building
-            next. Send adaptive voice conversations to the people your business
-            depends on, then turn what they say into context your team and
-            agents can use.
+            Run AI-led voice conversations with the people who matter to your
+            business. Lemma asks the follow-ups and turns what people say into
+            context your team and agents can use.
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">

@@ -5,7 +5,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Lemma for Marketing - Capture buyer language and proof",
   description:
-    "Lemma helps marketing teams find buyer language, objections, proof, and category framing through adaptive voice conversations.",
+    "Lemma helps marketing teams hear buyer language through adaptive voice conversations.",
   path: "/marketing",
 });
 
@@ -14,7 +14,7 @@ export default function MarketingPage() {
     <SolutionPage
       hero={{
         title: "Capture the language behind better messaging.",
-        body: "AI can generate endless campaigns. Lemma helps marketers find the buyer language, objections, proof, and category framing that make the work sound true.",
+        body: "AI can generate endless campaigns. Lemma helps marketers hear what buyers actually say before writing the next one.",
         ctaLabel: "Start a conversation",
         ctaHref: "https://app.heylemma.com",
         cardImage: "/assets/solution-marketing-context.png",
@@ -23,20 +23,20 @@ export default function MarketingPage() {
       }}
       feature={{
         title: "Turn customer conversations into message evidence.",
-        body: "Use Lemma to hear how customers describe the problem, what they compare against, why they believe, and what would stop them from acting.",
+        body: "Use Lemma to learn how customers describe the problem and what would stop them from acting.",
         visual: "marketing",
         items: [
           {
             title: "Find buyer language.",
-            body: "Capture the words customers use for the problem, the value, the alternative, and the moment they started to care.",
+            body: "Capture the words customers use when the problem becomes urgent.",
           },
           {
             title: "Map objections.",
-            body: "Surface what buyers doubt, what proof they need, and what would make the offer feel credible.",
+            body: "Surface what buyers doubt and what proof would make the offer credible.",
           },
           {
             title: "Build the proof bank.",
-            body: "Turn conversations into quotes, proof points, story angles, category language, and launch-message inputs.",
+            body: "Turn conversations into quotes, proof points, and language your team can reuse.",
           },
         ],
       }}
