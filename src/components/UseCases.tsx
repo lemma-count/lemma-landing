@@ -38,8 +38,8 @@ const useCases = [
     title: "Customer success",
     body: "to surface churn risk, activation friction, and expansion signals.",
     href: "/customer-success",
-    image: "/assets/solution-customer-success-context.png",
-    imageAlt: "Customer success team reviewing renewal and customer feedback notes together.",
+    image: "/assets/use-case-cx.png",
+    imageAlt: "Customer success manager on a headset reviewing customer notes during a support conversation.",
   },
   {
     title: "Consultants",

@@ -51,7 +51,7 @@ export default function CustomerFeedbackFormTemplatePage() {
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid gap-12 md:grid-cols-[0.86fr_0.74fr] md:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
                 Customer feedback context workflow
               </p>
               <h1 className="mt-5 text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
@@ -161,7 +161,7 @@ export default function CustomerFeedbackFormTemplatePage() {
       <section className="bg-[#f8f7f4]">
         <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-subtle">
               Usable context
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl">
