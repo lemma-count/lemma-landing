@@ -275,62 +275,6 @@ export function UseCaseCardVisual({ variant }: { variant: VisualVariant }) {
   );
 }
 
-export function AlternativesVisual() {
-  const tools = [
-    { label: "Forms", x: "14%", y: "68%", tone: "muted" },
-    { label: "Surveys", x: "32%", y: "56%", tone: "muted" },
-    { label: "Testing", x: "54%", y: "42%", tone: "muted" },
-    { label: "Repos", x: "68%", y: "30%", tone: "muted" },
-    { label: "Lemma", x: "74%", y: "18%", tone: "accent" },
-  ];
-
-  return (
-    <div className="relative aspect-[5/4] overflow-hidden rounded-[18px] border border-[#e6e3dd] bg-[#f8f7f4] p-5 text-left shadow-[0_28px_80px_-58px_rgba(0,0,0,0.65)]">
-      <div className="absolute -right-16 -top-12 h-40 w-40 rounded-full bg-[#245CFF]/15 blur-3xl" />
-      <div className="absolute -bottom-14 left-8 h-36 w-36 rounded-full bg-[#FFB547]/20 blur-3xl" />
-      <div className="relative h-full rounded-2xl border border-[#e6e3dd] bg-white/92 p-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-subtle">
-          Tool fit map
-        </p>
-        <h3 className="mt-3 text-2xl font-semibold leading-tight text-ink">
-          Choose by context depth.
-        </h3>
-
-        <div className="relative mt-6 h-[58%] rounded-xl border border-[#eceae4] bg-[#fbfaf7]">
-          <div className="absolute inset-x-5 bottom-8 h-px bg-[#d8d6d0]" />
-          <div className="absolute bottom-5 left-8 top-5 w-px bg-[#d8d6d0]" />
-          <div className="absolute bottom-7 left-8 right-5 h-20 rounded-full bg-[linear-gradient(90deg,rgba(36,92,255,0.05),rgba(36,92,255,0.22))] blur-xl" />
-          {tools.map((tool) => (
-            <div
-              key={tool.label}
-              className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full px-3 py-1.5 text-xs font-semibold shadow-[0_12px_30px_-24px_rgba(0,0,0,0.7)] ${
-                tool.tone === "accent"
-                  ? "bg-[#245CFF] text-white"
-                  : "border border-[#e6e3dd] bg-white text-muted"
-              }`}
-              style={{ left: tool.x, top: tool.y }}
-            >
-              {tool.label}
-            </div>
-          ))}
-          <p className="absolute bottom-3 right-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-subtle">
-            more context
-          </p>
-          <p className="absolute left-4 top-5 -rotate-90 text-[10px] font-semibold uppercase tracking-[0.12em] text-subtle">
-            more depth
-          </p>
-        </div>
-
-        <div className="mt-4 rounded-xl border border-[#d7dcff] bg-[#f7f8ff] p-3">
-          <p className="text-xs font-medium leading-5 text-ink">
-            Use Lemma when the next useful question depends on what someone just said.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function PricingFlowVisual() {
   return (
     <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-[18px] border border-[#e6e3dd] bg-[#f8f7f4] p-3 text-left shadow-[0_26px_80px_-62px_rgba(0,0,0,0.7)]">

@@ -45,7 +45,6 @@ function normalizePath(pathname: string) {
 
 function getPageType(pathname: string) {
   if (pathname === "/") return "homepage";
-  if (pathname === "/alternatives") return "alternatives";
   if (pathname === "/pricing") return "pricing";
   if (pathname === "/contact") return "contact";
   if (pathname === "/templates") return "templates_index";
@@ -62,7 +61,6 @@ function getPageType(pathname: string) {
 }
 
 function getSourceAssetId(pathname: string) {
-  if (pathname === "/alternatives") return "lemma-alternatives-hub";
   if (pathname === "/templates") return "lemma-templates-hub";
   if (pathname === "/templates/demo-request-form") {
     return "lemma-demo-request-form-template-2026-05-20";
@@ -75,7 +73,6 @@ function getSourceAssetId(pathname: string) {
 }
 
 function getContentId(pathname: string) {
-  if (pathname === "/alternatives") return "alternatives";
   if (pathname === "/templates") return "templates";
   if (pathname.startsWith("/templates/") || pathname.startsWith("/guides/")) {
     return pathname.split("/").pop();
