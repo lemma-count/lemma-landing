@@ -28,6 +28,7 @@ export const navGroups: NavGroup[] = [
     id: "resources",
     label: "Resources",
     links: [
+      { label: "Templates", href: "/templates" },
       { label: "Context layer thesis", href: "/blog/ai-made-building-easy-now-context-is-the-moat" },
       { label: "Blog", href: "/blog" },
     ],

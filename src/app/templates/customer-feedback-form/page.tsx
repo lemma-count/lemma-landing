@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WorkflowContextVisual } from "@/components/ContextVisuals";
 import { TrackedLink } from "@/components/TrackedLink";
-import { createMetadata } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  createMetadata,
+  faqJsonLd,
+  stringifyJsonLd,
+} from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Customer Feedback Context Workflow - Lemma",
+  title: "Customer Feedback Form Template with Follow-Up - Lemma",
   description:
-    "Use Lemma to turn shallow customer feedback into a follow-up conversation.",
+    "A customer feedback form template for teams that need adaptive voice follow-up, reasons, quotes, themes, and transcript-grounded next actions.",
   path: "/templates/customer-feedback-form",
-  noIndex: true,
 });
 
 const starterQuestions = [
@@ -44,9 +48,43 @@ const relatedLinks = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "What should customer feedback ask?",
+    answer:
+      "Customer feedback should ask what happened, what the customer expected, and why it mattered. Fixed fields capture the category. Follow-up questions explain the situation behind it.",
+  },
+  {
+    question: "When should feedback become a conversation?",
+    answer:
+      "Feedback should become a conversation when the first answer is a label rather than context. Short answers can show where to look, but follow-up questions reveal the reason behind the label.",
+  },
+  {
+    question: "How is this different from fixed feedback?",
+    answer:
+      "Fixed feedback asks the same questions to every respondent. Lemma is useful when the next question should depend on the customer's first answer.",
+  },
+];
+
 export default function CustomerFeedbackFormTemplatePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd([
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Templates", path: "/templates" },
+              {
+                name: "Customer feedback form",
+                path: "/templates/customer-feedback-form",
+              },
+            ]),
+            faqJsonLd(faqItems),
+          ]),
+        }}
+      />
       <section className="relative overflow-hidden bg-white pt-16 pb-14 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid gap-12 md:grid-cols-[0.86fr_0.74fr] md:items-center">
@@ -254,36 +292,19 @@ export default function CustomerFeedbackFormTemplatePage() {
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-[1280px] gap-6 px-6 py-20 md:grid-cols-3 md:px-10 md:py-28">
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              What should customer feedback ask?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Customer feedback should ask what happened, what the customer
-              expected, and why it mattered. Fixed fields capture the category.
-              Follow-up questions explain the situation behind it.
-            </p>
-          </div>
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              When should feedback become a conversation?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Feedback should become a conversation when the first answer is a
-              label rather than context. Short answers can show where to look,
-              but follow-up questions reveal the reason behind the label.
-            </p>
-          </div>
-          <div className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6">
-            <h2 className="text-xl font-semibold tracking-tight text-ink">
-              How is this different from fixed feedback?
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Fixed feedback asks the same questions to every respondent. Lemma
-              is useful when the next question should depend on the
-              customer's first answer.
-            </p>
-          </div>
+          {faqItems.map((item) => (
+            <div
+              key={item.question}
+              className="rounded-[14px] border border-[#e6e3dd] bg-[#f8f7f4] p-6"
+            >
+              <h2 className="text-xl font-semibold tracking-tight text-ink">
+                {item.question}
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-muted">
+                {item.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </main>

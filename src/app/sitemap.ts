@@ -3,20 +3,24 @@ import { posts } from "@/lib/posts";
 import { siteUrl } from "@/lib/seo";
 
 const base = siteUrl;
+const siteUpdatedAt = new Date("2026-05-28");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/product`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/consultants`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/product-growth`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/marketing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/sales`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/customer-success`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/founders`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
-    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
+    { url: base, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/product`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/templates`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.84 },
+    { url: `${base}/templates/customer-feedback-form`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${base}/templates/demo-request-form`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${base}/consultants`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/product-growth`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/marketing`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/sales`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/customer-success`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/founders`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/pricing`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog`, lastModified: siteUpdatedAt, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${base}/contact`, lastModified: siteUpdatedAt, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
