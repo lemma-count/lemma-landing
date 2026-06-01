@@ -3,7 +3,7 @@ import { posts } from "@/lib/posts";
 import { siteUrl } from "@/lib/seo";
 
 const base = siteUrl;
-const siteUpdatedAt = new Date("2026-05-28");
+const siteUpdatedAt = new Date("2026-06-01");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/templates`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.84 },
     { url: `${base}/templates/customer-feedback-form`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/templates/demo-request-form`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${base}/templates/lead-qualification-form`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/consultants`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/product-growth`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/marketing`, lastModified: siteUpdatedAt, changeFrequency: "monthly", priority: 0.8 },

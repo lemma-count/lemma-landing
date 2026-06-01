@@ -36,10 +36,21 @@ const templateCards = [
     output: "A sales-ready buyer brief.",
     use: "Sales teams preparing the next step.",
   },
+  {
+    title: "Lead qualification workflow",
+    href: "/templates/lead-qualification-form",
+    category: "Sales",
+    context: "Which leads are a fit, why are they looking now, and what should sales do next?",
+    audience: "Inbound leads, trial accounts, webinar attendees, and high-intent prospects.",
+    goal: "Turn lead capture into fit, urgency, objection, and next-step context.",
+    followUp:
+      "Lemma asks what the lead is trying to solve, why now, and what could block the next step.",
+    output: "A lead context brief.",
+    use: "Sales, growth, and founder-led teams.",
+  },
 ];
 
 const upcomingTemplates = [
-  "Lead qualification workflow",
   "Churn feedback workflow",
   "NPS or CSAT follow-up workflow",
 ];

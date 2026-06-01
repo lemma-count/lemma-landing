@@ -299,7 +299,7 @@ export function PricingFlowVisual() {
   );
 }
 
-type WorkflowKind = "generic" | "demo" | "feedback";
+type WorkflowKind = "generic" | "demo" | "feedback" | "lead";
 
 const workflowConfig: Record<
   WorkflowKind,
@@ -335,6 +335,14 @@ const workflowConfig: Record<
     followUp: "What happened? What did you expect? What should change?",
     output: "The reason behind the label",
     rows: ["Moment", "Expectation", "Impact", "Friction", "Fix"],
+  },
+  lead: {
+    eyebrow: "Lead context",
+    title: "Separate fit from noise before sales acts",
+    signal: "Inbound lead, trial account, webinar attendee",
+    followUp: "What are they trying to solve? Why now? What would make them move?",
+    output: "A lead context brief",
+    rows: ["Need", "Timing", "Fit", "Obstacle", "Next step"],
   },
 };
 
