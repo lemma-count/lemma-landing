@@ -299,7 +299,7 @@ export function PricingFlowVisual() {
   );
 }
 
-type WorkflowKind = "generic" | "demo" | "feedback";
+type WorkflowKind = "generic" | "demo" | "feedback" | "lead";
 
 const workflowConfig: Record<
   WorkflowKind,
@@ -327,6 +327,14 @@ const workflowConfig: Record<
     followUp: "Why now? What changed? What blocks the next step?",
     output: "A sales-ready buyer brief",
     rows: ["Intent", "Urgency", "Use case", "Stakeholders", "Objection"],
+  },
+  lead: {
+    eyebrow: "Lead context",
+    title: "Route the right follow-up before the queue fills",
+    signal: "Inbound lead, event signup, product interest, referral",
+    followUp: "What problem matters? Why now? What should happen next?",
+    output: "A qualification brief for sales or founder follow-up",
+    rows: ["Fit", "Pain", "Timing", "Authority", "Next step"],
   },
   feedback: {
     eyebrow: "Feedback context",
