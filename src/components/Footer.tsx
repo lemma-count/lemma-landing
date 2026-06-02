@@ -23,6 +23,10 @@ const footerGroups = [
               href: "/templates/customer-feedback-form",
             },
             { label: "Demo request form", href: "/templates/demo-request-form" },
+            {
+              label: "Lead qualification form",
+              href: "/templates/lead-qualification-form",
+            },
           ]
         : group.links,
   })),
