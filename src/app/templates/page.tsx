@@ -48,11 +48,24 @@ const templateCards = [
     output: "A lead context brief.",
     use: "Sales, growth, and founder-led teams.",
   },
+  {
+    title: "Churn feedback workflow",
+    href: "/templates/churn-feedback-form",
+    category: "Customer success",
+    context: "What changed, why did the customer leave, and what should the team learn from it?",
+    audience: "Customers who cancelled, downgraded, or stopped seeing value.",
+    goal: "Turn churn labels into reasons, examples, quotes, and next actions.",
+    followUp:
+      "Lemma asks what changed, where expectations broke, and what the customer is using instead.",
+    output: "A transcript-grounded churn feedback brief.",
+    use: "Customer success, product, and founder teams.",
+  },
 ];
 
 const upcomingTemplates = [
-  "Churn feedback workflow",
   "NPS or CSAT follow-up workflow",
+  "Customer story capture workflow",
+  "Closed-lost feedback workflow",
 ];
 
 const workflowSteps = [

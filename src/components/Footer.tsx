@@ -27,6 +27,7 @@ const footerGroups = [
               label: "Lead qualification form",
               href: "/templates/lead-qualification-form",
             },
+            { label: "Churn feedback form", href: "/templates/churn-feedback-form" },
           ]
         : group.links,
   })),
