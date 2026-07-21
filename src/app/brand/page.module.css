@@ -1,0 +1,61 @@
+.brandBook {
+  font-family: var(--font-ibm-plex-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+.signatureSerif {
+  font-family: var(--font-ibm-plex-serif), Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.coverMedia {
+  animation: cover-drift 26s ease-in-out infinite alternate;
+  object-position: 63% 68%;
+  transform: scale(1.035);
+  transform-origin: 56% 66%;
+  will-change: transform;
+}
+
+.landscapeMedia {
+  transition: transform 700ms ease;
+}
+
+.landscapeMedia:hover {
+  transform: scale(1.015);
+}
+
+.safeZoneGrid {
+  background-image:
+    linear-gradient(to right, transparent 33.15%, rgba(255, 255, 255, 0.2) 33.2%, rgba(255, 255, 255, 0.2) 33.45%, transparent 33.5%),
+    linear-gradient(to right, transparent 66.48%, rgba(255, 255, 255, 0.2) 66.53%, rgba(255, 255, 255, 0.2) 66.78%, transparent 66.83%),
+    linear-gradient(to bottom, transparent 33.15%, rgba(255, 255, 255, 0.2) 33.2%, rgba(255, 255, 255, 0.2) 33.45%, transparent 33.5%),
+    linear-gradient(to bottom, transparent 66.48%, rgba(255, 255, 255, 0.2) 66.53%, rgba(255, 255, 255, 0.2) 66.78%, transparent 66.83%);
+}
+
+@keyframes cover-drift {
+  from {
+    transform: scale(1.035) translate3d(-0.3%, -0.15%, 0);
+  }
+
+  to {
+    transform: scale(1.065) translate3d(0.35%, 0.25%, 0);
+  }
+}
+
+@media (min-width: 640px) {
+  .coverMedia {
+    object-position: 57% 66%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverMedia {
+    animation: none;
+    transform: none;
+  }
+
+  .landscapeMedia,
+  .landscapeMedia:hover {
+    transform: none;
+    transition: none;
+  }
+}

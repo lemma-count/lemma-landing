@@ -1,15 +1,15 @@
 import { Hero } from "@/components/Hero";
-import { ProblemStatement } from "@/components/ProblemStatement";
-import { Solution } from "@/components/Solution";
-import { UseCases } from "@/components/UseCases";
+import { ProofOverview } from "@/components/ProofOverview";
+import { MissionIntro } from "@/components/MissionIntro";
+import { CockpitSection } from "@/components/CockpitSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="landing-root">
       <Hero />
-      <ProblemStatement />
-      <Solution />
-      <UseCases />
+      <MissionIntro />
+      <ProofOverview />
+      <CockpitSection />
     </main>
   );
 }
