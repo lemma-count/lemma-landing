@@ -1,90 +1,119 @@
-import Link from "next/link";
 import Image from "next/image";
-import { navGroups, primaryLinks, productLinks } from "@/lib/navigation";
+import Link from "next/link";
+import {
+  ArrowUpRightIcon,
+  LinkedinLogoIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { TrackedLink } from "./TrackedLink";
 
 const footerGroups = [
   {
     title: "Product",
     links: [
-      { label: "Home", href: "/" },
-      ...productLinks,
-      ...primaryLinks,
+      { label: "Cockpit", href: "/#cockpit" },
+      { label: "Outbox", href: "/#outbox" },
+      { label: "Leads", href: "/#leads" },
     ],
   },
-  ...navGroups.map((group) => ({
-    title: group.label,
-    links:
-      group.id === "resources"
-        ? [
-            ...group.links,
-            {
-              label: "Customer feedback form",
-              href: "/templates/customer-feedback-form",
-            },
-            { label: "Demo request form", href: "/templates/demo-request-form" },
-            {
-              label: "Lead qualification form",
-              href: "/templates/lead-qualification-form",
-            },
-          ]
-        : group.links,
-  })),
+  {
+    title: "Explore",
+    links: [
+      { label: "Why now", href: "/#why-now" },
+      { label: "Launch your outbound", href: "https://app.heylemma.com/missions/new" },
+      { label: "Sign in", href: "https://app.heylemma.com/login" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [{ label: "Contact", href: "mailto:hello@heylemma.com" }],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#e6e3dd] bg-[#f8f7f4] text-ink">
-      <div className="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_auto]">
-          <div className="max-w-2xl">
-            <Link
-              href="/"
-              aria-label="Lemma home"
-              className="inline-flex items-center"
-            >
+    <footer
+      id="final-cta"
+      className="relative isolate overflow-hidden bg-brand-night text-white"
+    >
+      <Image
+        src="/brand/landscapes/screenprint/01-beacon-coast-screenprint.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="landing-footer-media -z-20 object-cover"
+      />
+      <div className="landing-footer-scrim absolute inset-0 -z-10" aria-hidden />
+
+      <div className="relative mx-auto flex min-h-[680px] max-w-[1400px] flex-col px-5 pb-7 pt-20 sm:px-8 sm:pb-8 md:pt-24 lg:min-h-[640px] lg:px-10 lg:pt-24">
+        <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
+          <div className="max-w-[920px]">
+            <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
+              <span className="h-px w-8 bg-brand-signal" aria-hidden />
+              Always-on outbound
+            </p>
+            <h2 className="text-balance font-display text-[3.15rem] font-normal leading-[0.94] tracking-[-0.028em] text-white max-[360px]:text-[2.62rem] sm:text-6xl lg:text-[4.8rem] xl:text-[5.1rem]">
+              Set it up once. Lemma keeps every Lead moving.
+            </h2>
+            <p className="mt-7 max-w-[680px] text-pretty text-base leading-7 text-white/76 sm:text-lg sm:leading-8">
+              From research and first touch to follow-up and the next step toward a meeting, Lemma runs the outbound loop across every connected channel.
+            </p>
+          </div>
+
+          <TrackedLink
+            href="https://app.heylemma.com/missions/new"
+            event="cta_click"
+            eventProps={{
+              label: "Launch your outbound",
+              page: "home",
+              location: "footer",
+            }}
+            className="landing-button inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_-18px_rgba(43,87,213,0.95)] hover:bg-brand-cobalt-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-fit lg:mb-2"
+          >
+            Launch your outbound
+            <ArrowUpRightIcon size={16} weight="bold" aria-hidden />
+          </TrackedLink>
+        </div>
+
+        <div className="mt-14 grid gap-10 border-t border-white/26 pt-8 md:mt-16 lg:grid-cols-[1fr_auto] lg:gap-16">
+          <div className="max-w-md">
+            <Link href="/#top" aria-label="Lemma home" className="inline-flex">
               <Image
-                src="/assets/lemma-logo-black.png"
+                src="/brand/logo/open-passage-lockup-white.png"
                 alt="Lemma"
-                width={117}
-                height={20}
-                className="h-5 w-auto"
-                style={{ width: "auto", height: "auto" }}
+                width={125}
+                height={25}
+                className="h-6 w-auto"
               />
             </Link>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">
-              Run AI-led voice conversations with the people who matter to your
-              business. Lemma turns what people say into context your team and
-              agents can use.
+            <p className="mt-5 max-w-[360px] text-sm leading-6 text-white/74 sm:text-base sm:leading-7">
+              Autonomous outbound for independent professionals and lean teams.
             </p>
-            <TrackedLink
-              href="/contact"
-              event="cta_click"
-              eventProps={{ label: "Contact us", page: "footer", location: "footer" }}
-              className="mt-7 inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
+            <Link
+              href="https://www.linkedin.com/company/heylemma"
+              aria-label="Lemma on LinkedIn"
+              className="landing-button mt-6 inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/34 text-white/76 hover:border-white/54 hover:bg-white/8 hover:text-white"
             >
-              Contact us
-              <span aria-hidden>→</span>
-            </TrackedLink>
+              <LinkedinLogoIcon size={18} weight="fill" aria-hidden />
+            </Link>
           </div>
 
           <nav
             aria-label="Footer navigation"
-            className="grid grid-cols-2 gap-x-10 gap-y-8 sm:grid-cols-4 lg:pt-1"
+            className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3 sm:gap-x-14 lg:gap-x-20"
           >
-            {footerGroups.map(({ title, links }) => (
-              <div key={title} className="min-w-32">
-                <h2 className="text-xs font-semibold uppercase tracking-[0.08em] text-subtle">
-                  {title}
-                </h2>
-                <div className="mt-4 grid gap-3">
-                  {links.map(({ label, href }) => (
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
+                  {group.title}
+                </h3>
+                <div className="mt-5 grid gap-3">
+                  {group.links.map((link) => (
                     <Link
-                      key={href}
-                      href={href}
-                      className="text-sm text-muted transition-colors hover:text-ink"
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm text-white/78 transition hover:text-white"
                     >
-                      {label}
+                      {link.label}
                     </Link>
                   ))}
                 </div>
@@ -93,8 +122,9 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex items-center justify-end border-t border-[#e6e3dd] pt-6 text-xs text-subtle">
-          <span>{new Date().getFullYear()} · Lemma</span>
+        <div className="mt-auto flex items-center justify-between border-t border-white/24 pt-5 text-xs text-white/66">
+          <span>© 2026 Lemma</span>
+          <span aria-hidden className="h-px w-10 bg-white/24" />
         </div>
       </div>
     </footer>

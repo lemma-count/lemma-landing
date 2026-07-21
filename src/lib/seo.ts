@@ -4,10 +4,10 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/assets/context-layer-visual.png",
-  width: 1672,
-  height: 941,
-  alt: "Human conversations flowing through an adaptive voice layer into structured context for teams and agents.",
+  url: "/brand/landscapes/screenprint/02-mountain-pass-screenprint.webp",
+  width: 1536,
+  height: 1024,
+  alt: "A blue-hour mountain pass with a clear trail leading toward a warm horizon.",
 };
 
 type MetadataImage = {
@@ -68,7 +68,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: siteName,
   url: siteUrl,
-  logo: absoluteUrl("/assets/lemma-logo-black.png"),
+  logo: absoluteUrl("/brand/logo/open-passage-mark-black.svg"),
 };
 
 export const websiteJsonLd = {
@@ -77,7 +77,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Lemma runs AI-led voice conversations with the people who matter and turns what they say into usable context.",
+    "Set up your offers and audiences once. Lemma researches Leads, runs outreach across connected channels, and keeps follow-up moving toward booked meetings.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
@@ -139,7 +139,7 @@ export function articleJsonLd({
       name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/assets/lemma-logo-black.png"),
+        url: absoluteUrl("/brand/logo/open-passage-mark-black.svg"),
       },
     },
   };

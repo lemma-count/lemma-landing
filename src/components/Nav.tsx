@@ -1,312 +1,247 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { CaretDownIcon, ListIcon, XIcon } from "@phosphor-icons/react";
 import { track } from "@vercel/analytics";
 import { trackGrowthCta } from "@/lib/growth-analytics";
-import { navGroups, primaryLinks, productLinks, type NavGroupId } from "@/lib/navigation";
+
+const productLinks = [
+  { label: "Cockpit", description: "See every Lead and the next step toward a meeting.", href: "/#cockpit" },
+  { label: "Leads", description: "See who Lemma is working and why they fit.", href: "/#leads" },
+  { label: "Outbox", description: "See what is running and the exceptions that need you.", href: "/#outbox" },
+];
 
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Image
-      src={inverse ? "/assets/lemma-logo-white.png" : "/assets/lemma-logo-black.png"}
+      src={inverse ? "/brand/logo/open-passage-lockup-white.png" : "/brand/logo/open-passage-lockup-night.png"}
       alt="Lemma"
-      width={120}
-      height={20}
+      width={125}
+      height={25}
       priority
-      className="h-5 w-auto"
-      style={{ width: "auto", height: "auto" }}
+      className="h-6 w-auto"
     />
   );
 }
 
-export function Nav() {
-  const [openDropdown, setOpenDropdown] = useState<NavGroupId | null>(null);
+export function Nav({
+  inverse = false,
+  compact = false,
+}: {
+  inverse?: boolean;
+  compact?: boolean;
+}) {
+  const [productOpen, setProductOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileOpenGroup, setMobileOpenGroup] = useState<NavGroupId | null>(null);
-  const desktopNavRef = useRef<HTMLUListElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
+  const mobileCloseRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    function handle(e: MouseEvent) {
-      if (!desktopNavRef.current?.contains(e.target as Node)) {
-        setOpenDropdown(null);
-      }
+    function closeOnOutsideClick(event: MouseEvent) {
+      if (!menuRef.current?.contains(event.target as Node)) setProductOpen(false);
     }
-    document.addEventListener("mousedown", handle);
-    return () => document.removeEventListener("mousedown", handle);
+    document.addEventListener("mousedown", closeOnOutsideClick);
+    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
   }, []);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [mobileOpen]);
+    if (!mobileOpen) return;
 
-  function closeMobile() {
-    setMobileOpen(false);
-    setMobileOpenGroup(null);
-  }
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    if (desktopQuery.matches) {
+      setMobileOpen(false);
+      return;
+    }
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    document.body.style.overflow = "hidden";
+    mobileCloseRef.current?.focus();
+
+    function closeAtDesktop(event: MediaQueryListEvent) {
+      if (event.matches) setMobileOpen(false);
+    }
+
+    function handleDrawerKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMobileOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = Array.from(
+        drawerRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      ).filter((element) => element.offsetParent !== null);
+
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleDrawerKeydown);
+    desktopQuery.addEventListener("change", closeAtDesktop);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleDrawerKeydown);
+      desktopQuery.removeEventListener("change", closeAtDesktop);
+      previouslyFocused?.focus();
+    };
+  }, [mobileOpen]);
 
   function trackNavCta(location: "desktop" | "mobile") {
     track("nav_cta_click", { location });
     trackGrowthCta("nav_cta_click", {
-      cta_id: `nav_${location}_start_free`,
-      cta_text: "Start for free",
-      cta_href: "https://app.heylemma.com",
+      cta_id: `nav_${location}_start_outreach`,
+      cta_text: "Launch your outbound",
+      cta_href: "https://app.heylemma.com/missions/new",
       location,
     });
   }
 
   return (
     <>
-    <header className="w-full border-b border-border/70 bg-white/92 backdrop-blur-sm">
-      <nav className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6 lg:px-10">
-        {/* Logo */}
-        <Link href="/" className="flex items-center" onClick={closeMobile} aria-label="Lemma home">
-          <LemmaWordmark />
-        </Link>
+      <header className={`w-full transition-[background-color,border-color,box-shadow] duration-300 ${inverse ? "border-b border-transparent bg-transparent text-white" : "border-b border-[#d9e2ef]/90 bg-white/88 text-ink shadow-[0_12px_34px_-28px_rgba(4,16,42,0.55)] backdrop-blur-xl"}`}>
+        <nav aria-label="Main navigation" className={`mx-auto flex max-w-[1400px] items-center justify-between px-5 transition-[height] duration-300 sm:px-8 lg:px-10 ${compact ? "h-[64px]" : "h-[72px]"}`}>
+          <Link href="/#top" aria-label="Lemma home" className="flex items-center">
+            <LemmaWordmark inverse={inverse} />
+          </Link>
 
-        {/* Desktop nav */}
-        <ul
-          ref={desktopNavRef}
-          className="hidden items-center gap-7 text-[13px] font-medium text-ink md:flex lg:gap-8"
-        >
-          <li>
-            <Link href="/" className="transition-colors hover:text-muted">
-              Home
-            </Link>
-          </li>
-          {productLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="transition-colors hover:text-muted">
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          {navGroups.map((group) => (
-            <li key={group.id} className="relative">
+          <div className="hidden items-center gap-8 lg:flex">
+            <div ref={menuRef} className="relative">
               <button
                 type="button"
-                onClick={() =>
-                  setOpenDropdown((current) =>
-                    current === group.id ? null : group.id
-                  )
-                }
-                aria-expanded={openDropdown === group.id}
+                aria-expanded={productOpen}
                 aria-haspopup="menu"
-                className="inline-flex items-center gap-1 transition-colors hover:text-muted"
+                onClick={() => setProductOpen((value) => !value)}
+                className={`inline-flex items-center gap-1.5 text-sm font-medium transition ${inverse ? "text-white/78 hover:text-white" : "text-ink hover:text-muted"}`}
               >
-                {group.label}
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  aria-hidden
-                  className={`transition-transform ${
-                    openDropdown === group.id ? "rotate-180" : ""
-                  }`}
-                >
-                  <path
-                    d="M2 3.5L5 6.5L8 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                Product
+                <CaretDownIcon size={12} weight="bold" aria-hidden className={`transition-transform ${productOpen ? "rotate-180" : ""}`} />
               </button>
-              {openDropdown === group.id && (
-                <div
-                  role="menu"
-                  className="absolute left-1/2 top-full mt-3 w-56 -translate-x-1/2 rounded-md border border-border bg-white p-2 shadow-[0_18px_40px_-22px_rgba(0,0,0,0.4)]"
-                >
-                  {group.links.map((link) => (
+
+              {productOpen && (
+                <div role="menu" className="absolute left-1/2 top-full mt-4 w-[330px] -translate-x-1/2 rounded-xl border border-black/10 bg-paper p-2 text-ink shadow-[0_30px_70px_-36px_rgba(4,14,31,0.62)]">
+                  {productLinks.map((item) => (
                     <Link
-                      key={link.href}
-                      href={link.href}
+                      key={item.label}
                       role="menuitem"
-                      onClick={() => setOpenDropdown(null)}
-                      className="block rounded-md px-3 py-2 text-sm text-ink transition-colors hover:bg-neutral-100"
+                      href={item.href}
+                      onClick={() => setProductOpen(false)}
+                      className="block rounded-lg px-4 py-3 transition hover:bg-paper-deep"
                     >
-                      {link.label}
+                      <span className="block text-sm font-semibold">{item.label}</span>
+                      <span className="mt-1 block text-xs leading-5 text-muted">{item.description}</span>
                     </Link>
                   ))}
                 </div>
               )}
-            </li>
-          ))}
-          {primaryLinks.map((l) => (
-            <li key={l.label}>
-              <Link href={l.href} className="transition-colors hover:text-muted">
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
 
-        {/* Desktop CTA */}
-        <Link
-          href="https://app.heylemma.com"
-          onClick={() => trackNavCta("desktop")}
-          className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-[0_8px_18px_-12px_rgba(61,80,255,0.8)] transition-colors hover:bg-[#2f3fd6] md:inline-flex"
-        >
-          Start for free
-          <span aria-hidden>→</span>
-        </Link>
+            <Link
+              href="/#why-now"
+              className={`text-sm font-medium transition ${inverse ? "text-white/78 hover:text-white" : "text-ink hover:text-muted"}`}
+            >
+              Why now
+            </Link>
 
-        {/* Mobile: hamburger */}
-        <button
-          type="button"
-          aria-label="Open menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(true)}
-          className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-neutral-100 md:hidden"
-        >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-            <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        </button>
+          </div>
+
+          <div className="hidden items-center lg:flex">
+            <Link
+              href="https://app.heylemma.com/missions/new"
+              onClick={() => trackNavCta("desktop")}
+              className={`landing-button rounded-[10px] px-4 py-2.5 text-sm font-semibold ${inverse ? "border border-white/48 bg-brand-night/28 text-white hover:border-white/70 hover:bg-white/10" : "bg-accent text-white shadow-[0_12px_28px_-18px_rgba(43,87,213,0.95)] hover:bg-brand-cobalt-hover"}`}
+            >
+              Launch your outbound
+            </Link>
+          </div>
+
+          <button
+            ref={mobileTriggerRef}
+            type="button"
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(true)}
+            className={`landing-button flex h-11 w-11 items-center justify-center rounded-[10px] lg:hidden ${inverse ? "text-white hover:bg-white/12" : "text-ink hover:bg-black/5"}`}
+          >
+            <ListIcon size={22} aria-hidden />
+          </button>
         </nav>
       </header>
 
-      {/* Mobile drawer backdrop */}
       {mobileOpen && (
-        <div
-          aria-hidden
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
-          onClick={closeMobile}
-        />
-      )}
+        <>
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="fixed inset-0 z-40 bg-black/45 backdrop-blur-sm lg:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
 
-      {/* Mobile drawer */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-y-0 right-0 z-50 flex w-[min(82vw,22rem)] flex-col bg-white shadow-2xl md:hidden"
-          role="dialog"
-          aria-modal="true"
-        >
-          {/* Drawer header */}
-          <div className="flex h-16 items-center justify-between border-b border-border/70 px-6">
-            <Link href="/" onClick={closeMobile} aria-label="Lemma home">
-              <LemmaWordmark />
-            </Link>
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={closeMobile}
-              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-neutral-100"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
+          <div
+            ref={drawerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Main menu"
+            className="fixed inset-y-0 right-0 z-50 flex w-[min(90vw,24rem)] flex-col bg-paper text-ink shadow-2xl lg:hidden"
+          >
+            <div className="flex h-[72px] items-center justify-between border-b border-border px-6">
+              <Link href="/#top" aria-label="Lemma home" onClick={() => setMobileOpen(false)}><LemmaWordmark /></Link>
+              <button
+                ref={mobileCloseRef}
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setMobileOpen(false)}
+                className="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-paper-deep"
+              >
+                <XIcon size={20} aria-hidden />
+              </button>
+            </div>
 
-          {/* Drawer links */}
-          <nav className="flex-1 overflow-y-auto px-4 py-2">
-            <ul className="space-y-1">
-              <li>
-                <Link
-                  href="/"
-                  onClick={closeMobile}
-                  className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-                >
-                  Home
-                </Link>
-              </li>
-
-              {productLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={closeMobile}
-                    className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-                  >
-                    {link.label}
+            <nav className="flex-1 overflow-y-auto px-6 py-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-subtle">Product</p>
+              <div className="mt-3 grid">
+                {productLinks.map((item) => (
+                  <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} className="border-b border-border py-4">
+                    <span className="block text-base font-semibold">{item.label}</span>
+                    <span className="mt-1 block text-xs leading-5 text-muted">{item.description}</span>
                   </Link>
-                </li>
-              ))}
+                ))}
+              </div>
 
-              {navGroups.map((group) => (
-                <li key={group.id}>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setMobileOpenGroup((current) =>
-                        current === group.id ? null : group.id
-                      )
-                    }
-                    className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-                  >
-                    {group.label}
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      aria-hidden
-                      className={`transition-transform ${
-                        mobileOpenGroup === group.id ? "rotate-180" : ""
-                      }`}
-                    >
-                      <path
-                        d="M2 3.5L5 6.5L8 3.5"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  {mobileOpenGroup === group.id && (
-                    <ul className="ml-4 mt-1 space-y-1 border-l border-border pl-3">
-                      {group.links.map((link) => (
-                        <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            onClick={closeMobile}
-                            className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:bg-neutral-100 hover:text-ink"
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
+              <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-subtle">Explore</p>
+              <div className="mt-3 grid">
+                <Link href="/#why-now" onClick={() => setMobileOpen(false)} className="border-b border-border py-4 text-base font-semibold">Why now</Link>
+              </div>
+            </nav>
 
-              {primaryLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    onClick={closeMobile}
-                    className="block rounded-md px-3 py-3 text-sm font-medium text-ink transition-colors hover:bg-neutral-100"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Drawer CTA */}
-          <div className="border-t border-border p-4">
-            <Link
-              href="https://app.heylemma.com"
-              onClick={() => { closeMobile(); trackNavCta("mobile"); }}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2f3fd6]"
-            >
-              Start for free
-              <span aria-hidden>→</span>
-            </Link>
+            <div className="border-t border-border p-5">
+              <Link
+                href="https://app.heylemma.com/missions/new"
+                onClick={() => { setMobileOpen(false); trackNavCta("mobile"); }}
+                className="landing-button inline-flex w-full items-center justify-center rounded-[10px] bg-accent px-5 py-3.5 text-sm font-semibold text-white hover:bg-brand-cobalt-hover"
+              >
+                Launch your outbound
+              </Link>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

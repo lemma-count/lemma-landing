@@ -6,6 +6,7 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
