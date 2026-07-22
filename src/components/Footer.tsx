@@ -10,24 +10,22 @@ const footerGroups = [
   {
     title: "Product",
     links: [
-      { label: "Cockpit", href: "/#cockpit" },
-      { label: "Outbox", href: "/#outbox" },
-      { label: "Leads", href: "/#leads" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "Pricing", href: "/pricing" },
     ],
   },
   {
-    title: "Explore",
+    title: "Account",
     links: [
-      { label: "Why now", href: "/#why-now" },
-      { label: "Launch your outbound", href: "https://app.heylemma.com/missions/new" },
       { label: "Sign in", href: "https://app.heylemma.com/login" },
+      { label: "Start for free", href: "https://app.heylemma.com/missions/new" },
     ],
   },
   {
     title: "Company",
     links: [{ label: "Contact", href: "mailto:hello@heylemma.com" }],
   },
-];
+] as const;
 
 export function Footer() {
   return (
@@ -49,13 +47,13 @@ export function Footer() {
           <div className="max-w-[920px]">
             <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
               <span className="h-px w-8 bg-brand-signal" aria-hidden />
-              Always-on outbound
+              For small teams
             </p>
             <h2 className="text-balance font-display text-[3.15rem] font-normal leading-[0.94] tracking-[-0.028em] text-white max-[360px]:text-[2.62rem] sm:text-6xl lg:text-[4.8rem] xl:text-[5.1rem]">
-              Set it up once. Lemma keeps every Lead moving.
+              You don&apos;t need a sales team to keep growing.
             </h2>
             <p className="mt-7 max-w-[680px] text-pretty text-base leading-7 text-white/76 sm:text-lg sm:leading-8">
-              From research and first touch to follow-up and the next step toward a meeting, Lemma runs the outbound loop across every connected channel.
+              Give Lemma the direction. It does the prospecting.
             </p>
           </div>
 
@@ -63,13 +61,13 @@ export function Footer() {
             href="https://app.heylemma.com/missions/new"
             event="cta_click"
             eventProps={{
-              label: "Launch your outbound",
+              label: "Start for free",
               page: "home",
               location: "footer",
             }}
             className="landing-button inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_-18px_rgba(43,87,213,0.95)] hover:bg-brand-cobalt-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-fit lg:mb-2"
           >
-            Launch your outbound
+            Start for free
             <ArrowUpRightIcon size={16} weight="bold" aria-hidden />
           </TrackedLink>
         </div>
@@ -86,7 +84,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-[360px] text-sm leading-6 text-white/74 sm:text-base sm:leading-7">
-              Autonomous outbound for independent professionals and lean teams.
+              The AI that runs your outbound.
             </p>
             <Link
               href="https://www.linkedin.com/company/heylemma"

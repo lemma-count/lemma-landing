@@ -3,15 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { CaretDownIcon, ListIcon, XIcon } from "@phosphor-icons/react";
+import { ListIcon, XIcon } from "@phosphor-icons/react";
 import { track } from "@vercel/analytics";
 import { trackGrowthCta } from "@/lib/growth-analytics";
 
-const productLinks = [
-  { label: "Cockpit", description: "See every Lead and the next step toward a meeting.", href: "/#cockpit" },
-  { label: "Leads", description: "See who Lemma is working and why they fit.", href: "/#leads" },
-  { label: "Outbox", description: "See what is running and the exceptions that need you.", href: "/#outbox" },
-];
+const navLinks = [
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Sign in", href: "https://app.heylemma.com/login" },
+] as const;
 
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -33,20 +33,9 @@ export function Nav({
   inverse?: boolean;
   compact?: boolean;
 }) {
-  const [productOpen, setProductOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
-  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const mobileCloseRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    function closeOnOutsideClick(event: MouseEvent) {
-      if (!menuRef.current?.contains(event.target as Node)) setProductOpen(false);
-    }
-    document.addEventListener("mousedown", closeOnOutsideClick);
-    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
-  }, []);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -107,12 +96,16 @@ export function Nav({
   function trackNavCta(location: "desktop" | "mobile") {
     track("nav_cta_click", { location });
     trackGrowthCta("nav_cta_click", {
-      cta_id: `nav_${location}_start_outreach`,
-      cta_text: "Launch your outbound",
+      cta_id: `nav_${location}_start_free`,
+      cta_text: "Start for free",
       cta_href: "https://app.heylemma.com/missions/new",
       location,
     });
   }
+
+  const navLinkClass = inverse
+    ? "text-white/78 hover:text-white"
+    : "text-ink hover:text-muted";
 
   return (
     <>
@@ -123,43 +116,15 @@ export function Nav({
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">
-            <div ref={menuRef} className="relative">
-              <button
-                type="button"
-                aria-expanded={productOpen}
-                aria-haspopup="menu"
-                onClick={() => setProductOpen((value) => !value)}
-                className={`inline-flex items-center gap-1.5 text-sm font-medium transition ${inverse ? "text-white/78 hover:text-white" : "text-ink hover:text-muted"}`}
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-medium transition ${navLinkClass}`}
               >
-                Product
-                <CaretDownIcon size={12} weight="bold" aria-hidden className={`transition-transform ${productOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {productOpen && (
-                <div role="menu" className="absolute left-1/2 top-full mt-4 w-[330px] -translate-x-1/2 rounded-xl border border-black/10 bg-paper p-2 text-ink shadow-[0_30px_70px_-36px_rgba(4,14,31,0.62)]">
-                  {productLinks.map((item) => (
-                    <Link
-                      key={item.label}
-                      role="menuitem"
-                      href={item.href}
-                      onClick={() => setProductOpen(false)}
-                      className="block rounded-lg px-4 py-3 transition hover:bg-paper-deep"
-                    >
-                      <span className="block text-sm font-semibold">{item.label}</span>
-                      <span className="mt-1 block text-xs leading-5 text-muted">{item.description}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Link
-              href="/#why-now"
-              className={`text-sm font-medium transition ${inverse ? "text-white/78 hover:text-white" : "text-ink hover:text-muted"}`}
-            >
-              Why now
-            </Link>
-
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden items-center lg:flex">
@@ -168,12 +133,11 @@ export function Nav({
               onClick={() => trackNavCta("desktop")}
               className={`landing-button rounded-[10px] px-4 py-2.5 text-sm font-semibold ${inverse ? "border border-white/48 bg-brand-night/28 text-white hover:border-white/70 hover:bg-white/10" : "bg-accent text-white shadow-[0_12px_28px_-18px_rgba(43,87,213,0.95)] hover:bg-brand-cobalt-hover"}`}
             >
-              Launch your outbound
+              Start for free
             </Link>
           </div>
 
           <button
-            ref={mobileTriggerRef}
             type="button"
             aria-label="Open menu"
             aria-expanded={mobileOpen}
@@ -202,7 +166,9 @@ export function Nav({
             className="fixed inset-y-0 right-0 z-50 flex w-[min(90vw,24rem)] flex-col bg-paper text-ink shadow-2xl lg:hidden"
           >
             <div className="flex h-[72px] items-center justify-between border-b border-border px-6">
-              <Link href="/#top" aria-label="Lemma home" onClick={() => setMobileOpen(false)}><LemmaWordmark /></Link>
+              <Link href="/#top" aria-label="Lemma home" onClick={() => setMobileOpen(false)}>
+                <LemmaWordmark />
+              </Link>
               <button
                 ref={mobileCloseRef}
                 type="button"
@@ -215,29 +181,30 @@ export function Nav({
             </div>
 
             <nav className="flex-1 overflow-y-auto px-6 py-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-subtle">Product</p>
-              <div className="mt-3 grid">
-                {productLinks.map((item) => (
-                  <Link key={item.label} href={item.href} onClick={() => setMobileOpen(false)} className="border-b border-border py-4">
-                    <span className="block text-base font-semibold">{item.label}</span>
-                    <span className="mt-1 block text-xs leading-5 text-muted">{item.description}</span>
+              <div className="grid">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="border-b border-border py-4 text-base font-semibold"
+                  >
+                    {link.label}
                   </Link>
                 ))}
-              </div>
-
-              <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-subtle">Explore</p>
-              <div className="mt-3 grid">
-                <Link href="/#why-now" onClick={() => setMobileOpen(false)} className="border-b border-border py-4 text-base font-semibold">Why now</Link>
               </div>
             </nav>
 
             <div className="border-t border-border p-5">
               <Link
                 href="https://app.heylemma.com/missions/new"
-                onClick={() => { setMobileOpen(false); trackNavCta("mobile"); }}
+                onClick={() => {
+                  setMobileOpen(false);
+                  trackNavCta("mobile");
+                }}
                 className="landing-button inline-flex w-full items-center justify-center rounded-[10px] bg-accent px-5 py-3.5 text-sm font-semibold text-white hover:bg-brand-cobalt-hover"
               >
-                Launch your outbound
+                Start for free
               </Link>
             </div>
           </div>

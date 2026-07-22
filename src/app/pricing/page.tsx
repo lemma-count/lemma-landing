@@ -1,66 +1,40 @@
 import type { Metadata } from "next";
-import { FAQ } from "@/components/FAQ";
-import { PricingFlowVisual } from "@/components/ContextVisuals";
-import { PricingSection } from "@/components/PricingSection";
+import { TrackedLink } from "@/components/TrackedLink";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
-  description:
-    "Pricing that scales with the adaptive conversations you collect. Each completed conversation uses 1 credit. Invite as many teammates as you want.",
+  description: "Start using Lemma for free. Simple usage-based pricing is coming soon.",
   path: "/pricing",
+  noIndex: true,
 });
-
-const faqItems = [
-  {
-    q: "What counts as a conversation credit?",
-    a: "One credit is consumed for each completed adaptive voice conversation, regardless of length. Incomplete or dropped sessions are not counted.",
-  },
-  {
-    q: "Are credits monthly?",
-    a: "On Professional, credits refresh every month. On Starter, credits are one-time and you can purchase additional credits at any time.",
-  },
-  {
-    q: "Do unused credits roll over?",
-    a: "Monthly credits on the Professional plan do not roll over. Extra credits you purchase à la carte remain valid for 12 months.",
-  },
-  {
-    q: "Can I buy more credits if I run out?",
-    a: "Yes. You can buy additional conversation credits at any time from your workspace settings, on every plan.",
-  },
-  {
-    q: "Do I pay per teammate?",
-    a: "No. You do not pay per seat. Invite the teammates you need and pay for the conversations you collect.",
-  },
-  {
-    q: "Can I run multiple context workflows at the same time?",
-    a: "Yes. You can run as many concurrent studies as you need; credits are pooled across the workspace.",
-  },
-  {
-    q: "What if I need integrations or custom workflows?",
-    a: "Talk to us. We will map the first workflow with you and confirm what is available for your plan.",
-  },
-];
 
 export default function PricingPage() {
   return (
-    <main>
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-8 text-center md:px-10 md:pt-28 md:pb-10">
-          <h1 className="mx-auto max-w-4xl text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
-            Pay for the conversations you collect.
-          </h1>
-          <div className="mx-auto mt-7 max-w-xl space-y-1 text-base leading-7 text-muted md:text-lg md:leading-8">
-            <p>Each completed adaptive voice conversation uses 1 credit.</p>
-            <p>Invite as many teammates as you want.</p>
-            <p>Scale from one real workflow to always-on context capture.</p>
-          </div>
-          <PricingFlowVisual />
-        </div>
-        <PricingSection />
+    <main className="bg-white text-ink">
+      <section className="mx-auto flex min-h-[72svh] max-w-[1100px] flex-col items-center justify-center px-5 py-24 text-center sm:px-8 md:py-32 lg:px-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-subtle">
+          Pricing
+        </p>
+        <h1 className="mt-5 max-w-[850px] text-balance text-[3.25rem] font-medium leading-[0.96] tracking-[-0.026em] sm:text-6xl lg:text-7xl">
+          Start free. Choose a plan when you&apos;re ready.
+        </h1>
+        <p className="mt-7 max-w-[620px] text-pretty text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          We&apos;re finalizing simple usage-based plans. You can start without a credit card today.
+        </p>
+        <TrackedLink
+          href="https://app.heylemma.com/missions/new"
+          event="cta_click"
+          eventProps={{
+            label: "Start for free",
+            page: "pricing",
+            location: "hero",
+          }}
+          className="landing-button mt-8 inline-flex min-h-12 items-center justify-center rounded-[10px] bg-accent px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_-18px_rgba(43,87,213,0.95)] hover:bg-brand-cobalt-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-cobalt"
+        >
+          Start for free
+        </TrackedLink>
       </section>
-
-      <FAQ items={faqItems} />
     </main>
   );
 }

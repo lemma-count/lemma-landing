@@ -77,7 +77,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Set up your offers and audiences once. Lemma researches Leads, runs outreach across connected channels, and keeps follow-up moving toward booked meetings.",
+    "Get new clients without doing the prospecting. Lemma runs your LinkedIn outbound from strategy to booked meeting.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {

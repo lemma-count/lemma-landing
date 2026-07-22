@@ -27,16 +27,20 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma — Autonomous outbound for lean teams",
+  title: "Lemma — The AI that runs your outbound",
   description:
-    "Set up your offers and audiences once. Lemma researches Leads, runs outreach across connected channels, and keeps follow-up moving toward booked meetings.",
+    "Get new clients without doing the prospecting. Lemma runs your LinkedIn outbound from strategy to booked meeting.",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"
