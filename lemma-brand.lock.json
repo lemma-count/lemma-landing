@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "brand": "Lemma",
-  "brandVersion": "1.2.0",
+  "brandVersion": "1.2.1",
   "source": "wilu-ops/brand/lemma",
   "releaseStatus": "approved",
-  "generatedAt": "2026-07-23T14:59:39.682Z",
+  "generatedAt": "2026-07-23T15:29:14.798Z",
   "tokens": {
     "color": {
       "paper": {
@@ -164,7 +164,7 @@
         "algorithm": "sha256",
         "value": "63882a9581c28c70a7620273d02654ffebaf6715001b5d5b2baaf595cde4199b"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -174,7 +174,7 @@
         "algorithm": "sha256",
         "value": "8158cfd47084289904699ed01dd780d00bf22378f04a5ff3f27f4d53228e4762"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -184,7 +184,7 @@
         "algorithm": "sha256",
         "value": "bf2e950fc0d2c225e081d37897f09f0c99a4596bc418d0018097beec663f8442"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -194,7 +194,7 @@
         "algorithm": "sha256",
         "value": "7241dc30ffa72b1bb79d67aefc1d898ca837ab98badc634ebd6b0b542e744877"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -204,7 +204,7 @@
         "algorithm": "sha256",
         "value": "f603159751106cf3b02fc69b0ff455c019eccc80e7e2d8def557130c8c314e83"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -214,7 +214,7 @@
         "algorithm": "sha256",
         "value": "c9c84f56bb9353f1f79b7ef26b8f9cf1542602d557c6983e2ae0567a77dfcda6"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -224,7 +224,7 @@
         "algorithm": "sha256",
         "value": "1054028d4be7d4ce4e2f6509f0b4eb27794a25cd7444b2f18394e0e7f6890423"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -234,7 +234,7 @@
         "algorithm": "sha256",
         "value": "2442cdef63e4602ba3a33c48b2bfe52eff58d3eff98e641b07b16a4412692eb4"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     },
     {
@@ -244,9 +244,9 @@
         "algorithm": "sha256",
         "value": "67843ca2bfd6ec2a4b48e7a83c0af94523c476954d0529f82db99317dbed2a19"
       },
-      "assetVersion": "1.2.0",
+      "assetVersion": "1.2.1",
       "approval": "approved"
     }
   ],
-  "integrity": "7f7148e3a9b736fe9cedc0455882eb99eba2d9e7f25351715bf336761d419387"
+  "integrity": "de2ed8491ee4b88f8ea9cd136a7f63fca97630abe1b4ba04714c6197865f87e0"
 }

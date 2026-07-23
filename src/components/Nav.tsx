@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { ListIcon, XIcon } from "@phosphor-icons/react";
 import { track } from "@vercel/analytics";
 import { trackGrowthCta } from "@/lib/growth-analytics";
+import { lemmaBrandLogos } from "@/lib/lemma-brand-release";
 
 const navLinks = [
   { label: "How it works", href: "/#how-it-works" },
@@ -16,7 +17,7 @@ const navLinks = [
 function LemmaWordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <Image
-      src={inverse ? "/brand/logo/open-passage-lockup-white.png" : "/brand/logo/open-passage-lockup-night.png"}
+      src={inverse ? lemmaBrandLogos.horizontalPaper : lemmaBrandLogos.horizontalInk}
       alt="Lemma"
       width={125}
       height={25}

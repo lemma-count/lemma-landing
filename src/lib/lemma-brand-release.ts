@@ -9,7 +9,7 @@ import lock from "../../lemma-brand.lock.json";
  */
 export const lemmaBrandRelease = lock;
 
-export const lemmaBrandAssetBase = "/brand/lemma/v1.2.0";
+export const lemmaBrandAssetBase = "/brand/lemma/v1.2.1";
 
 export function lemmaBrandVisual(fileName: string) {
   return `${lemmaBrandAssetBase}/visuals/${fileName}`;

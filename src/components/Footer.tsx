@@ -5,6 +5,7 @@ import {
   LinkedinLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { TrackedLink } from "./TrackedLink";
+import { lemmaBrandLogos } from "@/lib/lemma-brand-release";
 
 const footerGroups = [
   {
@@ -76,7 +77,7 @@ export function Footer() {
           <div className="max-w-md">
             <Link href="/#top" aria-label="Lemma home" className="inline-flex">
               <Image
-                src="/brand/logo/open-passage-lockup-white.png"
+                src={lemmaBrandLogos.horizontalPaper}
                 alt="Lemma"
                 width={125}
                 height={25}
