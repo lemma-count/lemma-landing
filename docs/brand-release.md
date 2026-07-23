@@ -1,6 +1,6 @@
 # Lemma Brand Release — consumer contract
 
-This site is pinned to **Open Passage v1.2.0** through [`lemma-brand.lock.json`](../../lemma-brand.lock.json). It is a release snapshot, not a runtime dependency on Wilu Ops or the internal portal.
+This site is pinned to **Open Passage v1.2.1** through [`lemma-brand.lock.json`](../../lemma-brand.lock.json). It is a release snapshot, not a runtime dependency on Wilu Ops or the internal portal.
 
 The approved runtime subset is under `public/brand/lemma/v1.2.0/` and is exposed through `src/lib/lemma-brand-release.ts`. Adopt it route by route after a visual and copy review; do not mix it casually with the historical Guided Horizon image system.
 

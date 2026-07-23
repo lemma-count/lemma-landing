@@ -68,7 +68,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: siteName,
   url: siteUrl,
-  logo: absoluteUrl("/brand/logo/open-passage-mark-black.svg"),
+  logo: absoluteUrl("/brand/lemma/v1.2.1/logo/lemma-mark-ink.svg"),
 };
 
 export const websiteJsonLd = {
@@ -139,7 +139,7 @@ export function articleJsonLd({
       name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/brand/logo/open-passage-mark-black.svg"),
+        url: absoluteUrl("/brand/lemma/v1.2.1/logo/lemma-mark-ink.svg"),
       },
     },
   };

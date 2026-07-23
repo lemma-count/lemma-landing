@@ -7,10 +7,10 @@ export const brandIdea = {
 };
 
 export const brandLogoVariants = {
-  markBlack: "/brand/logo/open-passage-mark-black.svg",
-  markWhite: "/brand/logo/open-passage-mark-white.svg",
-  lockupLight: "/brand/logo/open-passage-lockup-night.png",
-  lockupDark: "/brand/logo/open-passage-lockup-white.png",
+  markBlack: "/brand/lemma/v1.2.1/logo/lemma-mark-ink.svg",
+  markWhite: "/brand/lemma/v1.2.1/logo/lemma-mark-paper.svg",
+  lockupLight: "/brand/lemma/v1.2.1/logo/lemma-lockup-horizontal-ink.svg",
+  lockupDark: "/brand/lemma/v1.2.1/logo/lemma-lockup-horizontal-paper.svg",
 } as const;
 
 export const brandPrinciples = [
