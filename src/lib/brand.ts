@@ -1,10 +1,3 @@
-import type { StaticImageData } from "next/image";
-import beaconCoast from "../../public/brand/landscapes/screenprint/01-beacon-coast-screenprint.webp";
-import mountainPass from "../../public/brand/landscapes/screenprint/02-mountain-pass-screenprint.webp";
-import riverHorizon from "../../public/brand/landscapes/screenprint/03-river-horizon-screenprint.webp";
-import desertWaypoint from "../../public/brand/landscapes/screenprint/04-desert-waypoint-screenprint.webp";
-import northStarLake from "../../public/brand/landscapes/screenprint/05-north-star-lake-screenprint.webp";
-import dawnMeadow from "../../public/brand/landscapes/screenprint/06-dawn-meadow-screenprint.webp";
 
 export const brandIdea = {
   name: "The Guided Horizon",
@@ -81,7 +74,7 @@ export type BrandLandscape = {
   name: string;
   fileName: string;
   publicPath: string;
-  image: StaticImageData;
+  image: string;
   cue: string;
   role: string;
   safeZone: string;
@@ -96,7 +89,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "Beacon Coast",
     fileName: "01-beacon-coast-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/01-beacon-coast-screenprint.webp",
-    image: beaconCoast,
+    image: "/brand/landscapes/screenprint/01-beacon-coast-screenprint.webp",
     cue: "A distant light",
     role: "Campaign hero · closing CTA",
     safeZone: "Upper-left 52%",
@@ -109,7 +102,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "Mountain Pass",
     fileName: "02-mountain-pass-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/02-mountain-pass-screenprint.webp",
-    image: mountainPass,
+    image: "/brand/landscapes/screenprint/02-mountain-pass-screenprint.webp",
     cue: "A trail toward the opening",
     role: "Primary brand cover · product story",
     safeZone: "Upper-left 58%",
@@ -122,7 +115,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "River Horizon",
     fileName: "03-river-horizon-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/03-river-horizon-screenprint.webp",
-    image: riverHorizon,
+    image: "/brand/landscapes/screenprint/03-river-horizon-screenprint.webp",
     cue: "Water moving forward",
     role: "Editorial transition · section backdrop",
     safeZone: "Upper-right 54%",
@@ -135,7 +128,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "Desert Waypoint",
     fileName: "04-desert-waypoint-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/04-desert-waypoint-screenprint.webp",
-    image: desertWaypoint,
+    image: "/brand/landscapes/screenprint/04-desert-waypoint-screenprint.webp",
     cue: "An illuminated dune ridge",
     role: "Campaign alternate · social background",
     safeZone: "Upper-left 60%",
@@ -148,7 +141,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "North Star Lake",
     fileName: "05-north-star-lake-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/05-north-star-lake-screenprint.webp",
-    image: northStarLake,
+    image: "/brand/landscapes/screenprint/05-north-star-lake-screenprint.webp",
     cue: "One star above the valley",
     role: "Dark CTA · presentation cover",
     safeZone: "Upper-left 48%",
@@ -161,7 +154,7 @@ export const brandLandscapes: BrandLandscape[] = [
     name: "Dawn Meadow",
     fileName: "06-dawn-meadow-screenprint.webp",
     publicPath: "/brand/landscapes/screenprint/06-dawn-meadow-screenprint.webp",
-    image: dawnMeadow,
+    image: "/brand/landscapes/screenprint/06-dawn-meadow-screenprint.webp",
     cue: "A path to the clearing",
     role: "Editorial story · lighter campaign moment",
     safeZone: "Upper-left 55%",

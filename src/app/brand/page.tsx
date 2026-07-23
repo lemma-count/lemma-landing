@@ -303,7 +303,7 @@ export default function BrandPage() {
 
         <div className="mt-16 overflow-hidden rounded-3xl bg-brand-night text-white">
           <div className="relative aspect-[3/2] lg:aspect-[16/8]">
-            <Image src={composition.image} alt={composition.alt} placeholder="blur" fill sizes="100vw" className="object-cover object-[56%_60%]" />
+            <Image src={composition.image} alt={composition.alt} fill sizes="100vw" className="object-cover object-[56%_60%]" />
             <div className="absolute inset-0 bg-brand-night/30" aria-hidden />
             <div className={`${styles.safeZoneGrid} absolute inset-0`} aria-hidden />
             <div className="absolute left-[6%] top-[10%] flex h-[44%] w-[46%] items-center justify-center rounded-xl border border-dashed border-white/55 bg-brand-night/18">
