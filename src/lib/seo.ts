@@ -4,10 +4,10 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/brand/landscapes/screenprint/02-mountain-pass-screenprint.webp",
-  width: 1536,
-  height: 1024,
-  alt: "A blue-hour mountain pass with a clear trail leading toward a warm horizon.",
+  url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
+  width: 1500,
+  height: 1452,
+  alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",
 };
 
 type MetadataImage = {
@@ -68,7 +68,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: siteName,
   url: siteUrl,
-  logo: absoluteUrl("/brand/lemma/v1.2.1/logo/lemma-mark-ink.svg"),
+  logo: absoluteUrl("/brand/lemma/v1.4.0/logo/lemma-mark-ink.svg"),
 };
 
 export const websiteJsonLd = {
@@ -77,7 +77,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Get new clients without doing the prospecting. Lemma runs your LinkedIn outbound from strategy to booked meeting.",
+    "Get new clients without doing the prospecting. Lemma researches prospects, runs permitted LinkedIn work, keeps conversations warm with relevant content, and makes the next decision visible.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
@@ -139,7 +139,7 @@ export function articleJsonLd({
       name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/brand/lemma/v1.2.1/logo/lemma-mark-ink.svg"),
+        url: absoluteUrl("/brand/lemma/v1.4.0/logo/lemma-mark-ink.svg"),
       },
     },
   };

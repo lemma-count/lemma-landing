@@ -1,28 +1,64 @@
-import { ControlVisual } from "./ProductVisuals";
+import Image from "next/image";
+import { lemmaBrandVisual } from "@/lib/lemma-brand-release";
+import styles from "./LemmaMarketing.module.css";
+
+const lemmaHandles = [
+  "Lead research and preparation",
+  "Permitted LinkedIn execution",
+  "Relevant 1:1 follow-up",
+] as const;
+
+const operatorKeeps = [
+  "The target and Lead source",
+  "Permissions and boundaries",
+  "Reputation-sensitive judgment",
+  "The relationship and the close",
+] as const;
 
 export function CockpitSection() {
   return (
-    <section
-      id="control"
-      className="overflow-hidden border-t border-border bg-landing-surface text-ink"
-    >
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 sm:px-8 md:py-24 lg:grid-cols-[minmax(320px,0.82fr)_minmax(0,1.18fr)] lg:items-center lg:gap-20 lg:px-10 lg:py-28">
-        <div className="landing-reveal max-w-[600px]">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-subtle">
-            Your rules, your account
-          </p>
-          <h2 className="text-balance text-[2.85rem] font-medium leading-[0.98] tracking-[-0.024em] sm:text-[3.55rem] lg:text-[4rem]">
-            Autonomous by default. Under your control.
-          </h2>
-          <p className="mt-7 max-w-[560px] text-pretty text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            Let Lemma run independently, or require approval where you want it. See every decision, step into any conversation, change the strategy, or pause the work at any time.
-          </p>
+    <section id="control" className={styles.permissionSection}>
+      <div className={`${styles.frame} ${styles.permissionGrid}`}>
+        <div className={styles.permissionMedia} aria-hidden>
+          <Image
+            src={lemmaBrandVisual("lemma-permission-gate.webp")}
+            alt=""
+            fill
+            sizes="(max-width: 899px) 100vw, 50vw"
+            className={styles.permissionImage}
+          />
         </div>
 
-        <div className="landing-reveal min-w-0">
-          <div className="overflow-hidden rounded-[16px] border border-border bg-white p-2.5 shadow-[0_26px_64px_-48px_rgba(4,16,42,0.4)] sm:p-3">
-            <div className="aspect-[4/3] overflow-hidden rounded-[10px] sm:aspect-video">
-              <ControlVisual />
+        <div id="return" className={styles.permissionCopy}>
+          <p className={styles.eyebrow}>04 / Permission and return</p>
+          <h2 className={styles.permissionTitle}>Step in when it matters.</h2>
+          <p className={styles.permissionBody}>
+            Lemma runs within the boundaries you set. Replies, blockers, and
+            reputation-sensitive decisions return with the context you need to
+            take over.
+          </p>
+          <p className={styles.permissionSignal}>
+            <span className={styles.permissionSignalDot} aria-hidden />
+            <span>Needs you / Human judgment</span>
+          </p>
+
+          <div className={styles.permissionColumns}>
+            <div className={styles.permissionColumn}>
+              <h3>Lemma handles</h3>
+              <ul>
+                {lemmaHandles.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.permissionColumn}>
+              <h3>You keep</h3>
+              <ul>
+                {operatorKeeps.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

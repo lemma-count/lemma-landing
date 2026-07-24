@@ -1,0 +1,249 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "brand": {
+    "name": "Lemma",
+    "system": "Open Passage",
+    "version": "1.4.0"
+  },
+  "color": {
+    "paper": {
+      "$type": "color",
+      "$value": "#FCFCFC",
+      "$description": "Primary field"
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "#121212",
+      "$description": "Text and dark field"
+    },
+    "klein": {
+      "$type": "color",
+      "$value": "#002FA7",
+      "$description": "Klein Blue. Primary action, active direction, and structural brand pigment."
+    },
+    "klein-soft": {
+      "$type": "color",
+      "$value": "#1B46C7",
+      "$description": "Klein Lift. Hover and supporting plane."
+    },
+    "cobalt": {
+      "$type": "color",
+      "$value": "#002FA7",
+      "$description": "Deprecated compatibility alias. Use color.klein."
+    },
+    "cobalt-soft": {
+      "$type": "color",
+      "$value": "#1B46C7",
+      "$description": "Deprecated compatibility alias. Use color.klein-soft."
+    },
+    "signal": {
+      "$type": "color",
+      "$value": "#FF7A45",
+      "$description": "High-attention brand color for a decisive action, operator handoff, consequential marker, proof point, or architectural destination."
+    },
+    "attention": {
+      "action": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "One decisive commit action per primary attention zone. Use Ink text."
+      },
+      "handoff": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "A genuine operator decision, permission request, blocker, or handoff. Pair with an explicit label."
+      },
+      "marker": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "The one place attention must move now. Routine active and selected states remain Klein Blue."
+      },
+      "proof": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "One annotation connecting a claim to evidence or a consequential conclusion."
+      }
+    },
+    "body": {
+      "$type": "color",
+      "$value": "#3D3D3D",
+      "$description": "Long-form text"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "#707070",
+      "$description": "Supporting information"
+    },
+    "grid": {
+      "$type": "color",
+      "$value": "#E9E9E7",
+      "$description": "Rules and boundaries"
+    },
+    "semantic": {
+      "active": {
+        "$type": "color",
+        "$value": "#002FA7",
+        "$description": "Routine current work, selected state, and primary action."
+      },
+      "needs-you": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "A consequential operator decision or handoff, paired with an explicit label."
+      },
+      "success": {
+        "$type": "color",
+        "$value": "#137A4C",
+        "$description": "Confirmed positive completion only."
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "#A96000",
+        "$description": "Constraint or attention without failure."
+      },
+      "failure": {
+        "$type": "color",
+        "$value": "#B42318",
+        "$description": "Failed or unsafe work that did not execute."
+      }
+    }
+  },
+  "typography": {
+    "display": {
+      "$type": "fontFamily",
+      "$value": [
+        "Inter Tight Variable",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": [
+        "Sometype Mono Variable",
+        "SFMono-Regular",
+        "Menlo",
+        "Consolas",
+        "monospace"
+      ]
+    },
+    "scale": {
+      "display-xl": {
+        "desktop": "clamp(5rem, 10vw, 10rem)",
+        "mobile": "3.5rem",
+        "lineHeight": "0.78",
+        "letterSpacing": "-0.06em"
+      },
+      "display-l": {
+        "desktop": "clamp(4rem, 7vw, 7.5rem)",
+        "mobile": "3rem",
+        "lineHeight": "0.82",
+        "letterSpacing": "-0.05em"
+      },
+      "heading-1": {
+        "desktop": "4.5rem",
+        "mobile": "2.75rem",
+        "lineHeight": "0.92",
+        "letterSpacing": "-0.04em"
+      },
+      "heading-2": {
+        "desktop": "2.5rem",
+        "mobile": "2rem",
+        "lineHeight": "1.00",
+        "letterSpacing": "-0.03em"
+      },
+      "body-l": {
+        "desktop": "1.25rem",
+        "mobile": "1.125rem",
+        "lineHeight": "1.45",
+        "letterSpacing": "-0.015em"
+      },
+      "body": {
+        "desktop": "1rem",
+        "mobile": "1rem",
+        "lineHeight": "1.50",
+        "letterSpacing": "-0.01em"
+      },
+      "meta": {
+        "desktop": "0.75rem",
+        "mobile": "0.75rem",
+        "lineHeight": "1.30",
+        "letterSpacing": "0.05em"
+      }
+    }
+  },
+  "spacing": {
+    "2xs": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "72px"
+    },
+    "4xl": {
+      "$type": "dimension",
+      "$value": "96px"
+    },
+    "5xl": {
+      "$type": "dimension",
+      "$value": "144px"
+    },
+    "6xl": {
+      "$type": "dimension",
+      "$value": "192px"
+    }
+  },
+  "radius": {
+    "control": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "product": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "editorial": {
+      "$type": "dimension",
+      "$value": "0px"
+    }
+  },
+  "motion": {
+    "fast": {
+      "$type": "duration",
+      "$value": "160ms"
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "220ms"
+    },
+    "reveal": {
+      "$type": "duration",
+      "$value": "520ms"
+    }
+  }
+}

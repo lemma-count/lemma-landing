@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { GrowthAnalyticsProvider } from "@/components/GrowthAnalyticsProvider";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -12,24 +12,24 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: "variable",
-  variable: "--font-ibm-plex-sans",
+const lemmaInterTight = localFont({
+  src: "../../public/brand/lemma/v1.4.0/fonts/inter-tight-latin-variable.woff2",
+  variable: "--font-lemma-inter-tight",
+  weight: "100 900",
   display: "swap",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-ibm-plex-serif",
+const lemmaSometypeMono = localFont({
+  src: "../../public/brand/lemma/v1.4.0/fonts/sometype-mono-latin-variable.woff2",
+  variable: "--font-lemma-sometype-mono",
+  weight: "400 700",
   display: "swap",
 });
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma — The AI that runs your outbound",
+  title: "Lemma — Get new clients without doing the prospecting",
   description:
-    "Get new clients without doing the prospecting. Lemma runs your LinkedIn outbound from strategy to booked meeting.",
+    "Lemma researches the right prospects, starts LinkedIn conversations, shares relevant content, handles replies, and helps move interested people toward a meeting.",
 });
 
 export default function RootLayout({
@@ -39,9 +39,12 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}
+      className={`${lemmaInterTight.variable} ${lemmaSometypeMono.variable}`}
     >
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -49,7 +52,9 @@ export default function RootLayout({
           }}
         />
         <SiteHeader />
-        {children}
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
         <Footer />
         <GrowthAnalyticsProvider />
         <Analytics />
