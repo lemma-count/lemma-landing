@@ -19,6 +19,7 @@
     "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/typography": "^0.5.19",
     "@vercel/analytics": "^2.0.1",
+    "@xyflow/react": "^12.11.2",
     "next": "16.2.6",
     "posthog-js": "^1.374.2",
     "react": "19.2.4",

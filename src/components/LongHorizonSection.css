@@ -1,0 +1,918 @@
+.long-horizon {
+  --lh-paper: #ffffff;
+  --lh-ink: #171714;
+  --lh-muted: #5b687b;
+  --lh-hairline: #d9e2ef;
+  --lh-grid: #e8edf4;
+  --lh-blue: #2b57d5;
+  --lh-blue-soft: #edf2ff;
+  --lh-orange: #d65f25;
+  --lh-orange-soft: #ff9a62;
+  --lh-future: #7a8494;
+  overflow: hidden;
+  border-top: 1px solid var(--lh-hairline);
+  background: var(--lh-paper);
+  color: var(--lh-ink);
+  font-family: var(--font-sans);
+}
+
+.long-horizon *,
+.long-horizon *::before,
+.long-horizon *::after {
+  box-sizing: border-box;
+}
+
+.long-horizon button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.long-horizon .journey {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.long-horizon .journey-header {
+  display: grid;
+  grid-template-columns: minmax(540px, 1.05fr) minmax(480px, 0.95fr);
+  gap: clamp(36px, 4vw, 56px);
+  align-items: end;
+  padding-bottom: 24px;
+}
+
+.long-horizon .eyebrow,
+.long-horizon .journey-meta span,
+.long-horizon .event-detail span,
+.long-horizon .event-detail__identity > p,
+.long-horizon .lane-label,
+.long-horizon .scenario-kicker,
+.long-horizon .scenario-tab__trigger,
+.long-horizon .scenario-tab__preview,
+.long-horizon .timeline-phase {
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.long-horizon .eyebrow {
+  margin: 0 0 20px;
+  color: var(--lh-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.long-horizon .journey-heading h2 {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(46px, 4.1vw, 64px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.long-horizon .journey-heading h2 > span {
+  color: var(--lh-blue);
+}
+
+.long-horizon .journey-heading h2 i {
+  color: var(--lh-orange-soft);
+  font-style: normal;
+}
+
+.long-horizon .journey-heading h2 .keep-together {
+  color: var(--lh-ink);
+  font-weight: inherit;
+  white-space: nowrap;
+}
+
+.long-horizon .journey-intro {
+  max-width: 590px;
+  margin: 22px 0 0;
+  color: #48566b;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.long-horizon .journey-controls {
+  min-width: 0;
+}
+
+.long-horizon .scenario-kicker {
+  margin: 0 0 10px;
+  color: var(--lh-blue);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.long-horizon .scenario-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .scenario-tabs button {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  min-height: 76px;
+  padding: 8px 12px 10px;
+  align-content: center;
+  border: 0;
+  background: transparent;
+  color: #31343b;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.long-horizon .scenario-tab__trigger {
+  color: var(--lh-muted);
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.long-horizon .scenario-tab__label {
+  line-height: 1.08;
+}
+
+.long-horizon .scenario-tab__preview {
+  min-height: 9px;
+  color: var(--lh-blue);
+  font-size: 7px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.long-horizon .scenario-tab__preview span {
+  color: var(--lh-orange);
+}
+
+.long-horizon .scenario-tab__preview.is-empty {
+  visibility: hidden;
+}
+
+.long-horizon .scenario-tabs button::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+@media (hover: hover) {
+  .long-horizon .scenario-tabs button:hover {
+    color: var(--lh-blue);
+  }
+
+  .long-horizon .playback__button:hover {
+    border-color: var(--lh-blue);
+    color: var(--lh-blue);
+  }
+}
+
+.long-horizon .scenario-tabs button.is-active,
+.long-horizon .scenario-tabs button.is-active .scenario-tab__trigger {
+  color: var(--lh-blue);
+}
+
+.long-horizon .scenario-tabs button.is-active::after {
+  background: var(--lh-blue);
+}
+
+.long-horizon .scenario-tabs button:focus-visible,
+.long-horizon .playback__button:focus-visible,
+.long-horizon .event-node__button:focus-visible,
+.long-horizon .mobile-event:focus-visible {
+  outline: 3px solid var(--lh-orange);
+  outline-offset: 3px;
+}
+
+.long-horizon .journey-meta {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.65fr) minmax(420px, 1.35fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 54px;
+  padding: 12px 0;
+  border-top: 1px solid var(--lh-hairline);
+  border-bottom: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .journey-meta > div:first-child {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+
+.long-horizon .journey-meta span {
+  color: var(--lh-blue);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.long-horizon .journey-meta strong {
+  font-size: 14px;
+}
+
+.long-horizon .journey-meta p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.long-horizon .journey-meta p span {
+  margin-right: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.long-horizon .timeline-toolbar {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .timeline-phase {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  color: var(--lh-muted);
+  font-size: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.long-horizon .timeline-phase svg {
+  flex: 0 0 auto;
+  color: var(--lh-orange);
+}
+
+.long-horizon .timeline-phase__shared {
+  color: var(--lh-blue);
+}
+
+.long-horizon .timeline-phase__branch {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.long-horizon .timeline-phase__branch strong {
+  color: var(--lh-ink);
+}
+
+.long-horizon .timeline-phase__preview {
+  padding: 4px 6px;
+  border: 1px dashed var(--lh-blue);
+  color: var(--lh-blue);
+}
+
+.long-horizon .playback {
+  display: flex;
+  gap: 10px;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.long-horizon .playback__button {
+  position: relative;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--lh-ink);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--lh-ink);
+  cursor: pointer;
+}
+
+.long-horizon .playback__button::before {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: "";
+}
+
+.long-horizon .playback__button.is-playing {
+  border-color: var(--lh-blue);
+  background: var(--lh-blue);
+  color: #fff;
+}
+
+.long-horizon .playback p {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.long-horizon .playback p strong {
+  color: var(--lh-blue);
+}
+
+.long-horizon .desktop-timeline {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  min-height: 278px;
+  border-bottom: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .lane-labels {
+  display: grid;
+  grid-template-rows: 36px repeat(4, 58px);
+  border-right: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .lane-labels__spacer {
+  border-bottom: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .lane-label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--lh-ink);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.long-horizon .lane-label svg {
+  color: var(--lh-blue);
+}
+
+.long-horizon .timeline-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: var(--lh-blue) transparent;
+  scrollbar-width: thin;
+}
+
+.long-horizon .timeline-canvas {
+  position: relative;
+  height: 278px;
+}
+
+.long-horizon .branch-divider {
+  position: absolute;
+  top: 36px;
+  bottom: 0;
+  z-index: 1;
+  border-left: 1px dashed
+    color-mix(in srgb, var(--lh-orange-soft) 68%, transparent);
+  pointer-events: none;
+}
+
+.long-horizon .day-grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: grid;
+  pointer-events: none;
+}
+
+.long-horizon .day-grid__day {
+  position: relative;
+  height: 100%;
+  border-left: 1px solid var(--lh-grid);
+}
+
+.long-horizon .day-grid__day.is-shared {
+  background: color-mix(in srgb, var(--lh-blue) 4%, transparent);
+}
+
+.long-horizon .day-grid__day:last-child {
+  border-right: 1px solid var(--lh-grid);
+}
+
+.long-horizon .day-grid__day span {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  color: #4b5565;
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  transform: translateX(-50%);
+}
+
+.long-horizon .day-grid__day.is-active {
+  background: color-mix(in srgb, var(--lh-orange-soft) 8%, transparent);
+}
+
+.long-horizon .day-grid__day.is-active span {
+  color: var(--lh-orange);
+  font-weight: 700;
+}
+
+.long-horizon .react-flow {
+  z-index: 2;
+  background: transparent !important;
+}
+
+.long-horizon .react-flow__renderer,
+.long-horizon .react-flow__pane,
+.long-horizon .react-flow__viewport {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.long-horizon .react-flow__node-event {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  pointer-events: all !important;
+}
+
+.long-horizon .event-node {
+  width: 34px;
+  height: 34px;
+}
+
+.long-horizon .event-node__button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--lh-future);
+  cursor: pointer;
+}
+
+.long-horizon .event-node__button::before {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  content: "";
+}
+
+.long-horizon .event-node--complete .event-node__button {
+  color: var(--lh-blue);
+}
+
+.long-horizon .event-node--static .event-node__button {
+  color: #697386;
+}
+
+.long-horizon .event-node--current .event-node__button {
+  color: var(--lh-orange);
+}
+
+.long-horizon .event-node--inspected .event-node__button {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--lh-blue);
+}
+
+.long-horizon .event-node--current::after {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid
+    color-mix(in srgb, var(--lh-orange-soft) 68%, transparent);
+  border-radius: 50%;
+  content: "";
+  animation: lh-current-pulse 2.2s ease-out infinite;
+  pointer-events: none;
+}
+
+.long-horizon .react-flow__handle {
+  width: 1px !important;
+  min-width: 1px !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  border: 0 !important;
+  opacity: 0;
+}
+
+.long-horizon .react-flow__edge-path {
+  stroke: var(--lh-future);
+}
+
+.long-horizon .journey-edge.is-complete .react-flow__edge-path {
+  stroke: var(--lh-blue);
+}
+
+.long-horizon
+  .journey-edge.is-shared-edge.is-future
+  .react-flow__edge-path {
+  stroke: var(--lh-blue);
+  opacity: 0.42;
+}
+
+.long-horizon .journey-edge.is-current .react-flow__edge-path {
+  stroke: var(--lh-orange);
+  opacity: 1;
+}
+
+.long-horizon .journey-edge.is-static .react-flow__edge-path {
+  stroke: #697386;
+  opacity: 0.78;
+}
+
+.long-horizon .journey-edge.is-waiting .react-flow__edge-path {
+  stroke-linecap: round;
+}
+
+.long-horizon
+  .event-node--preview:not(.event-node--current):not(
+    .event-node--inspected
+  )
+  .event-node__button {
+  opacity: 0.62;
+}
+
+.long-horizon .event-node--preview .event-node__button svg {
+  stroke-dasharray: 3 2;
+}
+
+.long-horizon .journey-edge.is-preview .react-flow__edge-path {
+  opacity: 0.62;
+  stroke-dasharray: 4 6;
+}
+
+.long-horizon
+  .journey-edge.is-preview.is-current
+  .react-flow__edge-path {
+  opacity: 1;
+}
+
+.long-horizon .mobile-timeline {
+  display: none;
+}
+
+.long-horizon .event-detail {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 0.8fr) minmax(300px, 1.1fr)
+    minmax(300px, 1fr);
+  min-height: 158px;
+  border-bottom: 1px solid var(--lh-hairline);
+  animation: lh-detail-enter 360ms ease both;
+}
+
+.long-horizon .event-detail > div {
+  padding: 20px 22px 20px 0;
+}
+
+.long-horizon .event-detail > div + div {
+  padding-left: 22px;
+  border-left: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .event-detail span,
+.long-horizon .event-detail__identity > p {
+  display: block;
+  margin: 0 0 10px;
+  color: var(--lh-blue);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.long-horizon .event-detail h3 {
+  margin: 0;
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.long-horizon .event-detail__block > p {
+  max-width: 48ch;
+  margin: 0;
+  color: #313846;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.long-horizon .event-detail__block strong {
+  display: block;
+  margin: 15px 0 4px;
+  color: var(--lh-blue);
+  font-size: 12px;
+}
+
+.long-horizon .event-detail blockquote {
+  margin: 10px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--lh-blue);
+  color: #48566b;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.long-horizon .outcome-pill {
+  display: inline-block !important;
+  margin-top: 18px !important;
+  padding: 6px 8px;
+  border: 1px solid var(--lh-orange);
+  color: var(--lh-orange) !important;
+}
+
+.long-horizon .sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+}
+
+@keyframes lh-current-pulse {
+  0% {
+    opacity: 0.75;
+    transform: scale(0.72);
+  }
+
+  65%,
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes lh-detail-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .long-horizon .journey {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .long-horizon .journey {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .long-horizon .journey {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .long-horizon .journey {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .long-horizon {
+    overflow: visible;
+  }
+
+  .long-horizon .journey-header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .long-horizon .journey-heading h2 {
+    font-size: clamp(44px, 9vw, 60px);
+    line-height: 0.96;
+  }
+
+  .long-horizon .scenario-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 3px;
+    border-bottom: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .long-horizon .scenario-tabs::-webkit-scrollbar,
+  .long-horizon .mobile-event-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .long-horizon .scenario-tabs button {
+    flex: 1 0 178px;
+    min-height: 76px;
+    padding: 9px 12px;
+    border: 1px solid var(--lh-hairline);
+    scroll-snap-align: start;
+  }
+
+  .long-horizon .scenario-tabs button.is-active {
+    border-color: var(--lh-blue);
+  }
+
+  .long-horizon .scenario-tabs button::after {
+    display: none;
+  }
+
+  .long-horizon .timeline-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .long-horizon .timeline-phase {
+    width: 100%;
+    gap: 7px;
+    white-space: normal;
+  }
+
+  .long-horizon .timeline-phase__branch {
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .long-horizon .playback {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .long-horizon .journey-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 14px 0;
+  }
+
+  .long-horizon .journey-meta > div:first-child {
+    flex-wrap: wrap;
+  }
+
+  .long-horizon .journey-meta p {
+    font-size: 15px;
+  }
+
+  .long-horizon .desktop-timeline {
+    display: none;
+  }
+
+  .long-horizon .mobile-timeline {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--lh-hairline);
+  }
+
+  .long-horizon .mobile-day-rail {
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    gap: 2px;
+    height: 18px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .long-horizon .mobile-day-rail span {
+    height: 2px;
+    background: #cbd3df;
+  }
+
+  .long-horizon .mobile-day-rail span.has-event {
+    height: 5px;
+    background: var(--lh-blue);
+  }
+
+  .long-horizon .mobile-day-rail span.is-shared {
+    background: color-mix(in srgb, var(--lh-blue) 55%, #cbd3df);
+  }
+
+  .long-horizon .mobile-day-rail span.is-active {
+    height: 12px;
+    background: var(--lh-orange);
+  }
+
+  .long-horizon .mobile-event-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 3px 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .long-horizon .mobile-event {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 8px;
+    flex: 0 0 186px;
+    min-height: 90px;
+    padding: 12px;
+    border: 1px solid var(--lh-hairline);
+    background: transparent;
+    color: #465167;
+    text-align: left;
+    scroll-snap-align: center;
+  }
+
+  .long-horizon .mobile-event--shared {
+    background: color-mix(in srgb, var(--lh-blue) 3%, transparent);
+  }
+
+  .long-horizon .mobile-event span {
+    align-self: center;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .long-horizon .mobile-event strong {
+    grid-column: 1 / -1;
+    color: var(--lh-ink);
+    font-size: 15px;
+  }
+
+  .long-horizon .mobile-event.is-active {
+    border-color: var(--lh-orange);
+    color: var(--lh-orange);
+  }
+
+  .long-horizon .mobile-event.is-inspected {
+    box-shadow: 0 0 0 2px var(--lh-blue);
+  }
+
+  .long-horizon .mobile-event--preview {
+    border-style: dashed;
+    color: color-mix(in srgb, var(--lh-blue) 72%, var(--lh-muted));
+  }
+
+  .long-horizon .event-detail {
+    display: block;
+  }
+
+  .long-horizon .event-detail > div {
+    padding: 20px 0;
+  }
+
+  .long-horizon .event-detail > div + div {
+    padding-left: 0;
+    border-top: 1px solid var(--lh-hairline);
+    border-left: 0;
+  }
+
+  .long-horizon .event-detail h3 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .long-horizon .journey-heading h2 {
+    font-size: clamp(42px, 12.6vw, 56px);
+  }
+
+  .long-horizon .journey-heading h2 .keep-together {
+    white-space: normal;
+  }
+
+  .long-horizon .journey-intro {
+    font-size: 16px;
+  }
+
+  .long-horizon .timeline-phase__preview {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .long-horizon *,
+  .long-horizon *::before,
+  .long-horizon *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
