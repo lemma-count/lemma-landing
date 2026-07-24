@@ -1,115 +1,123 @@
-# Lemma landing page — design QA
+# Lemma long-horizon section — design QA
 
 ## Scope and source truth
 
-- Route reviewed: `/`, plus the linked `/pricing` route for commercial continuity.
-- State: unauthenticated public landing page on the Paper theme.
-- Product screenshots and simulated product UI are intentionally excluded.
-- Brand source: Open Passage Brand Book release `public/brand/lemma/v1.4.0`.
-- Selected Klein Blue hero reference: `output/pro-agency-direction-20260723/28-selected-klein-hero-reference.png`.
-- Reference size: 1672 × 941 physical pixels.
-- Implementation evidence: 1280 × 720 CSS viewport at device scale 1.
-
-The selected hero reference is a 16:9 art-direction target. Fidelity is judged directly at the implementation’s 1280 × 720 viewport for composition, hierarchy, Klein Blue pigment, type scale, image crop, and semantic use of Signal orange. The rest of the page retains the longer production structure required for real copy, pricing, FAQ, navigation, and responsive behavior.
+- Route reviewed: `/`, unauthenticated public landing page.
+- New section: `#long-horizon`, between the relevant-content chapter and the Operator-control chapter.
+- Interaction source: the approved Takeoff-inspired Lemma prototype.
+- Brand source: Open Passage Brand Book v1.4.0 in `public/brand/lemma/v1.4.0`.
+- Canonical active blue: Klein Blue `#002FA7`.
+- Canonical Signal orange: `#FF7A45`.
+- Canonical type: Inter Tight for display/body and Sometype Mono for structural metadata.
 
 ## Comparison evidence
 
-Implementation captures:
+- Desktop source: `/Users/wissem/.codex/visualizations/2026/07/24/019f9318-48ac-7c00-a289-d793212d5f5f/lemma-long-horizon-prototype/audit-copy-04-after-content-desktop.jpg`
+- Mobile source: `/Users/wissem/.codex/visualizations/2026/07/24/019f9318-48ac-7c00-a289-d793212d5f5f/lemma-long-horizon-prototype/audit-copy-06-after-mobile.jpg`
+- Desktop implementation: `output/long-horizon-qa/implementation-content-1280x720.png`
+- Mobile implementation: `output/long-horizon-qa/implementation-content-mobile-390x844.png`
+- Desktop same-input comparison: `output/long-horizon-qa/source-vs-implementation-content.png`
+- Mobile same-input comparison: `output/long-horizon-qa/source-vs-implementation-mobile.png`
 
-- `output/pro-agency-direction-20260723/18-implementation-hero-1280x720.png`
-- `output/pro-agency-direction-20260723/19-implementation-false-choice-1280x720.png`
-- `output/pro-agency-direction-20260723/20-implementation-alignment-1280x720.png`
-- `output/pro-agency-direction-20260723/21-implementation-warm-1280x720.png`
-- `output/pro-agency-direction-20260723/22-implementation-permission-1280x720.png`
-- `output/pro-agency-direction-20260723/23-implementation-pricing-1280x720.png`
-
-Combined comparison sheets reviewed:
-
-- `output/pro-agency-direction-20260723/24-reference-vs-implementation-story-contact-sheet.png`
-- `output/pro-agency-direction-20260723/25-hero-reference-vs-implementation.png`
-- `output/pro-agency-direction-20260723/26-false-choice-reference-vs-implementation.png`
-- `output/pro-agency-direction-20260723/27-return-pricing-reference-vs-implementation.png`
-- `output/pro-agency-direction-20260723/29-implementation-klein-hero-1280x720.png`
-- `output/pro-agency-direction-20260723/30-klein-reference-vs-implementation.png`
-- `output/pro-agency-direction-20260723/31-brand-portal-klein-hero-1280x720.png`
-- `output/pro-agency-direction-20260723/32-brand-portal-rounded-library-1280x720.png`
+The implementation keeps the source hierarchy, event taxonomy, 28-day ruler,
+shared-path/continuation model, event density, playback control, detail panel,
+and mobile event rail. Intentional differences are limited to production
+integration: the current Brand Book palette and typography, the live site’s
+sticky header, and the surrounding landing-page rhythm.
 
 ## Fidelity review
 
-### Typography
+### Typography and copy
 
-- Inter Tight remains the primary display and body face.
-- Sometype Mono is limited to structural labels, states, pricing facts, and chapter navigation.
-- The hero preserves the concept's monumental five-line rhythm and plain-language promise.
-- Supporting sections use editorial sentence case so monumental scale remains exceptional.
+- The section headline now uses the same 680 weight as the live landing’s major
+  section titles and visually matches the approved prototype.
+- Structural labels use Sometype Mono; narrative and event copy use Inter Tight.
+- Copy remains claim-safe and Operator-controlled.
+- Voice qualification explicitly says `Preview · Available soon`.
+- Voice starts only after disclosure, Lead consent, and Mission permission.
+- Qualification covers use case, current process, pain, urgency, scope,
+  constraints, and fit.
+- Booking is conditional on permission and approved calendar access.
+- Every branch ends by returning full context to the Operator.
 
 ### Layout and spacing
 
-- The page uses the Brand Portal's 12-column field, 1px architectural rules, hard-edged cells, asymmetrical image fields, and long vertical intervals.
-- The selected option's left index rail is removed.
-- The hero, false-choice field, Alignment chapter, warm-content field, Permission/Return chapter, and pricing comparison each use a distinct composition.
-- The separate Permission/Return chapter is an intentional product-truth addition before pricing; it clarifies what Lemma runs and when human judgment returns.
+- Desktop preserves the two-column heading/control composition and full-width
+  28-day graph.
+- The graph reaches Day 28 without the former dead space on the right.
+- Event halos and focus rings are not clipped at Day 1 or Day 28.
+- The play control is compact and lives in the timeline toolbar.
+- The section’s desktop top rhythm was reduced to keep all four event lanes
+  understandable on a 720px-high laptop viewport.
+- Mobile uses a dedicated day rail and horizontally scrollable event cards
+  rather than a shrunken desktop graph.
+- Mobile scenario tabs deliberately expose part of the next option as a scroll
+  affordance.
 
-### Color
+### Color and visual language
 
-- Paper and Ink remain the dominant fields, with Klein Blue directing the major visual chapters.
-- Signal orange is deliberately more visible without becoming a button or background color.
-- Orange appears only as four semantic cues: the hero promise period, the active Lemma choice, the warm-conversation period, and the “Needs you / Human judgment” state.
-- No decorative orange button, pricing badge, large orange surface, or repeated ornamental dot was introduced.
+- Computed active tab and timeline color is `rgb(0, 47, 167)` / `#002FA7`.
+- Signal orange is reserved for current progress, handoff emphasis, and the
+  headline period.
+- Focus indicators use Klein Blue for sufficient contrast.
+- Small active-day and handoff text uses Ink while orange remains the visual
+  marker.
+- Rules, grids, dashed waits, and future states use the Brand Book’s restrained
+  Paper/Ink/Grid system.
 
-### Imagery
+### Behavior and accessibility
 
-- All visible architecture comes from approved Open Passage v1.4.0 WebP assets through `lemmaBrandVisual()`.
-- Alignment Court, Horizon Court, Signal Colonnade, Permission Gate, and the approved closing field carry product meaning rather than acting as a gallery.
-- The downstream `/brand` library now exposes all twelve Architectural Horizon assets, including Alignment Arcs, Permission Aperture, and Return Curve as the approved rounded value counterparts.
-- Rounded forms remain structural: broad continuous arcs, protected apertures, and returning planes. No decorative pills, bubbles, blobs, or soft-SaaS geometry appear.
-- Image crops preserve their documented focal areas and remain square-cornered.
-- No fake UI, CSS illustration, inline SVG approximation, stock photo, or retired Guided Horizon asset is present.
-
-### Copy and product truth
-
-- The false-choice section directly under the hero states the market problem: volume creates noise; manual prospecting does not scale; Lemma combines relevance with consistent execution.
-- “Reach the right people” is used instead of implying that Lemma is merely a Lead-sourcing database.
-- The warm-content chapter explicitly describes sharing the right content with the right person.
-- Pricing preserves the exact managed-lead model: Starter $29 / 50, Growth $99 / 200, Scale $299 / 1,000, plus unlimited manual Sequences.
-- Trial copy remains 7 days, no credit card, and 10 Managed leads.
-
-## Responsive and interaction checks
-
-- Browser-reviewed at 1280 × 720, 768 × 1024, 390 × 844, and 320 × 800.
-- The current Klein/rounded pass was re-reviewed at 1280 × 720; the responsive structure is unchanged from the earlier breakpoint pass except for local brand-font loading and additional library cards.
-- No horizontal overflow at any tested width.
-- Hero copy, both CTAs, and trial facts remain readable and reachable on mobile.
-- The chapter rail becomes horizontally scrollable on narrow screens without reintroducing a left index.
-- The mobile navigation opens as a full-screen dialog, moves focus to Close, and closes cleanly without exposing a duplicate logo.
-- Chapter links move to their corresponding page sections.
-- FAQ disclosure opens and exposes its answer.
-- Pricing actions remain complete when the table becomes stacked mobile plan cards.
-- Reduced-motion rules disable non-essential image transitions.
+- Tabs use `tablist`/`tab` semantics, roving focus, Arrow keys, Home, and End.
+- Event nodes and mobile cards support click inspection plus Arrow/Home/End
+  keyboard navigation.
+- Play, pause, continue, and replay states were exercised.
+- Tab changes preserve the shared Days 1–3 history and animate only the selected
+  continuation.
+- The animation pauses when offscreen or when the document is hidden.
+- Reduced-motion users advance chapter by chapter instead of receiving autoplay.
+- A screen-reader event list and user-triggered polite announcements are present.
+- Effective node/play targets are at least 44px.
 - Browser console review found no errors or warnings.
 
-## Iteration history and resolved findings
+## Responsive review
 
-1. P2 — The original middle sections repeated generic SaaS compositions and felt assembled rather than art-directed. Resolved by giving Alignment, Warm Content, Permission/Return, and Pricing distinct Brand Portal-derived compositions.
-2. P2 — The selected option initially retained a decorative left index. Removed throughout the landing page.
-3. P2 — The market problem was not explicit enough immediately after the hero. Added the ruled false-choice field directly below it.
-4. P2 — The first revised direction underused Signal orange after the user's correction. Added four purposeful semantic accents and regenerated the selected reference to make that choice explicit.
-5. P2 — The warm-section title overlapped its neighboring copy at desktop widths. Expanded the statement grid and split the title into controlled lines.
-6. P2 — The mobile menu showed the underlying and drawer logos together. Made the mobile panel full-viewport.
-7. P2 — The desktop hero CTA fell below the initial viewport. Tightened the hero's top spacing and type scale while preserving the composition.
-8. P3 — The production page is vertically more spacious than the compressed concept. Accepted: the difference is intentional and protects real content, commercial detail, accessibility, and responsive readability.
-9. P1 — The downstream `/brand` route initially failed at runtime because dynamic Next Image assets lacked `fill` or explicit dimensions. Added `fill`, reloaded in a fresh browser tab, and confirmed zero broken images and zero console errors.
-10. P2 — The downstream `/brand` route still exposed the retired Guided Horizon library and IBM Plex typography. Replaced it with the twelve v1.4 Architectural Horizon assets and the canonical Inter Tight / Sometype Mono pair.
-11. P2 — The visual library had only rectilinear value motifs. Added three approved rounded siblings while preserving one passage, one Signal, and the Klein/Paper material system.
+- Reviewed at 1440px, 1280×720, 1181px, 1180px, 768px, 390×844, and 320px.
+- The 1181px desktop graph fits all 28 days and all four lanes.
+- The 1180px breakpoint switches cleanly to the mobile rail/card view.
+- `scrollWidth === clientWidth` at the breakpoint; no page-level horizontal
+  overflow was introduced.
+- Headline, tabs, Lead context, playback, event cards, and detail copy remain
+  readable at 320px.
 
-No unresolved P0, P1, or P2 issues remain.
+## Resolved findings
+
+1. P1 — The feature branch originally inherited an older mainline while
+   production was one commit ahead. Resolved by merging the exact live
+   production commit before integration.
+2. P1 — The first integration used the previous cobalt palette. Resolved by
+   binding the section to Brand Book v1.4.0 tokens, including Klein Blue
+   `#002FA7`.
+3. P2 — The integrated headline was visibly lighter than both the prototype and
+   current site. Resolved with the live system’s 680 display weight.
+4. P2 — Desktop top spacing hid too much of the graph on common laptop
+   viewports. Resolved by tightening the interactive section’s top interval.
+5. P2 — The first mobile tab sizing hid the third scenario without a clear
+   affordance. Resolved by exposing a deliberate next-tab preview.
+6. P2 — Signal-orange focus and small text states had insufficient contrast.
+   Resolved with Klein focus rings and Ink text while retaining orange markers.
+7. P2 — Starting the development server during a production build caused a
+   temporary cache lock. The server was stopped, the cache was rebuilt cleanly,
+   and final checks were rerun.
+
+No unresolved P0, P1, or P2 design issues remain.
 
 ## Technical verification
 
-- TypeScript verification passed with the final component structure.
-- The production Webpack build compiled successfully, completed TypeScript, generated all 36 static pages, and collected build traces.
-- Google-hosted IBM Plex dependencies were removed. Inter Tight and Sometype Mono now load from the versioned local Brand OS snapshot, eliminating build-time font requests and keeping downstream typography canonical.
-- The local Turbopack build process did not complete under the sandbox, so the final production signal is the successful Webpack build plus browser runtime verification on the Next.js development server.
+- `npm run typecheck` passed.
+- `npm run build` passed with all 36 static pages generated.
 - `git diff --check` passed.
+- Interaction checks passed in the in-app browser.
+- The final source-versus-implementation comparison was reviewed at desktop and
+  mobile sizes.
 
 final result: passed

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CockpitSection } from "@/components/CockpitSection";
 import { Hero } from "@/components/Hero";
 import { LandingFaq, landingFaqItems } from "@/components/LandingFaq";
+import { LongHorizonSection } from "@/components/LongHorizonSection";
 import { MissionIntro } from "@/components/MissionIntro";
 import { PricingPreview } from "@/components/PricingPreview";
 import { ProofOverview } from "@/components/ProofOverview";
@@ -43,6 +44,7 @@ export default function Home() {
         <MissionIntro />
         <ProofOverview />
         <RelevantContentSection />
+        <LongHorizonSection />
         <CockpitSection />
         <PricingPreview />
         <LandingFaq />
