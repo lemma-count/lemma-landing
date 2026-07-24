@@ -1851,7 +1851,7 @@
   margin-top: 56px;
   border-top: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .falseChoiceCell {
@@ -1867,16 +1867,6 @@
 
 .falseChoiceCell:last-child {
   border-right: 0;
-}
-
-.falseChoiceCellActive::before {
-  position: absolute;
-  top: -2px;
-  right: 0;
-  left: 0;
-  height: 2px;
-  background: var(--signal);
-  content: "";
 }
 
 .falseChoiceLabel {
@@ -1897,25 +1887,6 @@
   line-height: 1.02;
 }
 
-.falseChoiceCellActive .falseChoiceLabel,
-.falseChoiceCellActive .falseChoiceValue {
-  color: var(--klein);
-}
-
-.falseChoiceCellActive .falseChoiceLabel {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.falseChoiceCellActive .falseChoiceLabel::before {
-  width: 7px;
-  height: 7px;
-  background: var(--signal);
-  content: "";
-  flex: 0 0 auto;
-}
-
 .journeySection {
   border-bottom: 1px solid var(--grid);
   background: var(--paper);
@@ -1924,73 +1895,6 @@
 
 .journeyFrame {
   position: relative;
-}
-
-.chapterRail {
-  border-right: 1px solid var(--grid);
-  border-bottom: 1px solid var(--grid);
-  border-left: 1px solid var(--grid);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.chapterTab {
-  min-height: 128px;
-  border-right: 1px solid var(--grid);
-  padding: 22px 24px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto 1fr;
-  gap: 14px 20px;
-  color: var(--ink);
-  text-decoration: none;
-  transition:
-    background-color 180ms ease,
-    color 180ms ease;
-}
-
-.chapterTab:last-child {
-  border-right: 0;
-}
-
-.chapterTab:not(.chapterTabActive):hover {
-  background: rgb(0 49 245 / 4%);
-}
-
-.chapterTabActive {
-  background: var(--klein);
-  color: var(--paper);
-}
-
-.chapterTab:focus-visible {
-  outline: 2px solid var(--klein);
-  outline-offset: -4px;
-}
-
-.chapterTabActive:focus-visible {
-  outline-color: var(--paper);
-}
-
-.chapterIndex {
-  grid-column: 1 / -1;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-}
-
-.chapterName {
-  align-self: end;
-  max-width: 13ch;
-  font-size: clamp(1.25rem, 1.75vw, 2rem);
-  font-weight: 560;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
-  text-transform: uppercase;
-}
-
-.chapterTab svg {
-  align-self: end;
 }
 
 .alignmentChapter {
@@ -2496,19 +2400,6 @@
     grid-column: 1 / -1;
   }
 
-  .chapterRail {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .chapterTab {
-    min-height: 116px;
-    padding: 18px;
-  }
-
-  .chapterName {
-    font-size: 1.15rem;
-  }
-
   .alignmentChapter {
     min-height: 650px;
     grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -2730,32 +2621,12 @@
     border-bottom: 0;
   }
 
-  .falseChoiceCellActive::before {
-    right: auto;
-    width: 42%;
-  }
-
   .falseChoiceValue {
     margin-top: 18px;
   }
 
   .journeyFrame {
     padding-inline: 0;
-  }
-
-  .chapterRail {
-    overflow-x: auto;
-    border-left: 0;
-    display: flex;
-    scrollbar-width: none;
-  }
-
-  .chapterRail::-webkit-scrollbar {
-    display: none;
-  }
-
-  .chapterTab {
-    min-width: 240px;
   }
 
   .alignmentChapter {
@@ -2926,7 +2797,7 @@
   .journeyFrame {
     min-height: var(--home-viewport);
     display: grid;
-    grid-template-rows: auto minmax(520px, 1fr);
+    grid-template-rows: minmax(520px, 1fr);
   }
 
   .alignmentChapter,
