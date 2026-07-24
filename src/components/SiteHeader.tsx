@@ -44,7 +44,7 @@ export function SiteHeader() {
       ref={ref}
       className={isHome ? "fixed inset-x-0 top-0 z-30" : "sticky top-0 z-30"}
     >
-      <Nav inverse={isHome && !scrolled} compact={isHome && scrolled} />
+      <Nav compact={isHome && scrolled} />
     </div>
   );
 }
