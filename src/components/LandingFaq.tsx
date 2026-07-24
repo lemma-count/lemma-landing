@@ -40,7 +40,7 @@ export const landingFaqItems = [
 
 export function LandingFaq() {
   return (
-    <section id="faq" className={styles.section}>
+    <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.faqLead}>
           <p className={styles.eyebrow}>06 / Practical details</p>
