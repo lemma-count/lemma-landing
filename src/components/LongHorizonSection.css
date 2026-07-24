@@ -1,13 +1,13 @@
 .long-horizon {
-  --lh-paper: #fcfcfc;
-  --lh-ink: #121212;
-  --lh-muted: #707070;
-  --lh-hairline: #e9e9e7;
-  --lh-grid: #e9e9e7;
-  --lh-blue: #002fa7;
-  --lh-blue-soft: #eef2ff;
-  --lh-orange: #d75220;
-  --lh-orange-soft: #ff7a45;
+  --lh-paper: var(--color-lemma-paper, #fcfcfc);
+  --lh-ink: var(--color-lemma-ink, #121212);
+  --lh-muted: var(--color-lemma-muted, #707070);
+  --lh-hairline: var(--color-lemma-grid, #e9e9e7);
+  --lh-grid: var(--color-lemma-grid, #e9e9e7);
+  --lh-blue: var(--color-lemma-klein, #002fa7);
+  --lh-blue-soft: var(--color-lemma-klein-soft, #1b46c7);
+  --lh-orange: var(--color-lemma-signal, #ff7a45);
+  --lh-orange-soft: var(--color-lemma-signal, #ff7a45);
   --lh-future: #858585;
   overflow: hidden;
   border-top: 1px solid var(--lh-hairline);
@@ -31,7 +31,7 @@
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 80px 16px;
+  padding: 72px 16px 80px;
 }
 
 .long-horizon .journey-header {
@@ -68,7 +68,7 @@
   max-width: 720px;
   margin: 0;
   font-size: clamp(46px, 4.1vw, 64px);
-  font-weight: 500;
+  font-weight: 680;
   line-height: 0.98;
   letter-spacing: -0.035em;
 }
@@ -188,7 +188,7 @@
 .long-horizon .playback__button:focus-visible,
 .long-horizon .event-node__button:focus-visible,
 .long-horizon .mobile-event:focus-visible {
-  outline: 3px solid var(--lh-orange);
+  outline: 3px solid var(--lh-blue);
   outline-offset: 3px;
 }
 
@@ -415,7 +415,7 @@
 }
 
 .long-horizon .day-grid__day.is-active span {
-  color: var(--lh-orange);
+  color: var(--lh-ink);
   font-weight: 700;
 }
 
@@ -591,7 +591,7 @@
 .long-horizon .event-detail h3 {
   margin: 0;
   font-size: clamp(24px, 2vw, 32px);
-  font-weight: 500;
+  font-weight: 650;
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -626,7 +626,7 @@
   margin-top: 18px !important;
   padding: 6px 8px;
   border: 1px solid var(--lh-orange);
-  color: var(--lh-orange) !important;
+  color: var(--lh-ink) !important;
 }
 
 .long-horizon .sr-only {
@@ -684,7 +684,7 @@
   .long-horizon .journey {
     padding-right: 56px;
     padding-left: 56px;
-    padding-top: 112px;
+    padding-top: 80px;
     padding-bottom: 112px;
   }
 }
@@ -720,7 +720,7 @@
   }
 
   .long-horizon .scenario-tabs button {
-    flex: 1 0 178px;
+    flex: 0 0 156px;
     min-height: 76px;
     padding: 9px 12px;
     border: 1px solid var(--lh-hairline);
@@ -855,6 +855,10 @@
 
   .long-horizon .mobile-event.is-active {
     border-color: var(--lh-orange);
+    color: var(--lh-ink);
+  }
+
+  .long-horizon .mobile-event.is-active svg {
     color: var(--lh-orange);
   }
 
