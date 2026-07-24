@@ -871,7 +871,7 @@
 }
 
 .pricingPlan {
-  min-height: 460px;
+  min-height: 690px;
   display: flex;
   flex-direction: column;
   padding-top: 34px;
@@ -889,27 +889,45 @@
 .planRule {
   width: 100%;
   height: 1px;
-  margin: 30px 0 0;
+  margin: 28px 0 0;
   background: var(--grid);
 }
 
+.planFeaturesLabel {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 .planFeatures {
-  margin: 26px 0 34px;
+  margin: 12px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .planFeatures li {
   border-top: 1px solid var(--grid);
-  padding-block: 14px;
+  padding-block: 10px;
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 10px;
   color: var(--body);
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   line-height: 1.4;
+}
+
+.planFeatures svg {
+  margin-top: 2px;
+  color: var(--klein);
 }
 
 .pricingPlan .planAction {
   width: 100%;
-  margin-top: auto;
+  margin-top: 26px;
 }
 
 .pricingFinePrint {
@@ -919,48 +937,6 @@
   font-family: var(--font-mono);
   font-size: 0.7rem;
   line-height: 1.55;
-}
-
-.allPlansInclude {
-  grid-column: 1 / -1;
-  border-top: 1px solid var(--ink);
-  padding-block: 24px 28px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.allPlansInclude p {
-  grid-column: 1 / span 2;
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 650;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.allPlansInclude ul {
-  grid-column: 4 / -1;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  list-style: none;
-}
-
-.allPlansInclude li {
-  min-height: 56px;
-  border-left: 1px solid var(--grid);
-  padding-inline: 18px;
-  color: var(--body);
-  font-size: 0.88rem;
-  line-height: 1.4;
-}
-
-.allPlansInclude li:first-child {
-  border-left: 0;
-  padding-left: 0;
 }
 
 .definitionLead {
@@ -1226,13 +1202,6 @@
   }
 }
 
-@media (min-width: 900px) {
-  .pricingPlan .planRule,
-  .pricingPlan .planFeatures {
-    display: none;
-  }
-}
-
 @media (max-width: 1199px) {
   .frame,
   .nav {
@@ -1439,10 +1408,6 @@
 
   .pricingPlan .planDescription {
     min-height: 0;
-  }
-
-  .allPlansInclude {
-    display: none;
   }
 
   .trialBand {
