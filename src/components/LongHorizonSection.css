@@ -1,19 +1,19 @@
 .long-horizon {
-  --lh-paper: #ffffff;
-  --lh-ink: #171714;
-  --lh-muted: #5b687b;
-  --lh-hairline: #d9e2ef;
-  --lh-grid: #e8edf4;
-  --lh-blue: #2b57d5;
-  --lh-blue-soft: #edf2ff;
-  --lh-orange: #d65f25;
-  --lh-orange-soft: #ff9a62;
-  --lh-future: #7a8494;
+  --lh-paper: #fcfcfc;
+  --lh-ink: #121212;
+  --lh-muted: #707070;
+  --lh-hairline: #e9e9e7;
+  --lh-grid: #e9e9e7;
+  --lh-blue: #002fa7;
+  --lh-blue-soft: #eef2ff;
+  --lh-orange: #d75220;
+  --lh-orange-soft: #ff7a45;
+  --lh-future: #858585;
   overflow: hidden;
   border-top: 1px solid var(--lh-hairline);
   background: var(--lh-paper);
   color: var(--lh-ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-lemma);
 }
 
 .long-horizon *,
@@ -29,9 +29,9 @@
 
 .long-horizon .journey {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 80px 16px;
 }
 
 .long-horizon .journey-header {
@@ -51,6 +51,7 @@
 .long-horizon .scenario-tab__trigger,
 .long-horizon .scenario-tab__preview,
 .long-horizon .timeline-phase {
+  font-family: var(--font-lemma-mono);
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -90,7 +91,7 @@
 .long-horizon .journey-intro {
   max-width: 590px;
   margin: 22px 0 0;
-  color: #48566b;
+  color: #3d3d3d;
   font-size: 17px;
   line-height: 1.55;
 }
@@ -402,7 +403,8 @@
   position: absolute;
   top: 11px;
   left: 50%;
-  color: #4b5565;
+  color: #575757;
+  font-family: var(--font-lemma-mono);
   font-size: 9px;
   font-variant-numeric: tabular-nums;
   transform: translateX(-50%);
@@ -597,7 +599,7 @@
 .long-horizon .event-detail__block > p {
   max-width: 48ch;
   margin: 0;
-  color: #313846;
+  color: #3d3d3d;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -613,7 +615,7 @@
   margin: 10px 0 0;
   padding-left: 14px;
   border-left: 2px solid var(--lh-blue);
-  color: #48566b;
+  color: #707070;
   font-size: 13px;
   line-height: 1.45;
   white-space: pre-line;
@@ -678,15 +680,10 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .long-horizon .journey {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .long-horizon .journey {
+    padding-right: 56px;
+    padding-left: 56px;
     padding-top: 112px;
     padding-bottom: 112px;
   }
@@ -841,8 +838,9 @@
     background: color-mix(in srgb, var(--lh-blue) 3%, transparent);
   }
 
-  .long-horizon .mobile-event span {
+.long-horizon .mobile-event span {
     align-self: center;
+    font-family: var(--font-lemma-mono);
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 0.05em;

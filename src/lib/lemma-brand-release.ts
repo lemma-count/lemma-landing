@@ -3,13 +3,13 @@ import lock from "../../lemma-brand.lock.json";
 /**
  * Pinned corporate-brand release for the public marketing site.
  *
- * This intentionally does not replace the existing site implementation in one
- * step. New marketing surfaces can adopt it deliberately, while the current
- * landing stays stable until each route has been reviewed against the release.
+ * The marketing site is pinned to this reviewed release snapshot. New surfaces
+ * adopt it deliberately; the orange Signal roles are semantic and remain
+ * subordinate to the product copy and evidence around them.
  */
 export const lemmaBrandRelease = lock;
 
-export const lemmaBrandAssetBase = "/brand/lemma/v1.2.1";
+export const lemmaBrandAssetBase = "/brand/lemma/v1.4.0";
 
 export function lemmaBrandVisual(fileName: string) {
   return `${lemmaBrandAssetBase}/visuals/${fileName}`;
