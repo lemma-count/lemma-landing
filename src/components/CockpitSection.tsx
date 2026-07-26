@@ -31,12 +31,12 @@ export function CockpitSection() {
         </div>
 
         <div id="return" className={styles.permissionCopy}>
-          <p className={styles.eyebrow}>04 / You stay in control</p>
-          <h2 className={styles.permissionTitle}>Lemma works. You decide.</h2>
+          <p className={styles.eyebrow}>05 / Workflow · 3 of 3</p>
+          <h2 className={styles.permissionTitle}>Step in when it matters.</h2>
           <p className={styles.permissionBody}>
-            You set the target and the rules. Lemma handles the routine work and
-            brings you replies, problems, and sensitive decisions with the full
-            story.
+            Replies, blockers, and sensitive decisions come back with the full
+            history and the recommended next step. You take over without
+            rebuilding the story.
           </p>
           <p className={styles.permissionSignal}>
             <span className={styles.permissionSignalDot} aria-hidden />

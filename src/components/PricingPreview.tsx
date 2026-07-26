@@ -16,7 +16,7 @@ export function PricingPreview() {
     >
       <div className={`${styles.frame} ${styles.pricingPreviewGrid}`}>
         <div className={styles.pricingPreviewIntro}>
-          <p className={styles.eyebrow}>05 / Simple pricing</p>
+          <p className={styles.eyebrow}>06 / Simple pricing</p>
           <h2 className={styles.pricingPreviewTitle}>
             Pay for the Leads Lemma manages.
           </h2>

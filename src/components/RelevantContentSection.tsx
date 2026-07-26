@@ -4,7 +4,7 @@ import styles from "./LemmaMarketing.module.css";
 
 export function RelevantContentSection() {
   return (
-    <section id="product" className={styles.warmSection}>
+    <section id="follow-up" className={styles.warmSection}>
       <div className={`${styles.frame} ${styles.warmGrid}`}>
         <div className={styles.warmMedia}>
           <Image
@@ -17,23 +17,24 @@ export function RelevantContentSection() {
         </div>
 
         <div className={styles.warmStatement}>
-          <p className={styles.eyebrow}>03 / After the first message</p>
+          <p className={styles.eyebrow}>04 / Workflow · 2 of 3</p>
           <h2 className={styles.warmTitle}>
-            <span>Silence</span>
-            <span>is not a</span>
+            <span>Keep the</span>
+            <span>relationship</span>
             <span>
-              send button<span className={styles.warmSignalPeriod}>.</span>
+              moving<span className={styles.warmSignalPeriod}>.</span>
             </span>
           </h2>
         </div>
 
         <div className={styles.warmExplanation}>
           <p>
-            If there is nothing useful to say, Lemma waits. When there is, it
-            follows up with context—not a “just checking in.”
+            Lemma sends, waits, follows up with something useful, and adapts
+            when the customer replies. The work continues across days and weeks
+            without forcing the next touch.
           </p>
           <p className={styles.warmSequence}>
-            Wait · Add value · Keep the thread
+            Send · Wait · Add value · Adapt
           </p>
         </div>
       </div>

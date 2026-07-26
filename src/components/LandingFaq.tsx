@@ -31,7 +31,7 @@ export function LandingFaq() {
     <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.faqLead}>
-          <p className={styles.eyebrow}>06 / The basics</p>
+          <p className={styles.eyebrow}>07 / The basics</p>
           <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
             What you need to know.
           </h2>

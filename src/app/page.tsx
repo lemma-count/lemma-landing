@@ -42,9 +42,9 @@ export default function Home() {
       <main className={`${styles.root} ${styles.homeRoot}`}>
         <Hero />
         <MissionIntro />
+        <LongHorizonSection />
         <ProofOverview />
         <RelevantContentSection />
-        <LongHorizonSection />
         <CockpitSection />
         <PricingPreview />
         <LandingFaq />

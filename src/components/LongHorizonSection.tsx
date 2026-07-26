@@ -737,15 +737,15 @@ export function LongHorizonSection() {
 
   return (
     <section
-      id="long-horizon"
+      id="how-it-works"
       className="long-horizon scroll-mt-20"
       aria-labelledby="long-horizon-title"
       ref={rootRef}
     >
-      <div className="journey">
+      <div id="long-horizon" className="journey">
         <header className="journey-header">
           <div className="journey-heading landing-reveal">
-            <p className="eyebrow">Outbound takes weeks. Lemma remembers.</p>
+            <p className="eyebrow">02 / Why the long horizon matters</p>
             <h2 id="long-horizon-title">
               One Lead. <span>28 days.</span>{" "}
               <b className="keep-together">
@@ -753,9 +753,10 @@ export function LongHorizonSection() {
               </b>
             </h2>
             <p className="journey-intro">
-              A sequence sends messages. A Mission keeps the whole job
-              together—research, waiting, follow-up, replies, and the next
-              decision.
+              A customer journey changes with every signal. Lemma keeps each
+              task, message, wait, reply, and decision in one continuous
+              Mission, so it can adapt and pick up the relationship days or
+              weeks later without starting over.
             </p>
           </div>
 
