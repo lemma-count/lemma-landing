@@ -21,7 +21,9 @@ export function PricingPlans() {
           <p className={styles.planDescription}>{plan.description}</p>
 
           <div className={styles.planSupport}>
-            <p className={styles.planSupportLabel}>Support</p>
+            <p className={styles.planSupportLabel}>
+              Support / {plan.supportLevel}
+            </p>
             <p className={styles.planSupportCopy}>{plan.support}</p>
           </div>
 
