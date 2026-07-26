@@ -85,7 +85,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Get new clients without doing the prospecting. Lemma researches each Lead, runs permitted LinkedIn work across days and weeks, and makes the next decision visible.",
+    "Lemma researches the people you choose, runs the LinkedIn work you allow, follows up across days and weeks, and brings replies or problems back to you.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {

@@ -5,8 +5,6 @@ export type JourneyChapter =
   | "first-outreach"
   | "content-wait"
   | "content-followup"
-  | "voice-request"
-  | "voice-call"
   | "reengage-wait"
   | "reengage-signal"
   | "handoff";
@@ -38,10 +36,9 @@ export type ChapterContent = {
 };
 
 export type JourneyScenario = {
-  id: "content" | "voice" | "reengagement";
+  id: "content" | "reengagement";
   label: string;
   trigger: string;
-  preview: boolean;
   events: JourneyEvent[];
 };
 
@@ -54,11 +51,11 @@ export const leadContext = {
 export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
   research: {
     shortLabel: "Research",
-    title: "Know the Lead.",
+    title: "Know the person.",
     summary:
       "Lemma checks Maya, Northstar, your goal, and what it may send.",
     why:
-      "The first message starts with a real reason—not a made-up icebreaker.",
+      "The first message uses the research instead of a made-up icebreaker.",
     next: "Send one relevant connection request.",
     holdAfter: 2300,
   },
@@ -68,7 +65,7 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
     summary:
       "When Maya accepts, Lemma uses the same research for one short message.",
     why: "Start a conversation. Do not force a meeting.",
-    next: "Keep the thread and wait for what happens.",
+    next: "Keep the conversation and wait for what happens.",
     message:
       "Congrats on the partnerships expansion. Is building a repeatable partner pipeline already part of the plan—or still being shaped?",
     holdAfter: 2600,
@@ -77,7 +74,7 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
     shortLabel: "Wait",
     title: "No reply? Wait.",
     summary:
-      "Four days pass. Lemma remembers the thread and sends nothing.",
+      "Four days pass. Lemma remembers the conversation and sends nothing.",
     why: "An empty reminder adds noise, not value.",
     next: "Check again when the follow-up window opens.",
     holdAfter: 2500,
@@ -93,26 +90,6 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
       "This short piece on creating a repeatable partner pipeline may be useful as you shape the motion at Northstar.",
     holdAfter: 3200,
   },
-  "voice-request": {
-    shortLabel: "Call requested",
-    title: "A call—with permission.",
-    summary:
-      "Maya agrees to a clearly disclosed call with Lemma’s voice agent.",
-    why: "Both Maya and you have allowed the call.",
-    next: "Prepare the context and questions.",
-    holdAfter: 2700,
-  },
-  "voice-call": {
-    shortLabel: "Answer + qualify",
-    title: "Answer. Then qualify.",
-    summary:
-      "The voice agent answers Maya, then asks only what it still needs to know.",
-    why: "You can review the answers and the recommendation.",
-    next: "Offer a meeting only when allowed.",
-    message:
-      "Maya: Can this fit our partner motion, and how quickly can we start?\nVoice: I’ll answer both. Then I’ll ask a few focused questions so I can recommend the right next step.",
-    holdAfter: 3600,
-  },
   "reengage-wait": {
     shortLabel: "Respect timing",
     title: "Come back when asked.",
@@ -124,7 +101,7 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
   },
   "reengage-signal": {
     shortLabel: "Agreed return",
-    title: "Pick up the same thread.",
+    title: "Continue the same conversation.",
     summary:
       "The agreed window opens. Lemma checks the rules and prepares one short return.",
     why: "It continues the conversation instead of starting over.",
@@ -151,8 +128,8 @@ export const sharedEvents: JourneyEvent[] = [
     lane: "signal",
     chapter: "research",
     shared: true,
-    title: "Lead added to Mission",
-    summary: "Maya Chen at Northstar is added to this Mission.",
+    title: "Person added to the outreach plan",
+    summary: "Maya Chen at Northstar is added to this outreach plan.",
     why: "Northstar matches the audience and Maya owns partnerships.",
     next: "Check whether there is a credible reason to reach out.",
   },
@@ -163,7 +140,7 @@ export const sharedEvents: JourneyEvent[] = [
     chapter: "research",
     shared: true,
     title: "Worth researching",
-    summary: "Lemma decides this Lead merits deeper research.",
+    summary: "Lemma checks that Maya is worth researching further.",
     why: "The initial match is credible, and outreach remains within your rules.",
     next: "Research Maya, Northstar, and the current business context.",
   },
@@ -187,10 +164,10 @@ export const sharedEvents: JourneyEvent[] = [
     shared: true,
     title: "Request sent",
     summary:
-      "The approved LinkedIn connection request is sent through the selected Sender.",
+      "The approved LinkedIn connection request is sent through your LinkedIn account.",
     why:
       "The note references Northstar’s current priority instead of generic personalization.",
-    next: "Wait for a channel signal.",
+    next: "Wait for a LinkedIn response.",
     message:
       "Saw Northstar is building its partnerships team. Thought it could be useful to connect.",
   },
@@ -212,7 +189,7 @@ export const sharedEvents: JourneyEvent[] = [
     chapter: "first-outreach",
     shared: true,
     title: "Continue with value",
-    summary: "Lemma chooses a short, useful first message.",
+    summary: "Lemma prepares a short first message based on the research.",
     why: "The goal is to open a conversation, not force a meeting.",
     next: "Prepare a message grounded in Northstar’s priority.",
   },
@@ -234,9 +211,9 @@ export const sharedEvents: JourneyEvent[] = [
     chapter: "first-outreach",
     shared: true,
     title: "Message sent",
-    summary: "The approved first message is sent through the same Sender.",
+    summary: "The approved first message is sent through your LinkedIn account.",
     why: "It introduces the relevance without front-loading a sales pitch.",
-    next: "Keep the context and react to the next signal.",
+    next: "Keep the context and react to what happens next.",
     message:
       "Is building a repeatable partner pipeline already part of the plan—or still being shaped?",
   },
@@ -255,7 +232,8 @@ const createHandoffEvents = ({
     lane: "decision",
     chapter: "handoff",
     title: "Bring you in",
-    summary: "Lemma decides the next step needs human judgment.",
+    summary:
+      "The next step needs human judgment, so Lemma brings you in.",
     why: "The next move may shape trust, scope, or the commercial relationship.",
     next: "Prepare the complete context.",
   },
@@ -313,7 +291,7 @@ const contentBranch: JourneyEvent[] = [
     title: "Follow-up window reached",
     summary:
       "The approved article still matches Northstar’s partnerships priority.",
-    why: "Time is the signal, but prior research keeps the follow-up relevant.",
+    why: "Enough time has passed, and the prior research still fits.",
     next: "Decide whether the article justifies another message.",
   },
   {
@@ -322,7 +300,7 @@ const contentBranch: JourneyEvent[] = [
     lane: "decision",
     chapter: "content-followup",
     title: "Share the useful article",
-    summary: "Lemma chooses the article rather than a reminder.",
+    summary: "Lemma prepares the article follow-up rather than a reminder.",
     why:
       "The content answers a real problem instead of merely asking for attention.",
     next: "Prepare a short contextual note.",
@@ -368,111 +346,6 @@ const contentBranch: JourneyEvent[] = [
   }),
 ];
 
-const voiceBranch: JourneyEvent[] = [
-  {
-    id: "voice-d5-signal",
-    day: 5,
-    lane: "signal",
-    chapter: "voice-request",
-    title: "Maya agrees to a voice-agent call",
-    summary:
-      "Maya is told she will speak with Lemma’s voice agent and agrees to continue by phone.",
-    why:
-      "The preview begins with disclosure and consent, not an unsolicited call.",
-    next: "Confirm that this Mission permits voice.",
-  },
-  {
-    id: "voice-d5-decision",
-    day: 5,
-    lane: "decision",
-    chapter: "voice-request",
-    title: "Voice is permitted",
-    summary:
-      "The Mission permits disclosed voice calls, and Maya has agreed to one.",
-    why:
-      "Both Operator permission and Lead consent are checked before the call.",
-    next: "Prepare a call brief and qualification frame.",
-  },
-  {
-    id: "voice-d5-task",
-    day: 5,
-    lane: "task",
-    chapter: "voice-request",
-    title: "Prepare call brief",
-    summary:
-      "Questions, history, approved answers, use-case prompts, and fit criteria are assembled.",
-    why: "The agent should never begin without the prior context.",
-    next: "Place the consented call.",
-  },
-  {
-    id: "voice-d6-interaction",
-    day: 6,
-    lane: "interaction",
-    chapter: "voice-call",
-    title: "Voice call",
-    summary:
-      "The voice agent answers from approved information, then asks only what is still needed.",
-    why:
-      "A live conversation resolves detail efficiently without repeating known context.",
-    next:
-      "Capture the use case, process, pain, urgency, scope, constraints, and fit.",
-    message:
-      "Maya: Can this fit our partner motion, and how quickly can we start?\nVoice: I’ll answer both. Then I’ll ask a few focused questions so I can recommend the right next step.",
-    holdAfter: 1800,
-  },
-  {
-    id: "voice-d7-signal",
-    day: 7,
-    lane: "signal",
-    chapter: "voice-call",
-    title: "Qualification answers captured",
-    summary:
-      "The call captures Maya’s use case, current process, pain, urgency, scope, constraints, and fit against the Operator’s criteria.",
-    why: "The result is explainable and reviewable by the Operator.",
-    next: "Choose the best next step.",
-  },
-  {
-    id: "voice-d7-decision",
-    day: 7,
-    lane: "decision",
-    chapter: "voice-call",
-    title: "Recommend a working session",
-    summary: "Maya’s answers meet the Operator’s configured criteria.",
-    why:
-      "This is a reviewable recommendation—not a final commercial judgment.",
-    next: "Offer approved meeting times when booking is permitted.",
-  },
-  {
-    id: "voice-d7-task",
-    day: 7,
-    lane: "task",
-    chapter: "voice-call",
-    title: "Offer approved times",
-    summary:
-      "When calendar access and booking are enabled, Lemma proposes Operator-approved times.",
-    why: "A permitted next step becomes an immediate, practical action.",
-    next: "Book the meeting Maya selects.",
-  },
-  {
-    id: "voice-d7-interaction",
-    day: 7,
-    lane: "interaction",
-    chapter: "voice-call",
-    title: "Meeting booked",
-    summary:
-      "Maya selects an approved time, and the working session is booked.",
-    why:
-      "The voice agent moves the conversation forward within the Operator’s rules.",
-    next: "Return the call evidence and booking to the Operator.",
-    message: "30-minute working session booked for Thursday at 10:00.",
-  },
-  ...createHandoffEvents({
-    day: 9,
-    evidence:
-      "Questions answered, fit evidence captured, and a working session booked for Thursday at 10:00.",
-  }),
-];
-
 const reengagementBranch: JourneyEvent[] = [
   {
     id: "reengage-d7-signal",
@@ -481,8 +354,8 @@ const reengagementBranch: JourneyEvent[] = [
     chapter: "reengage-wait",
     title: "“Try me later this month”",
     summary: "Maya asks Lemma to return later in the month.",
-    why: "The Lead has supplied a real timing signal and an explicit boundary.",
-    next: "Respect the timing and keep the thread.",
+    why: "Maya gave a clear time to return and set a clear boundary.",
+    next: "Respect the timing and keep the conversation.",
   },
   {
     id: "reengage-d7-decision",
@@ -492,7 +365,7 @@ const reengagementBranch: JourneyEvent[] = [
     title: "Respect the timing",
     summary: "Lemma stops the active follow-up.",
     why: "Another message now would ignore Maya’s explicit request.",
-    next: "Schedule one return inside the same 28-day Sequence.",
+    next: "Schedule one return inside the same 28-day outreach plan.",
   },
   {
     id: "reengage-d7-task",
@@ -502,7 +375,7 @@ const reengagementBranch: JourneyEvent[] = [
     title: "Schedule one return",
     summary: "Lemma schedules one contextual return for the agreed window.",
     why:
-      "The Sequence can persist without turning into repeated pressure.",
+      "The outreach plan can continue without turning into repeated pressure.",
     next: "Wait until the agreed date.",
   },
   {
@@ -512,7 +385,7 @@ const reengagementBranch: JourneyEvent[] = [
     chapter: "reengage-signal",
     title: "Agreed window reached",
     summary: "The requested return window opens.",
-    why: "Lemma now has a Lead-defined reason to re-enter the thread.",
+    why: "Lemma now has a reason Maya gave to return to the conversation.",
     next: "Check whether re-engagement remains permitted.",
   },
   {
@@ -520,8 +393,8 @@ const reengagementBranch: JourneyEvent[] = [
     day: 21,
     lane: "decision",
     chapter: "reengage-signal",
-    title: "Re-open the existing thread",
-    summary: "Lemma chooses one concise return tied to Maya’s request.",
+    title: "Continue the existing conversation",
+    summary: "Lemma prepares one concise return tied to Maya’s request.",
     why:
       "The outreach continues the relationship instead of restarting it.",
     next: "Prepare the re-entry message.",
@@ -535,15 +408,16 @@ const reengagementBranch: JourneyEvent[] = [
     summary:
       "Lemma reconnects the prior conversation to the agreed timing.",
     why: "The note is specific without repeating the original pitch.",
-    next: "Run the final permission checks.",
+    next: "Check the rules one last time.",
   },
   {
     id: "reengage-d23-task",
     day: 23,
     lane: "task",
     chapter: "reengage-signal",
-    title: "Recheck permission",
-    summary: "Sender, permission, and do-not-contact checks still pass.",
+    title: "Check the rules again",
+    summary:
+      "The LinkedIn account, your rules, and do-not-contact checks still pass.",
     why: "A scheduled return never bypasses your rules or Maya’s request.",
     next: "Send the single agreed re-engagement.",
   },
@@ -564,7 +438,7 @@ const reengagementBranch: JourneyEvent[] = [
     day: 25,
     lane: "signal",
     chapter: "handoff",
-    title: "Maya reopens the thread",
+    title: "Maya continues the conversation",
     summary: "Maya replies and references the earlier conversation.",
     why:
       "The agreed return has reopened a relationship with preserved history.",
@@ -573,30 +447,21 @@ const reengagementBranch: JourneyEvent[] = [
   ...createHandoffEvents({
     day: 26,
     evidence:
-      "Maya reopened the thread after the agreed delay and asked about fit and timing.",
+      "Maya continued the conversation after the agreed delay and asked about fit and timing.",
   }),
 ];
 
 export const scenarios: JourneyScenario[] = [
   {
     id: "content",
-    label: "Wait, then add value",
+    label: "Wait, then share an article",
     trigger: "No reply",
-    preview: false,
     events: [...sharedEvents, ...contentBranch],
   },
   {
-    id: "voice",
-    label: "Answer, then qualify",
-    trigger: "Call requested",
-    preview: true,
-    events: [...sharedEvents, ...voiceBranch],
-  },
-  {
     id: "reengagement",
-    label: "Come back when asked",
+    label: "Stop. Return when asked.",
     trigger: "Try me later",
-    preview: false,
     events: [...sharedEvents, ...reengagementBranch],
   },
 ];

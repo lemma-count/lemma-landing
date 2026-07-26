@@ -5,24 +5,28 @@ import styles from "./LemmaMarketing.module.css";
 
 export const landingFaqItems = [
   {
-    q: "What does Lemma do?",
-    a: "Lemma researches the Leads you choose, starts permitted LinkedIn conversations, follows up across days and weeks, and brings replies or problems back to you.",
+    q: "Who chooses the people Lemma contacts?",
+    a: "You do. Lemma only works on the people you add.",
   },
   {
-    q: "What exactly is a Managed lead?",
-    a: "A Managed lead is a Lead currently assigned to a live Lemma-led Mission. It counts while Lemma is actively running that work for you.",
-  },
-  {
-    q: "Which channel does Lemma support?",
-    a: "Lemma currently runs outbound through your LinkedIn account.",
+    q: "Which channel does Lemma use?",
+    a: "Lemma currently works through your LinkedIn account.",
   },
   {
     q: "Can Lemma act without my approval?",
-    a: "You decide what Lemma may run. Anything outside those rules, plus blockers and sensitive decisions, comes back to you.",
+    a: "You choose what Lemma may send. Work outside those rules, plus problems and replies that need you, comes back to you.",
   },
   {
-    q: "Do I need a credit card for the trial?",
-    a: `No. The ${lemmaTrial.days}-day trial includes ${lemmaTrial.managedLeads} Managed leads and does not require a credit card.`,
+    q: "What happens when someone replies?",
+    a: "Lemma records the reply and shows you the prior messages and the next action. You decide what happens next when the reply needs you.",
+  },
+  {
+    q: "What counts toward my plan?",
+    a: "A person counts while Lemma is actively working on them. Your plan sets how many people Lemma can work on at once.",
+  },
+  {
+    q: "Do I need a card for the trial?",
+    a: `No. The ${lemmaTrial.days}-day trial lets Lemma work on ${lemmaTrial.managedLeads} people at once and does not require a card.`,
   },
 ] as const;
 
@@ -31,7 +35,7 @@ export function LandingFaq() {
     <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.faqLead}>
-          <p className={styles.eyebrow}>07 / The basics</p>
+          <p className={styles.eyebrow}>Questions</p>
           <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
             What you need to know.
           </h2>

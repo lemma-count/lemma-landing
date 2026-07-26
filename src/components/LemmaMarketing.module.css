@@ -356,10 +356,10 @@
 
 .trialMeta {
   margin: 18px 0 0;
-  color: var(--muted);
+  color: var(--ink);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 550;
+  font-size: 0.78rem;
+  font-weight: 600;
   letter-spacing: 0.04em;
 }
 
@@ -1127,7 +1127,7 @@
 .closingBody {
   max-width: 600px;
   margin: 28px 0 0;
-  color: rgb(252 252 252 / 72%);
+  color: rgb(252 252 252 / 82%);
   font-size: 1.05rem;
   line-height: 1.5;
 }
@@ -1163,7 +1163,7 @@
 .footerBrand p {
   max-width: 360px;
   margin: 18px 0 0;
-  color: rgb(252 252 252 / 62%);
+  color: rgb(252 252 252 / 74%);
   font-size: 0.88rem;
   line-height: 1.5;
 }
@@ -1177,7 +1177,7 @@
 
 .footerNavGroup h3 {
   margin: 0;
-  color: rgb(252 252 252 / 50%);
+  color: rgb(252 252 252 / 68%);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.07em;
@@ -1209,7 +1209,7 @@
   border-top: 1px solid rgb(252 252 252 / 18%);
   display: flex;
   justify-content: space-between;
-  color: rgb(252 252 252 / 46%);
+  color: rgb(252 252 252 / 66%);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -2624,8 +2624,8 @@
   }
 
   .alignmentChapter {
-    min-height: 780px;
-    padding-inline: 16px;
+    min-height: auto;
+    padding: 0 16px 48px;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
   }
@@ -2642,7 +2642,7 @@
 
   .alignmentVisual {
     grid-column: 1 / -1;
-    min-height: 430px;
+    min-height: 210px;
     margin-inline: -16px;
     align-self: end;
   }
@@ -2656,21 +2656,26 @@
 
   .warmMedia {
     grid-column: 1 / -1;
+    order: 3;
     min-height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 4 / 3;
+    margin-top: 40px;
   }
 
   .warmStatement {
     grid-column: 1 / -1;
-    margin-top: 40px;
+    order: 1;
+    margin-top: 0;
   }
 
   .warmTitle {
-    font-size: 4rem;
+    max-width: 12ch;
+    font-size: 3.5rem;
   }
 
   .warmExplanation {
     grid-column: 1 / -1;
+    order: 2;
     margin-top: 24px;
   }
 
@@ -2682,7 +2687,8 @@
 
   .permissionMedia {
     grid-column: 1 / -1;
-    min-height: 480px;
+    order: 2;
+    min-height: 190px;
     margin-inline: -16px;
     border-right: 0;
     border-bottom: 1px solid var(--grid);
@@ -2690,6 +2696,7 @@
 
   .permissionCopy {
     grid-column: 1 / -1;
+    order: 1;
     padding-block: 72px;
   }
 
@@ -2846,6 +2853,10 @@
 }
 
 @media (max-width: 899px) {
+  .homeRoot > section {
+    min-height: auto;
+  }
+
   .hero,
   .heroGrid {
     min-height: max(860px, var(--home-viewport));

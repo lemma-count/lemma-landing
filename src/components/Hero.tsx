@@ -25,19 +25,19 @@ export function Hero() {
       <div className={`${styles.frame} ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
           <h1 className={styles.heroTitle}>
-            <span>Get new</span>
-            <span>clients</span>
-            <span className={styles.heroTitleAccent}>without</span>
-            <span className={styles.heroTitleAccent}>doing the</span>
+            <span>Lemma does</span>
+            <span>your LinkedIn</span>
+            <span className={styles.heroTitleAccent}>research and</span>
             <span className={styles.heroTitleAccent}>
-              prospecting<span className={styles.heroSignalPeriod}>.</span>
+              follow-up<span className={styles.heroSignalPeriod}>.</span>
             </span>
           </h1>
           <p className={styles.heroBody}>
-            Tell Lemma who to reach. Across days and weeks, it researches each
-            Lead, starts the LinkedIn conversation, waits, follows up with
-            something useful, adapts to replies, and asks you to step in when
-            needed.
+            For independent professionals, founders, and small teams. You
+            choose who to contact and tell Lemma what you sell. Lemma prepares
+            and sends the messages you allow, then keeps the same conversation
+            moving for days or weeks. When a reply, problem, or new choice
+            changes the plan, Lemma brings you in.
           </p>
 
           <div className={styles.heroActions}>
@@ -55,13 +55,13 @@ export function Hero() {
               <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden />
             </TrackedLink>
             <Link href="/#how-it-works" className={styles.secondaryAction}>
-              See Lemma work
+              See how it works
               <ArrowDown size={16} strokeWidth={1.5} aria-hidden />
             </Link>
           </div>
           <p className={styles.trialMeta}>
-            {lemmaTrial.days} days free · No credit card ·{" "}
-            {lemmaTrial.managedLeads} Managed leads
+            {lemmaTrial.days} days free · No card · Start with{" "}
+            {lemmaTrial.managedLeads} people
           </p>
         </div>
       </div>

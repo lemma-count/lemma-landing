@@ -103,13 +103,13 @@
 .long-horizon .scenario-kicker {
   margin: 0 0 10px;
   color: var(--lh-blue);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
 }
 
 .long-horizon .scenario-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-bottom: 1px solid var(--lh-hairline);
 }
 
@@ -130,7 +130,7 @@
 
 .long-horizon .scenario-tab__trigger {
   color: var(--lh-muted);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -249,7 +249,7 @@
   align-items: center;
   min-width: 0;
   color: var(--lh-muted);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -288,8 +288,8 @@
 .long-horizon .playback__button {
   position: relative;
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   place-items: center;
   border: 1px solid var(--lh-ink);
@@ -711,12 +711,14 @@
     padding: 3px;
     border-bottom: 0;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--lh-blue) transparent;
   }
 
   .long-horizon .scenario-tabs::-webkit-scrollbar,
   .long-horizon .mobile-event-strip::-webkit-scrollbar {
-    display: none;
+    display: block;
+    height: 4px;
   }
 
   .long-horizon .scenario-tabs button {
@@ -817,7 +819,8 @@
     overflow-x: auto;
     padding: 4px 3px 10px;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--lh-blue) transparent;
   }
 
   .long-horizon .mobile-event {
@@ -841,7 +844,7 @@
 .long-horizon .mobile-event span {
     align-self: center;
     font-family: var(--font-lemma-mono);
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;

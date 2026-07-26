@@ -48,13 +48,13 @@ export function Footer() {
 
       <div className={`${styles.frame} ${styles.closing}`}>
         <div className={styles.closingCopy}>
-          <p className={styles.eyebrow}>Start with 10 Leads</p>
+          <p className={styles.eyebrow}>Start with 10 people</p>
           <h2 className={styles.closingTitle}>
-            Let Lemma do the prospecting.
+            Let Lemma do the LinkedIn research and follow-up.
           </h2>
           <p className={styles.closingBody}>
-            You choose who to reach. Lemma researches, follows up, and brings
-            you back when the conversation needs you.
+            Choose who to reach. Lemma researches them, runs the work you
+            allow, and keeps the follow-up moving.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -83,8 +83,8 @@ export function Footer() {
               />
             </Link>
             <p>
-              LinkedIn outbound that keeps the work moving without taking
-              control away from you.
+              LinkedIn research and follow-up that works across days and weeks
+              while you stay in control.
             </p>
           </div>
 

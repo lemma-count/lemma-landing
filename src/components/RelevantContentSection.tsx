@@ -17,24 +17,23 @@ export function RelevantContentSection() {
         </div>
 
         <div className={styles.warmStatement}>
-          <p className={styles.eyebrow}>04 / Workflow · 2 of 3</p>
+          <p className={styles.eyebrow}>How it works · Step 2</p>
           <h2 className={styles.warmTitle}>
-            <span>Keep the</span>
-            <span>relationship</span>
+            <span>Lemma researches,</span>
+            <span>sends, and</span>
             <span>
-              moving<span className={styles.warmSignalPeriod}>.</span>
+              follows up<span className={styles.warmSignalPeriod}>.</span>
             </span>
           </h2>
         </div>
 
         <div className={styles.warmExplanation}>
           <p>
-            Lemma sends, waits, follows up with something useful, and adapts
-            when the customer replies. The work continues across days and weeks
-            without forcing the next touch.
+            Lemma researches each person, prepares and sends the messages you
+            allow, waits, and follows up for days or weeks.
           </p>
           <p className={styles.warmSequence}>
-            Send · Wait · Add value · Adapt
+            Research · Send · Wait · Follow up
           </p>
         </div>
       </div>

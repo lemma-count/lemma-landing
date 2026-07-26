@@ -6,19 +6,18 @@ import styles from "./LemmaMarketing.module.css";
 
 export function ProofOverview() {
   return (
-    <section id="product" className={styles.journeySection}>
+    <section id="how-it-works" className={styles.journeySection}>
       <div className={`${styles.frame} ${styles.journeyFrame}`}>
-        <article id="alignment" className={styles.alignmentChapter}>
+        <article id="product" className={styles.alignmentChapter}>
           <div className={styles.alignmentCopy}>
-            <p className={styles.eyebrow}>03 / Workflow · 1 of 3</p>
-            <h2 className={styles.alignmentTitle}>Set the mission.</h2>
+            <p className={styles.eyebrow}>How it works · Step 1</p>
+            <h2 className={styles.alignmentTitle}>Choose who to reach.</h2>
             <p className={styles.alignmentBody}>
-              Choose the Leads to reach, the outcome you want, and the rules.
-              Lemma researches each Lead and finds a real reason to start the
-              conversation.
+              Add the people you want to contact. Tell Lemma what you sell and
+              what kinds of LinkedIn messages it may send.
             </p>
             <Link href="/#follow-up" className={styles.chapterTextLink}>
-              Next: keep the relationship moving
+              Next: research, messages, and follow-up
               <ArrowRight size={16} strokeWidth={1.5} aria-hidden />
             </Link>
           </div>

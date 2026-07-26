@@ -4,15 +4,15 @@ import styles from "./LemmaMarketing.module.css";
 
 const lemmaHandles = [
   "Research",
-  "LinkedIn outreach",
-  "Follow-up",
+  "Messages you allow",
+  "Waiting and following up",
 ] as const;
 
 const operatorKeeps = [
-  "The target",
-  "The rules",
-  "Sensitive decisions",
-  "The close",
+  "Who to contact",
+  "What Lemma may send",
+  "Replies that need you",
+  "When to take over",
 ] as const;
 
 export function CockpitSection() {
@@ -31,12 +31,12 @@ export function CockpitSection() {
         </div>
 
         <div id="return" className={styles.permissionCopy}>
-          <p className={styles.eyebrow}>05 / Workflow · 3 of 3</p>
-          <h2 className={styles.permissionTitle}>Step in when it matters.</h2>
+          <p className={styles.eyebrow}>How it works · Step 3</p>
+          <h2 className={styles.permissionTitle}>Take over when needed.</h2>
           <p className={styles.permissionBody}>
-            Replies, blockers, and sensitive decisions come back with the full
-            history and the recommended next step. You take over without
-            rebuilding the story.
+            When someone replies, something fails, or a choice needs you, Lemma
+            shows the prior messages, the reply, and the next action. You decide
+            what happens next.
           </p>
           <p className={styles.permissionSignal}>
             <span className={styles.permissionSignalDot} aria-hidden />
@@ -45,7 +45,7 @@ export function CockpitSection() {
 
           <div className={styles.permissionColumns}>
             <div className={styles.permissionColumn}>
-              <h3>Lemma does</h3>
+              <h3>Lemma handles</h3>
               <ul>
                 {lemmaHandles.map((item) => (
                   <li key={item}>{item}</li>

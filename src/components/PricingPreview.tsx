@@ -16,13 +16,14 @@ export function PricingPreview() {
     >
       <div className={`${styles.frame} ${styles.pricingPreviewGrid}`}>
         <div className={styles.pricingPreviewIntro}>
-          <p className={styles.eyebrow}>06 / Simple pricing</p>
+          <p className={styles.eyebrow}>Simple pricing</p>
           <h2 className={styles.pricingPreviewTitle}>
-            Pay for the Leads Lemma manages.
+            Pay for the people Lemma is working on.
           </h2>
           <p className={styles.pricingPreviewBody}>
-            Start with {lemmaTrial.managedLeads} Managed leads free for{" "}
-            {lemmaTrial.days} days. No credit card.
+            Plans are based on how many people Lemma can work on at once. Start
+            with {lemmaTrial.managedLeads} people for {lemmaTrial.days} days. No
+            card.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -59,17 +60,11 @@ export function PricingPreview() {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Managed leads</th>
+                <th scope="row">People Lemma can work on at once</th>
                 {lemmaPlans.map((plan) => (
                   <td key={plan.id}>
                     {plan.managedLeads.toLocaleString("en-US")}
                   </td>
-                ))}
-              </tr>
-              <tr>
-                <th scope="row">Manual Sequences</th>
-                {lemmaPlans.map((plan) => (
-                  <td key={plan.id}>Unlimited</td>
                 ))}
               </tr>
               <tr className={styles.pricingTablePriceRow}>
@@ -96,9 +91,9 @@ export function PricingPreview() {
                 </div>
                 <ul>
                   <li>
-                    {plan.managedLeads.toLocaleString("en-US")} Managed leads
+                    Lemma can work on{" "}
+                    {plan.managedLeads.toLocaleString("en-US")} people at once
                   </li>
-                  <li>Unlimited manual Sequences</li>
                 </ul>
                 <TrackedLink
                   href={getLemmaPlanUrl(plan.id)}
@@ -118,8 +113,7 @@ export function PricingPreview() {
           </div>
 
           <p className={styles.pricingComparisonNote}>
-            Unlimited manual outbound is included on every plan. Managed leads
-            are the only plan limit.
+            Plans differ only by how many people Lemma can work on at once.
           </p>
         </div>
       </div>

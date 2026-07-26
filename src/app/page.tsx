@@ -3,7 +3,6 @@ import { CockpitSection } from "@/components/CockpitSection";
 import { Hero } from "@/components/Hero";
 import { LandingFaq, landingFaqItems } from "@/components/LandingFaq";
 import { LongHorizonSection } from "@/components/LongHorizonSection";
-import { MissionIntro } from "@/components/MissionIntro";
 import { PricingPreview } from "@/components/PricingPreview";
 import { ProofOverview } from "@/components/ProofOverview";
 import { RelevantContentSection } from "@/components/RelevantContentSection";
@@ -11,9 +10,9 @@ import styles from "@/components/LemmaMarketing.module.css";
 import { createMetadata, faqJsonLd, stringifyJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Get new clients without doing the prospecting — Lemma",
+  title: "LinkedIn prospecting that keeps going — Lemma",
   description:
-    "Lemma researches each Lead, starts the LinkedIn conversation, follows up across days and weeks, and brings you in when judgment is needed.",
+    "Lemma researches the people you choose, runs the LinkedIn work you allow, follows up across days and weeks, and brings replies or problems back to you.",
   path: "/",
   image: {
     url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
@@ -41,11 +40,10 @@ export default function Home() {
       />
       <main className={`${styles.root} ${styles.homeRoot}`}>
         <Hero />
-        <MissionIntro />
-        <LongHorizonSection />
         <ProofOverview />
         <RelevantContentSection />
         <CockpitSection />
+        <LongHorizonSection />
         <PricingPreview />
         <LandingFaq />
       </main>

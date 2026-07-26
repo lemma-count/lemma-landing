@@ -69,7 +69,6 @@ type EventNodeData = Record<string, unknown> & {
   index: number;
   playheadIndex: number;
   inspected: boolean;
-  preview: boolean;
   reducedMotion: boolean;
   onInspect: (index: number) => void;
   onKeyDown: (
@@ -98,7 +97,6 @@ function EventNode({ data }: NodeProps<EventGraphNode>) {
         "event-node",
         `event-node--${status}`,
         data.event.shared ? "event-node--shared" : "event-node--branch",
-        data.preview ? "event-node--preview" : "",
         data.inspected ? "event-node--inspected" : "",
       ].join(" ")}
     >
@@ -293,9 +291,6 @@ function MobileTimeline({
               className={[
                 "mobile-event",
                 event.shared ? "mobile-event--shared" : "mobile-event--branch",
-                scenario.preview && !event.shared
-                  ? "mobile-event--preview"
-                  : "",
                 current ? "is-active" : "",
                 inspected ? "is-inspected" : "",
               ].join(" ")}
@@ -458,11 +453,10 @@ export function LongHorizonSection() {
       setInspectionIndex(null);
       setPlayIntent(false);
       setAnnouncement(
-        `${nextScenario.label}. Same Lead and history. Showing what Lemma does next.`,
+        `${nextScenario.label}. Same person and history. Showing what Lemma does next.`,
       );
       track("long_horizon_scenario_change", {
         scenario: nextScenario.id,
-        preview: nextScenario.preview,
       });
       branchStartTimerRef.current = window.setTimeout(() => {
         setPlayIntent(true);
@@ -538,7 +532,8 @@ export function LongHorizonSection() {
         if (
           entry.isIntersecting &&
           !autoPlayedRef.current &&
-          !reducedMotion
+          !reducedMotion &&
+          !window.matchMedia("(max-width: 1180px)").matches
         ) {
           autoPlayedRef.current = true;
           autoStartTimerRef.current = window.setTimeout(() => {
@@ -595,7 +590,6 @@ export function LongHorizonSection() {
           index,
           playheadIndex,
           inspected: index === inspectionIndex,
-          preview: scenario.preview && !event.shared,
           reducedMotion,
           onInspect: inspectEvent,
           onKeyDown: handleNodeKeyDown,
@@ -617,7 +611,6 @@ export function LongHorizonSection() {
       playheadIndex,
       reducedMotion,
       scenario.events,
-      scenario.preview,
       timelineGeometry.dayWidth,
     ],
   );
@@ -646,21 +639,15 @@ export function LongHorizonSection() {
             current ? "is-current" : "",
             waiting ? "is-waiting" : "",
             branchEdge ? "is-branch-edge" : "is-shared-edge",
-            scenario.preview && branchEdge ? "is-preview" : "",
             reducedMotion ? "is-static" : "",
           ].join(" "),
           style: {
             strokeWidth: current ? 2.2 : 1.6,
-            strokeDasharray:
-              scenario.preview && branchEdge
-                ? "4 6"
-                : waiting
-                  ? "6 7"
-                  : undefined,
+            strokeDasharray: waiting ? "6 7" : undefined,
           },
         };
       }),
-    [playheadIndex, reducedMotion, scenario.events, scenario.preview],
+    [playheadIndex, reducedMotion, scenario.events],
   );
 
   const advanceReducedMotion = () => {
@@ -732,12 +719,12 @@ export function LongHorizonSection() {
           : "Play journey";
   const chapterEyebrow = `CHAPTER ${activeChapterIndex + 1} OF ${chapterSequence.length} · ${activeChapter.shortLabel}`;
   const detailEyebrow = detailEvent
-    ? `${scenario.preview && !detailEvent.shared ? "PREVIEW · " : ""}DAY ${detailEvent.day} · ${laneMeta[detailEvent.lane].label}`
-    : `${scenario.preview && !activeEvent.shared ? "PREVIEW · " : ""}${chapterEyebrow}`;
+    ? `DAY ${detailEvent.day} · ${laneMeta[detailEvent.lane].label}`
+    : chapterEyebrow;
 
   return (
     <section
-      id="how-it-works"
+      id="difference"
       className="long-horizon scroll-mt-20"
       aria-labelledby="long-horizon-title"
       ref={rootRef}
@@ -745,24 +732,25 @@ export function LongHorizonSection() {
       <div id="long-horizon" className="journey">
         <header className="journey-header">
           <div className="journey-heading landing-reveal">
-            <p className="eyebrow">02 / Why the long horizon matters</p>
+            <p className="eyebrow">Why Lemma is different · Example</p>
             <h2 id="long-horizon-title">
-              One Lead. <span>28 days.</span>{" "}
+              One person. <span>28 days.</span>{" "}
               <b className="keep-together">
-                Same thread<i>.</i>
+                One conversation<i>.</i>
               </b>
             </h2>
             <p className="journey-intro">
-              A customer journey changes with every signal. Lemma keeps each
-              task, message, wait, reply, and decision in one continuous
-              Mission, so it can adapt and pick up the relationship days or
-              weeks later without starting over.
+              LinkedIn message schedulers can run for weeks. But when a reply,
+              problem, or new choice changes the plan, scheduling is not
+              enough. Lemma keeps the research, messages, replies, and next
+              decision together, so the same conversation can continue without
+              starting over.
             </p>
           </div>
 
           <div className="journey-controls">
             <p className="scenario-kicker">
-              Same first 3 days · Then Lemma adapts
+              Same history · New situation · New plan
             </p>
             <div
               className="scenario-tabs"
@@ -776,11 +764,7 @@ export function LongHorizonSection() {
                   id={`scenario-tab-${item.id}`}
                   aria-controls="long-horizon-journey-panel"
                   aria-selected={item.id === scenarioId}
-                  aria-label={
-                    item.preview
-                      ? `${item.label}, after ${item.trigger.toLowerCase()}, preview, available soon`
-                      : `${item.label}, after ${item.trigger.toLowerCase()}`
-                  }
+                  aria-label={`${item.label}, after ${item.trigger.toLowerCase()}`}
                   tabIndex={item.id === scenarioId ? 0 : -1}
                   className={item.id === scenarioId ? "is-active" : ""}
                   key={item.id}
@@ -792,21 +776,6 @@ export function LongHorizonSection() {
                 >
                   <span className="scenario-tab__trigger">{item.trigger}</span>
                   <span className="scenario-tab__label">{item.label}</span>
-                  <span
-                    className={[
-                      "scenario-tab__preview",
-                      item.preview ? "" : "is-empty",
-                    ].join(" ")}
-                    aria-hidden="true"
-                  >
-                    {item.preview ? (
-                      <>
-                        <span>*</span> Preview · Available soon
-                      </>
-                    ) : (
-                      "\u00a0"
-                    )}
-                  </span>
                 </button>
               ))}
             </div>
@@ -822,7 +791,7 @@ export function LongHorizonSection() {
         >
           <div className="journey-meta">
             <div>
-              <span>EXAMPLE LEAD</span>
+              <span>EXAMPLE PERSON</span>
               <strong>
                 {leadContext.person} · {leadContext.company}
               </strong>
@@ -839,11 +808,6 @@ export function LongHorizonSection() {
               <span className="timeline-phase__branch">
                 Then · <strong>{scenario.label}</strong>
               </span>
-              {scenario.preview && (
-                <span className="timeline-phase__preview">
-                  Preview · Available soon
-                </span>
-              )}
             </div>
 
             <div className="playback">
@@ -877,7 +841,7 @@ export function LongHorizonSection() {
               <div
                 className="timeline-canvas"
                 style={{ width: timelineGeometry.canvasWidth }}
-                aria-label="Interactive 28-day outbound journey"
+                aria-label="Interactive 28-day LinkedIn example"
               >
                 <DayGrid
                   activeDay={activeEvent.day}
@@ -958,9 +922,7 @@ export function LongHorizonSection() {
             <li key={`accessible-${event.id}`}>
               {event.shared
                 ? "Shared path. "
-                : scenario.preview
-                  ? "Preview path. "
-                  : "Selected path. "}
+                : "Selected path. "}
               Day {event.day}, {laneMeta[event.lane].label}: {event.title}.{" "}
               {event.summary}
             </li>
