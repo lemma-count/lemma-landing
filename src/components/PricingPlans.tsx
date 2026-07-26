@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import { getLemmaPlanUrl } from "@/lib/links";
 import { lemmaPlans, planSharedFeatures } from "@/lib/pricing";
 import { TrackedLink } from "./TrackedLink";
@@ -19,13 +20,6 @@ export function PricingPlans() {
           </p>
           <p className={styles.planDescription}>{plan.description}</p>
 
-          <div className={styles.planRule} aria-hidden />
-          <ul className={styles.planFeatures}>
-            {planSharedFeatures.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
-
           <TrackedLink
             href={getLemmaPlanUrl(plan.id)}
             event="pricing_cta_click"
@@ -39,17 +33,19 @@ export function PricingPlans() {
           >
             {plan.cta}
           </TrackedLink>
+
+          <div className={styles.planRule} aria-hidden />
+          <p className={styles.planFeaturesLabel}>Included</p>
+          <ul className={styles.planFeatures}>
+            {planSharedFeatures.map((feature) => (
+              <li key={feature}>
+                <Check size={14} strokeWidth={1.8} aria-hidden />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
         </article>
       ))}
-
-      <div className={styles.allPlansInclude}>
-        <p>Every plan includes</p>
-        <ul>
-          {planSharedFeatures.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }

@@ -41,6 +41,8 @@ export const lemmaPlans = [
 export const planSharedFeatures = [
   "Unlimited manual Sequences",
   "LinkedIn execution",
-  "Lead research and relevant 1:1 content",
+  "Lead research and 1:1 drafts",
   "Mission, Cockpit, and Outbox visibility",
+  "Sign in with Google",
+  "In-app chat support",
 ] as const;

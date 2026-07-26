@@ -39,7 +39,7 @@ export default function Home() {
           ),
         }}
       />
-      <main className={styles.root}>
+      <main className={`${styles.root} ${styles.homeRoot}`}>
         <Hero />
         <MissionIntro />
         <ProofOverview />
