@@ -4,13 +4,13 @@ import styles from "./LemmaMarketing.module.css";
 
 const lemmaHandles = [
   "Research",
-  "Messages you allow",
+  "Messages your rules allow",
   "Waiting and following up",
 ] as const;
 
 const operatorKeeps = [
   "Who to contact",
-  "What Lemma may send",
+  "Which messages Lemma may send",
   "Replies that need you",
   "When to take over",
 ] as const;

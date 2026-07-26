@@ -27,7 +27,7 @@ const lemmaSometypeMono = localFont({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma — LinkedIn prospecting that keeps going",
+  title: "Lemma — LinkedIn research and follow-up that keeps going",
   description:
     "Lemma researches the people you choose, runs the LinkedIn work you allow, follows up across days and weeks, and brings replies or problems back to you.",
 });

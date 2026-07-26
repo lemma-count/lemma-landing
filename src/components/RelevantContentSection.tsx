@@ -29,8 +29,8 @@ export function RelevantContentSection() {
 
         <div className={styles.warmExplanation}>
           <p>
-            Lemma researches each person, prepares and sends the messages you
-            allow, waits, and follows up for days or weeks.
+            Lemma researches each person, prepares and sends the messages your
+            rules allow, waits, and follows up for days or weeks.
           </p>
           <p className={styles.warmSequence}>
             Research · Send · Wait · Follow up

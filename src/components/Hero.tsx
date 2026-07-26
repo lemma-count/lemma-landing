@@ -35,9 +35,9 @@ export function Hero() {
           <p className={styles.heroBody}>
             For independent professionals, founders, and small teams. You
             choose who to contact and tell Lemma what you sell. Lemma prepares
-            and sends the messages you allow, then keeps the same conversation
-            moving for days or weeks. When a reply, problem, or new choice
-            changes the plan, Lemma brings you in.
+            and sends messages allowed by your rules, then keeps the same
+            conversation moving for days or weeks. When a reply, problem, or
+            new choice changes the plan, Lemma brings you in.
           </p>
 
           <div className={styles.heroActions}>

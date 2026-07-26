@@ -10,7 +10,7 @@ import styles from "@/components/LemmaMarketing.module.css";
 import { createMetadata, faqJsonLd, stringifyJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "LinkedIn prospecting that keeps going — Lemma",
+  title: "LinkedIn research and follow-up that keeps going — Lemma",
   description:
     "Lemma researches the people you choose, runs the LinkedIn work you allow, follows up across days and weeks, and brings replies or problems back to you.",
   path: "/",

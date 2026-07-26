@@ -740,11 +740,11 @@ export function LongHorizonSection() {
               </b>
             </h2>
             <p className="journey-intro">
-              LinkedIn message schedulers can run for weeks. But when a reply,
-              problem, or new choice changes the plan, scheduling is not
+              A message schedule can run for weeks. But when someone replies,
+              something fails, or the next step changes, a schedule is not
               enough. Lemma keeps the research, messages, replies, and next
-              decision together, so the same conversation can continue without
-              starting over.
+              action together, so the same conversation can continue for days
+              or weeks without starting over.
             </p>
           </div>
 

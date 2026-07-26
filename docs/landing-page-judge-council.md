@@ -99,3 +99,28 @@ Two judges remained below threshold. The next implementation therefore:
   weakness when a reply, problem, or new decision changes the plan;
 - makes preserved history and changed plans the category difference;
 - further reduces decorative mobile art and increases small graph labels.
+
+## Iteration 2 — final vote
+
+| Judge | Score | Result |
+| --- | ---: | --- |
+| YC clarity | 4.9 | Pass |
+| Plain language | 5.0 | Pass |
+| Category difference | 4.3 | Pass |
+| CMO and conversion | 4.2 | Pass |
+| Web design and mobile | 4.5 | Pass |
+| Skeptical buyer | 4.4 | Pass |
+| Product truth | Zero vetoes | Pass |
+| Accessibility and mobile | No blocker | Pass |
+
+The final corrections:
+
+- remove the remaining internal sales vocabulary from the 28-day example;
+- state permissions as rules instead of implying approval of every message;
+- compare Lemma with the limitation of a schedule without making an
+  unsupported claim about every competitor;
+- keep the 28-day example after the three-step explanation, where its detail
+  proves the difference instead of delaying basic understanding.
+
+Every judge now meets its threshold. The council remains the review process for
+future meaningful landing-page iterations.

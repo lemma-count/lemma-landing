@@ -14,7 +14,7 @@ export const landingFaqItems = [
   },
   {
     q: "Can Lemma act without my approval?",
-    a: "You choose what Lemma may send. Work outside those rules, plus problems and replies that need you, comes back to you.",
+    a: "You set the rules for what Lemma may send. Work outside those rules, plus problems and replies that need you, comes back to you.",
   },
   {
     q: "What happens when someone replies?",
