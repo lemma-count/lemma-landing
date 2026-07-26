@@ -17,24 +17,23 @@ export function RelevantContentSection() {
         </div>
 
         <div className={styles.warmStatement}>
-          <p className={styles.eyebrow}>03 / Relevance over repetition</p>
+          <p className={styles.eyebrow}>03 / After the first message</p>
           <h2 className={styles.warmTitle}>
-            <span>Keep the</span>
-            <span>conversation</span>
+            <span>Silence</span>
+            <span>is not a</span>
             <span>
-              warm<span className={styles.warmSignalPeriod}>.</span>
+              send button<span className={styles.warmSignalPeriod}>.</span>
             </span>
           </h2>
         </div>
 
         <div className={styles.warmExplanation}>
           <p>
-            Lemma starts with a relevant reason to connect, follows up with the
-            right content for that person, and keeps the next step moving
-            without empty bumps.
+            If there is nothing useful to say, Lemma waits. When there is, it
+            follows up with context—not a “just checking in.”
           </p>
           <p className={styles.warmSequence}>
-            Relevant opening · Useful follow-up · Context intact
+            Wait · Add value · Keep the thread
           </p>
         </div>
       </div>

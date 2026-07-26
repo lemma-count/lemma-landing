@@ -132,12 +132,12 @@ export function Nav({ compact = false }: { compact?: boolean }) {
               href={LEMMA_START_TRIAL_URL}
               event="nav_cta_click"
               eventProps={{
-                label: "Start winning clients",
+                label: "Start free",
                 location: "desktop",
               }}
               className={`${styles.primaryAction} ${styles.navCta}`}
             >
-              Start winning clients
+              Start free
             </TrackedLink>
           </div>
 
@@ -218,13 +218,13 @@ export function Nav({ compact = false }: { compact?: boolean }) {
               href={LEMMA_START_TRIAL_URL}
               event="nav_cta_click"
               eventProps={{
-                label: "Start winning clients",
+                label: "Start free",
                 location: "mobile",
               }}
               onClick={() => setMobileOpen(false)}
               className={`${styles.primaryAction} ${styles.mobileCta}`}
             >
-              Start winning clients
+              Start free
             </TrackedLink>
           </div>
         </>

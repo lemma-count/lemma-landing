@@ -48,25 +48,25 @@ export function Footer() {
 
       <div className={`${styles.frame} ${styles.closing}`}>
         <div className={styles.closingCopy}>
-          <p className={styles.eyebrow}>Start with one target</p>
+          <p className={styles.eyebrow}>Start with 10 Leads</p>
           <h2 className={styles.closingTitle}>
-            Your next clients are already out there.
+            Let Lemma do the prospecting.
           </h2>
           <p className={styles.closingBody}>
-            Give Lemma the target. It does the prospecting and keeps the
-            conversation moving until it is time for you to close.
+            You choose who to reach. Lemma researches, follows up, and brings
+            you back when the conversation needs you.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
             event="cta_click"
             eventProps={{
-              label: "Start winning clients",
+              label: "Start free",
               page: "global",
               location: "footer",
             }}
             className={styles.footerAction}
           >
-            Start winning clients
+            Start free
             <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden />
           </TrackedLink>
         </div>
@@ -83,8 +83,8 @@ export function Footer() {
               />
             </Link>
             <p>
-              Professional LinkedIn outbound for independent professionals,
-              founders, and lean teams.
+              LinkedIn outbound that keeps the work moving without taking
+              control away from you.
             </p>
           </div>
 

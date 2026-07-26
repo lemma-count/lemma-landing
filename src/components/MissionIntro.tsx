@@ -2,12 +2,16 @@ import styles from "./LemmaMarketing.module.css";
 
 const tradeoffs = [
   {
-    label: "Volume automation",
-    value: "More messages. Less relevance.",
+    label: "Short horizon",
+    value: "What should we send next?",
   },
   {
-    label: "Manual prospecting",
-    value: "Better care. Too many hours.",
+    label: "Changing customer",
+    value: "Timing and priorities move.",
+  },
+  {
+    label: "Volume pressure",
+    value: "More sends. Less care.",
   },
 ] as const;
 
@@ -16,13 +20,15 @@ export function MissionIntro() {
     <section className={`${styles.section} ${styles.falseChoiceSection}`}>
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.falseChoiceIntro}>
-          <p className={styles.eyebrow}>01 / The false choice</p>
+          <p className={styles.eyebrow}>01 / The outbound problem</p>
           <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
-            More volume does not mean more clients.
+            The next touch is not the whole relationship.
           </h2>
           <p className={styles.sectionBody}>
-            Outbound has forced the same trade-off for years: automate more and
-            lose relevance, or do it manually and lose the hours.
+            Outbound software automates one touch at a time: send, wait, follow
+            up. But a customer relationship unfolds across weeks as timing,
+            questions, and priorities change. Optimize the sequence for
+            quantity and the relationship gets worse—not better.
           </p>
         </div>
 

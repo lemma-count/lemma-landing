@@ -10,15 +10,15 @@ export function ProofOverview() {
       <div className={`${styles.frame} ${styles.journeyFrame}`}>
         <article id="alignment" className={styles.alignmentChapter}>
           <div className={styles.alignmentCopy}>
-            <p className={styles.eyebrow}>02 / Alignment and research</p>
-            <h2 className={styles.alignmentTitle}>Reach the right people.</h2>
+            <p className={styles.eyebrow}>02 / Before the first message</p>
+            <h2 className={styles.alignmentTitle}>Start with a reason.</h2>
             <p className={styles.alignmentBody}>
-              Add the Leads you want to reach. Lemma researches each person and
-              company, checks fit against the Mission, and prepares outreach
-              with a real reason to exist.
+              A first name and a company fact are not relevance. Lemma
+              researches the Lead, checks the fit, and builds the opening around
+              a real reason to talk.
             </p>
             <Link href="/#product" className={styles.chapterTextLink}>
-              Then keep them engaged
+              Then it keeps going
               <ArrowRight size={16} strokeWidth={1.5} aria-hidden />
             </Link>
           </div>

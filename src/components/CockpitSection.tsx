@@ -3,16 +3,16 @@ import { lemmaBrandVisual } from "@/lib/lemma-brand-release";
 import styles from "./LemmaMarketing.module.css";
 
 const lemmaHandles = [
-  "Lead research and preparation",
-  "Permitted LinkedIn execution",
-  "Relevant 1:1 follow-up",
+  "Research",
+  "LinkedIn outreach",
+  "Follow-up",
 ] as const;
 
 const operatorKeeps = [
-  "The target and Lead source",
-  "Permissions and boundaries",
-  "Reputation-sensitive judgment",
-  "The relationship and the close",
+  "The target",
+  "The rules",
+  "Sensitive decisions",
+  "The close",
 ] as const;
 
 export function CockpitSection() {
@@ -31,21 +31,21 @@ export function CockpitSection() {
         </div>
 
         <div id="return" className={styles.permissionCopy}>
-          <p className={styles.eyebrow}>04 / Permission and return</p>
-          <h2 className={styles.permissionTitle}>Step in when it matters.</h2>
+          <p className={styles.eyebrow}>04 / You stay in control</p>
+          <h2 className={styles.permissionTitle}>Lemma works. You decide.</h2>
           <p className={styles.permissionBody}>
-            Lemma runs within the boundaries you set. Replies, blockers, and
-            reputation-sensitive decisions return with the context you need to
-            take over.
+            You set the target and the rules. Lemma handles the routine work and
+            brings you replies, problems, and sensitive decisions with the full
+            story.
           </p>
           <p className={styles.permissionSignal}>
             <span className={styles.permissionSignalDot} aria-hidden />
-            <span>Needs you / Human judgment</span>
+            <span>Ready for you</span>
           </p>
 
           <div className={styles.permissionColumns}>
             <div className={styles.permissionColumn}>
-              <h3>Lemma handles</h3>
+              <h3>Lemma does</h3>
               <ul>
                 {lemmaHandles.map((item) => (
                   <li key={item}>{item}</li>
@@ -54,7 +54,7 @@ export function CockpitSection() {
             </div>
 
             <div className={styles.permissionColumn}>
-              <h3>You keep</h3>
+              <h3>You decide</h3>
               <ul>
                 {operatorKeeps.map((item) => (
                   <li key={item}>{item}</li>

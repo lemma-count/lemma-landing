@@ -58,10 +58,10 @@ const LANE_Y: Record<JourneyLane, number> = {
 };
 
 const laneMeta: Record<JourneyLane, { label: string; icon: Icon }> = {
-  signal: { label: "SIGNAL", icon: Diamond },
-  decision: { label: "DECISION", icon: Square },
-  task: { label: "TASK", icon: Circle },
-  interaction: { label: "INTERACTION", icon: Triangle },
+  signal: { label: "WHAT CHANGED", icon: Diamond },
+  decision: { label: "CHOICE", icon: Square },
+  task: { label: "WORK", icon: Circle },
+  interaction: { label: "CONTACT", icon: Triangle },
 };
 
 type EventNodeData = Record<string, unknown> & {
@@ -313,7 +313,7 @@ function MobileTimeline({
                 aria-hidden="true"
               />
               <span>
-                {event.shared ? "SHARED" : "CONTINUATION"} ·{" "}
+                {event.shared ? "FIRST 3 DAYS" : "NEXT"} ·{" "}
                 {laneMeta[event.lane].label} · DAY {event.day}
               </span>
               <strong>{event.title}</strong>
@@ -745,22 +745,23 @@ export function LongHorizonSection() {
       <div className="journey">
         <header className="journey-header">
           <div className="journey-heading landing-reveal">
-            <p className="eyebrow">Persistent follow-through</p>
+            <p className="eyebrow">Outbound takes weeks. Lemma remembers.</p>
             <h2 id="long-horizon-title">
-              One Lead. <span>28 days</span> of relevant{" "}
+              One Lead. <span>28 days.</span>{" "}
               <b className="keep-together">
-                follow-through<i>.</i>
+                Same thread<i>.</i>
               </b>
             </h2>
             <p className="journey-intro">
-              Lemma keeps the full context and adapts the follow-up to each new
-              signal—within the rules you set.
+              A sequence sends messages. A Mission keeps the whole job
+              together—research, waiting, follow-up, replies, and the next
+              decision.
             </p>
           </div>
 
           <div className="journey-controls">
             <p className="scenario-kicker">
-              Same through Day 3 · Three possible next moves
+              Same first 3 days · Then Lemma adapts
             </p>
             <div
               className="scenario-tabs"
@@ -832,9 +833,7 @@ export function LongHorizonSection() {
 
           <div className="timeline-toolbar">
             <div className="timeline-phase" aria-label="Journey structure">
-              <span className="timeline-phase__shared">
-                Same through Day 3
-              </span>
+              <span className="timeline-phase__shared">First 3 days</span>
               <GitFork size={16} weight="bold" aria-hidden="true" />
               <span className="timeline-phase__branch">
                 Then · <strong>{scenario.label}</strong>
@@ -945,7 +944,7 @@ export function LongHorizonSection() {
             </div>
 
             <div className="event-detail__block">
-              <span>WHY IT MATTERS</span>
+              <span>WHY</span>
               <p>{detail.why}</p>
               <strong>Next</strong>
               <p>{detail.next}</p>

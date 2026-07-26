@@ -54,100 +54,92 @@ export const leadContext = {
 export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
   research: {
     shortLabel: "Research",
-    title: "Research before reaching out.",
+    title: "Know the Lead.",
     summary:
-      "Lemma checks Maya, Northstar, the current partnerships priority, what it may send, and the sources approved for this Mission.",
+      "Lemma checks Maya, Northstar, your goal, and what it may send.",
     why:
-      "The relationship starts from real context instead of a generated icebreaker.",
-    next: "Send one contextual connection request.",
+      "The first message starts with a real reason—not a made-up icebreaker.",
+    next: "Send one relevant connection request.",
     holdAfter: 2300,
   },
   "first-outreach": {
     shortLabel: "First outreach",
-    title: "Open the conversation without forcing it.",
+    title: "Start with relevance.",
     summary:
-      "After Maya accepts, Lemma turns the same research into a concise first message.",
-    why:
-      "The goal is a relevant conversation—not an immediate meeting at any cost.",
-    next: "Preserve the context and react to what happens next.",
+      "When Maya accepts, Lemma uses the same research for one short message.",
+    why: "Start a conversation. Do not force a meeting.",
+    next: "Keep the thread and wait for what happens.",
     message:
       "Congrats on the partnerships expansion. Is building a repeatable partner pipeline already part of the plan—or still being shaped?",
     holdAfter: 2600,
   },
   "content-wait": {
     shortLabel: "Wait",
-    title: "Silence is not a reason to send an empty bump.",
+    title: "No reply? Wait.",
     summary:
-      "Four days pass without a reply. Lemma keeps the full thread but deliberately takes no external action.",
-    why:
-      "Waiting protects relevance and leaves room for a genuinely useful next move.",
-    next: "Reassess when the configured follow-up window opens.",
+      "Four days pass. Lemma remembers the thread and sends nothing.",
+    why: "An empty reminder adds noise, not value.",
+    next: "Check again when the follow-up window opens.",
     holdAfter: 2500,
   },
   "content-followup": {
     shortLabel: "Useful content",
-    title: "Return with something useful.",
+    title: "Come back with value.",
     summary:
-      "The follow-up window opens and an article approved for this Mission still matches Northstar’s priority.",
-    why:
-      "The resource answers a real problem instead of merely asking Maya for attention again.",
-    next: "Share the article once, then wait.",
+      "The follow-up window opens. A useful article still fits Maya’s priority.",
+    why: "Give Maya a reason to care—not another request for attention.",
+    next: "Share it once. Then wait.",
     message:
       "This short piece on creating a repeatable partner pipeline may be useful as you shape the motion at Northstar.",
     holdAfter: 3200,
   },
   "voice-request": {
     shortLabel: "Call requested",
-    title: "Maya agrees to a voice-agent call.",
+    title: "A call—with permission.",
     summary:
-      "Maya agrees to a disclosed call from Lemma’s voice agent to get direct answers about setup, channels, and fit.",
-    why:
-      "The call begins with Maya’s consent and the Operator’s permission, with the full conversation already in context.",
-    next: "Prepare the call brief, approved answers, and qualification criteria.",
+      "Maya agrees to a clearly disclosed call with Lemma’s voice agent.",
+    why: "Both Maya and you have allowed the call.",
+    next: "Prepare the context and questions.",
     holdAfter: 2700,
   },
   "voice-call": {
     shortLabel: "Answer + qualify",
-    title: "Answer first. Then qualify.",
+    title: "Answer. Then qualify.",
     summary:
-      "The voice agent answers from Operator-approved information, then learns the use case, current process, pain, urgency, scope, constraints, and overall fit.",
-    why:
-      "Maya’s answers and the reason for the recommendation remain reviewable by the Operator.",
-    next: "Recommend the right next step, and book a meeting only when permitted.",
+      "The voice agent answers Maya, then asks only what it still needs to know.",
+    why: "You can review the answers and the recommendation.",
+    next: "Offer a meeting only when allowed.",
     message:
       "Maya: Can this fit our partner motion, and how quickly can we start?\nVoice: I’ll answer both. Then I’ll ask a few focused questions so I can recommend the right next step.",
     holdAfter: 3600,
   },
   "reengage-wait": {
     shortLabel: "Respect timing",
-    title: "Respect the timing without losing context.",
+    title: "Come back when asked.",
     summary:
-      "Maya says, “Not now—try me later this month.” Lemma stops the active follow-up and schedules one return inside the same 28-day Sequence.",
-    why:
-      "The next touch follows Maya’s timing rather than an arbitrary re-engagement cadence.",
-    next: "Return only when the agreed window opens.",
+      "Maya says, “Not now—try me later this month.” Lemma stops and schedules one return.",
+    why: "Her timing matters more than a preset cadence.",
+    next: "Wait for the date she gave.",
     holdAfter: 2700,
   },
   "reengage-signal": {
     shortLabel: "Agreed return",
-    title: "The agreed window creates a credible re-entry.",
+    title: "Pick up the same thread.",
     summary:
-      "The agreed window opens. Lemma reuses the existing thread, refreshes permission checks, and prepares one concise return.",
-    why:
-      "The message acknowledges Maya’s request instead of pretending this is a new introduction.",
-    next: "Send one contextual re-engagement message.",
+      "The agreed window opens. Lemma checks the rules and prepares one short return.",
+    why: "It continues the conversation instead of starting over.",
+    next: "Send one message tied to Maya’s request.",
     message:
       "You asked me to circle back later this month. Is the partner-pipeline work a better conversation now?",
     holdAfter: 3300,
   },
   handoff: {
     shortLabel: "Ready for you",
-    title: "The full context is ready.",
+    title: "Ready for you.",
     summary:
-      "Lemma brings you the research, conversation history, latest outcome, and recommended next step.",
-    why:
-      "You step in when judgment adds value—without rebuilding the story.",
-    next: "Review the context and continue the conversation.",
+      "You get the research, messages, latest outcome, and next step.",
+    why: "You can step in without rebuilding the story.",
+    next: "Review it and take over.",
     outcome: "Ready for you",
   },
 };
@@ -588,21 +580,21 @@ const reengagementBranch: JourneyEvent[] = [
 export const scenarios: JourneyScenario[] = [
   {
     id: "content",
-    label: "Content follow-up",
+    label: "Wait, then add value",
     trigger: "No reply",
     preview: false,
     events: [...sharedEvents, ...contentBranch],
   },
   {
     id: "voice",
-    label: "Voice qualification",
+    label: "Answer, then qualify",
     trigger: "Call requested",
     preview: true,
     events: [...sharedEvents, ...voiceBranch],
   },
   {
     id: "reengagement",
-    label: "Re-engagement",
+    label: "Come back when asked",
     trigger: "Try me later",
     preview: false,
     events: [...sharedEvents, ...reengagementBranch],

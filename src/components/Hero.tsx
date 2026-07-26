@@ -34,9 +34,10 @@ export function Hero() {
             </span>
           </h1>
           <p className={styles.heroBody}>
-            Tell Lemma who you want to reach. It researches each Lead, starts
-            relevant conversations, shares the right content, follows up, and
-            brings interested people back to you.
+            Tell Lemma who to reach. Across days and weeks, it researches each
+            Lead, starts the LinkedIn conversation, waits, follows up with
+            something useful, adapts to replies, and asks you to step in when
+            needed.
           </p>
 
           <div className={styles.heroActions}>
@@ -44,17 +45,17 @@ export function Hero() {
               href={LEMMA_START_TRIAL_URL}
               event="cta_click"
               eventProps={{
-                label: "Start winning clients",
+                label: "Start free",
                 page: "home",
                 location: "hero",
               }}
               className={styles.primaryAction}
             >
-              Start winning clients
+              Start free
               <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden />
             </TrackedLink>
             <Link href="/#how-it-works" className={styles.secondaryAction}>
-              See how it works
+              See Lemma work
               <ArrowDown size={16} strokeWidth={1.5} aria-hidden />
             </Link>
           </div>

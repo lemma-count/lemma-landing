@@ -5,32 +5,20 @@ import styles from "./LemmaMarketing.module.css";
 
 export const landingFaqItems = [
   {
+    q: "What does Lemma do?",
+    a: "Lemma researches the Leads you choose, starts permitted LinkedIn conversations, follows up across days and weeks, and brings replies or problems back to you.",
+  },
+  {
     q: "What exactly is a Managed lead?",
     a: "A Managed lead is a Lead currently assigned to a live Lemma-led Mission. It counts while Lemma is actively running that work for you.",
-  },
-  {
-    q: "Does a reply free Managed-lead capacity?",
-    a: "No. A reply does not free capacity. The Lead stops counting when you release the Lead or finish or archive the Mission.",
-  },
-  {
-    q: "What happens when I reach my plan limit?",
-    a: "New Lemma-led capacity is blocked until you upgrade. There are no credit packs or top-ups.",
-  },
-  {
-    q: "Are manual Sequences really unlimited?",
-    a: "Yes. Manual Sequences do not count as Managed leads and are unlimited on every plan.",
   },
   {
     q: "Which channel does Lemma support?",
     a: "Lemma currently runs outbound through your LinkedIn account.",
   },
   {
-    q: "Does Lemma publish content for me?",
-    a: "No. Lemma shares relevant content directly with the right person inside the 1:1 LinkedIn conversation. It does not run a public content program.",
-  },
-  {
-    q: "Can Lemma run without my approval?",
-    a: "You set the Mission boundaries and decide what Lemma may run. Work outside those boundaries, blockers, and consequential decisions return to you.",
+    q: "Can Lemma act without my approval?",
+    a: "You decide what Lemma may run. Anything outside those rules, plus blockers and sensitive decisions, comes back to you.",
   },
   {
     q: "Do I need a credit card for the trial?",
@@ -43,9 +31,9 @@ export function LandingFaq() {
     <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.faqLead}>
-          <p className={styles.eyebrow}>06 / Practical details</p>
+          <p className={styles.eyebrow}>06 / The basics</p>
           <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
-            Know exactly what you are starting.
+            What you need to know.
           </h2>
         </div>
 

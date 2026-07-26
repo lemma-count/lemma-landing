@@ -16,30 +16,30 @@ export function PricingPreview() {
     >
       <div className={`${styles.frame} ${styles.pricingPreviewGrid}`}>
         <div className={styles.pricingPreviewIntro}>
-          <p className={styles.eyebrow}>05 / Simple monthly plans</p>
+          <p className={styles.eyebrow}>05 / Simple pricing</p>
           <h2 className={styles.pricingPreviewTitle}>
-            Start small. Grow when Lemma is running more Leads.
+            Pay for the Leads Lemma manages.
           </h2>
           <p className={styles.pricingPreviewBody}>
-            Your trial includes {lemmaTrial.managedLeads} Managed leads for{" "}
-            {lemmaTrial.days} days. No credit card required.
+            Start with {lemmaTrial.managedLeads} Managed leads free for{" "}
+            {lemmaTrial.days} days. No credit card.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
             event="pricing_cta_click"
             eventProps={{
               plan: "trial",
-              label: "Start winning clients",
+              label: "Start free",
               page: "home",
               location: "pricing-preview",
             }}
             className={`${styles.primaryAction} ${styles.pricingStartAction}`}
           >
-            Start winning clients
+            Start free
             <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden />
           </TrackedLink>
           <Link href="/pricing" className={styles.textLink}>
-            See full pricing
+            See all plans
             <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden />
           </Link>
         </div>
