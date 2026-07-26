@@ -25,6 +25,7 @@ export function CockpitSection() {
             alt=""
             fill
             sizes="(max-width: 899px) 100vw, 50vw"
+            unoptimized
             className={styles.permissionImage}
           />
         </div>

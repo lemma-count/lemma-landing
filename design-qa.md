@@ -1,123 +1,70 @@
-# Lemma long-horizon section — design QA
+# Design QA — Pricing plan feature lists
 
-## Scope and source truth
+## Comparison target
 
-- Route reviewed: `/`, unauthenticated public landing page.
-- New section: `#long-horizon`, between the relevant-content chapter and the Operator-control chapter.
-- Interaction source: the approved Takeoff-inspired Lemma prototype.
-- Brand source: Open Passage Brand Book v1.4.0 in `public/brand/lemma/v1.4.0`.
-- Canonical active blue: Klein Blue `#002FA7`.
-- Canonical Signal orange: `#FF7A45`.
-- Canonical type: Inter Tight for display/body and Sometype Mono for structural metadata.
+- Route: pricing (`/pricing`)
+- Source visual truth:
+  - `output/pricing-feature-matrix-qa-20260724/before-pricing-cards-1280x720.jpg`
+- Rendered implementation:
+  - `output/pricing-feature-matrix-qa-20260724/after-pricing-cards-1280x720.jpg`
+  - `output/pricing-feature-matrix-qa-20260724/after-pricing-features-1280x720.jpg`
+- Combined comparison input:
+  - `output/pricing-feature-matrix-qa-20260724/comparison-before-after-2560x720.jpg`
 
-## Comparison evidence
+## Capture state
 
-- Desktop source: `/Users/wissem/.codex/visualizations/2026/07/24/019f9318-48ac-7c00-a289-d793212d5f5f/lemma-long-horizon-prototype/audit-copy-04-after-content-desktop.jpg`
-- Mobile source: `/Users/wissem/.codex/visualizations/2026/07/24/019f9318-48ac-7c00-a289-d793212d5f5f/lemma-long-horizon-prototype/audit-copy-06-after-mobile.jpg`
-- Desktop implementation: `output/long-horizon-qa/implementation-content-1280x720.png`
-- Mobile implementation: `output/long-horizon-qa/implementation-content-mobile-390x844.png`
-- Desktop same-input comparison: `output/long-horizon-qa/source-vs-implementation-content.png`
-- Mobile same-input comparison: `output/long-horizon-qa/source-vs-implementation-mobile.png`
+- CSS viewport: 1280 × 720
+- Source and implementation pixels: 1280 × 720 per capture
+- Combined comparison pixels: 2560 × 720
+- Density normalization: none required; source and implementation use the same browser, viewport, scale, and image dimensions
+- State: default desktop layout, fixed header visible, pricing cards aligned to the viewport
 
-The implementation keeps the source hierarchy, event taxonomy, 28-day ruler,
-shared-path/continuation model, event density, playback control, detail panel,
-and mobile event rail. Intentional differences are limited to production
-integration: the current Brand Book palette and typography, the live site’s
-sticky header, and the surrounding landing-page rhythm.
+## Findings
 
-## Fidelity review
+- No actionable P0, P1, or P2 differences remain.
+- Each plan now exposes six verified capabilities inside its own card, removing the large empty middle and the detached shared-features band.
+- Starter, Growth, and Scale intentionally use the same capability list. The audited product entitlements differ by Managed-lead capacity, so progressive feature gates would be inaccurate.
+- The CTA remains above the feature detail, preserving the fast comparison path while making the included product surface easy to scan.
+- All three cards retain equal height, aligned CTAs, aligned rules, and consistent row rhythm.
+- The pricing section has no horizontal page overflow.
 
-### Typography and copy
+## Required fidelity surfaces
 
-- The section headline now uses the same 680 weight as the live landing’s major
-  section titles and visually matches the approved prototype.
-- Structural labels use Sometype Mono; narrative and event copy use Inter Tight.
-- Copy remains claim-safe and Operator-controlled.
-- Voice qualification explicitly says `Preview · Available soon`.
-- Voice starts only after disclosure, Lead consent, and Mission permission.
-- Qualification covers use case, current process, pain, urgency, scope,
-  constraints, and fit.
-- Booking is conditional on permission and approved calendar access.
-- Every branch ends by returning full context to the Operator.
+- Fonts and typography: unchanged from the existing Lemma system; plan labels, price hierarchy, body copy, and mono “Included” labels remain consistent.
+- Spacing and layout rhythm: 10px feature-row padding and a 26px icon/text grid keep six rows readable without making the cards visually heavy.
+- Colors and visual tokens: no new colors were introduced; check icons use the current `--klein` brand token.
+- Iconography: Lucide check icons are decorative and marked `aria-hidden`; list semantics carry the content.
+- Copy and content: claims are grounded in the product audit. “Sign in with Google” describes the implemented OAuth flow without implying enterprise SAML/SCIM SSO. “In-app chat support” describes the implemented support channel without implying priority support or an SLA.
 
-### Layout and spacing
+## Focused comparison
 
-- Desktop preserves the two-column heading/control composition and full-width
-  28-day graph.
-- The graph reaches Day 28 without the former dead space on the right.
-- Event halos and focus rings are not clipped at Day 1 or Day 28.
-- The play control is compact and lives in the timeline toolbar.
-- The section’s desktop top rhythm was reduced to keep all four event lanes
-  understandable on a 720px-high laptop viewport.
-- Mobile uses a dedicated day rail and horizontally scrollable event cards
-  rather than a shrunken desktop graph.
-- Mobile scenario tabs deliberately expose part of the next option as a scroll
-  affordance.
+- The full-card implementation capture shows price, capacity, description, CTA, and the beginning of each list in one viewport.
+- The second implementation capture shows all six list rows, the aligned card bottoms, and the existing billing fine print.
 
-### Color and visual language
+## Interaction and runtime checks
 
-- Computed active tab and timeline color is `rgb(0, 47, 167)` / `#002FA7`.
-- Signal orange is reserved for current progress, handoff emphasis, and the
-  headline period.
-- Focus indicators use Klein Blue for sufficient contrast.
-- Small active-day and handoff text uses Ink while orange remains the visual
-  marker.
-- Rules, grids, dashed waits, and future states use the Brand Book’s restrained
-  Paper/Ink/Grid system.
+- Three plan cards render with six list items each.
+- CTA destinations remain:
+  - Starter: `https://app.heylemma.com/settings/account?plan=starter`
+  - Growth: `https://app.heylemma.com/settings/account?plan=growth`
+  - Scale: `https://app.heylemma.com/settings/account?plan=scale`
+- Browser console: no application warnings or errors; only the standard React development-tools information message.
+- `npm run typecheck`: passed.
+- `npm run build`: passed; all static routes generated.
+- `git diff --check`: passed.
 
-### Behavior and accessibility
+## Responsive note
 
-- Tabs use `tablist`/`tab` semantics, roving focus, Arrow keys, Home, and End.
-- Event nodes and mobile cards support click inspection plus Arrow/Home/End
-  keyboard navigation.
-- Play, pause, continue, and replay states were exercised.
-- Tab changes preserve the shared Days 1–3 history and animate only the selected
-  continuation.
-- The animation pauses when offscreen or when the document is hidden.
-- Reduced-motion users advance chapter by chapter instead of receiving autoplay.
-- A screen-reader event list and user-triggered polite announcements are present.
-- Effective node/play targets are at least 44px.
-- Browser console review found no errors or warnings.
+- The in-app browser was fixed at 1280 × 720 for visual comparison.
+- At the existing `max-width: 899px` breakpoint, the pricing grid remains single-column, card `min-height` returns to `auto`, description `min-height` returns to `0`, and every feature list remains visible.
+- No new fixed widths or breakpoint-specific feature hiding were introduced.
 
-## Responsive review
+## Comparison history
 
-- Reviewed at 1440px, 1280×720, 1181px, 1180px, 768px, 390×844, and 320px.
-- The 1181px desktop graph fits all 28 days and all four lanes.
-- The 1180px breakpoint switches cleanly to the mobile rail/card view.
-- `scrollWidth === clientWidth` at the breakpoint; no page-level horizontal
-  overflow was introduced.
-- Headline, tabs, Lead context, playback, event cards, and detail copy remain
-  readable at 320px.
-
-## Resolved findings
-
-1. P1 — The feature branch originally inherited an older mainline while
-   production was one commit ahead. Resolved by merging the exact live
-   production commit before integration.
-2. P1 — The first integration used the previous cobalt palette. Resolved by
-   binding the section to Brand Book v1.4.0 tokens, including Klein Blue
-   `#002FA7`.
-3. P2 — The integrated headline was visibly lighter than both the prototype and
-   current site. Resolved with the live system’s 680 display weight.
-4. P2 — Desktop top spacing hid too much of the graph on common laptop
-   viewports. Resolved by tightening the interactive section’s top interval.
-5. P2 — The first mobile tab sizing hid the third scenario without a clear
-   affordance. Resolved by exposing a deliberate next-tab preview.
-6. P2 — Signal-orange focus and small text states had insufficient contrast.
-   Resolved with Klein focus rings and Ink text while retaining orange markers.
-7. P2 — Starting the development server during a production build caused a
-   temporary cache lock. The server was stopped, the cache was rebuilt cleanly,
-   and final checks were rerun.
-
-No unresolved P0, P1, or P2 design issues remain.
-
-## Technical verification
-
-- `npm run typecheck` passed.
-- `npm run build` passed with all 36 static pages generated.
-- `git diff --check` passed.
-- Interaction checks passed in the in-app browser.
-- The final source-versus-implementation comparison was reviewed at desktop and
-  mobile sizes.
+1. The source placed all product capabilities in a detached band below three mostly empty cards.
+2. The shared list was expanded from four to six verified capabilities, including Google sign-in and in-app chat support.
+3. The duplicated bottom band was removed and the verified list was placed inside every plan card.
+4. The CTA was kept before the detail list, and the cards were rebalanced around a compact label, divider, and six aligned rows.
+5. Desktop visual comparison, responsive CSS review, console inspection, typecheck, and production build found no P0, P1, or P2 regressions.
 
 final result: passed

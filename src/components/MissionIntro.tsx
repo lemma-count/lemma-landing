@@ -4,17 +4,10 @@ const tradeoffs = [
   {
     label: "Volume automation",
     value: "More messages. Less relevance.",
-    active: false,
   },
   {
     label: "Manual prospecting",
     value: "Better care. Too many hours.",
-    active: false,
-  },
-  {
-    label: "Lemma",
-    value: "Personal relevance. Continuous progress.",
-    active: true,
   },
 ] as const;
 
@@ -28,20 +21,14 @@ export function MissionIntro() {
             More volume does not mean more clients.
           </h2>
           <p className={styles.sectionBody}>
-            Most outbound tools optimize for sending more messages. That
-            usually means less research, less relevance, and fewer reasons to
-            reply.
+            Outbound has forced the same trade-off for years: automate more and
+            lose relevance, or do it manually and lose the hours.
           </p>
         </div>
 
         <div className={styles.falseChoiceGrid}>
           {tradeoffs.map((item) => (
-            <div
-              key={item.label}
-              className={`${styles.falseChoiceCell} ${
-                item.active ? styles.falseChoiceCellActive : ""
-              }`}
-            >
+            <div key={item.label} className={styles.falseChoiceCell}>
               <span className={styles.falseChoiceLabel}>{item.label}</span>
               <p className={styles.falseChoiceValue}>{item.value}</p>
             </div>
