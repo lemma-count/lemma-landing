@@ -20,6 +20,11 @@ export function PricingPlans() {
           </p>
           <p className={styles.planDescription}>{plan.description}</p>
 
+          <div className={styles.planSupport}>
+            <p className={styles.planSupportLabel}>Support</p>
+            <p className={styles.planSupportCopy}>{plan.support}</p>
+          </div>
+
           <TrackedLink
             href={getLemmaPlanUrl(plan.id)}
             event="pricing_cta_click"
@@ -35,7 +40,7 @@ export function PricingPlans() {
           </TrackedLink>
 
           <div className={styles.planRule} aria-hidden />
-          <p className={styles.planFeaturesLabel}>Included</p>
+          <p className={styles.planFeaturesLabel}>Same product in every plan</p>
           <ul className={styles.planFeatures}>
             {planSharedFeatures.map((feature) => (
               <li key={feature}>

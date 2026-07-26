@@ -1,5 +1,5 @@
 export const pricingTruth = {
-  asOf: "2026-07-23",
+  asOf: "2026-07-26",
   source: "Founder-approved website pricing brief",
   currency: "USD",
   billingPeriod: "monthly",
@@ -17,7 +17,8 @@ export const lemmaPlans = [
     name: "Starter",
     monthlyPrice: 29,
     managedLeads: 50,
-    description: "For starting a focused, repeatable outbound motion.",
+    description: "For getting a focused, repeatable outbound motion live.",
+    support: "In-app support for setup and day-to-day questions.",
     cta: "Subscribe to Starter",
   },
   {
@@ -25,7 +26,8 @@ export const lemmaPlans = [
     name: "Growth",
     monthlyPrice: 99,
     managedLeads: 200,
-    description: "For running client acquisition consistently each week.",
+    description: "For running outbound consistently every week.",
+    support: "More hands-on support as your outbound motion grows.",
     cta: "Subscribe to Growth",
   },
   {
@@ -33,7 +35,8 @@ export const lemmaPlans = [
     name: "Scale",
     monthlyPrice: 299,
     managedLeads: 1000,
-    description: "For lean teams running several active Missions.",
+    description: "For lean teams coordinating several active Missions.",
+    support: "Our most hands-on support for more complex outbound operations.",
     cta: "Subscribe to Scale",
   },
 ] as const;
@@ -44,5 +47,4 @@ export const planSharedFeatures = [
   "Lead research and 1:1 drafts",
   "Mission, Cockpit, and Outbox visibility",
   "Sign in with Google",
-  "In-app chat support",
 ] as const;

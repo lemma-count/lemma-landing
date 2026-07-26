@@ -893,8 +893,33 @@
   background: var(--grid);
 }
 
+.planSupport {
+  min-height: 104px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--grid);
+}
+
+.planSupportLabel {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.planSupportCopy {
+  max-width: 32ch;
+  margin: 10px 0 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 560;
+  line-height: 1.45;
+}
+
 .planFeaturesLabel {
-  margin: 22px 0 0;
+  margin: 20px 0 0;
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -1407,6 +1432,10 @@
   }
 
   .pricingPlan .planDescription {
+    min-height: 0;
+  }
+
+  .planSupport {
     min-height: 0;
   }
 
