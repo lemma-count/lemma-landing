@@ -17,7 +17,7 @@ export function ProofOverview() {
               what kinds of LinkedIn messages it may send.
             </p>
             <Link href="/#follow-up" className={styles.chapterTextLink}>
-              Next: research, messages, and follow-up
+              Next: send, wait, and follow up
               <ArrowRight size={16} strokeWidth={1.5} aria-hidden />
             </Link>
           </div>

@@ -124,3 +124,39 @@ The final corrections:
 
 Every judge now meets its threshold. The council remains the review process for
 future meaningful landing-page iterations.
+
+## Iteration 3 — outbound continuity, not research
+
+The operator preferred the outcome-led structure of the earlier hero and
+rejected research as the page's defining idea. This iteration therefore treats
+research as internal context for a specific message, not as the product
+category.
+
+| Judge | Score | Result |
+| --- | ---: | --- |
+| YC clarity | 4.9 | Pass |
+| Plain language | 5.0 | Pass |
+| Category difference | 4.6 | Pass |
+| CMO and conversion | 4.5 | Pass |
+| Web design and mobile | 4.2 | Pass |
+| Skeptical buyer | 4.4 | Pass |
+| Product truth | Zero vetoes | Pass |
+| Accessibility and mobile | No blocker | Pass |
+
+The implementation:
+
+- restores an outcome-led hero without promising a client or meeting:
+  “Reach potential clients without doing every follow-up”;
+- makes send, wait, follow up, and human takeover the main workflow;
+- removes visible research language from the hero, workflow, difference
+  statement, footer, and search metadata;
+- keeps only a supporting context check inside the 28-day example so visitors
+  can still see why the first message is specific;
+- preserves LinkedIn, rule-based permissions, and human decisions as explicit
+  product boundaries.
+
+The final 320 px and 979 px recapture was blocked by the browser after the
+local-server restart. The design vote therefore uses the immediately preceding
+captures, the bounded one-line hero delta, and code inspection. Both CTAs remain
+within the estimated 800 px mobile viewport; the trial note may fall below the
+fold.

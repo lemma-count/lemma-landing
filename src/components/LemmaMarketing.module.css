@@ -1797,7 +1797,7 @@
 }
 
 .heroTitle {
-  max-width: 9ch;
+  max-width: 12ch;
   margin: 0;
   font-size: clamp(5rem, 7.5vw, 9.25rem);
   font-weight: 700;

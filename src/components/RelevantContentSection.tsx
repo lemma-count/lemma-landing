@@ -19,21 +19,22 @@ export function RelevantContentSection() {
         <div className={styles.warmStatement}>
           <p className={styles.eyebrow}>How it works · Step 2</p>
           <h2 className={styles.warmTitle}>
-            <span>Lemma researches,</span>
-            <span>sends, and</span>
+            <span>Lemma keeps</span>
+            <span>the conversation</span>
             <span>
-              follows up<span className={styles.warmSignalPeriod}>.</span>
+              moving<span className={styles.warmSignalPeriod}>.</span>
             </span>
           </h2>
         </div>
 
         <div className={styles.warmExplanation}>
           <p>
-            Lemma researches each person, prepares and sends the messages your
-            rules allow, waits, and follows up for days or weeks.
+            Lemma sends, waits, and follows up for days or weeks. When someone
+            replies or the plan changes, it keeps the same conversation moving
+            or brings you in when you need to decide.
           </p>
           <p className={styles.warmSequence}>
-            Research · Send · Wait · Follow up
+            Send · Wait · Follow up · Bring you in
           </p>
         </div>
       </div>

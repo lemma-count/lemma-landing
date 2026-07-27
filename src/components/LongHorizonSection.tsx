@@ -742,9 +742,9 @@ export function LongHorizonSection() {
             <p className="journey-intro">
               A message schedule can run for weeks. But when someone replies,
               something fails, or the next step changes, a schedule is not
-              enough. Lemma keeps the research, messages, replies, and next
-              action together, so the same conversation can continue for days
-              or weeks without starting over.
+              enough. Lemma keeps the messages it sent, recorded replies,
+              decisions, and next action together, so the same conversation can
+              continue for days or weeks without starting over.
             </p>
           </div>
 

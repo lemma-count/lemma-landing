@@ -3,8 +3,8 @@ import { lemmaBrandVisual } from "@/lib/lemma-brand-release";
 import styles from "./LemmaMarketing.module.css";
 
 const lemmaHandles = [
-  "Research",
-  "Messages your rules allow",
+  "Preparing messages",
+  "Sending what your rules allow",
   "Waiting and following up",
 ] as const;
 

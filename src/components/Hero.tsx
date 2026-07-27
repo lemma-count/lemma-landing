@@ -25,19 +25,19 @@ export function Hero() {
       <div className={`${styles.frame} ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
           <h1 className={styles.heroTitle}>
-            <span>Lemma does</span>
-            <span>your LinkedIn</span>
-            <span className={styles.heroTitleAccent}>research and</span>
+            <span>Reach</span>
+            <span>potential clients</span>
+            <span className={styles.heroTitleAccent}>without doing</span>
+            <span className={styles.heroTitleAccent}>every</span>
             <span className={styles.heroTitleAccent}>
               follow-up<span className={styles.heroSignalPeriod}>.</span>
             </span>
           </h1>
           <p className={styles.heroBody}>
-            For independent professionals, founders, and small teams. You
-            choose who to contact and tell Lemma what you sell. Lemma prepares
-            and sends messages allowed by your rules, then keeps the same
-            conversation moving for days or weeks. When a reply, problem, or
-            new choice changes the plan, Lemma brings you in.
+            Tell Lemma who to contact, what you sell, and which messages it may
+            send. Lemma sends, waits, and follows up on LinkedIn for days or
+            weeks. When someone replies or the plan changes, it brings you in
+            when you need to decide.
           </p>
 
           <div className={styles.heroActions}>

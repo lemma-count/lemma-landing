@@ -50,12 +50,12 @@ export const leadContext = {
 
 export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
   research: {
-    shortLabel: "Research",
+    shortLabel: "Context",
     title: "Know the person.",
     summary:
       "Lemma checks Maya, Northstar, your goal, and what it may send.",
     why:
-      "The first message uses the research instead of a generic opening.",
+      "The first message uses what Lemma knows instead of a generic opening.",
     next: "Send one relevant connection request.",
     holdAfter: 2300,
   },
@@ -63,7 +63,7 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
     shortLabel: "First message",
     title: "Start with a reason.",
     summary:
-      "When Maya accepts, Lemma uses the same research for one short message.",
+      "When Maya accepts, Lemma uses the same context for one short message.",
     why: "Start a conversation. Do not force a meeting.",
     next: "Keep the conversation and wait for what happens.",
     message:
@@ -114,7 +114,7 @@ export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
     shortLabel: "Ready for you",
     title: "Ready for you.",
     summary:
-      "You get the research, messages, latest result, and next step.",
+      "You get the context, messages, latest result, and next step.",
     why: "You can step in without rebuilding the story.",
     next: "Review it and take over.",
     outcome: "Ready for you",
@@ -139,10 +139,10 @@ export const sharedEvents: JourneyEvent[] = [
     lane: "decision",
     chapter: "research",
     shared: true,
-    title: "Worth researching",
-    summary: "Lemma checks that Maya is worth researching further.",
+    title: "Good fit to contact",
+    summary: "Lemma checks whether Maya is a good fit to contact.",
     why: "The match looks right, and the work stays within your rules.",
-    next: "Research Maya, Northstar, and what the company is doing now.",
+    next: "Check Maya, Northstar, and what the company is doing now.",
   },
   {
     id: "shared-d1-task",
@@ -150,10 +150,10 @@ export const sharedEvents: JourneyEvent[] = [
     lane: "task",
     chapter: "research",
     shared: true,
-    title: "Research + rules",
+    title: "Context + rules",
     summary:
       "Lemma records what Maya is working on, what it may send, the sources you allowed, and an opening written for her.",
-    why: "The same research can guide every later step.",
+    why: "The same context can guide every later step.",
     next: "Prepare the connection request.",
   },
   {
@@ -189,7 +189,7 @@ export const sharedEvents: JourneyEvent[] = [
     chapter: "first-outreach",
     shared: true,
     title: "Continue with value",
-    summary: "Lemma prepares a short first message based on the research.",
+    summary: "Lemma prepares a short first message based on what it knows.",
     why: "The goal is to open a conversation, not force a meeting.",
     next: "Prepare a message based on what Northstar is working on.",
   },
@@ -200,7 +200,7 @@ export const sharedEvents: JourneyEvent[] = [
     chapter: "first-outreach",
     shared: true,
     title: "Prepare first message",
-    summary: "Lemma turns the research into a short opening.",
+    summary: "Lemma turns what it learned into a short opening.",
     why: "The message stays specific while leaving Maya room to respond.",
     next: "Send the message through LinkedIn.",
   },
@@ -245,7 +245,7 @@ const createHandoffEvents = ({
     chapter: "handoff",
     title: "Get it ready for you",
     summary:
-      "Research, messages, timing, the latest response, and the recommended next step are attached.",
+      "Context, messages, timing, the latest response, and the recommended next step are attached.",
     why: "You should be ready to answer, not piece the story together.",
     next: "Notify you.",
   },
@@ -292,7 +292,7 @@ const contentBranch: JourneyEvent[] = [
     title: "Planned date reached",
     summary:
       "The article still matches what Northstar is working on.",
-    why: "Enough time has passed, and the prior research still fits.",
+    why: "Enough time has passed, and the earlier context still fits.",
     next: "Check whether the article gives a good reason to send another message.",
   },
   {
