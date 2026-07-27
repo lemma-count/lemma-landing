@@ -5,24 +5,32 @@ import styles from "./LemmaMarketing.module.css";
 
 export const landingFaqItems = [
   {
+    q: "What does Lemma do today?",
+    a: "Lemma runs supervised LinkedIn outreach. You choose the Leads, goal, and rules. Lemma plans the work, sends the messages, follows up, and can send a link to an AI voice conversation when more questions need answering.",
+  },
+  {
     q: "Who chooses the people Lemma contacts?",
     a: "You do. Lemma only works on the people you add.",
   },
   {
-    q: "Which channel does Lemma use?",
-    a: "Lemma currently works through your LinkedIn account.",
+    q: "Is an AI voice conversation a phone call?",
+    a: "No. Lemma sends a link. The Lead opens it when ready, so there is no call to schedule or attend.",
+  },
+  {
+    q: "What happens in an AI voice conversation?",
+    a: "The AI asks follow-up questions and answers the Lead’s questions. The whole exchange stays with the same Lead, goal, rules, and Mission.",
   },
   {
     q: "Can Lemma act without my approval?",
-    a: "You set the rules for what Lemma may send. Work outside those rules, plus problems and replies that need you, comes back to you.",
+    a: "You set the rules for what Lemma may do. Anything outside those rules, plus problems and decisions that need judgment, comes back to you.",
   },
   {
-    q: "What happens when someone replies?",
-    a: "Lemma records the reply and shows you the prior messages and the next action. You decide what happens next when the reply needs you.",
+    q: "When does Lemma stop working on a Lead?",
+    a: "When the Lead is a good fit, not a fit, or needs a decision from you.",
   },
   {
-    q: "What counts toward my plan?",
-    a: "A person counts while Lemma is actively working on them. Your plan sets how many people Lemma can work on at once.",
+    q: "How does pricing work?",
+    a: "Your plan sets how many Leads Lemma can actively manage at once. A Lead counts while Lemma-led work on their Mission is active. Pricing is not based on how many LinkedIn messages or follow-ups Lemma sends.",
   },
   {
     q: "Do I need a card for the trial?",
@@ -32,12 +40,19 @@ export const landingFaqItems = [
 
 export function LandingFaq() {
   return (
-    <section id="faq" className={`${styles.section} ${styles.faqSection}`}>
+    <section
+      id="faq"
+      aria-labelledby="faq-title"
+      className={`${styles.section} ${styles.faqSection}`}
+    >
       <div className={`${styles.frame} ${styles.sectionGrid}`}>
         <div className={styles.faqLead}>
-          <p className={styles.eyebrow}>Questions</p>
-          <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
-            What you need to know.
+          <p className={styles.eyebrow}>Questions and answers</p>
+          <h2
+            id="faq-title"
+            className={`${styles.sectionTitle} ${styles.editorialTitle}`}
+          >
+            Questions before you start.
           </h2>
         </div>
 

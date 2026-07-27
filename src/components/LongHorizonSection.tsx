@@ -732,19 +732,17 @@ export function LongHorizonSection() {
       <div id="long-horizon" className="journey">
         <header className="journey-header">
           <div className="journey-heading landing-reveal">
-            <p className="eyebrow">Why Lemma is different · Example</p>
+            <p className="eyebrow">Lemma works on a long horizon · Example</p>
             <h2 id="long-horizon-title">
-              One person. <span>28 days.</span>{" "}
+              Relationships take time. One person. <span>28 days.</span>{" "}
               <b className="keep-together">
                 One conversation<i>.</i>
               </b>
             </h2>
             <p className="journey-intro">
-              A message schedule can run for weeks. But when someone replies,
-              something fails, or the next step changes, a schedule is not
-              enough. Lemma keeps the messages it sent, recorded replies,
-              decisions, and next action together, so the same conversation can
-              continue for days or weeks without starting over.
+              A fixed message schedule cannot handle that. Lemma keeps every
+              message, reply, decision, and next step together, so the
+              conversation can adapt without starting over.
             </p>
           </div>
 

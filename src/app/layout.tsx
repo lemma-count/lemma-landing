@@ -27,9 +27,9 @@ const lemmaSometypeMono = localFont({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: "Lemma — LinkedIn prospecting that keeps moving",
+  title: "Lemma — Outbound without the sales team",
   description:
-    "Lemma sends, waits, and follows up on LinkedIn for days or weeks, then brings you in when a reply or decision needs you.",
+    "Lemma plans and runs supervised LinkedIn outreach, can send links to AI voice conversations, and keeps working until there is a clear outcome or a decision needs you.",
 });
 
 export default function RootLayout({

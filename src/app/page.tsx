@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { CockpitSection } from "@/components/CockpitSection";
+import { AsyncInterviewSection } from "@/components/AsyncInterviewSection";
 import { Hero } from "@/components/Hero";
 import { LandingFaq, landingFaqItems } from "@/components/LandingFaq";
 import { LongHorizonSection } from "@/components/LongHorizonSection";
 import { PricingPreview } from "@/components/PricingPreview";
-import { ProofOverview } from "@/components/ProofOverview";
-import { RelevantContentSection } from "@/components/RelevantContentSection";
+import { SolutionWorkflowSection } from "@/components/SolutionWorkflowSection";
+import { WhyNowSection } from "@/components/WhyNowSection";
 import styles from "@/components/LemmaMarketing.module.css";
 import { createMetadata, faqJsonLd, stringifyJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "LinkedIn prospecting that keeps moving — Lemma",
+  title: "Outbound that keeps the relationship moving — Lemma",
   description:
-    "Lemma sends, waits, and follows up on LinkedIn for days or weeks, then brings you in when a reply or decision needs you.",
+    "Lemma plans and runs supervised LinkedIn outreach, can send links to AI voice conversations, and keeps working until there is a clear outcome or a decision needs you.",
   path: "/",
   image: {
     url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
@@ -40,9 +40,9 @@ export default function Home() {
       />
       <main className={`${styles.root} ${styles.homeRoot}`}>
         <Hero />
-        <ProofOverview />
-        <RelevantContentSection />
-        <CockpitSection />
+        <WhyNowSection />
+        <SolutionWorkflowSection />
+        <AsyncInterviewSection />
         <LongHorizonSection />
         <PricingPreview />
         <LandingFaq />

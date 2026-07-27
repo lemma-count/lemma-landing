@@ -2880,3 +2880,360 @@
     }
   }
 }
+
+/* Homepage narrative: attention → solution → voice conversation */
+
+.homeRoot > .whyNowSection,
+.homeRoot > .solutionSection,
+.homeRoot > .voiceSection,
+.homeRoot > .pricingPreviewSection,
+.homeRoot > .faqSection {
+  min-height: auto;
+}
+
+.whyNowSection,
+.solutionSection,
+.voiceSection {
+  scroll-margin-top: var(--header-h, 72px);
+}
+
+.whyNowSection {
+  padding-block: 112px;
+  background: var(--paper);
+}
+
+.whyNowSection .falseChoiceIntro {
+  grid-column: 1 / span 8;
+}
+
+.whyNowSection .falseChoiceIntro .sectionBody {
+  max-width: 660px;
+}
+
+.whyNowSection .falseChoiceGrid {
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.whyNowCellActive {
+  border-top: 3px solid var(--signal);
+  background: color-mix(in srgb, var(--signal) 8%, var(--paper));
+}
+
+.whyNowCellActive .falseChoiceLabel {
+  color: var(--ink);
+}
+
+.solutionSection {
+  padding-block: 112px;
+}
+
+.solutionGrid {
+  align-items: start;
+}
+
+.solutionSection .workflowHeader {
+  position: sticky;
+  top: calc(var(--header-h, 72px) + 32px);
+}
+
+.solutionSection .workflowList {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.solutionSection .workflowItem:first-child {
+  border-top: 0;
+}
+
+.solutionOutcome {
+  grid-column: 7 / -1;
+  margin: 30px 0 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: rgb(252 252 252 / 74%);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.solutionOutcome span {
+  color: var(--signal);
+}
+
+.voiceSection {
+  padding-block: 112px;
+  background:
+    linear-gradient(135deg, rgb(0 47 167 / 5%), transparent 46%),
+    var(--paper);
+}
+
+.voiceGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+}
+
+.voiceCopy {
+  grid-column: 1 / span 5;
+}
+
+.voiceTitle {
+  max-width: 9ch;
+}
+
+.voiceCallout {
+  max-width: 520px;
+  margin: 36px 0 0;
+  border-top: 1px solid var(--klein);
+  padding-top: 18px;
+  color: var(--klein);
+  font-size: 1.15rem;
+  font-weight: 640;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.voiceProof {
+  grid-column: 7 / -1;
+  margin: 0;
+}
+
+.voiceBrowser {
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 28px 70px rgb(0 47 167 / 10%);
+}
+
+.voiceBrowserBar {
+  min-height: 50px;
+  border-bottom: 1px solid var(--grid);
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 8px 8px 8px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+}
+
+.voiceBrowserBar > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--grid);
+}
+
+.voiceBrowserBar > span:first-child {
+  background: var(--signal);
+}
+
+.voiceBrowserBar p {
+  min-width: 0;
+  margin: 0 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 620;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.voiceFlow {
+  margin: 0;
+  padding: 24px 32px 4px;
+  list-style: none;
+}
+
+.voiceFlowItem {
+  position: relative;
+  min-height: 92px;
+  border-bottom: 1px solid var(--grid);
+  padding: 20px 28px 20px 0;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.voiceFlowItem:last-child {
+  border-bottom: 0;
+}
+
+.voiceFlowIcon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid color-mix(in srgb, var(--klein) 28%, var(--grid));
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--klein) 6%, var(--paper));
+  color: var(--klein);
+}
+
+.voiceFlowItem strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.voiceFlowItem p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.voiceFlowArrow {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  color: var(--klein);
+  transform: translateY(-50%);
+}
+
+.voiceReturn {
+  min-height: 74px;
+  border-top: 1px solid var(--ink);
+  padding: 14px 32px;
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.voiceReturn span {
+  color: rgb(252 252 252 / 58%);
+}
+
+.voiceReturn strong {
+  justify-self: end;
+  color: var(--paper);
+  font-weight: 650;
+}
+
+.pricingThesis {
+  max-width: 410px;
+  margin: 28px 0 0;
+  border-top: 1px solid var(--klein);
+  padding-top: 16px;
+  color: var(--klein);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+@media (max-width: 899px) {
+  .whyNowSection,
+  .solutionSection,
+  .voiceSection {
+    padding-block: 88px;
+  }
+
+  .whyNowSection .falseChoiceIntro,
+  .voiceCopy,
+  .voiceProof {
+    grid-column: 1 / -1;
+  }
+
+  .solutionSection .workflowHeader {
+    position: static;
+  }
+
+  .solutionOutcome {
+    grid-column: 1 / -1;
+  }
+
+  .voiceGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .voiceTitle {
+    max-width: 11ch;
+  }
+
+  .voiceProof {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 639px) {
+  .whyNowSection,
+  .solutionSection,
+  .voiceSection {
+    padding-block: 72px;
+  }
+
+  .solutionOutcome {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .voiceGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .voiceProof {
+    margin-top: 44px;
+  }
+
+  .voiceFlow {
+    padding: 12px 16px 0;
+  }
+
+  .voiceFlowItem {
+    min-height: 88px;
+    padding-right: 24px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .voiceFlowIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .voiceBrowserBar {
+    padding-inline: 12px;
+  }
+
+  .voiceBrowserBar p {
+    justify-content: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .voiceReturn {
+    padding: 14px 16px;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .voiceReturn strong {
+    justify-self: start;
+    margin-top: 4px;
+  }
+}

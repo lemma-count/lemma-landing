@@ -85,7 +85,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Lemma researches the people you choose, runs the LinkedIn work you allow, follows up across days and weeks, and brings replies or problems back to you.",
+    "Lemma runs supervised LinkedIn outreach for the Leads you choose, can send links to AI voice conversations, and keeps the relationship moving until there is a clear outcome or a decision needs you.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {

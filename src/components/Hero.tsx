@@ -25,19 +25,19 @@ export function Hero() {
       <div className={`${styles.frame} ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
           <h1 className={styles.heroTitle}>
-            <span>Reach</span>
-            <span>potential clients</span>
+            <span>Get</span>
+            <span>clients</span>
             <span className={styles.heroTitleAccent}>without doing</span>
-            <span className={styles.heroTitleAccent}>every</span>
             <span className={styles.heroTitleAccent}>
-              follow-up<span className={styles.heroSignalPeriod}>.</span>
+              the prospecting<span className={styles.heroSignalPeriod}>.</span>
             </span>
           </h1>
           <p className={styles.heroBody}>
-            Tell Lemma who to contact, what you sell, and which messages it may
-            send. Lemma sends, waits, and follows up on LinkedIn for days or
-            weeks. When someone replies or the plan changes, it brings you in
-            when you need to decide.
+            Tell Lemma who to contact, what you sell, and what it may send.
+            Lemma sends LinkedIn messages and follows up for days or weeks. When
+            text is not enough, it can send a link to an AI voice conversation.
+            Leads ask and answer questions without booking a call with you. You
+            step in only when needed.
           </p>
 
           <div className={styles.heroActions}>
@@ -60,8 +60,7 @@ export function Hero() {
             </Link>
           </div>
           <p className={styles.trialMeta}>
-            {lemmaTrial.days} days free · No card · Start with{" "}
-            {lemmaTrial.managedLeads} people
+            {lemmaTrial.days} days free · No card
           </p>
         </div>
       </div>

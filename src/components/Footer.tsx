@@ -11,13 +11,15 @@ const footerGroups = [
     title: "Explore",
     links: [
       { label: "How it works", href: "/#how-it-works" },
-      { label: "Product", href: "/#product" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Voice conversations", href: "/#voice-outbound" },
+      { label: "Long horizon", href: "/#difference" },
     ],
   },
   {
-    title: "Account",
+    title: "Start",
     links: [
+      { label: "Pricing", href: "/#pricing" },
+      { label: "Questions", href: "/#faq" },
       { label: "Start free trial", href: LEMMA_START_TRIAL_URL },
       { label: "Sign in", href: LEMMA_SIGN_IN_URL },
     ],
@@ -48,13 +50,13 @@ export function Footer() {
 
       <div className={`${styles.frame} ${styles.closing}`}>
         <div className={styles.closingCopy}>
-          <p className={styles.eyebrow}>Start with 10 people</p>
+          <p className={styles.eyebrow}>Ready to start?</p>
           <h2 className={styles.closingTitle}>
-            Let Lemma keep your LinkedIn follow-up moving.
+            Set the goal. Let Lemma run the outreach.
           </h2>
           <p className={styles.closingBody}>
-            Set the rules once. Lemma sends, waits, follows up, and brings you
-            in when you need to decide.
+            Choose the Leads and rules. Lemma handles LinkedIn follow-up and can
+            send links to AI voice conversations. You step in only when needed.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -83,8 +85,8 @@ export function Footer() {
               />
             </Link>
             <p>
-              LinkedIn prospecting that keeps working across days and weeks
-              while you stay in control.
+              Supervised LinkedIn outreach and AI voice conversations for
+              independent professionals and small B2B teams.
             </p>
           </div>
 

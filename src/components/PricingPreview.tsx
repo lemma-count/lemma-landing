@@ -16,14 +16,18 @@ export function PricingPreview() {
     >
       <div className={`${styles.frame} ${styles.pricingPreviewGrid}`}>
         <div className={styles.pricingPreviewIntro}>
-          <p className={styles.eyebrow}>Simple pricing</p>
+          <p className={styles.eyebrow}>Pricing / Active work</p>
           <h2 className={styles.pricingPreviewTitle}>
-            Pay for the people Lemma is working on.
+            Pay for work moving toward an outcome—not messages sent.
           </h2>
           <p className={styles.pricingPreviewBody}>
-            Plans are based on how many people Lemma can work on at once. Start
-            with {lemmaTrial.managedLeads} people for {lemmaTrial.days} days. No
-            card.
+            Old-school outbound stacks add seats, tools, and high monthly
+            costs. Lemma starts at ${lemmaPlans[0].monthlyPrice}/month. Plans
+            grow with how many people Lemma can actively work on at once—not
+            how many messages it sends.
+          </p>
+          <p className={styles.pricingThesis}>
+            More messages are not the product. Progress is.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -60,7 +64,7 @@ export function PricingPreview() {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">People Lemma can work on at once</th>
+                <th scope="row">People Lemma can actively work on at once</th>
                 {lemmaPlans.map((plan) => (
                   <td key={plan.id}>
                     {plan.managedLeads.toLocaleString("en-US")}
@@ -91,7 +95,7 @@ export function PricingPreview() {
                 </div>
                 <ul>
                   <li>
-                    Lemma can work on{" "}
+                    Active capacity for{" "}
                     {plan.managedLeads.toLocaleString("en-US")} people at once
                   </li>
                 </ul>
@@ -113,7 +117,9 @@ export function PricingPreview() {
           </div>
 
           <p className={styles.pricingComparisonNote}>
-            Plans differ only by how many people Lemma can work on at once.
+            A person counts while Lemma-led work on their Mission is active.
+            Start with {lemmaTrial.managedLeads} people for {lemmaTrial.days}{" "}
+            days. No card.
           </p>
         </div>
       </div>
