@@ -25,11 +25,11 @@ export function Hero() {
       <div className={`${styles.frame} ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
           <h1 className={styles.heroTitle}>
-            <span>Get</span>
-            <span>clients</span>
-            <span className={styles.heroTitleAccent}>without doing</span>
+            <span>Revenue,</span>
+            <span className={styles.heroTitleAccent}>that no longer</span>
+            <span className={styles.heroTitleAccent}>scales with</span>
             <span className={styles.heroTitleAccent}>
-              the prospecting<span className={styles.heroSignalPeriod}>.</span>
+              headcount<span className={styles.heroSignalPeriod}>.</span>
             </span>
           </h1>
           <p className={styles.heroBody}>
