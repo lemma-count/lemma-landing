@@ -12,7 +12,7 @@ export const metadata: Metadata = createMetadata({
     "Simple monthly pricing based on Managed leads. Start with a seven-day trial, ten Managed leads, and no credit card. Manual Sequences are unlimited.",
   path: "/pricing",
   image: {
-    url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
+    url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-court.webp",
     width: 1500,
     height: 1452,
     alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",

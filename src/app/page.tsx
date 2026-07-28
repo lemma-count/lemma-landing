@@ -16,7 +16,7 @@ export const metadata: Metadata = createMetadata({
     "Lemma researches the right prospects, starts LinkedIn conversations, shares relevant 1:1 content, handles replies, and helps move interested people toward a meeting.",
   path: "/",
   image: {
-    url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
+    url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-court.webp",
     width: 1500,
     height: 1452,
     alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",

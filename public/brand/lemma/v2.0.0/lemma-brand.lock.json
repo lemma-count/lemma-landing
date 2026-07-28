@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "brand": "Lemma",
+  "brandVersion": "2.0.0",
+  "source": "wilu-ops/brand/lemma",
+  "releaseStatus": "approved",
+  "generatedAt": "2026-07-28T14:35:49.595Z",
+  "tokens": {
+    "color": {
+      "paper": {
+        "$type": "color",
+        "$value": "#FCFCFC",
+        "$description": "Primary field"
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#121212",
+        "$description": "Text and dark field"
+      },
+      "klein": {
+        "$type": "color",
+        "$value": "#002FA7",
+        "$description": "Klein Blue. Primary action, active direction, and structural brand pigment."
+      },
+      "klein-soft": {
+        "$type": "color",
+        "$value": "#1B46C7",
+        "$description": "Klein Lift. Hover and supporting plane."
+      },
+      "cobalt": {
+        "$type": "color",
+        "$value": "#002FA7",
+        "$description": "Deprecated compatibility alias. Use color.klein."
+      },
+      "cobalt-soft": {
+        "$type": "color",
+        "$value": "#1B46C7",
+        "$description": "Deprecated compatibility alias. Use color.klein-soft."
+      },
+      "signal": {
+        "$type": "color",
+        "$value": "#FF7A45",
+        "$description": "High-attention brand color for a decisive action, operator handoff, consequential marker, proof point, or architectural destination."
+      },
+      "attention": {
+        "action": {
+          "$type": "color",
+          "$value": "#FF7A45",
+          "$description": "One decisive commit action per primary attention zone. Use Ink text."
+        },
+        "handoff": {
+          "$type": "color",
+          "$value": "#FF7A45",
+          "$description": "A genuine operator decision, permission request, blocker, or handoff. Pair with an explicit label."
+        },
+        "marker": {
+          "$type": "color",
+          "$value": "#FF7A45",
+          "$description": "The one place attention must move now. Routine active and selected states remain Klein Blue."
+        },
+        "proof": {
+          "$type": "color",
+          "$value": "#FF7A45",
+          "$description": "One annotation connecting a claim to evidence or a consequential conclusion."
+        }
+      },
+      "body": {
+        "$type": "color",
+        "$value": "#3D3D3D",
+        "$description": "Long-form text"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "#707070",
+        "$description": "Supporting information"
+      },
+      "grid": {
+        "$type": "color",
+        "$value": "#E9E9E7",
+        "$description": "Rules and boundaries"
+      },
+      "semantic": {
+        "active": {
+          "$type": "color",
+          "$value": "#002FA7",
+          "$description": "Routine current work, selected state, and primary action."
+        },
+        "needs-you": {
+          "$type": "color",
+          "$value": "#FF7A45",
+          "$description": "A consequential operator decision or handoff, paired with an explicit label."
+        },
+        "success": {
+          "$type": "color",
+          "$value": "#137A4C",
+          "$description": "Confirmed positive completion only."
+        },
+        "warning": {
+          "$type": "color",
+          "$value": "#A96000",
+          "$description": "Constraint or attention without failure."
+        },
+        "failure": {
+          "$type": "color",
+          "$value": "#B42318",
+          "$description": "Failed or unsafe work that did not execute."
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "$type": "fontFamily",
+        "$value": [
+          "Inter Tight Variable",
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
+          "sans-serif"
+        ]
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": [
+          "Sometype Mono Variable",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "monospace"
+        ]
+      },
+      "scale": {
+        "display-xl": {
+          "desktop": "clamp(5rem, 10vw, 10rem)",
+          "mobile": "3.5rem",
+          "lineHeight": "0.78",
+          "letterSpacing": "-0.06em"
+        },
+        "display-l": {
+          "desktop": "clamp(4rem, 7vw, 7.5rem)",
+          "mobile": "3rem",
+          "lineHeight": "0.82",
+          "letterSpacing": "-0.05em"
+        },
+        "heading-1": {
+          "desktop": "4.5rem",
+          "mobile": "2.75rem",
+          "lineHeight": "0.92",
+          "letterSpacing": "-0.04em"
+        },
+        "heading-2": {
+          "desktop": "2.5rem",
+          "mobile": "2rem",
+          "lineHeight": "1.00",
+          "letterSpacing": "-0.03em"
+        },
+        "body-l": {
+          "desktop": "1.25rem",
+          "mobile": "1.125rem",
+          "lineHeight": "1.45",
+          "letterSpacing": "-0.015em"
+        },
+        "body": {
+          "desktop": "1rem",
+          "mobile": "1rem",
+          "lineHeight": "1.50",
+          "letterSpacing": "-0.01em"
+        },
+        "meta": {
+          "desktop": "0.75rem",
+          "mobile": "0.75rem",
+          "lineHeight": "1.30",
+          "letterSpacing": "0.05em"
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "product": {
+        "$type": "dimension",
+        "$value": "8px"
+      },
+      "editorial": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    }
+  },
+  "approvedAssets": [
+    {
+      "id": "horizon-court",
+      "file": "./visuals/lemma-horizon-court.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "feba44e8fb28f5d8d58275c2360c861d368292f3c2fb2000bb8141e469e9774a"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "horizon-threshold",
+      "file": "./visuals/lemma-horizon-threshold.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "403d4a9b7b9b5701e23a07b699fd26df5c79cf614235a55c1c126724753fcfab"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "interval-temple",
+      "file": "./visuals/lemma-interval-temple.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "495e5985768e0e35b35fb2977bc9ab498c2614a586e71ccedf3ad5cc0386435b"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "open-passage-atrium",
+      "file": "./visuals/lemma-open-passage-atrium.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "44061e845f10e7d140bca92d64e96997c1667e2247108806c04116cbda6e31f5"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "signal-colonnade",
+      "file": "./visuals/lemma-signal-colonnade.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1f84f435da3dc1223769b556ebfe93e806a24f9125c30a0382ec95a67f467276"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "quiet-observatory",
+      "file": "./visuals/lemma-quiet-observatory.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "9d018f6b959c5d88f0b4985e00ec617f3136df3992b4b4dd14ba7bd6fd3a6f46"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "alignment-court",
+      "file": "./visuals/lemma-alignment-court.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "b76a595cd375908c7b43cbaefdc990f72d96ddbf65585daa6ff32b975d2fb691"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "permission-gate",
+      "file": "./visuals/lemma-permission-gate.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0708e302eb0b9341af6721def543d20aa472f78f489da3f1ea4fa45acb17c436"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "return-signal",
+      "file": "./visuals/lemma-return-signal.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "e09ede3e865ef181f3521bb882a4eab8a060d6cb7a0e07456492e75be33ba85f"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "alignment-arcs",
+      "file": "./visuals/lemma-alignment-arcs.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "ffe3508b644f8acc6b2bd682eb36861ef5337d41bd174aef7d737b17930fc7ed"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "permission-aperture",
+      "file": "./visuals/lemma-permission-aperture.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "a5649101f4e0d60541afd4a0b3eee301d273426e00284cfd4796c0ff30659dee"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    },
+    {
+      "id": "return-curve",
+      "file": "./visuals/lemma-return-curve.webp",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "c20a06e5b969f31dbb7100151626af3c8326a76cfde0699947cc80e6e58495a7"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved"
+    }
+  ],
+  "integrity": "1612724db0610d95fa12cfa6ef9069b599b382ef4286bff9128ca20b9c9dfd03"
+}
