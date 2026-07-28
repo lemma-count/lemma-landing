@@ -180,8 +180,7 @@
   gap: 30px;
 }
 
-.navLink,
-.signIn {
+.navLink {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -192,8 +191,7 @@
   transition: color 180ms ease;
 }
 
-.navLink:hover,
-.signIn:hover {
+.navLink:hover {
   color: var(--klein);
 }
 

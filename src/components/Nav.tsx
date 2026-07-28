@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { lemmaBrandLogos } from "@/lib/lemma-brand-release";
-import { LEMMA_SIGN_IN_URL, LEMMA_START_TRIAL_URL } from "@/lib/links";
+import { LEMMA_START_TRIAL_URL } from "@/lib/links";
 import { TrackedLink } from "./TrackedLink";
 import styles from "./LemmaMarketing.module.css";
 
@@ -125,9 +125,6 @@ export function Nav({ compact = false }: { compact?: boolean }) {
           </div>
 
           <div className={styles.navActions}>
-            <Link href={LEMMA_SIGN_IN_URL} className={styles.signIn}>
-              Sign in
-            </Link>
             <TrackedLink
               href={LEMMA_START_TRIAL_URL}
               event="nav_cta_click"
@@ -205,13 +202,6 @@ export function Nav({ compact = false }: { compact?: boolean }) {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href={LEMMA_SIGN_IN_URL}
-                onClick={() => setMobileOpen(false)}
-                className={styles.navLink}
-              >
-                Sign in
-              </Link>
             </nav>
 
             <TrackedLink
