@@ -13,14 +13,14 @@ import {
 import "./globals.css";
 
 const lemmaInterTight = localFont({
-  src: "../../public/brand/lemma/v1.4.0/fonts/inter-tight-latin-variable.woff2",
+  src: "../../public/brand/lemma/v2.0.0/fonts/inter-tight-latin-variable.woff2",
   variable: "--font-lemma-inter-tight",
   weight: "100 900",
   display: "swap",
 });
 
 const lemmaSometypeMono = localFont({
-  src: "../../public/brand/lemma/v1.4.0/fonts/sometype-mono-latin-variable.woff2",
+  src: "../../public/brand/lemma/v2.0.0/fonts/sometype-mono-latin-variable.woff2",
   variable: "--font-lemma-sometype-mono",
   weight: "400 700",
   display: "swap",

@@ -28,7 +28,7 @@ export const metadata: Metadata = createMetadata({
   path: "/brand",
   noIndex: true,
   image: {
-    url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-arcs.webp",
+    url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-arcs.webp",
     width: 1500,
     height: 1452,
     alt: "Broad Klein Blue arcs aligning around one open passage and a tiny orange horizon signal.",
@@ -132,7 +132,7 @@ export default function BrandPage() {
         <div className="mx-auto flex min-h-[760px] max-w-[1400px] flex-col justify-between px-5 py-10 sm:min-h-[840px] sm:px-8 sm:py-14 lg:min-h-[900px] lg:px-10 lg:py-16">
           <div className="flex items-center justify-between gap-6 border-b border-white/18 pb-5">
             <Image
-              src="/brand/lemma/v1.4.0/logo/lemma-lockup-horizontal-paper.svg"
+              src="/brand/lemma/v2.0.0/logo/lemma-lockup-horizontal-paper.svg"
               alt="Lemma"
               width={125}
               height={25}
@@ -229,10 +229,10 @@ export default function BrandPage() {
                   className="h-10 w-auto"
                 />
               </div>
-              <p className="max-w-md text-sm leading-6 text-white/64">Use only the supplied Ink and Paper Open Passage masters. Never stretch, recolor, outline, or place the wordmark over detailed structure.</p>
+              <p className="max-w-md text-sm leading-6 text-white/64">Use only the supplied Ink and Paper Sunrise Threshold masters. Never stretch, recolor, outline, move the half-sun, or place the wordmark over detailed structure.</p>
             </div>
           </div>
-          <p className="mt-5 text-xs leading-5 text-subtle">The compact mark is a deterministic SVG master. The favicon serves the black or white variant according to the browser color scheme so the passage remains legible in dark mode.</p>
+          <p className="mt-5 text-xs leading-5 text-subtle">The doorway and sunrise are deterministic SVG paths. The favicon swaps Ink and Paper with the browser color scheme while preserving the Signal-orange half-sun.</p>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="rounded-3xl border border-border bg-paper p-7 sm:p-9">

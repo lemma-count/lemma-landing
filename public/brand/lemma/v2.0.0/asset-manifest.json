@@ -1,0 +1,596 @@
+{
+  "brand": "Lemma",
+  "system": "Open Passage",
+  "version": "2.0.0",
+  "generatedAt": "2026-07-28T00:00:00.000Z",
+  "release": {
+    "approvalDate": "2026-07-28",
+    "brandDesignOwner": "Lemma founder / brand owner",
+    "productTruthOwner": "Lemma product owner",
+    "accessibilityReviewer": "Codex browser QA",
+    "licensingReviewer": "Lemma brand owner; bundled font licenses and asset provenance reviewed",
+    "implementationOwner": "Codex implementation for Lemma"
+  },
+  "visualRules": {
+    "family": "Architectural Horizon",
+    "referenceAesthetic": "Horizon Court",
+    "palette": [
+      "Paper",
+      "Ink",
+      "Klein Blue",
+      "Signal"
+    ],
+    "valueMotifs": [
+      {
+        "id": "alignment",
+        "name": "Alignment",
+        "proposition": "Reach the right people.",
+        "visualLogic": "Many possibilities. One relevant path."
+      },
+      {
+        "id": "permission",
+        "name": "Permission",
+        "proposition": "Run only what you allow.",
+        "visualLogic": "A clear boundary. One permitted opening."
+      },
+      {
+        "id": "return",
+        "name": "Return",
+        "proposition": "Keep the next decision visible.",
+        "visualLogic": "Work advances. Judgment returns to you."
+      }
+    ],
+    "constraints": [
+      "Original contemporary monuments only",
+      "No recognizable classical or real architecture",
+      "No people, text, logos, dashboards, workflows, or generic AI imagery",
+      "White fields and light planes remain pure neutral white with no cream, ivory, beige, or yellow cast",
+      "Horizon Court is the rendering master for field, linework, texture, scale, and negative space",
+      "Exactly one tiny orange Signal sits on or immediately beside the distant horizon or vanishing point",
+      "No orange foreground object or decorative accent",
+      "Rounded expressions use broad structural arcs, protected apertures, or returning planes; never pills, bubbles, blobs, or soft-SaaS decoration"
+    ]
+  },
+  "assets": [
+    {
+      "id": "horizon-court",
+      "name": "Horizon Court",
+      "file": "./visuals/lemma-horizon-court.webp",
+      "archiveSourceFile": "./sources/lemma-horizon-court.png",
+      "sourceAvailability": "archive-only",
+      "role": "Master brand field · homepage hero · launch campaign",
+      "safeZone": "Lower-left copy or full-bleed display type",
+      "crop": "Landscape / square",
+      "focalPoint": "62% 61%",
+      "mobileCrop": "Center the passage; preserve the lower-left copy field.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1234",
+      "alt": "Abstract white architectural court opening toward a Klein Blue horizon and one tiny orange signal.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "A low pure-white court opens through one quiet passage toward exactly one tiny orange Signal on the distant Klein Blue horizon."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "feba44e8fb28f5d8d58275c2360c861d368292f3c2fb2000bb8141e469e9774a"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "9e2ee0d3feb6f712551e66be21cd25e7344a1fc39eefa378c87e30aff8607151"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "horizon-threshold",
+      "name": "Horizon Threshold",
+      "file": "./visuals/lemma-horizon-threshold.webp",
+      "archiveSourceFile": "./sources/lemma-horizon-threshold.png",
+      "sourceAvailability": "archive-only",
+      "role": "Closing field · editorial cover · paid social",
+      "safeZone": "Upper-left 42%",
+      "crop": "Landscape / portrait",
+      "focalPoint": "68% 58%",
+      "mobileCrop": "Anchor the threshold at center-right; protect the upper-left copy field.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1234",
+      "alt": "Monumental white threshold framing a distant Klein Blue horizon and small orange sun.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "A monumental pure-white threshold frames a distant Klein Blue horizon and one restrained warm signal."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "403d4a9b7b9b5701e23a07b699fd26df5c79cf614235a55c1c126724753fcfab"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "f9ffe4267d2fc8a29e663a8a43b0ee0c9ec00c0bb73f8d94842a90a68ce6dfad"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "interval-temple",
+      "name": "Temple of the Interval",
+      "file": "./visuals/lemma-interval-temple.webp",
+      "archiveSourceFile": "./sources/lemma-interval-temple.png",
+      "sourceAvailability": "archive-only",
+      "role": "Dark field · systems story · presentation cover",
+      "safeZone": "Upper-right 36%",
+      "crop": "Landscape / square",
+      "focalPoint": "58% 54%",
+      "mobileCrop": "Keep the central interval and Klein Blue void; trim repeated planes evenly.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1233",
+      "alt": "Rhythmic architectural planes forming a precise passage toward a Klein Blue void.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Rhythmic dark architectural planes form one precise interval toward a Klein Blue void."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "495e5985768e0e35b35fb2977bc9ab498c2614a586e71ccedf3ad5cc0386435b"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "2e30cb00faa73b7249e4ebccab00ada4c45daff3fccf131ab8cb9cee20765426"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "open-passage-atrium",
+      "name": "Open Passage Atrium",
+      "file": "./visuals/lemma-open-passage-atrium.webp",
+      "archiveSourceFile": "./sources/lemma-open-passage-atrium.png",
+      "sourceAvailability": "archive-only",
+      "role": "Blog feature · campaign hero · keynote opener",
+      "safeZone": "Upper-left 48%",
+      "crop": "Landscape / portrait",
+      "focalPoint": "62% 62%",
+      "mobileCrop": "Center the passage and retain the warm signal near the lower third.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1234",
+      "alt": "A quiet architectural atrium leading toward one Klein Blue passage and a warm signal.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "A quiet pure-white atrium leads toward one Klein Blue passage and one warm signal."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "44061e845f10e7d140bca92d64e96997c1667e2247108806c04116cbda6e31f5"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "31fddae21be0b6ee687e36c0d280c9f973c185d4eb1d5b3a23adaf9c35dac1bb"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "signal-colonnade",
+      "name": "Signal Colonnade",
+      "file": "./visuals/lemma-signal-colonnade.webp",
+      "archiveSourceFile": "./sources/lemma-signal-colonnade.png",
+      "sourceAvailability": "archive-only",
+      "role": "Social series · report cover · campaign sequence",
+      "safeZone": "Left 38%",
+      "crop": "Portrait / square",
+      "focalPoint": "64% 65%",
+      "mobileCrop": "Preserve the repeated vertical cadence and the single distant signal.",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1254 × 1254",
+      "alt": "Abstract vertical planes repeating toward a distant orange signal.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Tall abstract planes repeat toward one distant orange signal under a calm field."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "1f84f435da3dc1223769b556ebfe93e806a24f9125c30a0382ec95a67f467276"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "ef877afaa2fea6a1c3049aaa24226ab63a8932ade185a05f2aa52813da18b640"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "quiet-observatory",
+      "name": "Quiet Observatory",
+      "file": "./visuals/lemma-quiet-observatory.webp",
+      "archiveSourceFile": "./sources/lemma-quiet-observatory.png",
+      "sourceAvailability": "archive-only",
+      "role": "Research report · event field · long-form editorial",
+      "safeZone": "Upper-right 50%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "52% 62%",
+      "mobileCrop": "Keep the low court centered and allow the Klein Blue sky to dominate.",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1254 × 1254",
+      "alt": "A low abstract architectural court opening beneath an immense Klein Blue sky.",
+      "valueRole": null,
+      "visualLogic": null,
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "A low abstract observatory court opens beneath an immense Klein Blue sky."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "9d018f6b959c5d88f0b4985e00ec617f3136df3992b4b4dd14ba7bd6fd3a6f46"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "f3ccc0d25c1a543a08f3d9e20855aa7604729c3cb0b8838a851c884db5f75552"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "alignment-court",
+      "name": "Alignment Court",
+      "file": "./visuals/lemma-alignment-court.webp",
+      "archiveSourceFile": "./sources/lemma-alignment-court.png",
+      "sourceAvailability": "archive-only",
+      "role": "Relevance story · website variation · editorial campaign",
+      "safeZone": "Upper-left 40%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "80% 70%",
+      "mobileCrop": "Keep the selected passage and distant horizon Signal in the right third; protect the upper-left white field.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1233",
+      "alt": "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",
+      "valueRole": "Alignment",
+      "visualLogic": "Many possibilities resolve into one relevant path.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Many quiet parallel planes converge toward one precise open passage and exactly one tiny orange Signal on the distant horizon."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "b76a595cd375908c7b43cbaefdc990f72d96ddbf65585daa6ff32b975d2fb691"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "0ba94e78c344e6b5aab94bd9a758f080c290b8947d2efc54f5d2785396bee1e5"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "permission-gate",
+      "name": "Permission Gate",
+      "file": "./visuals/lemma-permission-gate.webp",
+      "archiveSourceFile": "./sources/lemma-permission-gate.png",
+      "sourceAvailability": "archive-only",
+      "role": "Control story · paid variation · presentation divider",
+      "safeZone": "Upper-right 42%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "49% 85%",
+      "mobileCrop": "Keep both walls, the narrow threshold, and the distant horizon Signal; protect the upper-right field.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1254 × 1254",
+      "alt": "Two monumental walls defining one permitted threshold toward a tiny orange Signal on the distant horizon.",
+      "valueRole": "Permission",
+      "visualLogic": "A clear boundary contains one permitted opening.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Two monumental planes define a protected field with exactly one permitted threshold across a Klein Blue datum and exactly one tiny orange Signal on the distant horizon beyond it."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0708e302eb0b9341af6721def543d20aa472f78f489da3f1ea4fa45acb17c436"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "68bf125a9f2ceb11a15776add791409ca932f7502e34db2c140e235aa127794c"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "return-signal",
+      "name": "Return Signal",
+      "file": "./visuals/lemma-return-signal.webp",
+      "archiveSourceFile": "./sources/lemma-return-signal.png",
+      "sourceAvailability": "archive-only",
+      "role": "Judgment story · social variation · closing field",
+      "safeZone": "Upper 45%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "54% 56%",
+      "mobileCrop": "Preserve the return plane and the distant horizon Signal; protect the expansive pure-white upper field.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1275 × 1234",
+      "alt": "An airy white axial court with one plane returning toward the foreground and a tiny orange signal on the distant horizon.",
+      "valueRole": "Return",
+      "visualLogic": "Work advances and the consequential decision returns.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "One low axial passage enters a quiet white court while a single architectural plane returns toward the foreground; exactly one tiny orange Signal remains on the distant horizon."
+      },
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "provenance": "OpenAI ImageGen edit of a Lemma-owned approved source plate; composition and motif preserved while blue material migrated to Klein Blue #002FA7 and the single-Signal rule was enforced.",
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "e09ede3e865ef181f3521bb882a4eab8a060d6cb7a0e07456492e75be33ba85f"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "a9729a235d7a0565f95944c8f7a1b5b31f03dc12876edc47ecb1019af73e4a8a"
+      },
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions."
+    },
+    {
+      "id": "alignment-arcs",
+      "name": "Alignment Arcs",
+      "file": "./visuals/lemma-alignment-arcs.webp",
+      "archiveSourceFile": "./sources/lemma-alignment-arcs.png",
+      "sourceAvailability": "archive-only",
+      "role": "Relevance story · rounded expression · editorial campaign",
+      "safeZone": "Upper-left 34%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "84% 43%",
+      "mobileCrop": "Keep the rectangular passage and distant Signal in the right third; retain at least three arcs.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1042 × 1509",
+      "alt": "Broad Klein Blue arcs align around one open passage and a tiny orange horizon signal.",
+      "valueRole": "Alignment",
+      "visualLogic": "Multiple structural arcs resolve into one relevant passage.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Broad continuous Klein Blue arcs align around one deliberate rectangular passage and exactly one tiny orange Signal on the distant horizon."
+      },
+      "provenance": "Original OpenAI ImageGen composition commissioned for Lemma v1.4.0 as the approved rounded Alignment expression; art-directed against the Architectural Horizon family.",
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "ffe3508b644f8acc6b2bd682eb36861ef5337d41bd174aef7d737b17930fc7ed"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "2c9d671855efa6435bdc2ea4c0ce2015567c20f4b5c78ff1389089847ddc4e11"
+      }
+    },
+    {
+      "id": "permission-aperture",
+      "name": "Permission Aperture",
+      "file": "./visuals/lemma-permission-aperture.webp",
+      "archiveSourceFile": "./sources/lemma-permission-aperture.png",
+      "sourceAvailability": "archive-only",
+      "role": "Control story · rounded expression · presentation divider",
+      "safeZone": "Upper-right 30%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "62% 60%",
+      "mobileCrop": "Keep both curved walls, the narrow aperture, and the single Signal.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1020 × 1541",
+      "alt": "Two rounded Klein Blue walls protect a field with one narrow opening and a tiny orange signal.",
+      "valueRole": "Permission",
+      "visualLogic": "A protected curved field contains one chosen opening.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "Two broad rounded Klein Blue walls define a protected field with exactly one narrow aperture and one tiny orange Signal beyond it."
+      },
+      "provenance": "Original OpenAI ImageGen composition commissioned for Lemma v1.4.0 as the approved rounded Permission expression; art-directed against the Architectural Horizon family.",
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "a5649101f4e0d60541afd4a0b3eee301d273426e00284cfd4796c0ff30659dee"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "dc474902733b149f6eaf186dcd652abffd9ed6c3c4f72ce5cd31a525a7d70d42"
+      }
+    },
+    {
+      "id": "return-curve",
+      "name": "Return Curve",
+      "file": "./visuals/lemma-return-curve.webp",
+      "archiveSourceFile": "./sources/lemma-return-curve.png",
+      "sourceAvailability": "archive-only",
+      "role": "Judgment story · rounded expression · closing field",
+      "safeZone": "Upper 32%",
+      "crop": "Landscape / square / portrait",
+      "focalPoint": "68% 31%",
+      "mobileCrop": "Preserve the foreground bend, clear passage, and distant Signal.",
+      "dimensions": {
+        "width": 1500,
+        "height": 1452,
+        "format": "WebP"
+      },
+      "sourceDimensions": "1043 × 1508",
+      "alt": "A continuous Klein Blue plane curves back through an open court toward a tiny orange horizon signal.",
+      "valueRole": "Return",
+      "visualLogic": "A deliberate route advances, bends back, and keeps judgment visible.",
+      "prompt": {
+        "canonical": "Original abstract contemporary monument on a pure neutral-white or Ink field; restrained planes, one passage, one stable horizon, subtle neutral paper grain without cream or yellow warmth, dense Klein Blue (#002FA7) pigment and mineral-glass construction texture, and exactly one tiny orange Signal on or immediately beside the distant horizon or vanishing point. No orange foreground object or decorative accent. No people, text, logos, dashboards, business diagrams, recognizable architecture, classical orders, religious symbols, or generic AI imagery.",
+        "composition": "One continuous Klein Blue plane advances through a quiet court, bends deliberately back toward the foreground, and leaves one clear passage to exactly one tiny orange Signal."
+      },
+      "provenance": "Original OpenAI ImageGen composition commissioned for Lemma v1.4.0 as the approved rounded Return expression; art-directed against the Architectural Horizon family.",
+      "model": "OpenAI ImageGen",
+      "generationDate": "2026-07-24",
+      "sourceReferences": [
+        "Lemma Open Passage brand brief",
+        "Architectural Horizon image direction"
+      ],
+      "rights": "Approved for Lemma customer-facing brand use; redistribution outside this kit requires owner review.",
+      "assetVersion": "1.4.0",
+      "approval": "approved",
+      "approvalDate": "2026-07-24",
+      "approvalScope": "Digital use at or below delivered native dimensions.",
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "c20a06e5b969f31dbb7100151626af3c8326a76cfde0699947cc80e6e58495a7"
+      },
+      "sourceChecksum": {
+        "algorithm": "sha256",
+        "value": "1c07b5da2c34fed48d7f861f8f48ebd6c45fb3dc58c3b217e4482e76ada47f93"
+      }
+    }
+  ]
+}

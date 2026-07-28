@@ -2,11 +2,13 @@
   <style>
     .field { fill: #121212; }
     .passage { fill: #FCFCFC; }
+    .signal { fill: #FF7A45; }
     @media (prefers-color-scheme: dark) {
       .field { fill: #FCFCFC; }
       .passage { fill: #121212; }
     }
   </style>
   <rect class="field" width="160" height="160"/>
-  <path class="passage" d="M67 42h26v54l53 64H14l53-64V42Z"/>
+  <path class="passage" d="M40 32H120V128H95V58H65V128H40Z"/>
+  <path class="signal" d="M68 128A12 12 0 0 1 92 128Z"/>
 </svg>
