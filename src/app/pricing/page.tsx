@@ -10,7 +10,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
   description:
-    "Simple monthly pricing based on how many new people Lemma starts work for. Start with a seven-day trial, ten Lemma credits, and no credit card. Outreach you run yourself is unlimited.",
+    "Simple monthly pricing based on how many new people Lemma starts work for. Start with a seven-day trial, ten Lemma credits, and no credit card. Work you direct step by step uses no credits.",
   path: "/pricing",
   image: {
     url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-court.webp",
@@ -24,22 +24,22 @@ const lemmaCreditRules = [
   {
     index: "01",
     title: "Charged when Lemma starts work",
-    body: "One credit is used when Lemma begins managing a new person. Retrying the same start does not use another credit.",
+    body: "One credit is used when Lemma begins managing a new person. Retrying the same start uses no extra credit.",
   },
   {
     index: "02",
     title: "Your credits reset each month",
-    body: "Each renewal gives you a new monthly set of credits. People Lemma already manages are not charged again. If Starter’s 10 credits are used, upgrading to Growth adds 90 more. A downgrade starts next month.",
+    body: "People already managed are not charged again. Upgrades add the difference immediately; downgrades start next month.",
   },
   {
     index: "03",
     title: "One active outreach plan per person",
-    body: "A person can be in one active self-run or Lemma-managed plan at a time. Moving that person between plans does not use another credit. Starting again after the previous work ended does.",
+    body: "Moving someone between plans is free. Starting again after the previous work ended uses a new credit.",
   },
   {
     index: "04",
-    title: "Outreach you run yourself stays unlimited",
-    body: "You can run as many outreach plans and contact as many people yourself as you want, without using credits. When a trial or subscription ends, sending stops and the workspace remains available to read.",
+    title: "The work you direct stays unlimited",
+    body: "Choose every message and timing without using credits. When a trial or subscription ends, sending stops; the workspace stays readable.",
   },
 ] as const;
 
@@ -54,8 +54,8 @@ export default function PricingPage() {
               Pay when Lemma starts work on a new contact.
             </h1>
             <p className={`${styles.sectionBody} ${styles.pricingHeroBody}`}>
-              One Lemma credit starts Lemma-managed research and follow-up for
-              one new person. Outreach you run yourself stays unlimited.
+              Choose every message and timing yourself—unlimited. Or use one
+              credit when Lemma starts research and follow-up for a new person.
             </p>
           </div>
 
@@ -94,6 +94,32 @@ export default function PricingPage() {
 
       <section className={styles.pricingSection}>
         <div className={`${styles.frame} ${styles.sectionGrid}`}>
+          <div className={styles.pricingModesIntro}>
+            <p className={styles.eyebrow}>Two ways to work</p>
+            <div className={styles.pricingModes}>
+              <article className={styles.pricingMode}>
+                <span>01</span>
+                <div>
+                  <h2>You direct every step.</h2>
+                  <p>
+                    Choose each message and timing. Unlimited and no credits.
+                  </p>
+                </div>
+              </article>
+              <article className={styles.pricingMode}>
+                <span>02</span>
+                <div>
+                  <h2>
+                    Lemma runs the work from first message to next step.
+                  </h2>
+                  <p>
+                    Lemma researches, prepares, and adapts the next move. One
+                    credit per new person.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
           <PricingPlans />
         </div>
       </section>
@@ -103,12 +129,11 @@ export default function PricingPage() {
           <div className={styles.definitionLead}>
             <p className={styles.eyebrow}>One clear unit</p>
             <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
-              One credit lets Lemma manage one new person over time.
+              One credit. One new person managed over time.
             </h2>
             <p className={styles.sectionBody}>
-              The credit is used when Lemma starts work for that person. Lemma
-              can then research, follow up, and adapt as the relationship
-              develops—without charging for every message.
+              It covers Lemma’s research, follow-up, and adaptation—not each
+              message.
             </p>
           </div>
 

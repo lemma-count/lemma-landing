@@ -55,9 +55,8 @@ export function Footer() {
             Keep finding your next customer.
           </h2>
           <p className={styles.closingBody}>
-            Tell Lemma what you sell and who needs it. Lemma keeps the work
-            moving over time and brings you in when there is a real
-            opportunity.
+            Tell Lemma what you sell and who needs it. It keeps the work moving
+            until a real opportunity needs you.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}

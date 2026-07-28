@@ -53,13 +53,8 @@ export function AsyncInterviewSection() {
             Voice when the person is ready.
           </h2>
           <p className={styles.sectionBody}>
-            When text is not enough, Lemma sends a link instead of asking for a
-            meeting. The person opens it when it suits them, answers at their own
-            pace, and asks questions without being put on the spot.
-          </p>
-          <p className={styles.voiceCallout}>
-            No calendar pressure. No salesperson pushing for an answer. You
-            join only when needed.
+            When text is not enough, Lemma sends a voice link. They answer on
+            their time; you join only when needed.
           </p>
         </header>
 

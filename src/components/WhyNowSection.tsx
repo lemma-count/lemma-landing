@@ -31,11 +31,6 @@ export function WhyNowSection() {
           >
             Everyone can send more. Buyers cannot read more.
           </h2>
-          <p className={styles.sectionBody}>
-            AI made it cheaper to build products and send messages. Buyers did
-            not get more time. More messages now create more noise—not more
-            trust.
-          </p>
         </header>
 
         <ol className={styles.falseChoiceGrid}>

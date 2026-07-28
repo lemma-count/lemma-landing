@@ -33,11 +33,9 @@ export function Hero() {
             </span>
           </h1>
           <p className={styles.heroBody}>
-            Tell Lemma who to contact, what you sell, and what it may send.
-            Lemma sends LinkedIn messages and follows up for days or weeks. When
-            text is not enough, it can send a link to an AI voice conversation.
-            People can ask and answer questions without booking a call with
-            you. You step in only when needed.
+            Tell Lemma who you want to reach and what you sell. It researches,
+            follows up over time, and brings you in when a real opportunity
+            emerges.
           </p>
 
           <div className={styles.heroActions}>

@@ -420,7 +420,7 @@ const adaptiveJourney: JourneyEvent[] = [
     chapter: "handoff",
     title: "Maya completes the conversation",
     summary:
-      "Maya explains how the team works today and asks how Lemma would run the follow-up.",
+      "Maya explains how the team works today and asks how Lemma would run the work from first message to next step.",
     why: "The opportunity now has a clear need, scope, and next question.",
     next: "Prepare the full history for you.",
   },
@@ -431,14 +431,14 @@ const adaptiveJourney: JourneyEvent[] = [
     chapter: "handoff",
     title: "Real opportunity",
     summary:
-      "Maya wants to see how Lemma would run consistent follow-up for Northstar.",
+      "Maya wants to see how Lemma would run the work from first message to next step for Northstar.",
     why: "There is a real problem, quantified need, and explicit interest.",
     next: "Bring you in with the full history.",
   },
   ...createHandoffEvents({
     day: 28,
     evidence:
-      "Northstar wants to contact 200 potential customers each month with two sellers. Maya wants to see how Lemma would run the follow-up.",
+      "Northstar wants to contact 200 potential customers each month with two sellers. Maya wants to see how Lemma would run the work from first message to next step.",
   }),
 ];
 

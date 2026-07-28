@@ -5,8 +5,8 @@ import styles from "./LemmaMarketing.module.css";
 
 export const landingFaqItems = [
   {
-    q: "What does Lemma do today?",
-    a: "Lemma researches the people you choose, prepares and sends LinkedIn messages within your rules, follows up over time, and can send a link to an AI voice conversation when more questions need answering.",
+    q: "What does Lemma do, and who stays in control?",
+    a: "You choose the people, goal, and rules. Lemma researches, sends, and follows up within those rules; anything that needs judgment comes back to you.",
   },
   {
     q: "What do “Lead” and “Mission” mean in Lemma?",
@@ -14,35 +14,19 @@ export const landingFaqItems = [
   },
   {
     q: "What is the difference between self-run and Lemma-managed outreach?",
-    a: "With self-run outreach, you choose and send every step yourself. With Lemma-managed outreach, Lemma researches each person, prepares the next move, and runs only the actions your rules allow. Self-run outreach uses no Lemma credits.",
+    a: "You send every step in self-run outreach. In Lemma-managed outreach, Lemma researches and runs the permitted next moves. Self-run outreach uses no credits.",
   },
   {
-    q: "Who chooses the people Lemma contacts?",
-    a: "You do. Lemma only works on the people you add.",
-  },
-  {
-    q: "Is an AI voice conversation a phone call?",
-    a: "No. Lemma sends a link. The person opens it when ready, so there is no call to schedule or attend.",
-  },
-  {
-    q: "What happens in an AI voice conversation?",
-    a: "The AI asks follow-up questions and answers the person’s questions. The whole exchange stays with the same person and customer-finding goal.",
-  },
-  {
-    q: "Can Lemma act without my approval?",
-    a: "You set the rules for what Lemma may do. Anything outside those rules, plus problems and decisions that need judgment, comes back to you.",
+    q: "How do AI voice conversations work?",
+    a: "Lemma sends a link, not a phone call. The person answers when ready; the AI asks and answers follow-up questions without requiring a meeting.",
   },
   {
     q: "When does Lemma stop working on someone?",
     a: "When the person is interested, not interested, or the next step needs a decision from you.",
   },
   {
-    q: "How does pricing work?",
-    a: "Each plan includes monthly Lemma credits. One credit starts Lemma-managed research and follow-up for one new person. Outreach you run yourself is unlimited and uses no credits.",
-  },
-  {
-    q: "Do I need a card for the trial?",
-    a: `No. The ${lemmaTrial.days}-day trial includes ${lemmaTrial.lemmaCredits} Lemma credits, enough for Lemma to start work on ${lemmaTrial.lemmaCredits} people, and does not require a card.`,
+    q: "How do pricing and the trial work?",
+    a: `One credit starts Lemma-managed work for one new person; self-run outreach is unlimited. The ${lemmaTrial.days}-day trial includes ${lemmaTrial.lemmaCredits} credits and requires no card.`,
   },
 ] as const;
 

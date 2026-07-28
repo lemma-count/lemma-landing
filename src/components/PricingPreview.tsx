@@ -4,7 +4,7 @@ import {
   getLemmaPlanUrl,
   LEMMA_START_TRIAL_URL,
 } from "@/lib/links";
-import { lemmaPlans, lemmaTrial } from "@/lib/pricing";
+import { lemmaPlans } from "@/lib/pricing";
 import { TrackedLink } from "./TrackedLink";
 import styles from "./LemmaMarketing.module.css";
 
@@ -18,15 +18,10 @@ export function PricingPreview() {
         <div className={styles.pricingPreviewIntro}>
           <p className={styles.eyebrow}>Pricing / Lemma-managed contacts</p>
           <h2 className={styles.pricingPreviewTitle}>
-            Run your own outreach without limits. Pay when Lemma starts work.
+            Pay when Lemma starts work. Direct every step without credits.
           </h2>
           <p className={styles.pricingPreviewBody}>
-            Outreach you run yourself is unlimited. A Lemma credit is used only
-            when Lemma starts researching and following up with a new person
-            for you.
-          </p>
-          <p className={styles.pricingThesis}>
-            1 Lemma credit = Lemma starts work for 1 new person.
+            One credit starts research and follow-up for one new person.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -71,7 +66,7 @@ export function PricingPreview() {
                 ))}
               </tr>
               <tr>
-                <th scope="row">Outreach you run yourself</th>
+                <th scope="row">Messages and timing you choose</th>
                 {lemmaPlans.map((plan) => (
                   <td key={plan.id}>Unlimited</td>
                 ))}
@@ -103,7 +98,7 @@ export function PricingPreview() {
                     {plan.lemmaCredits.toLocaleString("en-US")} Lemma
                     credits per month
                   </li>
-                  <li>Unlimited outreach you run yourself</li>
+                  <li>Choose every message and timing · unlimited</li>
                 </ul>
                 <TrackedLink
                   href={getLemmaPlanUrl(plan.id)}
@@ -122,11 +117,6 @@ export function PricingPreview() {
             ))}
           </div>
 
-          <p className={styles.pricingComparisonNote}>
-            A credit is used once, when Lemma starts work for a new person.
-            Trial: {lemmaTrial.lemmaCredits} people for {lemmaTrial.days} days.
-            No card.
-          </p>
         </div>
       </div>
     </section>

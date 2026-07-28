@@ -701,11 +701,15 @@
 }
 
 .previewPlans,
-.pricingPlans {
+.pricingPlansBlock {
   grid-column: 1 / -1;
   margin-top: 72px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
+}
+
+.previewPlans,
+.pricingPlans {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -868,8 +872,60 @@
   padding-block: 96px 144px;
 }
 
+.pricingModesIntro {
+  grid-column: 1 / -1;
+}
+
+.pricingModes {
+  margin-top: 24px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pricingMode {
+  min-width: 0;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.pricingMode:first-child {
+  border-right: 1px solid var(--grid);
+  padding-left: 0;
+}
+
+.pricingMode:last-child {
+  padding-right: 0;
+}
+
+.pricingMode > span {
+  color: var(--klein);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+}
+
+.pricingMode h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 640;
+  letter-spacing: -0.035em;
+}
+
+.pricingMode p {
+  max-width: 42ch;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .pricingPlan {
-  min-height: 690px;
+  min-height: 510px;
   display: flex;
   flex-direction: column;
   padding-top: 34px;
@@ -882,13 +938,6 @@
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.5;
-}
-
-.planRule {
-  width: 100%;
-  height: 1px;
-  margin: 28px 0 0;
-  background: var(--grid);
 }
 
 .planSupport {
@@ -917,7 +966,7 @@
 }
 
 .planFeaturesLabel {
-  margin: 20px 0 0;
+  margin: 0;
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -927,14 +976,12 @@
 }
 
 .planFeatures {
-  margin: 12px 0 0;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .planFeatures li {
-  border-top: 1px solid var(--grid);
-  padding-block: 10px;
   display: grid;
   grid-template-columns: 16px minmax(0, 1fr);
   gap: 10px;
@@ -946,6 +993,40 @@
 .planFeatures svg {
   margin-top: 2px;
   color: var(--klein);
+}
+
+.pricingSharedFeatures {
+  border-top: 1px solid var(--grid);
+  padding-block: 24px 28px;
+}
+
+.pricingSharedFeatureGroups {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pricingSharedFeatureGroup {
+  min-width: 0;
+  padding-right: 40px;
+}
+
+.pricingSharedFeatureGroup + .pricingSharedFeatureGroup {
+  border-left: 1px solid var(--grid);
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+.pricingSharedFeatureGroup h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+}
+
+.pricingSharedFeatureGroup .planFeatures {
+  display: grid;
+  gap: 12px;
 }
 
 .pricingPlan .planAction {
@@ -1615,8 +1696,39 @@
   }
 
   .previewPlans,
-  .pricingPlans {
+  .pricingPlansBlock {
     margin-top: 48px;
+  }
+
+  .pricingModes {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingMode,
+  .pricingMode:first-child,
+  .pricingMode:last-child {
+    padding: 24px 0;
+  }
+
+  .pricingMode:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--grid);
+  }
+
+  .pricingSharedFeatureGroups {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingSharedFeatureGroup,
+  .pricingSharedFeatureGroup + .pricingSharedFeatureGroup {
+    border-left: 0;
+    padding: 0;
+  }
+
+  .pricingSharedFeatureGroup + .pricingSharedFeatureGroup {
+    margin-top: 24px;
+    border-top: 1px solid var(--grid);
+    padding-top: 24px;
   }
 
   .previewFooter {
@@ -2157,11 +2269,11 @@
 }
 
 .pricingPreviewIntro {
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 5;
 }
 
 .pricingPreviewTitle {
-  max-width: 10ch;
+  max-width: 12ch;
   margin: 22px 0 0;
   font-size: clamp(3rem, 4.1vw, 5rem);
   font-weight: 650;

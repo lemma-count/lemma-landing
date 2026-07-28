@@ -44,10 +44,21 @@ export const lemmaPlans = [
   },
 ] as const;
 
-export const planSharedFeatures = [
-  "Unlimited outreach you run yourself",
-  "Self-run outreach uses zero Lemma credits",
-  "LinkedIn execution",
-  "Research and one-to-one message drafts",
-  "See every plan, message, reply, and issue",
+export const planSharedFeatureGroups = [
+  {
+    title: "Find and work",
+    features: [
+      "Import Leads from CSV or LinkedIn",
+      "Research and one-to-one message drafts",
+      "Review plans and drafts in the Cockpit and Outbox",
+    ],
+  },
+  {
+    title: "Stay in control",
+    features: [
+      "Sign in with Google",
+      "Sending limits and active hours",
+      "Do-not-contact controls and audit history",
+    ],
+  },
 ] as const;

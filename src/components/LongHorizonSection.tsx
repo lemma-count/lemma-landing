@@ -322,7 +322,6 @@ export function LongHorizonSection() {
   const [playheadIndex, setPlayheadIndex] = useState(0);
   const [inspectionIndex, setInspectionIndex] = useState<number | null>(null);
   const [playIntent, setPlayIntent] = useState(false);
-  const [inView, setInView] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(true);
   const [announcement, setAnnouncement] = useState("");
   const [timelineViewportWidth, setTimelineViewportWidth] = useState(0);
@@ -347,8 +346,7 @@ export function LongHorizonSection() {
   );
   const activeChapter = chapterCopy[activeEvent.chapter];
   const activeChapterIndex = chapterSequence.indexOf(activeEvent.chapter);
-  const isPlaying =
-    playIntent && inView && documentVisible && !reducedMotion;
+  const isPlaying = playIntent && documentVisible && !reducedMotion;
   const atEnd = playheadIndex >= scenario.events.length - 1;
   const timelineGeometry = useMemo(
     () => getTimelineGeometry(timelineViewportWidth),
@@ -459,32 +457,56 @@ export function LongHorizonSection() {
     const stage = stageRef.current;
     if (!stage) return undefined;
 
+    const visibilityThreshold = window.matchMedia("(max-width: 1180px)")
+      .matches
+      ? 0.18
+      : 0.35;
+    const handleVisibility = (
+      isIntersecting: boolean,
+      intersectionRatio: number,
+    ) => {
+      const readyToStart =
+        isIntersecting && intersectionRatio >= visibilityThreshold;
+      if (readyToStart && !autoPlayedRef.current && !reducedMotion) {
+        autoPlayedRef.current = true;
+        autoStartTimerRef.current = window.setTimeout(() => {
+          setPlayIntent(true);
+        }, 800);
+      } else if (!isIntersecting) {
+        if (autoStartTimerRef.current) {
+          window.clearTimeout(autoStartTimerRef.current);
+        }
+        setPlayIntent(false);
+      }
+    };
+
     if (!window.IntersectionObserver) {
-      setInView(true);
-      return undefined;
+      const updateVisibility = () => {
+        const rect = stage.getBoundingClientRect();
+        const visibleHeight = Math.max(
+          0,
+          Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0),
+        );
+        handleVisibility(visibleHeight > 0, visibleHeight / rect.height);
+      };
+
+      updateVisibility();
+      window.addEventListener("scroll", updateVisibility, { passive: true });
+      window.addEventListener("resize", updateVisibility);
+      return () => {
+        window.removeEventListener("scroll", updateVisibility);
+        window.removeEventListener("resize", updateVisibility);
+        if (autoStartTimerRef.current) {
+          window.clearTimeout(autoStartTimerRef.current);
+        }
+      };
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-        if (
-          entry.isIntersecting &&
-          !autoPlayedRef.current &&
-          !reducedMotion &&
-          !window.matchMedia("(max-width: 1180px)").matches
-        ) {
-          autoPlayedRef.current = true;
-          autoStartTimerRef.current = window.setTimeout(() => {
-            setPlayIntent(true);
-          }, 800);
-        } else if (!entry.isIntersecting && autoStartTimerRef.current) {
-          window.clearTimeout(autoStartTimerRef.current);
-        }
-      },
+      ([entry]) =>
+        handleVisibility(entry.isIntersecting, entry.intersectionRatio),
       {
-        threshold: window.matchMedia("(max-width: 1180px)").matches
-          ? 0.2
-          : 0.45,
+        threshold: [0, visibilityThreshold],
       },
     );
     observer.observe(stage);
@@ -677,16 +699,12 @@ export function LongHorizonSection() {
               A real customer opportunity can take weeks—not one message<i>.</i>
             </h2>
             <p className="journey-intro">
-              This example shows why: Lemma waits through silence, uses a real
-              change to restart the conversation, learns what the person needs
-              across text and voice, and brings you in when interest is real.
+              Lemma waits, restarts when something meaningful changes, learns
+              the need, and brings you in when interest is real.
             </p>
           </div>
 
           <div className="journey-controls">
-            <p className="scenario-kicker">
-              One conversation · Four useful decisions
-            </p>
             <ol className="journey-summary">
               <li>
                 <span>No reply</span>
@@ -731,7 +749,7 @@ export function LongHorizonSection() {
               <span className="timeline-phase__shared">First 3 days</span>
               <ArrowRight size={16} weight="bold" aria-hidden="true" />
               <span className="timeline-phase__branch">
-                Then · <strong>{scenario.label}</strong>
+                Then · <strong>Lemma adapts</strong>
               </span>
             </div>
 
