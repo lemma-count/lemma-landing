@@ -36,87 +36,83 @@ export type ChapterContent = {
 };
 
 export type JourneyScenario = {
-  id: "content" | "reengagement";
+  id: "adaptive";
   label: string;
-  trigger: string;
   events: JourneyEvent[];
 };
 
 export const leadContext = {
   person: "Maya Chen",
   company: "Northstar",
-  goal: "Start a relevant conversation with Maya at Northstar.",
+  goal: "Learn whether Northstar needs help finding and following up with potential customers.",
 };
 
 export const chapterCopy: Record<JourneyChapter, ChapterContent> = {
   research: {
-    shortLabel: "Context",
+    shortLabel: "Research",
     title: "Know the person.",
-    summary:
-      "Lemma checks Maya, Northstar, your goal, and what it may send.",
-    why:
-      "The first message uses what Lemma knows instead of a generic opening.",
+    summary: "Research Maya, Northstar, and the rules.",
+    why: "Make the opening specific.",
     next: "Send one relevant connection request.",
     holdAfter: 2300,
   },
   "first-outreach": {
     shortLabel: "First message",
     title: "Start with a reason.",
-    summary:
-      "When Maya accepts, Lemma uses the same context for one short message.",
-    why: "Start a conversation. Do not force a meeting.",
-    next: "Keep the conversation and wait for what happens.",
+    summary: "Use what Lemma learned for one short message.",
+    why: "Open a conversation—not a meeting.",
+    next: "Wait to see what happens.",
     message:
-      "Congrats on growing the partnerships team. Do you already have a steady way to find new partners, or are you still working that out?",
+      "Congrats on growing the sales team. Is the priority reaching more potential customers, or improving follow-up with the people you already contact?",
     holdAfter: 2600,
   },
   "content-wait": {
     shortLabel: "Wait",
     title: "No reply? Wait.",
-    summary:
-      "Four days pass. Lemma remembers the conversation and sends nothing.",
-    why: "An empty reminder adds noise without helping Maya.",
-    next: "Check again on the planned date.",
+    summary: "No reply. Lemma sends nothing.",
+    why: "A reminder would only add noise.",
+    next: "Look for a useful reason to follow up.",
     holdAfter: 2500,
   },
   "content-followup": {
-    shortLabel: "Article follow-up",
-    title: "Share something useful.",
+    shortLabel: "New reason",
+    title: "Restart with a reason.",
     summary:
-      "The planned date arrives. An article still fits what Maya is working on.",
-    why: "Give Maya something helpful—not another request for attention.",
-    next: "Share it once. Then wait.",
+      "Northstar enters a new market. Lemma uses that change to ask a sharper question.",
+    why: "A meaningful change earns a new message.",
+    next: "Send one relevant question.",
     message:
-      "This short article on building a steady way to find new partners may help as you work out the plan at Northstar.",
+      "Saw Northstar launched in the UK. Is the bigger challenge finding enough potential customers, or following up consistently with the ones you already contact?",
     holdAfter: 3200,
   },
   "reengage-wait": {
-    shortLabel: "Respect timing",
-    title: "Come back when asked.",
+    shortLabel: "Learn the need",
+    title: "Use the reply to understand the need.",
     summary:
-      "Maya says, “Not now—try me later this month.” Lemma stops and schedules one return.",
-    why: "Her timing matters more than a fixed message schedule.",
-    next: "Wait for the date she gave.",
+      "Maya says the team finds potential customers, but follow-up is inconsistent. Lemma asks one useful question.",
+    why: "Good selling understands the need before asking for a meeting.",
+    next: "Ask how many people the team needs to reach and who can do the work.",
+    message:
+      "How many potential customers does the team need to contact each month?",
     holdAfter: 2700,
   },
   "reengage-signal": {
-    shortLabel: "Return when asked",
-    title: "Continue the same conversation.",
+    shortLabel: "Voice details",
+    title: "Go deeper without booking a call.",
     summary:
-      "The date Maya gave arrives. Lemma checks the rules and prepares one short return.",
-    why: "It continues the conversation instead of starting over.",
-    next: "Send one message tied to Maya’s request.",
+      "Maya shares the target and team size. Lemma sends an async voice conversation.",
+    why: "She can explain the process in her own time.",
+    next: "Check whether the opportunity is real and prepare it for you.",
     message:
-      "You asked me to come back later this month. Is finding new partners a better conversation now?",
+      "You can talk this through whenever it suits you—no calendar needed.",
     holdAfter: 3300,
   },
   handoff: {
     shortLabel: "Ready for you",
-    title: "Ready for you.",
-    summary:
-      "You get the context, messages, latest result, and next step.",
-    why: "You can step in without rebuilding the story.",
-    next: "Review it and take over.",
+    title: "A real opportunity, ready for you.",
+    summary: "The need, size, limits, messages, and next step are ready.",
+    why: "You enter with the full history and a real reason to talk.",
+    next: "Review and take over.",
     outcome: "Ready for you",
   },
 };
@@ -130,7 +126,7 @@ export const sharedEvents: JourneyEvent[] = [
     shared: true,
     title: "Person added to the contact plan",
     summary: "Maya Chen at Northstar is added to this contact plan.",
-    why: "Northstar matches the audience and Maya leads partnerships.",
+    why: "Northstar matches the audience and Maya leads sales.",
     next: "Check whether there is a good reason to contact her.",
   },
   {
@@ -139,8 +135,8 @@ export const sharedEvents: JourneyEvent[] = [
     lane: "decision",
     chapter: "research",
     shared: true,
-    title: "Good fit to contact",
-    summary: "Lemma checks whether Maya is a good fit to contact.",
+    title: "Relevant person to contact",
+    summary: "Lemma checks whether contacting Maya makes sense.",
     why: "The match looks right, and the work stays within your rules.",
     next: "Check Maya, Northstar, and what the company is doing now.",
   },
@@ -150,10 +146,10 @@ export const sharedEvents: JourneyEvent[] = [
     lane: "task",
     chapter: "research",
     shared: true,
-    title: "Context + rules",
+    title: "Research + rules",
     summary:
       "Lemma records what Maya is working on, what it may send, the sources you allowed, and an opening written for her.",
-    why: "The same context can guide every later step.",
+    why: "What Lemma learns can guide every later step.",
     next: "Prepare the connection request.",
   },
   {
@@ -169,7 +165,7 @@ export const sharedEvents: JourneyEvent[] = [
       "The note refers to what Northstar is doing instead of using copy-paste wording.",
     next: "Wait for a LinkedIn response.",
     message:
-      "Saw Northstar is building its partnerships team. Thought it could be useful to connect.",
+      "Saw Northstar is growing its sales team. Thought it could be useful to connect.",
   },
   {
     id: "shared-d3-signal",
@@ -214,9 +210,9 @@ export const sharedEvents: JourneyEvent[] = [
     summary:
       "The first message follows your rules and is sent through your LinkedIn account.",
     why: "It explains why the message fits without turning it into a sales pitch.",
-    next: "Keep the context and react to what happens next.",
+    next: "Keep the history and react to what happens next.",
     message:
-      "Do you already have a steady way to find new partners, or are you still working that out?",
+      "Is the priority reaching more potential customers, or improving follow-up with the people you already contact?",
   },
 ];
 
@@ -233,20 +229,19 @@ const createHandoffEvents = ({
     lane: "decision",
     chapter: "handoff",
     title: "Bring you in",
-    summary:
-      "The next step needs you to decide, so Lemma brings you in.",
-    why: "The next move may affect trust or the chance of working together.",
-    next: "Prepare everything you need.",
+    summary: "The opportunity is real and the next step needs you.",
+    why: "Your judgment now adds more value than another step from Lemma.",
+    next: "Prepare the conversation for you.",
   },
   {
     id: `handoff-${day}-task`,
     day,
     lane: "task",
     chapter: "handoff",
-    title: "Get it ready for you",
+    title: "Prepare the conversation for you",
     summary:
-      "Context, messages, timing, the latest response, and the recommended next step are attached.",
-    why: "You should be ready to answer, not piece the story together.",
+      "The need, number of people to reach, team limits, messages, and recommended next step are attached.",
+    why: "You should enter ready to advise—not ask the same questions again.",
     next: "Notify you.",
   },
   {
@@ -254,217 +249,203 @@ const createHandoffEvents = ({
     day,
     lane: "interaction",
     chapter: "handoff",
-    title: "You’re notified",
-    summary: "Everything you need is ready.",
-    why: "You can continue without piecing the conversation together.",
-    next: "Review the context and step in.",
+    title: "Real opportunity ready",
+    summary: "You receive the full history and recommended next move.",
+    why: "You can continue the sale from where Lemma stopped.",
+    next: "Review the history and step in.",
     message: evidence,
     outcome: "Ready for you",
   },
 ];
 
-const contentBranch: JourneyEvent[] = [
+const adaptiveJourney: JourneyEvent[] = [
   {
-    id: "content-d7-signal",
+    id: "sales-d7-signal",
     day: 7,
     lane: "signal",
     chapter: "content-wait",
     title: "No reply",
     summary: "Four days pass without a reply.",
     why: "No reply is not a reason to send an empty reminder.",
-    next: "Decide whether waiting is smarter.",
+    next: "Wait instead of sending noise.",
   },
   {
-    id: "content-d7-decision",
+    id: "sales-d7-decision",
     day: 7,
     lane: "decision",
     chapter: "content-wait",
     title: "Wait — no empty reminder",
     summary: "Lemma sends nothing.",
     why: "Another copy-paste reminder would only add noise.",
-    next: "Keep the history until the planned date.",
+    next: "Keep the history and look for a useful reason to follow up.",
   },
   {
-    id: "content-d14-signal",
-    day: 14,
+    id: "sales-d12-signal",
+    day: 12,
     lane: "signal",
     chapter: "content-followup",
-    title: "Planned date reached",
+    title: "Northstar enters a new market",
     summary:
-      "The article still matches what Northstar is working on.",
-    why: "Enough time has passed, and the earlier context still fits.",
-    next: "Check whether the article gives a good reason to send another message.",
+      "A public update shows Northstar has launched in the UK.",
+    why: "The change creates a fresh, relevant reason to contact Maya.",
+    next: "Decide whether the change earns another message.",
   },
   {
-    id: "content-d14-decision",
-    day: 14,
+    id: "sales-d12-decision",
+    day: 12,
     lane: "decision",
     chapter: "content-followup",
-    title: "Share the useful article",
-    summary: "Lemma prepares the article follow-up rather than a reminder.",
-    why:
-      "The article helps with a real problem instead of merely asking for attention.",
-    next: "Prepare a short note explaining why the article fits.",
+    title: "Restart with a new reason",
+    summary:
+      "Lemma chooses one question tied to Northstar’s new market.",
+    why: "The message is based on what changed—not the calendar.",
+    next: "Write one short, specific question.",
   },
   {
-    id: "content-d14-task",
-    day: 14,
+    id: "sales-d12-task",
+    day: 12,
     lane: "task",
     chapter: "content-followup",
-    title: "Write article follow-up",
+    title: "Write a question based on what changed",
     summary:
-      "Lemma selects a helpful part and writes the sharing note.",
-    why: "The article connects directly to Northstar’s situation.",
-    next: "Share the article once.",
+      "Lemma connects the UK launch to the need for consistent follow-up.",
+    why: "It makes the question timely and easy to answer.",
+    next: "Send it once.",
   },
   {
-    id: "content-d14-interaction",
-    day: 14,
+    id: "sales-d12-interaction",
+    day: 12,
     lane: "interaction",
     chapter: "content-followup",
-    title: "Article sent",
-    summary: "The article is shared in a LinkedIn message.",
-    why: "This follow-up shares something helpful instead of another reminder.",
+    title: "Sharper message sent",
+    summary: "The new question is sent in the same LinkedIn conversation.",
+    why: "It gives Maya a relevant reason to respond.",
     next: "Wait for Maya’s response.",
     message:
-      "This short article on building a steady way to find new partners may help as you work out the plan at Northstar.",
+      "Saw Northstar launched in the UK. Is the bigger challenge finding enough potential customers, or following up consistently with the ones you already contact?",
   },
   {
-    id: "content-d21-signal",
-    day: 21,
-    lane: "signal",
-    chapter: "handoff",
-    title: "Maya replies",
-    summary: "Maya replies with a concrete question about setup time.",
-    why:
-      "Maya asked a clear question that needs your judgment.",
-    next: "Bring you back with the full history.",
-  },
-  ...createHandoffEvents({
-    day: 21,
-    evidence: "Maya asked how quickly Northstar could start finding new partners.",
-  }),
-];
-
-const reengagementBranch: JourneyEvent[] = [
-  {
-    id: "reengage-d7-signal",
-    day: 7,
+    id: "sales-d16-signal",
+    day: 16,
     lane: "signal",
     chapter: "reengage-wait",
-    title: "“Try me later this month”",
-    summary: "Maya asks Lemma to return later in the month.",
-    why: "Maya gave a clear time to return and set a clear boundary.",
-    next: "Respect the timing and keep the conversation.",
+    title: "Maya names the real problem",
+    summary:
+      "Maya replies: “We find potential customers. Following up consistently is the hard part.”",
+    why: "The reply reveals a concrete need instead of generic interest.",
+    next: "Ask one question that checks whether the opportunity is real.",
   },
   {
-    id: "reengage-d7-decision",
-    day: 7,
+    id: "sales-d16-decision",
+    day: 16,
     lane: "decision",
     chapter: "reengage-wait",
-    title: "Respect the timing",
-    summary: "Lemma stops the active follow-up.",
-    why: "Another message now would ignore Maya’s clear request.",
-    next: "Schedule one return inside the same 28-day contact plan.",
+    title: "Understand the need before asking for a meeting",
+    summary: "Lemma decides to clarify how many people the team must reach and who can do the work.",
+    why: "One useful question can show whether Lemma can help without calendar pressure.",
+    next: "Prepare one question about the need.",
   },
   {
-    id: "reengage-d7-task",
-    day: 7,
+    id: "sales-d16-task",
+    day: 16,
     lane: "task",
     chapter: "reengage-wait",
-    title: "Schedule one return",
-    summary: "Lemma schedules one follow-up tied to the date Maya gave.",
-    why:
-      "The contact plan can continue without turning into repeated pressure.",
-    next: "Wait until the agreed date.",
+    title: "Choose one useful question",
+    summary:
+      "Lemma asks for the monthly outreach target instead of launching into a pitch.",
+    why: "The answer will show whether the problem is material.",
+    next: "Send the question.",
   },
   {
-    id: "reengage-d21-signal",
-    day: 21,
+    id: "sales-d16-interaction",
+    day: 16,
+    lane: "interaction",
+    chapter: "reengage-wait",
+    title: "Useful question sent",
+    summary: "Lemma keeps learning inside the same conversation.",
+    why: "Maya can answer without booking a call.",
+    next: "Wait for the detail that shows whether Lemma can help.",
+    message:
+      "How many potential customers does the team need to contact each month?",
+  },
+  {
+    id: "sales-d20-signal",
+    day: 20,
     lane: "signal",
     chapter: "reengage-signal",
-    title: "Date Maya gave reached",
-    summary: "It is time to return as Maya asked.",
-    why: "Lemma now has a reason Maya gave to return to the conversation.",
-    next: "Check whether your rules still allow the return message.",
+    title: "Maya shares the target and constraint",
+    summary:
+      "Northstar wants to contact 200 potential customers each month with two sellers.",
+    why: "The need is specific, important, and difficult for a two-person team.",
+    next: "Go deeper on the current process.",
   },
   {
-    id: "reengage-d21-decision",
-    day: 21,
+    id: "sales-d20-decision",
+    day: 20,
     lane: "decision",
     chapter: "reengage-signal",
-    title: "Continue the existing conversation",
-    summary: "Lemma prepares one short return tied to Maya’s request.",
-    why:
-      "The message continues the conversation instead of restarting it.",
-    next: "Prepare the return message.",
+    title: "The need is real—go deeper",
+    summary:
+      "Lemma decides that a short voice conversation can clarify how the team works.",
+    why: "Voice captures nuance without forcing Maya into a sales call.",
+    next: "Prepare an asynchronous voice conversation.",
   },
   {
-    id: "reengage-d22-task",
-    day: 22,
+    id: "sales-d20-task",
+    day: 20,
     lane: "task",
     chapter: "reengage-signal",
-    title: "Write return note",
+    title: "Prepare the voice conversation",
     summary:
-      "Lemma reconnects the prior conversation to the agreed timing.",
-    why: "The note is specific without repeating the original sales message.",
-    next: "Check the rules one last time.",
+      "Lemma carries the target, team size, and earlier messages into the questions.",
+    why: "Maya does not have to repeat what Lemma already knows.",
+    next: "Send the link.",
   },
   {
-    id: "reengage-d23-task",
-    day: 23,
-    lane: "task",
-    chapter: "reengage-signal",
-    title: "Check the rules again",
-    summary:
-      "Your LinkedIn account is ready, the message follows your rules, and Maya has not asked to be removed.",
-    why:
-      "Before sending, Lemma checks that the return still follows your rules and Maya’s request.",
-    next: "Send the one return message Maya agreed to.",
-  },
-  {
-    id: "reengage-d23-interaction",
-    day: 23,
+    id: "sales-d20-interaction",
+    day: 20,
     lane: "interaction",
     chapter: "reengage-signal",
-    title: "Return message sent",
-    summary: "A LinkedIn message tied to Maya’s request is sent.",
-    why: "The message returns at Maya’s requested time without pressure.",
-    next: "Wait for Maya’s response.",
+    title: "Voice conversation link sent",
+    summary: "Maya receives a link she can open whenever it suits her.",
+    why: "She can explain the process and ask questions in her own time.",
+    next: "Wait for Maya to complete it.",
     message:
-      "You asked me to come back later this month. Is finding new partners a better conversation now?",
+      "You can talk this through whenever it suits you—no calendar needed.",
   },
   {
-    id: "reengage-d25-signal",
-    day: 25,
+    id: "sales-d27-signal",
+    day: 27,
     lane: "signal",
     chapter: "handoff",
-    title: "Maya continues the conversation",
-    summary: "Maya replies and references the earlier conversation.",
-    why:
-      "The return continued the conversation with the same history.",
-    next: "Bring you back with the full history.",
+    title: "Maya completes the conversation",
+    summary:
+      "Maya explains how the team works today and asks how Lemma would run the follow-up.",
+    why: "The opportunity now has a clear need, scope, and next question.",
+    next: "Prepare the full history for you.",
+  },
+  {
+    id: "sales-d28-signal",
+    day: 28,
+    lane: "signal",
+    chapter: "handoff",
+    title: "Real opportunity",
+    summary:
+      "Maya wants to see how Lemma would run consistent follow-up for Northstar.",
+    why: "There is a real problem, quantified need, and explicit interest.",
+    next: "Bring you in with the full history.",
   },
   ...createHandoffEvents({
-    day: 26,
+    day: 28,
     evidence:
-      "Maya continued the conversation after the agreed delay and asked whether it fits and when to start.",
+      "Northstar wants to contact 200 potential customers each month with two sellers. Maya wants to see how Lemma would run the follow-up.",
   }),
 ];
 
 export const scenarios: JourneyScenario[] = [
   {
-    id: "content",
-    label: "Wait, then share an article",
-    trigger: "No reply",
-    events: [...sharedEvents, ...contentBranch],
-  },
-  {
-    id: "reengagement",
-    label: "Stop. Return when asked.",
-    trigger: "Try me later",
-    events: [...sharedEvents, ...reengagementBranch],
+    id: "adaptive",
+    label: "Wait, restart, understand, bring you in.",
+    events: [...sharedEvents, ...adaptiveJourney],
   },
 ];
-
-export const BRANCH_START_INDEX = sharedEvents.length;

@@ -953,15 +953,6 @@
   margin-top: 26px;
 }
 
-.pricingFinePrint {
-  grid-column: 1 / -1;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  line-height: 1.55;
-}
-
 .definitionLead {
   grid-column: 1 / span 5;
 }
@@ -2948,8 +2939,7 @@
 }
 
 .solutionOutcome {
-  grid-column: 7 / -1;
-  margin: 30px 0 0;
+  margin: 22px 0 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -3157,10 +3147,6 @@
 
   .solutionSection .workflowHeader {
     position: static;
-  }
-
-  .solutionOutcome {
-    grid-column: 1 / -1;
   }
 
   .voiceGrid {

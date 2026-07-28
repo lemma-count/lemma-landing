@@ -1,13 +1,13 @@
 export const pricingTruth = {
-  asOf: "2026-07-26",
-  source: "Founder-approved website pricing brief",
+  asOf: "2026-07-28",
+  source: "Founder-approved Lemma enrollment credit pricing brief",
   currency: "USD",
   billingPeriod: "monthly",
 } as const;
 
 export const lemmaTrial = {
   days: 7,
-  managedLeads: 10,
+  lemmaCredits: 10,
   cardRequired: false,
 } as const;
 
@@ -16,8 +16,8 @@ export const lemmaPlans = [
     id: "starter",
     name: "Starter",
     monthlyPrice: 29,
-    managedLeads: 50,
-    description: "For getting a focused, repeatable outbound motion live.",
+    lemmaCredits: 10,
+    description: "For starting a focused customer-finding effort with Lemma.",
     supportLevel: "Standard",
     support: "In-app support for setup and day-to-day questions.",
     cta: "Subscribe to Starter",
@@ -26,28 +26,28 @@ export const lemmaPlans = [
     id: "growth",
     name: "Growth",
     monthlyPrice: 99,
-    managedLeads: 200,
-    description: "For running outbound consistently every week.",
+    lemmaCredits: 100,
+    description: "For finding and following up with potential customers every week.",
     supportLevel: "Enhanced",
-    support: "More hands-on support as your outbound motion grows.",
+    support: "More hands-on support as your customer-finding work grows.",
     cta: "Subscribe to Growth",
   },
   {
     id: "scale",
     name: "Scale",
     monthlyPrice: 299,
-    managedLeads: 1000,
-    description: "For lean teams coordinating several active Missions.",
+    lemmaCredits: 400,
+    description: "For lean teams running several customer-finding goals at once.",
     supportLevel: "Premium",
-    support: "Our highest level of support for more complex outbound operations.",
+    support: "Our highest level of support for more complex customer-finding work.",
     cta: "Subscribe to Scale",
   },
 ] as const;
 
 export const planSharedFeatures = [
-  "Unlimited manual Sequences",
+  "Unlimited outreach you run yourself",
+  "Self-run outreach uses zero Lemma credits",
   "LinkedIn execution",
-  "Lead research and 1:1 drafts",
-  "Mission, Cockpit, and Outbox visibility",
-  "Sign in with Google",
+  "Research and one-to-one message drafts",
+  "See every plan, message, reply, and issue",
 ] as const;

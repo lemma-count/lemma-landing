@@ -48,6 +48,7 @@
 .long-horizon .event-detail__identity > p,
 .long-horizon .lane-label,
 .long-horizon .scenario-kicker,
+.long-horizon .journey-summary span,
 .long-horizon .scenario-tab__trigger,
 .long-horizon .scenario-tab__preview,
 .long-horizon .timeline-phase {
@@ -105,6 +106,40 @@
   color: var(--lh-blue);
   font-size: 11px;
   font-weight: 600;
+}
+
+.long-horizon .journey-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--lh-hairline);
+  border-bottom: 1px solid var(--lh-hairline);
+  list-style: none;
+}
+
+.long-horizon .journey-summary li {
+  display: grid;
+  gap: 5px;
+  min-height: 76px;
+  padding: 12px;
+  align-content: center;
+}
+
+.long-horizon .journey-summary li + li {
+  border-left: 1px solid var(--lh-hairline);
+}
+
+.long-horizon .journey-summary span {
+  color: var(--lh-muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.long-horizon .journey-summary strong {
+  color: var(--lh-ink);
+  font-size: 15px;
+  line-height: 1.08;
 }
 
 .long-horizon .scenario-tabs {
@@ -615,9 +650,9 @@
   margin: 10px 0 0;
   padding-left: 14px;
   border-left: 2px solid var(--lh-blue);
-  color: #707070;
-  font-size: 13px;
-  line-height: 1.45;
+  color: #3d3d3d;
+  font-size: 14px;
+  line-height: 1.5;
   white-space: pre-line;
 }
 
@@ -904,6 +939,19 @@
 
   .long-horizon .journey-intro {
     font-size: 16px;
+  }
+
+  .long-horizon .journey-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .long-horizon .journey-summary li {
+    min-height: 56px;
+  }
+
+  .long-horizon .journey-summary li + li {
+    border-top: 1px solid var(--lh-hairline);
+    border-left: 0;
   }
 
   .long-horizon .timeline-phase__preview {

@@ -12,7 +12,7 @@ const footerGroups = [
     links: [
       { label: "How it works", href: "/#how-it-works" },
       { label: "Voice conversations", href: "/#voice-outbound" },
-      { label: "Long horizon", href: "/#difference" },
+      { label: "Why it takes time", href: "/#difference" },
     ],
   },
   {
@@ -52,11 +52,12 @@ export function Footer() {
         <div className={styles.closingCopy}>
           <p className={styles.eyebrow}>Ready to start?</p>
           <h2 className={styles.closingTitle}>
-            Set the goal. Let Lemma run the outreach.
+            Keep finding your next customer.
           </h2>
           <p className={styles.closingBody}>
-            Choose the Leads and rules. Lemma handles LinkedIn follow-up and can
-            send links to AI voice conversations. You step in only when needed.
+            Tell Lemma what you sell and who needs it. Lemma keeps the work
+            moving over time and brings you in when there is a real
+            opportunity.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -85,8 +86,8 @@ export function Footer() {
               />
             </Link>
             <p>
-              Supervised LinkedIn outreach and AI voice conversations for
-              independent professionals and small B2B teams.
+              For independent professionals and lean B2B teams that need a
+              steady path to new customers.
             </p>
           </div>
 

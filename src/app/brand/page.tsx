@@ -299,7 +299,7 @@ export default function BrandPage() {
                       <span className="flex w-[80%] items-stretch gap-3"><i className="w-1.5 shrink-0 bg-brand-signal" /><span className="flex flex-col justify-center gap-1"><small className="font-mono text-[9px] uppercase tracking-[0.1em] text-subtle">Next decision</small><strong className="text-sm">{useCase.example}</strong></span></span>
                     ) : null}
                     {useCase.id === "proof" ? (
-                      <span className="relative flex w-[80%] items-end gap-3 border-b-[6px] border-brand-signal pb-3"><strong className="text-6xl font-semibold leading-[0.72] tracking-[-0.07em]">10</strong><span className="flex flex-col gap-1"><strong className="text-sm">managed leads</strong><small className="font-mono text-[9px] text-subtle">included in trial</small></span></span>
+                      <span className="relative flex w-[80%] items-end gap-3 border-b-[6px] border-brand-signal pb-3"><strong className="text-6xl font-semibold leading-[0.72] tracking-[-0.07em]">10</strong><span className="flex flex-col gap-1"><strong className="text-sm">Lemma credits</strong><small className="font-mono text-[9px] text-subtle">included in trial</small></span></span>
                     ) : null}
                   </div>
                   <h4 className="mt-7 text-2xl font-medium tracking-[-0.02em]">{useCase.name}</h4>

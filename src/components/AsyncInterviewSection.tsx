@@ -16,22 +16,22 @@ const voiceConversationFlow = [
   },
   {
     label: "Voice conversation link",
-    detail: "Sent instead of booking a call",
+    detail: "Sent without asking for a meeting",
     icon: Link2,
   },
   {
     label: "Opened when ready",
-    detail: "The Lead answers by voice on their time",
+    detail: "The person starts when it suits them",
     icon: Clock3,
   },
   {
-    label: "Questions both ways",
-    detail: "The AI asks follow-ups and answers questions",
+    label: "Questions at their pace",
+    detail: "They can answer, pause, and ask questions",
     icon: Mic2,
   },
   {
     label: "Clear next step",
-    detail: "Good fit · Not a fit · Needs you",
+    detail: "Interested · Not interested · Needs your decision",
     icon: CheckCircle2,
   },
 ] as const;
@@ -45,19 +45,21 @@ export function AsyncInterviewSection() {
     >
       <div className={`${styles.frame} ${styles.voiceGrid}`}>
         <header className={styles.voiceCopy}>
-          <p className={styles.eyebrow}>AI voice conversations, by link</p>
+          <p className={styles.eyebrow}>Asynchronous AI voice, by link</p>
           <h2
             id="voice-outbound-title"
             className={`${styles.sectionTitle} ${styles.editorialTitle} ${styles.voiceTitle}`}
           >
-            Go beyond text without booking a call.
+            Voice when the person is ready.
           </h2>
           <p className={styles.sectionBody}>
-            Lemma sends a link to an AI voice conversation. The Lead opens it
-            when ready. The AI asks follow-ups and answers their questions.
+            When text is not enough, Lemma sends a link instead of asking for a
+            meeting. The person opens it when it suits them, answers at their own
+            pace, and asks questions without being put on the spot.
           </p>
           <p className={styles.voiceCallout}>
-            They answer when ready. You join only when needed.
+            No calendar pressure. No salesperson pushing for an answer. You
+            join only when needed.
           </p>
         </header>
 
@@ -100,9 +102,9 @@ export function AsyncInterviewSection() {
             </ol>
 
             <div className={styles.voiceReturn}>
-              <span>Same Lead</span>
+              <span>Same person</span>
               <span>Same goal</span>
-              <strong>Back to the Mission</strong>
+              <strong>Back to the outreach plan</strong>
             </div>
           </div>
         </figure>

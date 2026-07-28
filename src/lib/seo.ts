@@ -7,7 +7,7 @@ const defaultImage = {
   url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
   width: 1500,
   height: 1452,
-  alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",
+  alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange marker.",
 };
 
 type MetadataImage = {
@@ -85,7 +85,7 @@ export const websiteJsonLd = {
   name: siteName,
   url: siteUrl,
   description:
-    "Lemma runs supervised LinkedIn outreach for the Leads you choose, can send links to AI voice conversations, and keeps the relationship moving until there is a clear outcome or a decision needs you.",
+    "Lemma researches the people you choose, runs supervised LinkedIn outreach within your rules, can send links to AI voice conversations, and keeps the relationship moving until there is a clear outcome or a decision needs you.",
 };
 
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {

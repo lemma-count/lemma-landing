@@ -18,7 +18,7 @@ export const metadata: Metadata = createMetadata({
     url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
     width: 1500,
     height: 1452,
-    alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",
+    alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange marker.",
   },
 });
 

@@ -15,8 +15,8 @@ export function PricingPlans() {
             <span className={styles.planPeriod}>/ month</span>
           </p>
           <p className={styles.planCapacity}>
-            <strong>{plan.managedLeads.toLocaleString("en-US")}</strong>{" "}
-            Managed leads
+            <strong>{plan.lemmaCredits.toLocaleString("en-US")}</strong> Lemma
+            credits / month
           </p>
           <p className={styles.planDescription}>{plan.description}</p>
 

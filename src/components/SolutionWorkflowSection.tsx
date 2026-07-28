@@ -3,18 +3,18 @@ import styles from "./LemmaMarketing.module.css";
 const workflow = [
   {
     index: "01",
-    title: "Choose the Leads and the goal.",
+    title: "Choose the people, goal, and rules.",
     body: "You decide who Lemma may contact, what a good result looks like, and what it may do.",
   },
   {
     index: "02",
-    title: "Lemma plans and runs the outreach.",
-    body: "It sends LinkedIn messages, waits, follows up, and controls the pace inside your rules.",
+    title: "Lemma works out the next useful move.",
+    body: "It researches each person, prepares a relevant message, and decides when to send, wait, or follow up.",
   },
   {
     index: "03",
-    title: "Go beyond text with an AI voice conversation.",
-    body: "When more questions need answering, Lemma can send a link to an AI voice conversation. It continues until the Lead is a good fit, not a fit, or needs your decision.",
+    title: "The conversation adapts until the next step is clear.",
+    body: "Replies and new information stay with the same customer-finding goal. Lemma continues, stops, or brings you in when a decision needs you.",
   },
 ] as const;
 
@@ -35,11 +35,13 @@ export function SolutionWorkflowSection() {
             id="solution-title"
             className={`${styles.sectionTitle} ${styles.editorialTitle}`}
           >
-            Give Lemma the goal, not a list of messages.
+            Move the right conversations forward—not the message count.
           </h2>
           <p className={styles.sectionBody}>
-            A Mission keeps one outbound goal, the Leads, the rules, and every
-            next step together.
+            In Lemma, a Mission is one customer-finding goal: the people to
+            contact, the outcome you want, and the rules Lemma must follow.
+            Lemma researches each person and keeps the conversation moving
+            until there is a clear next step.
           </p>
         </header>
 
@@ -50,15 +52,16 @@ export function SolutionWorkflowSection() {
               <div>
                 <h3 className={styles.workflowTitle}>{item.title}</h3>
                 <p className={styles.workflowText}>{item.body}</p>
+                {item.index === "03" && (
+                  <p className={styles.solutionOutcome}>
+                    Interested <span aria-hidden>·</span> Not interested{" "}
+                    <span aria-hidden>·</span> Needs your decision
+                  </p>
+                )}
               </div>
             </li>
           ))}
         </ol>
-
-        <p className={styles.solutionOutcome}>
-          Good fit <span aria-hidden>·</span> Not a fit{" "}
-          <span aria-hidden>·</span> Needs you
-        </p>
       </div>
     </section>
   );

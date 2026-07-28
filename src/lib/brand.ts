@@ -97,7 +97,7 @@ export const signalUseCases = [
     id: "proof",
     name: "Proof point",
     role: "Evidence emphasis",
-    example: "10 managed leads",
+    example: "10 Lemma credits",
     guidance: "One orange rule, pin, or numeral connecting a claim to evidence. Never a repeated eyebrow or generic highlight.",
     token: "--lemma-attention-proof",
   },

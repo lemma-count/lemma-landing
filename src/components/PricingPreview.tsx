@@ -16,18 +16,17 @@ export function PricingPreview() {
     >
       <div className={`${styles.frame} ${styles.pricingPreviewGrid}`}>
         <div className={styles.pricingPreviewIntro}>
-          <p className={styles.eyebrow}>Pricing / Active work</p>
+          <p className={styles.eyebrow}>Pricing / Lemma-managed contacts</p>
           <h2 className={styles.pricingPreviewTitle}>
-            Pay for work moving toward an outcome—not messages sent.
+            Run your own outreach without limits. Pay when Lemma starts work.
           </h2>
           <p className={styles.pricingPreviewBody}>
-            Old-school outbound stacks add seats, tools, and high monthly
-            costs. Lemma starts at ${lemmaPlans[0].monthlyPrice}/month. Plans
-            grow with how many people Lemma can actively work on at once—not
-            how many messages it sends.
+            Outreach you run yourself is unlimited. A Lemma credit is used only
+            when Lemma starts researching and following up with a new person
+            for you.
           </p>
           <p className={styles.pricingThesis}>
-            More messages are not the product. Progress is.
+            1 Lemma credit = Lemma starts work for 1 new person.
           </p>
           <TrackedLink
             href={LEMMA_START_TRIAL_URL}
@@ -64,11 +63,17 @@ export function PricingPreview() {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">People Lemma can actively work on at once</th>
+                <th scope="row">Lemma credits / month</th>
                 {lemmaPlans.map((plan) => (
                   <td key={plan.id}>
-                    {plan.managedLeads.toLocaleString("en-US")}
+                    {plan.lemmaCredits.toLocaleString("en-US")}
                   </td>
+                ))}
+              </tr>
+              <tr>
+                <th scope="row">Outreach you run yourself</th>
+                {lemmaPlans.map((plan) => (
+                  <td key={plan.id}>Unlimited</td>
                 ))}
               </tr>
               <tr className={styles.pricingTablePriceRow}>
@@ -95,9 +100,10 @@ export function PricingPreview() {
                 </div>
                 <ul>
                   <li>
-                    Active capacity for{" "}
-                    {plan.managedLeads.toLocaleString("en-US")} people at once
+                    {plan.lemmaCredits.toLocaleString("en-US")} Lemma
+                    credits per month
                   </li>
+                  <li>Unlimited outreach you run yourself</li>
                 </ul>
                 <TrackedLink
                   href={getLemmaPlanUrl(plan.id)}
@@ -117,9 +123,9 @@ export function PricingPreview() {
           </div>
 
           <p className={styles.pricingComparisonNote}>
-            A person counts while Lemma-led work on their Mission is active.
-            Start with {lemmaTrial.managedLeads} people for {lemmaTrial.days}{" "}
-            days. No card.
+            A credit is used once, when Lemma starts work for a new person.
+            Trial: {lemmaTrial.lemmaCredits} people for {lemmaTrial.days} days.
+            No card.
           </p>
         </div>
       </div>

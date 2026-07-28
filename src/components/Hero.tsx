@@ -36,8 +36,8 @@ export function Hero() {
             Tell Lemma who to contact, what you sell, and what it may send.
             Lemma sends LinkedIn messages and follows up for days or weeks. When
             text is not enough, it can send a link to an AI voice conversation.
-            Leads ask and answer questions without booking a call with you. You
-            step in only when needed.
+            People can ask and answer questions without booking a call with
+            you. You step in only when needed.
           </p>
 
           <div className={styles.heroActions}>

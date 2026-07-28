@@ -18,9 +18,9 @@ import {
   type NodeTypes,
 } from "@xyflow/react";
 import {
+  ArrowRight,
   Circle,
   Diamond,
-  GitFork,
   Pause,
   Play,
   Square,
@@ -29,7 +29,6 @@ import {
 } from "@phosphor-icons/react";
 import { track } from "@vercel/analytics";
 import {
-  BRANCH_START_INDEX,
   chapterCopy,
   leadContext,
   scenarios,
@@ -48,7 +47,6 @@ const MIN_TRACK_WIDTH = DAY_COUNT * MIN_DAY_WIDTH;
 const SHARED_DAYS = 3;
 const INTRA_CHAPTER_DELAY = 1500;
 const FALLBACK_CHAPTER_HOLD = 3000;
-const BRANCH_START_HOLD = 1800;
 
 const LANE_Y: Record<JourneyLane, number> = {
   signal: 45,
@@ -321,8 +319,6 @@ function MobileTimeline({
 }
 
 export function LongHorizonSection() {
-  const [scenarioId, setScenarioId] =
-    useState<JourneyScenario["id"]>("content");
   const [playheadIndex, setPlayheadIndex] = useState(0);
   const [inspectionIndex, setInspectionIndex] = useState<number | null>(null);
   const [playIntent, setPlayIntent] = useState(false);
@@ -333,14 +329,11 @@ export function LongHorizonSection() {
   const rootRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const timelineScrollRef = useRef<HTMLDivElement>(null);
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const autoPlayedRef = useRef(false);
   const autoStartTimerRef = useRef<number | null>(null);
-  const branchStartTimerRef = useRef<number | null>(null);
   const reducedMotion = useReducedMotion();
 
-  const scenario =
-    scenarios.find((item) => item.id === scenarioId) ?? scenarios[0];
+  const scenario = scenarios[0];
   const boundedPlayheadIndex = Math.max(
     0,
     Math.min(playheadIndex, scenario.events.length - 1),
@@ -386,9 +379,6 @@ export function LongHorizonSection() {
   const cancelPendingStarts = useCallback(() => {
     if (autoStartTimerRef.current) {
       window.clearTimeout(autoStartTimerRef.current);
-    }
-    if (branchStartTimerRef.current) {
-      window.clearTimeout(branchStartTimerRef.current);
     }
   }, []);
 
@@ -439,58 +429,6 @@ export function LongHorizonSection() {
       }, 30);
     },
     [inspectEvent, scenario.events.length],
-  );
-
-  const changeScenario = useCallback(
-    (nextScenarioId: JourneyScenario["id"]) => {
-      if (nextScenarioId === scenarioId) return;
-      const nextScenario =
-        scenarios.find((item) => item.id === nextScenarioId) ?? scenarios[0];
-      autoPlayedRef.current = true;
-      cancelPendingStarts();
-      setScenarioId(nextScenarioId);
-      setPlayheadIndex(BRANCH_START_INDEX);
-      setInspectionIndex(null);
-      setPlayIntent(false);
-      setAnnouncement(
-        `${nextScenario.label}. Same person and history. Showing what Lemma does next.`,
-      );
-      track("long_horizon_scenario_change", {
-        scenario: nextScenario.id,
-      });
-      branchStartTimerRef.current = window.setTimeout(() => {
-        setPlayIntent(true);
-      }, BRANCH_START_HOLD);
-    },
-    [cancelPendingStarts, scenarioId],
-  );
-
-  const handleScenarioKeyDown = useCallback(
-    (event: ReactKeyboardEvent<HTMLButtonElement>, index: number) => {
-      const keyDirection: Record<string, number> = {
-        ArrowRight: 1,
-        ArrowDown: 1,
-        ArrowLeft: -1,
-        ArrowUp: -1,
-      };
-
-      let nextIndex: number | null = null;
-      if (keyDirection[event.key]) {
-        nextIndex =
-          (index + keyDirection[event.key] + scenarios.length) %
-          scenarios.length;
-      } else if (event.key === "Home") {
-        nextIndex = 0;
-      } else if (event.key === "End") {
-        nextIndex = scenarios.length - 1;
-      }
-
-      if (nextIndex === null) return;
-      event.preventDefault();
-      changeScenario(scenarios[nextIndex].id);
-      tabRefs.current[nextIndex]?.focus();
-    },
-    [changeScenario],
   );
 
   useEffect(() => {
@@ -732,59 +670,48 @@ export function LongHorizonSection() {
       <div id="long-horizon" className="journey">
         <header className="journey-header">
           <div className="journey-heading landing-reveal">
-            <p className="eyebrow">Lemma works on a long horizon · Example</p>
+            <p className="eyebrow">
+              One person · An illustrative 28-day journey
+            </p>
             <h2 id="long-horizon-title">
-              Relationships take time. One person. <span>28 days.</span>{" "}
-              <b className="keep-together">
-                One conversation<i>.</i>
-              </b>
+              A real customer opportunity can take weeks—not one message<i>.</i>
             </h2>
             <p className="journey-intro">
-              A fixed message schedule cannot handle that. Lemma keeps every
-              message, reply, decision, and next step together, so the
-              conversation can adapt without starting over.
+              This example shows why: Lemma waits through silence, uses a real
+              change to restart the conversation, learns what the person needs
+              across text and voice, and brings you in when interest is real.
             </p>
           </div>
 
           <div className="journey-controls">
             <p className="scenario-kicker">
-              Same history · New situation · New plan
+              One conversation · Four useful decisions
             </p>
-            <div
-              className="scenario-tabs"
-              role="tablist"
-              aria-label="What Lemma does next"
-            >
-              {scenarios.map((item, index) => (
-                <button
-                  type="button"
-                  role="tab"
-                  id={`scenario-tab-${item.id}`}
-                  aria-controls="long-horizon-journey-panel"
-                  aria-selected={item.id === scenarioId}
-                  aria-label={`${item.label}, after ${item.trigger.toLowerCase()}`}
-                  tabIndex={item.id === scenarioId ? 0 : -1}
-                  className={item.id === scenarioId ? "is-active" : ""}
-                  key={item.id}
-                  ref={(element) => {
-                    tabRefs.current[index] = element;
-                  }}
-                  onClick={() => changeScenario(item.id)}
-                  onKeyDown={(event) => handleScenarioKeyDown(event, index)}
-                >
-                  <span className="scenario-tab__trigger">{item.trigger}</span>
-                  <span className="scenario-tab__label">{item.label}</span>
-                </button>
-              ))}
-            </div>
+            <ol className="journey-summary">
+              <li>
+                <span>No reply</span>
+                <strong>Wait</strong>
+              </li>
+              <li>
+                <span>Something changed</span>
+                <strong>Restart</strong>
+              </li>
+              <li>
+                <span>The person replies</span>
+                <strong>Learn the need</strong>
+              </li>
+              <li>
+                <span>Ready to talk</span>
+                <strong>Bring you in</strong>
+              </li>
+            </ol>
           </div>
         </header>
 
         <div
           className="journey-stage"
           id="long-horizon-journey-panel"
-          role="tabpanel"
-          aria-labelledby={`scenario-tab-${scenario.id}`}
+          aria-label="One illustrative 28-day customer journey"
           ref={stageRef}
         >
           <div className="journey-meta">
@@ -802,7 +729,7 @@ export function LongHorizonSection() {
           <div className="timeline-toolbar">
             <div className="timeline-phase" aria-label="Journey structure">
               <span className="timeline-phase__shared">First 3 days</span>
-              <GitFork size={16} weight="bold" aria-hidden="true" />
+              <ArrowRight size={16} weight="bold" aria-hidden="true" />
               <span className="timeline-phase__branch">
                 Then · <strong>{scenario.label}</strong>
               </span>
@@ -901,7 +828,7 @@ export function LongHorizonSection() {
             </div>
 
             <div className="event-detail__block">
-              <span>{detailEvent ? "WHAT HAPPENED" : "WHAT LEMMA DOES"}</span>
+              <span>{detailEvent ? "WHAT HAPPENED" : "LEMMA’S MOVE"}</span>
               <p>{detail.summary}</p>
               {detail.message && <blockquote>{detail.message}</blockquote>}
             </div>
@@ -909,7 +836,7 @@ export function LongHorizonSection() {
             <div className="event-detail__block">
               <span>WHY</span>
               <p>{detail.why}</p>
-              <strong>Next</strong>
+              <strong>NEXT</strong>
               <p>{detail.next}</p>
             </div>
           </article>

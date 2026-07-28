@@ -1,44 +1,45 @@
 import type { Metadata } from "next";
+import { LandingFaq } from "@/components/LandingFaq";
 import { PricingPlans } from "@/components/PricingPlans";
 import { TrackedLink } from "@/components/TrackedLink";
 import styles from "@/components/LemmaMarketing.module.css";
 import { LEMMA_START_TRIAL_URL } from "@/lib/links";
-import { lemmaTrial, pricingTruth } from "@/lib/pricing";
+import { lemmaTrial } from "@/lib/pricing";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Lemma",
   description:
-    "Simple monthly pricing based on Managed leads. Start with a seven-day trial, ten Managed leads, and no credit card. Manual Sequences are unlimited.",
+    "Simple monthly pricing based on how many new people Lemma starts work for. Start with a seven-day trial, ten Lemma credits, and no credit card. Outreach you run yourself is unlimited.",
   path: "/pricing",
   image: {
     url: "/brand/lemma/v1.4.0/visuals/lemma-alignment-court.webp",
     width: 1500,
     height: 1452,
-    alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange horizon signal.",
+    alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange marker.",
   },
 });
 
-const managedLeadRules = [
+const lemmaCreditRules = [
   {
     index: "01",
-    title: "What counts",
-    body: "A Lead counts while it is assigned to a live Lemma-led Mission and Lemma is actively running that work for you.",
+    title: "Charged when Lemma starts work",
+    body: "One credit is used when Lemma begins managing a new person. Retrying the same start does not use another credit.",
   },
   {
     index: "02",
-    title: "What does not free capacity",
-    body: "A reply does not remove a Lead from your usage. The active Mission still holds that Managed-lead capacity.",
+    title: "Your credits reset each month",
+    body: "Each renewal gives you a new monthly set of credits. People Lemma already manages are not charged again. If Starter’s 10 credits are used, upgrading to Growth adds 90 more. A downgrade starts next month.",
   },
   {
     index: "03",
-    title: "What frees capacity",
-    body: "Finish or archive the Mission, or release the Lead from Lemma-led work.",
+    title: "One active outreach plan per person",
+    body: "A person can be in one active self-run or Lemma-managed plan at a time. Moving that person between plans does not use another credit. Starting again after the previous work ended does.",
   },
   {
     index: "04",
-    title: "What happens at the limit",
-    body: "New Lemma-led capacity is blocked until you upgrade. After the trial, new Lemma-led capacity is soft-locked behind the upgrade action.",
+    title: "Outreach you run yourself stays unlimited",
+    body: "You can run as many outreach plans and contact as many people yourself as you want, without using credits. When a trial or subscription ends, sending stops and the workspace remains available to read.",
   },
 ] as const;
 
@@ -48,13 +49,13 @@ export default function PricingPage() {
       <section className={styles.pricingHero}>
         <div className={`${styles.frame} ${styles.sectionGrid}`}>
           <div className={styles.pricingHeroCopy}>
-            <p className={styles.eyebrow}>Pricing / Managed leads</p>
+            <p className={styles.eyebrow}>Pricing / Lemma credits</p>
             <h1 className={`${styles.sectionTitle} ${styles.pricingHeroTitle}`}>
-              Simple pricing for the Leads Lemma runs.
+              Pay when Lemma starts work on a new contact.
             </h1>
             <p className={`${styles.sectionBody} ${styles.pricingHeroBody}`}>
-              Pay for Managed leads on live Lemma-led Missions. Manual
-              Sequences are unlimited and never count toward your plan.
+              One Lemma credit starts Lemma-managed research and follow-up for
+              one new person. Outreach you run yourself stays unlimited.
             </p>
           </div>
 
@@ -65,8 +66,8 @@ export default function PricingPage() {
                 <span>Free trial</span>
               </div>
               <div className={styles.trialMetric}>
-                <strong>{lemmaTrial.managedLeads}</strong>
-                <span>Managed leads</span>
+                <strong>{lemmaTrial.lemmaCredits}</strong>
+                <span>Lemma credits</span>
               </div>
               <div className={styles.trialMetric}>
                 <strong>No card</strong>
@@ -94,14 +95,6 @@ export default function PricingPage() {
       <section className={styles.pricingSection}>
         <div className={`${styles.frame} ${styles.sectionGrid}`}>
           <PricingPlans />
-          <p
-            className={styles.pricingFinePrint}
-            data-pricing-as-of={pricingTruth.asOf}
-            data-pricing-source={pricingTruth.source}
-          >
-            Monthly plans in {pricingTruth.currency} · Monthly billing only ·
-            Upgrade only · No credit packs or top-ups
-          </p>
         </div>
       </section>
 
@@ -110,16 +103,17 @@ export default function PricingPage() {
           <div className={styles.definitionLead}>
             <p className={styles.eyebrow}>One clear unit</p>
             <h2 className={`${styles.sectionTitle} ${styles.editorialTitle}`}>
-              What makes a Lead managed?
+              One credit lets Lemma manage one new person over time.
             </h2>
             <p className={styles.sectionBody}>
-              The unit follows active Lemma-led work—not messages sent, replies
-              received, or manual Sequences.
+              The credit is used when Lemma starts work for that person. Lemma
+              can then research, follow up, and adapt as the relationship
+              develops—without charging for every message.
             </p>
           </div>
 
           <div className={styles.definitionRules}>
-            {managedLeadRules.map((rule) => (
+            {lemmaCreditRules.map((rule) => (
               <article key={rule.index} className={styles.definitionRule}>
                 <span>{rule.index}</span>
                 <div>
@@ -131,6 +125,8 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      <LandingFaq />
     </main>
   );
 }
