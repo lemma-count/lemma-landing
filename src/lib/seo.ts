@@ -43,8 +43,8 @@ export function createMetadata({
     manifest: "/site.webmanifest",
     icons: {
       icon: [
-        { url: "/favicon.ico", sizes: "any" },
-        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico?v=2.0.1", sizes: "any" },
+        { url: "/favicon.svg?v=2.0.1", type: "image/svg+xml" },
       ],
       apple: "/apple-touch-icon.png",
     },
