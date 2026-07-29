@@ -95,11 +95,26 @@ export function Footer() {
               <div key={group.title} className={styles.footerNavGroup}>
                 <h3>{group.title}</h3>
                 <div>
-                  {group.links.map((link) => (
-                    <Link key={link.label} href={link.href}>
-                      {link.label}
-                    </Link>
-                  ))}
+                  {group.links.map((link) =>
+                    link.href === LEMMA_SIGN_IN_URL ? (
+                      <TrackedLink
+                        key={link.label}
+                        href={link.href}
+                        event="sign_in_click"
+                        eventProps={{
+                          label: link.label,
+                          page: "global",
+                          location: "footer",
+                        }}
+                      >
+                        {link.label}
+                      </TrackedLink>
+                    ) : (
+                      <Link key={link.label} href={link.href}>
+                        {link.label}
+                      </Link>
+                    ),
+                  )}
                 </div>
               </div>
             ))}
