@@ -4,7 +4,7 @@
   "brandVersion": "2.1.0",
   "source": "wilu-ops/brand/lemma",
   "releaseStatus": "approved",
-  "generatedAt": "2026-07-29T10:59:06.545Z",
+  "generatedAt": "2026-07-29T11:06:33.803Z",
   "tokens": {
     "color": {
       "paper": {
@@ -310,5 +310,5 @@
       "approval": "approved"
     }
   ],
-  "integrity": "6670d3cc3811c3b790c9cbaeb80b2acdf11a6b6ea030a67176aa45907bc19a0c"
+  "integrity": "fc0c9bb29d075bb6cfc7b9b898a90d741c93d1441bfbc3295d2a1ccd4ac4f689"
 }
