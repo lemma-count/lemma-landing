@@ -107,7 +107,7 @@ export function Footer() {
 
           <div className={styles.copyright}>
             <span>© 2026 Lemma</span>
-            <span>Open Passage / 2.0.0</span>
+            <span>Open Passage / 2.1.0</span>
           </div>
         </div>
       </div>
