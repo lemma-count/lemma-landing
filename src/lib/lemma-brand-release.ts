@@ -9,7 +9,7 @@ import lock from "../../lemma-brand.lock.json";
  */
 export const lemmaBrandRelease = lock;
 
-export const lemmaBrandAssetBase = "/brand/lemma/v2.0.0";
+export const lemmaBrandAssetBase = "/brand/lemma/v2.1.0";
 
 export function lemmaBrandVisual(fileName: string) {
   return `${lemmaBrandAssetBase}/visuals/${fileName}`;
@@ -18,6 +18,10 @@ export function lemmaBrandVisual(fileName: string) {
 export const lemmaBrandLogos = {
   horizontalInk: `${lemmaBrandAssetBase}/logo/lemma-lockup-horizontal-ink.svg`,
   horizontalPaper: `${lemmaBrandAssetBase}/logo/lemma-lockup-horizontal-paper.svg`,
+  horizontalInkUi: `${lemmaBrandAssetBase}/logo/lemma-lockup-horizontal-ink-ui.svg`,
+  horizontalPaperUi: `${lemmaBrandAssetBase}/logo/lemma-lockup-horizontal-paper-ui.svg`,
   markInk: `${lemmaBrandAssetBase}/logo/lemma-mark-ink.svg`,
   markPaper: `${lemmaBrandAssetBase}/logo/lemma-mark-paper.svg`,
+  markInkUi: `${lemmaBrandAssetBase}/logo/lemma-mark-ink-ui.svg`,
+  markPaperUi: `${lemmaBrandAssetBase}/logo/lemma-mark-paper-ui.svg`,
 } as const;

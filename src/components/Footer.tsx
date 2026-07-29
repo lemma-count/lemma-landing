@@ -77,7 +77,7 @@ export function Footer() {
           <div className={styles.footerBrand}>
             <Link href="/#top" aria-label="Lemma home">
               <Image
-                src={lemmaBrandLogos.horizontalPaper}
+                src={lemmaBrandLogos.horizontalPaperUi}
                 alt="Lemma"
                 width={125}
                 height={25}

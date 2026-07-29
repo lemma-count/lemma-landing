@@ -28,7 +28,7 @@ export const metadata: Metadata = createMetadata({
   path: "/brand",
   noIndex: true,
   image: {
-    url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-arcs.webp",
+    url: "/brand/lemma/v2.1.0/visuals/lemma-alignment-arcs.webp",
     width: 1500,
     height: 1452,
     alt: "Broad Klein Blue arcs aligning around one open passage and a tiny orange horizon signal.",
@@ -132,7 +132,7 @@ export default function BrandPage() {
         <div className="mx-auto flex min-h-[760px] max-w-[1400px] flex-col justify-between px-5 py-10 sm:min-h-[840px] sm:px-8 sm:py-14 lg:min-h-[900px] lg:px-10 lg:py-16">
           <div className="flex items-center justify-between gap-6 border-b border-white/18 pb-5">
             <Image
-              src="/brand/lemma/v2.0.0/logo/lemma-lockup-horizontal-paper.svg"
+              src="/brand/lemma/v2.1.0/logo/lemma-lockup-horizontal-paper.svg"
               alt="Lemma"
               width={125}
               height={25}
