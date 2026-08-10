@@ -3,7 +3,7 @@ export const AI_WORK_REPORT_URL =
 
 export const LEMMA_APP_URL = "https://app.heylemma.com";
 export const LEMMA_START_TRIAL_URL = `${LEMMA_APP_URL}/missions/new`;
-export const LEMMA_SIGN_IN_URL = `${LEMMA_APP_URL}/login`;
+export const LEMMA_CONTACT_URL = "mailto:contact@heylemma.com";
 export const LEMMA_BILLING_URL = `${LEMMA_APP_URL}/settings/account`;
 
 export function getLemmaPlanUrl(

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { lemmaBrandLogos, lemmaBrandVisual } from "@/lib/lemma-brand-release";
-import { LEMMA_SIGN_IN_URL, LEMMA_START_TRIAL_URL } from "@/lib/links";
+import { LEMMA_CONTACT_URL, LEMMA_START_TRIAL_URL } from "@/lib/links";
 import { TrackedLink } from "./TrackedLink";
 import styles from "./LemmaMarketing.module.css";
 
@@ -21,7 +21,7 @@ const footerGroups = [
       { label: "Pricing", href: "/#pricing" },
       { label: "Questions", href: "/#faq" },
       { label: "Start free trial", href: LEMMA_START_TRIAL_URL },
-      { label: "Sign in", href: LEMMA_SIGN_IN_URL },
+      { label: "Contact us", href: LEMMA_CONTACT_URL },
     ],
   },
   {
@@ -96,11 +96,11 @@ export function Footer() {
                 <h3>{group.title}</h3>
                 <div>
                   {group.links.map((link) =>
-                    link.href === LEMMA_SIGN_IN_URL ? (
+                    link.href === LEMMA_CONTACT_URL ? (
                       <TrackedLink
                         key={link.label}
                         href={link.href}
-                        event="sign_in_click"
+                        event="contact_click"
                         eventProps={{
                           label: link.label,
                           page: "global",
