@@ -15,7 +15,7 @@ export const metadata: Metadata = createMetadata({
     "Lemma plans and runs supervised LinkedIn outreach, can send links to AI voice conversations, and keeps working until there is a clear outcome or a decision needs you.",
   path: "/",
   image: {
-    url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-court.webp",
+    url: "/brand/lemma/v2.1.0/visuals/lemma-alignment-court.webp",
     width: 1500,
     height: 1452,
     alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange marker.",

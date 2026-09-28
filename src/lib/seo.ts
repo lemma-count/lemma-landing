@@ -4,7 +4,7 @@ export const siteUrl = "https://www.heylemma.com";
 export const siteName = "Lemma";
 
 const defaultImage = {
-  url: "/brand/lemma/v2.0.0/visuals/lemma-alignment-court.webp",
+  url: "/brand/lemma/v2.1.0/visuals/lemma-alignment-court.webp",
   width: 1500,
   height: 1452,
   alt: "Airy Klein Blue architectural planes converging toward one precise passage and a tiny orange marker.",
@@ -43,8 +43,8 @@ export function createMetadata({
     manifest: "/site.webmanifest",
     icons: {
       icon: [
-        { url: "/favicon.ico?v=2.0.1", sizes: "any" },
-        { url: "/favicon.svg?v=2.0.1", type: "image/svg+xml" },
+        { url: "/favicon.ico?v=2.1.0", sizes: "any" },
+        { url: "/favicon.svg?v=2.1.0", type: "image/svg+xml" },
       ],
       apple: "/apple-touch-icon.png",
     },
@@ -76,7 +76,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: siteName,
   url: siteUrl,
-  logo: absoluteUrl("/brand/lemma/v2.0.0/logo/lemma-mark-ink.svg"),
+  logo: absoluteUrl("/brand/lemma/v2.1.0/logo/lemma-mark-ink.svg"),
 };
 
 export const websiteJsonLd = {
@@ -147,7 +147,7 @@ export function articleJsonLd({
       name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/brand/lemma/v2.0.0/logo/lemma-mark-ink.svg"),
+        url: absoluteUrl("/brand/lemma/v2.1.0/logo/lemma-mark-ink.svg"),
       },
     },
   };

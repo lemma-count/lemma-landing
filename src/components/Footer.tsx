@@ -77,7 +77,7 @@ export function Footer() {
           <div className={styles.footerBrand}>
             <Link href="/#top" aria-label="Lemma home">
               <Image
-                src={lemmaBrandLogos.horizontalPaper}
+                src={lemmaBrandLogos.horizontalPaperUi}
                 alt="Lemma"
                 width={125}
                 height={25}
@@ -122,7 +122,7 @@ export function Footer() {
 
           <div className={styles.copyright}>
             <span>© 2026 Lemma</span>
-            <span>Open Passage / 2.0.0</span>
+            <span>Open Passage / 2.1.0</span>
           </div>
         </div>
       </div>

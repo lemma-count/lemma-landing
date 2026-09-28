@@ -18,7 +18,7 @@ const navLinks = [
 function LemmaLogo() {
   return (
     <Image
-      src={lemmaBrandLogos.horizontalInk}
+      src={lemmaBrandLogos.horizontalInkUi}
       alt="Lemma"
       width={125}
       height={25}
